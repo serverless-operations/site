@@ -1,0 +1,26 @@
+$breakpoint-up: (
+  'sm': 'screen and (min-width: 600px)',
+  'md': 'screen and (min-width: 960px)',
+  'lg': 'screen and (min-width: 1264px)',
+  'xl': 'screen and (min-width: 1888px)'
+) !default;
+
+$breakpoint-down: (
+  'xs': 'screen and (max-width: 599px)',
+  'sm': 'screen and (max-width: 959px)',
+  'md': 'screen and (max-width: 1263px)',
+  'lg': 'screen and (max-width: 1887px)'
+) !default;
+
+// @mixinの定義
+@mixin media-breakpoint-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint: md) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}

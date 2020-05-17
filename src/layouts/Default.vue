@@ -1,54 +1,91 @@
 <template>
   <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">Gridsome</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
+    <header-component />
     <slot/>
+    <footer-component />
   </div>
 </template>
 
-<style>
-body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+<script>
+
+import FooterComponent from '~/components/Footer.vue'
+import HeaderComponent from '~/components/Header.vue'
+
+export default {
+  components: {
+    FooterComponent,
+    HeaderComponent
+  }
 }
 
-img {
-  max-width: 100%;
-}
+</script>
 
-nav[role="navigation"] {
-  text-align: center;
-}
-nav[role="navigation"] a {
-  display: inline-block;
-  margin: 1.0em 0.75em 2.0em;
-}
 
-.layout {
-  max-width: 600px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+<style lang="scss">
+.v-content .container {
+  width: 98vw;
+  @include media-breakpoint-up(sm) {
+    max-width: 900px;
+  }
+  @include media-breakpoint-up(md) {
+    max-width: 928px;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 1200px;
+  }
+  @include media-breakpoint-up(xl) {
+    max-width: 1232px;
+  }
 }
-.header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-.nav__link {
-  margin-left: 20px;
-}
-.post-list {
-  list-style: none;
-  padding-left: 0;
-}
-.post-list li {
-  padding: 1em 0;
+.p-top-contact {
+  &--form {
+    .v-text-field {
+      &:not(.v-textarea) {
+        .v-input__slot {
+          height: 40px;
+          min-height: 40px !important;
+          background-color: $light-gray-1 !important;
+          border-width: 1px !important;
+          & > .v-text-field__slot {
+            height: 40px;
+            min-height: 40px;
+          }
+          & > fieldset {
+            height: 44px;
+            border-width: 1px !important;
+          }
+        }
+      }
+      &:not(.v-input--is-focused, .primary--text, .error--text) {
+        .v-input__slot {
+          border: none !important;
+          & > fieldset {
+            border: solid 1px $light-gray-1 !important;
+          }
+        }
+      }
+    }
+    .v-textarea {
+      .v-input__slot {
+        background-color: $light-gray-1 !important;
+        & > fieldset {
+          border-width: 1px !important;
+        }
+        & > .v-text-field__slot textarea {
+          color: $black;
+        }
+      }
+    }
+
+    .v-input.v-text-field input[type='text'] {
+      margin: 0;
+      color: $black;
+    }
+  }
+  &--check {
+    .v-icon {
+      color: rgba($mid-gray-3, 0.4);
+    }
+  }
 }
 </style>
