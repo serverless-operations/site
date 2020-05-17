@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <!-- <v-container>
       <v-col cols="12" class="c-footer-breadcrumb">
         <nuxt-link to="/" class="c-footer-breadcrumb__home">
@@ -18,24 +18,24 @@
                sm="6"
                md="3">
           <div class>
-            <nuxt-link to="/services"
+            <g-link to="/services"
                        class="c-footer-list__link">
               <div class="c-footer-menu__title">Service</div>
               <div class="c-footer-menu__subtitle">サービス紹介</div>
-            </nuxt-link>
+            </g-link>
           </div>
           <ul class="c-footer-list">
             <li class="c-footer-list__item">
-              <nuxt-link to="/services"
-                         class="c-footer-list__link">Serverless Oprationsとは</nuxt-link>
+              <g-link to="/services"
+                         class="c-footer-list__link">Serverless Oprationsとは</g-link>
             </li>
             <li class="c-footer-list__item">
-              <nuxt-link to="/services/serverless-consulting"
-                         class="c-footer-list__link">サーバーレスコンサルティング</nuxt-link>
+              <g-link to="/services/serverless-consulting"
+                         class="c-footer-list__link">サーバーレスコンサルティング</g-link>
             </li>
             <li class="c-footer-list__item">
-              <nuxt-link to="/services/serverless-development"
-                         class="c-footer-list__link">サーバーレスディべロプメント</nuxt-link>
+              <g-link to="/services/serverless-development"
+                         class="c-footer-list__link">サーバーレスディべロプメント</g-link>
             </li>
           </ul>
         </v-col>
@@ -65,40 +65,40 @@
        
 
         <v-col cols="12" sm="6" md="3">
-          <nuxt-link to="/company/" class="c-footer-list__link">
+          <g-link to="/company/" class="c-footer-list__link">
             <div class="c-footer-menu__title">Company</div>
             <div class="c-footer-menu__subtitle">会社案内</div>
-          </nuxt-link>
+          </g-link>
 
           <ul class="c-footer-list">
             <li class="c-footer-list__item">
-              <nuxt-link to="/company" class="c-footer-list__link">
+              <g-link to="/company" class="c-footer-list__link">
                 会社概要
-              </nuxt-link>
+              </g-link>
             </li>
             <li class="c-footer-list__item">
-              <nuxt-link to="/company/#message" class="c-footer-list__link">
+              <g-link to="/company/#message" class="c-footer-list__link">
                 代表あいさつ
-              </nuxt-link>
+              </g-link>
             </li>
             <li class="c-footer-list__item">
-              <nuxt-link to="/company/#vision" class="c-footer-list__link">
+              <g-link to="/company/#vision" class="c-footer-list__link">
                 未来像
-              </nuxt-link>
+              </g-link>
             </li>
           </ul>
         </v-col>
 
         <v-col cols="12" sm="6" md="3">     
-          <nuxt-link to="/our-products" class="c-footer-list__link">
+          <g-link to="/our-products" class="c-footer-list__link">
             <div class="c-footer-menu__title">Products</div>
             <div class="c-footer-menu__subtitle">私たちが開発したプロダクト</div>
-          </nuxt-link>
+          </g-link>
           <ul class="c-footer-list">
             <li class="c-footer-list__item">
-              <nuxt-link to="/our-products" class="c-footer-list__link">
+              <g-link to="/our-products" class="c-footer-list__link">
                 私たちが開発したプロダクト
-              </nuxt-link>
+              </g-link>
             </li>
           </ul>
         </v-col>
@@ -108,10 +108,10 @@
         <v-col cols="12"
                md="2">
           <div>
-            <nuxt-link to="/">
+            <g-link to="/">
               <img src="../assets/images/footer-severless-operations-logo.svg"
                    alt="Severless Operations ロゴ" />
-            </nuxt-link>
+            </g-link>
           </div>
         </v-col>
         <v-col cols="12"
@@ -131,17 +131,17 @@
           </div>
 
           <div class="c-footer-submenu">
-            <nuxt-link to="/contact"
-                       class="c-footer-submenu__link">Contact</nuxt-link>
-            <nuxt-link to="/privacy-policy"
-                       class="c-footer-submenu__link">Privacy Policy</nuxt-link>
+            <g-link to="/contact"
+                       class="c-footer-submenu__link">Contact</g-link>
+            <g-link to="/privacy-policy"
+                       class="c-footer-submenu__link">Privacy Policy</g-link>
           </div>
 
           <div class="footer-copyright">© 2019 Serverless Operations All Rights Reserved.</div>
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -158,7 +158,7 @@ a.async=true,a.src=s,m.parentNode.insertBefore(a,m);})();
 </script>
 
 <style lang="scss" scoped>
-.v-footer .container {
+.footer .container {
   @include media-breakpoint-up(sm) {
     max-width: 900px;
   }

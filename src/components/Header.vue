@@ -1,13 +1,13 @@
 <template>
   <header class="header-nav">
     <div class="header-nav__logo-block">
-      <nuxt-link to="/" class="header-nav__logo-link">
+      <g-link to="/" class="header-nav__logo-link">
         <img
           src="../assets/images/header-logo.svg"
           alt="Severless Operations ロゴ"
           class="header-nav__logo"
         />
-      </nuxt-link>
+      </g-link>
     </div>
     <div id="app" class="header-nav__toggler-block">
       <button
@@ -32,12 +32,12 @@
 <script>
 // モーダルの読み込み
 //import { mapMutations } from 'vuex'
-//import Modal from '~/components/Modal.vue'
+import Modal from '~/components/Modal.vue'
 
 export default {
   computed: {
     showModal() {
-      return this.$store.state.showModal
+      //return this.$store.state.showModal
     }
   },
   components: {
