@@ -39,7 +39,7 @@
               </h3>
               <p>Serverless Operationsは、これまでグローバルの第一線で培ってきたクラウド技術<small>（AWS − アマゾンウェブサービス）</small>の豊富な実績と知見を活かし、お客さまのサーバーレスによる開発や運用の支援、コンサルティングまで一貫してサポート。サーバーレスに関するさまざまな課題を解決いたします。</p>
               <span class="p-top-concept--more">
-                <nuxt-link to="/services">About Serverless Operations</nuxt-link>
+                <g-link to="/services">About Serverless Operations</g-link>
               </span>
             </v-col>
           </v-row>
