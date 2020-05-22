@@ -27,7 +27,7 @@
                   :hover="false"
                   height="158px"
                   width="100%"
-                  class="d-flex justify-center align-center p-cta__consulting">
+                  class="d-flex justify-center align-center p-cta__consulting theme--dark">
            
             <v-card-title class="flex-column justify-end justify-sm-center align-start p-cta__menu">
               <span class="p-cta__menu--top">Serverless</span>
@@ -40,7 +40,7 @@
                   to="/services/serverless-development"
                   height="158px"
                   width="100%"
-                  class="d-flex justify-center align-center p-cta__development">
+                  class="d-flex justify-center align-center p-cta__development theme--dark">
             
             <v-card-title class="flex-column justify-end justify-sm-center align-start p-cta__menu">
               <span class="p-cta__menu--top">Serverless</span>
