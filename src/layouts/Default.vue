@@ -23,6 +23,10 @@ export default {
 
 
 <style lang="scss">
+
+.theme--dark.v-application {
+    background: #fff;
+}
 .v-content .container {
   width: 98vw;
   @include media-breakpoint-up(sm) {

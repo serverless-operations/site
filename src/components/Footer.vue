@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="v-footer footer v-sheet v-sheet--tile theme--dark">
     <!-- <v-container>
       <v-col cols="12" class="c-footer-breadcrumb">
         <nuxt-link to="/" class="c-footer-breadcrumb__home">
@@ -271,6 +271,9 @@ a.async=true,a.src=s,m.parentNode.insertBefore(a,m);})();
   &__twitter {
     text-decoration: none;
     transition: all 0.3s ease;
+    i {
+      color: #fff;
+    }
     &:hover {
       opacity: 0.5;
     }

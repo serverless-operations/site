@@ -38,12 +38,7 @@
 
       <top-news-contact />
 
-    <ul class="post-list">
-      <li v-for="{ node } in $page.allWordPressPost.edges" :key="node.id">
-        <Post :post="node" />
-      </li>
-    </ul>
-    <!-- Pager :info="$page.allWordPressPost.pageInfo"/ -->
+   
 
     </div>
 
@@ -63,6 +58,13 @@ query Home ($page: Int) {
         title
         path
         excerpt
+        featuredMedia {
+          sourceUrl
+          altText
+          mediaDetails {
+            width
+          }
+        }
       }
     }
   }
