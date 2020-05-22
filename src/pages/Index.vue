@@ -31,8 +31,11 @@
           </div>
         </v-container>
       </div>
-      <!-- top-concept >
-      <top-services-clients /-->
+
+      <top-concept />
+
+      <!-- top-services-clients -->
+
       <!-- top-news-contact :news="news" /-->
 
     <ul class="post-list">
@@ -68,12 +71,14 @@ query Home ($page: Int) {
 
 <script>
 import { Pager } from 'gridsome'
+import TopConcept from '~/components/TopConcept.vue'
 import Post from '~/components/Post.vue'
 
 export default {
   components: {
     Pager,
-    Post
+    Post,
+    TopConcept
   },
   metaInfo: {
     title: 'Welcome to my blog :)'
