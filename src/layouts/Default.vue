@@ -2,7 +2,9 @@
   <div class="v-application v-application--is-ltr theme--dark">
     <div class="v-application--wrap">
       <header-component />
-      <slot/>
+        <transition name="fade" appear>
+          <slot/>
+        </transition>
       <call-to-action />
       <footer-component />
     </div>
@@ -95,5 +97,14 @@ export default {
       color: rgba($mid-gray-3, 0.4);
     }
   }
+}
+
+.fade-enter-active {
+  transition: all .8s cubic-bezier(.93,0,.1,1);
+  opacity: 1;
+}
+
+.fade-enter {
+  opacity: 0;
 }
 </style>
