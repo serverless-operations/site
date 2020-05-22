@@ -3,6 +3,7 @@
     <div class="v-application--wrap">
       <header-component />
       <slot/>
+      <call-to-action />
       <footer-component />
     </div>
   </div>
@@ -10,12 +11,14 @@
 
 <script>
 import HeaderComponent from '~/components/Header.vue'
+import CallToAction from '~/components/CallToAction.vue'
 import FooterComponent from '~/components/Footer.vue'
 
 export default {
   components: {
-    FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    CallToAction,
+    FooterComponent
   }
 }
 
