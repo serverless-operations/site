@@ -38,8 +38,6 @@
 
       <top-news-contact />
 
-   
-
     </div>
 
   </Layout>

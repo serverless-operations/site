@@ -1,38 +1,36 @@
 <template>
-  <div>
-    <v-col cols="6" md="3" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4">
-      <div class="c-card-border">
 
-        <g-link :to="post.path" class="p-news-contents__card v-card v-card--link v-sheet v-sheet--tile theme--dark white">
+  <div class="c-card-border">
 
-          <v-card class="p-news-contents__card">
-          
-              <div class="p-news-contents__image">
-                <div class="p-news-contents__image-cover">
-                  <g-image class="object-cover h-64 w-full"
-                    v-if="post.featuredMedia"
-                    :src="post.featuredMedia.sourceUrl"
-                    :width="`${post.featuredMedia.mediaDetails.width}`"
-                    :alt="post.featuredMedia.altText"
-                  />
-                
-                <img v-else
-                    src="../assets/images/top-news-thum.jpg">
-                </div>
-              </div>
-          
-              <div class="p-news-contents__title-block">
-                <v-card-text class="p-news-contents__date">2020.01.07</v-card-text>
-                <div v-html="post.title" class="v-card__title p-news-contents__title" />
-              </div>
+    <g-link :to="post.path" class="p-news-contents__card v-card v-card--link v-sheet v-sheet--tile theme--dark white">
 
-          </v-card>
+      <v-card class="p-news-contents__card">
+      
+          <div class="p-news-contents__image">
+            <div class="p-news-contents__image-cover">
+              <g-image class="object-cover h-64 w-full"
+                v-if="post.featuredMedia"
+                :src="post.featuredMedia.sourceUrl"
+                :width="`${post.featuredMedia.mediaDetails.width}`"
+                :alt="post.featuredMedia.altText"
+              />
+            
+            <img v-else
+                src="../assets/images/top-news-thum.jpg">
+            </div>
+          </div>
+      
+          <div class="p-news-contents__title-block">
+            <v-card-text class="p-news-contents__date">2020.01.07</v-card-text>
+            <div v-html="post.title" class="v-card__title p-news-contents__title" />
+          </div>
 
-        </g-link>
+      </v-card>
 
-      </div>
-    </v-col>
+    </g-link>
+
   </div>
+
 </template>
 
 

@@ -18,10 +18,10 @@
       </div>
 
       <div class="p-news-contents row">
-    
-        <div v-for="{ node } in $page.allWordPressPost.edges" :key="node.id">
-          <Post :post="node" />
-        </div>
+      
+          <div v-for="{ node } in $page.allWordPressPost.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-3 col-6">
+            <Post :post="node" />
+          </div>
          <!-- Pager :info="$page.allWordPressPost.pageInfo"/ -->
 
       </div>
@@ -45,10 +45,7 @@
           <p class="p-top-contact--paragraph">AWS<small>（アマゾンウェブサービス）</small>などを利用したサーバーレスアプリケーションの設計・開発・保守運用等についてお困りの方は、こちらのフォームから気軽にお問い合わせください。2〜3営業日以内にメールで返信いたします。</p>
         </div>
 
-        <div cols="12"
-               md="7"
-               lg="6"
-               class="p-top-contact--form col">
+        <div class="p-top-contact--form col-md-7 col-lg-6 col-12">
           <div class="p-top-contact--form-shadow" />
           <v-form v-model="valid"
                   name="contact"
