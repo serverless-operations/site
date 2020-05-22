@@ -1,6 +1,6 @@
 <template>
   <div class="v-content">
-    <v-container>
+    <div class="container">
       <v-row>
         <v-col class="p-top-concept--vertical-title">
           <h2>Concept</h2>
@@ -48,7 +48,7 @@
            src="../assets/images/top-concept-footer-bk.svg"
            alt="">
       </v-row>
-    </v-container>
+    </div>
   </div>
 </template>
 

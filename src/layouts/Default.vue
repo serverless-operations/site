@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <header-component />
-    <slot/>
-    <footer-component />
+  <div class="v-application v-application--is-ltr theme--dark">
+    <div class="v-application--wrap">
+      <header-component />
+      <slot/>
+      <footer-component />
+    </div>
   </div>
 </template>
 

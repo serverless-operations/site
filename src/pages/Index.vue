@@ -36,6 +36,8 @@
 
       <top-services-clients />
 
+      <top-news-contact />
+
     <ul class="post-list">
       <li v-for="{ node } in $page.allWordPressPost.edges" :key="node.id">
         <Post :post="node" />
@@ -71,6 +73,7 @@ query Home ($page: Int) {
 import { Pager } from 'gridsome'
 import TopConcept from '~/components/TopConcept.vue'
 import TopServicesClients from '~/components/TopServicesClients.vue'
+import TopNewsContact from '~/components/TopNewsContact.vue'
 import Post from '~/components/Post.vue'
 
 export default {
@@ -78,7 +81,8 @@ export default {
     Pager,
     Post,
     TopConcept,
-    TopServicesClients
+    TopServicesClients,
+    TopNewsContact
   },
   metaInfo: {
     title: 'Welcome to my blog :)'
