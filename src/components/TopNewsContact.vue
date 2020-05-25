@@ -2,42 +2,40 @@
   <div class="v-content">
     <div class="v-content__wrap">
 
-   
-    <div class="container">
+      <div class="container">
 
-      <div class="row align-center justify-space-between">
-        
-        <div class="col-md-6 col-12">
-          <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title">News<span>お知らせ</span></h2>
-        </div>
-
-        <div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
-          <g-link to="/news/">More Details</g-link>
-        </div>
-
-      </div>
-
-      <div class="p-news-contents row">
-      
-          <div v-for="{ node } in $page.allWordPressPost.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-3 col-6">
-            <Post :post="node" />
+        <div class="row align-center justify-space-between">
+          
+          <div class="col-md-6 col-12">
+            <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title">News<span>お知らせ</span></h2>
           </div>
-         <!-- Pager :info="$page.allWordPressPost.pageInfo"/ -->
 
-      </div>
+          <div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
+            <g-link to="/news/">More Details</g-link>
+          </div>
 
-      <div class="row mb-md-12 align-center justify-end">
-        <div class="d-block d-md-none p-top-news--more col col-5 align-self-end">
-          <g-link to="/news/">More Details</g-link>
-        </div>
-      </div>
+        </div><!-- row -->
 
-    </div>
+        <div class="p-news-contents row">
+        
+            <div v-for="{ node } in $page.allWordPressPost.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-3 col-6">
+              <Post :post="node" />
+            </div>
+          <!-- Pager :info="$page.allWordPressPost.pageInfo"/ -->
+
+        </div><!-- p-news-contents -->
+
+        <div class="row mb-md-12 align-center justify-end">
+          <div class="d-block d-md-none p-top-news--more col col-5 align-self-end">
+            <g-link to="/news/">More Details</g-link>
+          </div>
+        </div><!-- row -->
+
+      </div><!-- container -->
 
     <div class="p-news-bg"></div>
 
     <div class="container mt-md-12">
-      
       <div class="row mt-md-12 align-center justify-space-between">
 
         <div class="col-md-4 col-lg-5 col-12">
@@ -227,9 +225,10 @@
           </v-form>
         </div>
       </div>
-      </div>
-    </div>
-  </div>
+    </div><!-- container -->
+    
+    </div><!-- v-content__wrap -->
+  </div><!-- v-content -->
 </template>
 
 

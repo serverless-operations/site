@@ -3,7 +3,7 @@
     <div class="v-application--wrap">
       <header-component />
         <transition name="fade" appear>
-          <main>
+          <main class="v-content">
             <slot/>
           </main>
         </transition>
