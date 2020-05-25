@@ -21,8 +21,10 @@
           </div>
       
           <div class="p-news-contents__title-block">
-            <v-card-text class="p-news-contents__date">2020.01.07</v-card-text>
-            <div v-html="post.title" class="v-card__title p-news-contents__title" />
+            <!-- v-card-text class="p-news-contents__date">dd{{ post.date }}</v-card-text-->
+            <!--time class="p-news-contents__date" v-html="post.date" /-->
+            <time :datetime="post.date">{{post.date}}</time>
+            <h3 v-html="post.title" class="v-card__title p-news-contents__title" />
           </div>
 
       </v-card>

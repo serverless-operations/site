@@ -243,6 +243,7 @@ query ($page: Int) {
       node {
         id
         title
+        date (format: "YYYY.MM.DD")
         path
         excerpt
         featuredMedia {
