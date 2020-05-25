@@ -1,5 +1,6 @@
 <template>
   <Layout>
+
     <h1 v-html="$page.wordPressPost.title"/>
     <img
       v-if="$page.wordPressPost.featuredMedia"
@@ -8,6 +9,8 @@
       :alt="$page.wordPressPost.featuredMedia.altText"
     />
     <div v-html="$page.wordPressPost.content"/>
+
+    
     <template v-if="$page.wordPressPost.categories.length">
       <h4>Posted in</h4>
       <ul class="list categories">
@@ -24,11 +27,12 @@
         </li>
       </ul>
     </template>
+
   </Layout>
 </template>
 
 <page-query>
-query WordPressPost ($id: ID!) {
+query ($id: ID!) {
   wordPressPost(id: $id) {
     title
     content

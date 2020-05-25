@@ -3,7 +3,9 @@
     <div class="v-application--wrap">
       <header-component />
         <transition name="fade" appear>
-          <slot/>
+          <main>
+            <slot/>
+          </main>
         </transition>
       <call-to-action />
       <footer-component />

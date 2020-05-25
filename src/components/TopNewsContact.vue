@@ -233,6 +233,38 @@
 </template>
 
 
+<page-query>
+query ($page: Int) {
+  allWordPressPost (page: $page, perPage: 10) @paginate {
+    pageInfo {
+      totalPages
+      currentPage
+    }
+    edges {
+      node {
+        id
+        title
+        path
+        excerpt
+        featuredMedia {
+          sourceUrl
+          altText
+          mediaDetails {
+            width
+          }
+        }
+        categories {
+          id
+          title
+          path
+        }
+      }
+    }
+  }
+}
+</page-query>
+
+
 
 <script>
 import Post from '~/components/Post.vue'
