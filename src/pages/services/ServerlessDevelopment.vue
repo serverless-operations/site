@@ -209,9 +209,9 @@
                   詳しくはお問い合わせフォームより、お気軽にご相談ください。</p>
               
               <div class="p-development-cost__contact-block">
-                <nuxt-link to="/contact" class="p-development-cost__contact-button" v-ripple="{ class:`white--text`}">
+                <g-link to="/contact" class="p-development-cost__contact-button" v-ripple="{ class:`white--text`}">
                   <span>お問い合わせ</span>
-                </nuxt-link>
+                </g-link>
               </div>
             </v-col>
 
@@ -226,7 +226,7 @@
     <section class="p-development-consulting">
       <v-container>
         <v-row>
-          <nuxt-link to="/services/serverless-consulting" class="p-development-consulting__link">
+          <g-link to="/services/serverless-consulting" class="p-development-consulting__link">
           <v-col cols="11" md="12" class="p-development-consulting__block" v-ripple="{ class:`white--text`}">
        
             <h3 class="p-development-consulting__header">
@@ -251,7 +251,7 @@
             </div>
         
           </v-col>
-          </nuxt-link>
+          </g-link>
 
         </v-row>
       </v-container>
