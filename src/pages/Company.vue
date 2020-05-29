@@ -9,10 +9,10 @@
       <div class="p-company-header__main-img">
 
         <!--背景 -->
-        <img src="..//assets/images/company-main-bg.svg"
+        <img src="../assets/images/company-main-bg.svg"
              class="p-company-header__main-bg d-none d-md-block" alt="Serverless Operations 会社案内 メインイメージ">
         <!-- 粒子 -->
-        <img src="..//assets/images/company-main-particle.svg"
+        <img src="../assets/images/company-main-particle.svg"
              class="p-company-header__main-particle d-none d-md-block" alt="Serverless Operations 会社案内 メインイメージ">
         <!-- ロゴ -->
         <img src="../assets/images/company-main-logo.svg"
