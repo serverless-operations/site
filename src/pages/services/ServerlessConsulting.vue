@@ -2,7 +2,7 @@
   <Layout>
     <div class="v-content__wrap">
   
-  <v-content class="l-consulting-page">
+  <div class="l-consulting-page">
     <section class="p-consulting-header">
       <div class="p-consulting-header__tryangle"></div>
 
@@ -263,7 +263,7 @@
       </v-container>
     </section>
 
-  </v-content>
+  </div>
 
     </div>
   </Layout>
