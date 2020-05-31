@@ -55,6 +55,7 @@ query Home ($page: Int) {
         id
         title
         path
+        date (format: "YYYY.MM.DD")
         excerpt
         featuredMedia {
           sourceUrl

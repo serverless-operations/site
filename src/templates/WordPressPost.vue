@@ -39,7 +39,7 @@
                   </span>
                   
                   <time class="post-created-at p-news-contents__date">
-                    date
+                    <div class="p-news-contents__date" :datetime="$page.wordPressPost.date">{{$page.wordPressPost.date}}</div>
                   </time>
 
                   <h1 v-html="$page.wordPressPost.title" class="p-news-contents__title" />
@@ -70,6 +70,7 @@ query ($id: ID!) {
   wordPressPost(id: $id) {
     title
     content
+    date (format: "YYYY.MM.DD")
     featuredMedia {
       sourceUrl
       altText

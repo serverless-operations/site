@@ -18,7 +18,7 @@
           </div>
         </div>
 
-         <!--Pager :info="$page.allWordPressPost.pageInfo" /-->
+        <Pager :info="$page.allWordPressPost.pageInfo" />
 
       </div><!-- container -->
 
@@ -30,7 +30,7 @@
 
 <page-query>
 query ($page: Int) {
-  allWordPressPost (page: $page, perPage: 10) @paginate {
+  allWordPressPost (page: $page, perPage: 21) @paginate {
     pageInfo {
       totalPages
       currentPage
