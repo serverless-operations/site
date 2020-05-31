@@ -158,17 +158,15 @@
 <script>
 
 //import Meta from '~/assets/mixins/meta'
-//import Vue from 'vue';
-//import VueGitHubButtons from 'vue-github-buttons';
+import Vue from 'vue';
+import VueGitHubButtons from 'vue-github-buttons';
 
 // Stylesheet
-//import 'vue-github-buttons/dist/vue-github-buttons.css';
+import 'vue-github-buttons/dist/vue-github-buttons.css';
 
-//Vue.use(VueGitHubButtons);
+Vue.use(VueGitHubButtons);
 // Or if your don't want to use cache
-//Vue.use(VueGitHubButtons, { useCache: false });
-
-//Vue.component('github-badge', GitHubBadge)
+Vue.use(VueGitHubButtons, { useCache: false });
 
 export default {
   // mixins: [Meta],
@@ -184,7 +182,7 @@ export default {
     }
   },
   components: {
-    // VueGitHubButtons
+    VueGitHubButtons
   },
   fetch({ store }) {
     store.commit('resetModal')
