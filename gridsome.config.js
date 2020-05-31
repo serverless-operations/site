@@ -42,6 +42,13 @@ module.exports = {
     }
   ],
 
+  modules: [
+    ['vue-github-buttons/nuxt', {
+			css: false, // Don't include CSS
+			useCache: false // Don't use cache
+		}]
+  ],
+
   chainWebpack (config) {
     // Load variables for all vue-files
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
