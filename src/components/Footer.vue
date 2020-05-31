@@ -37,6 +37,11 @@
               <g-link to="/services/serverless-development"
                          class="c-footer-list__link">サーバーレスディべロプメント</g-link>
             </li>
+            <li class="c-footer-list__item">
+              <g-link to="/our-products" class="c-footer-list__link">
+                私たちが開発したプロダクト
+              </g-link>
+            </li>
           </ul>
         </v-col>
 
@@ -91,13 +96,27 @@
 
         <v-col cols="12" sm="6" md="3">     
           <g-link to="/our-products" class="c-footer-list__link">
-            <div class="c-footer-menu__title">Products</div>
-            <div class="c-footer-menu__subtitle">私たちが開発したプロダクト</div>
+            <div class="c-footer-menu__title">Works</div>
+            <div class="c-footer-menu__subtitle">導入事例</div>
           </g-link>
           <ul class="c-footer-list">
             <li class="c-footer-list__item">
               <g-link to="/our-products" class="c-footer-list__link">
-                私たちが開発したプロダクト
+                事例ループ
+              </g-link>
+            </li>
+          </ul>
+        </v-col>
+
+        <v-col cols="12" sm="6" md="3">     
+          <g-link to="/our-products" class="c-footer-list__link">
+            <div class="c-footer-menu__title">Blog</div>
+            <div class="c-footer-menu__subtitle">開発ブログ</div>
+          </g-link>
+          <ul class="c-footer-list">
+            <li class="c-footer-list__item">
+              <g-link to="/our-products" class="c-footer-list__link">
+                ブログループ出力
               </g-link>
             </li>
           </ul>
