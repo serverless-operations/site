@@ -11,7 +11,7 @@
           </div>
 
           <div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
-            <g-link to="/news/">More Details</g-link>
+            <g-link to="/news-archives">More Details</g-link>
           </div>
 
         </div><!-- row -->

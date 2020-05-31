@@ -28,7 +28,7 @@
                     class="p-news-contents__main-img"
                   />
                 <!-- noimage入れる -->
-                <img v-else src="..//assets/images/top-news-thum.jpg" />
+                <img v-else src="../assets/images/top-news-thum.jpg" />
               </v-col>
 
               <v-col cols="11" md="10">
@@ -90,6 +90,7 @@ query ($id: ID!) {
   }
 }
 </page-query>
+
 
 <script>
 export default {
