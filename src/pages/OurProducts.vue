@@ -162,7 +162,7 @@ import Vue from 'vue';
 import VueGitHubButtons from 'vue-github-buttons';
 
 // Stylesheet
-import 'vue-github-buttons/dist/vue-github-buttons.css';
+// import 'vue-github-buttons/dist/vue-github-buttons.css';
 
 Vue.use(VueGitHubButtons);
 // Or if your don't want to use cache
@@ -436,6 +436,122 @@ export default {
       }
     }
   }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /deep/ .octicon {
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: text-top;
+  }
+
+  /deep/ .octicon.spin {
+    animation: spin 1s linear 0s infinite;
+  }
+
+  /deep/ .gh-button-container {
+    display: inline-block;
+    float: left;
+    margin: 0 5px;
+  }
+
+  /deep/ .gh-button-container a {
+    text-decoration: none !important;
+    color: $primary;
+  }
+
+  /deep/ .gh-button-container.loading {
+    visibility: hidden;
+  }
+
+  /deep/ .gh-button {
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+    background-position: -1px -1px;
+    background-repeat: repeat-x;
+    background-size: 110% 110%;
+    border-radius: 0.25em;
+    border: 1px solid rgba(27, 31, 35, 0.2);
+    color: #24292e;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 3px 10px;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  /deep/ .gh-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  /deep/ .gh-button:hover {
+    background-color: #e6ebf1;
+    background-image: linear-gradient(-180deg, #f0f3f6 0%, #e6ebf1 90%);
+    background-position: 0 -0.5em;
+    background-repeat: repeat-x;
+    border-color: rgba(27, 31, 35, 0.35);
+    text-decoration: none !important;
+  }
+
+  /deep/ .gh-button:active {
+    background-color: #e9ecef;
+    background-image: none;
+    border-color: rgba(27, 31, 35, 0.35);
+    box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
+  }
+
+  /deep/ .gh-button:focus {
+    box-shadow: 0 0 0 0.2em rgba(3, 102, 214, 0.3);
+    outline: 0;
+  }
+
+  /deep/ .gh-button.with-count {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  /deep/ a.social-count {
+    background-color: #fff;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top: 1px solid rgba(27, 31, 35, 0.2);
+    border-right: 1px solid rgba(27, 31, 35, 0.2);
+    border-bottom: 1px solid rgba(27, 31, 35, 0.2);
+    color: $primary;
+    float: left;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 3px 10px;
+    text-decoration: none !important;
+    vertical-align: middle;
+  }
+
+  /deep/ a.social-count:hover {
+    color: #0366d6;
+    cursor: pointer;
+  }
+
+  /deep/ a.social-count.no-count::before {
+    content: '\00A0';
+  }
+
+  /*# sourceMappingURL=vue-github-buttons.css.map */
+  /*# sourceMappingURL=vue-github-buttons.css.map */
 } // p-our-products
 
 .blue-drop-shadow {
