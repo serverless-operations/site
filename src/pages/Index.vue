@@ -90,7 +90,7 @@ export default {
     TopNewsContact
   },
   metaInfo: {
-    title: 'Welcome to my blog :)'
+    title: 'Serverless Operations'
   }
 }
 </script>

@@ -1,44 +1,46 @@
 <template>
-  <div class="v-content">
-    <div class="v-content__wrap">
+  <div>
+     <div class="v-content">
+      <div class="v-content__wrap">
 
-       <div class="container">
+        <div class="container">
 
-        <div class="row align-center justify-space-between">
-          
-          <div class="col-md-6 col-12">
-            <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title">News<span>お知らせ</span></h2>
-          </div>
+          <div class="row align-center justify-space-between">
+            
+            <div class="col-md-6 col-12">
+              <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title">News<span>お知らせ</span></h2>
+            </div>
 
-          <div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
-            <g-link to="/news-archives">More Details</g-link>
-          </div>
+            <div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
+              <g-link to="/news-archives">More Details</g-link>
+            </div>
 
-        </div><!-- row -->
-      
-        <div class="p-blog-contents row">
-          <div v-for="{ node } in $page.allWordPressBlog.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-6">
-            <BlogCard :post="node" />
-          </div>
-        </div>
-        <!-- Pager :info="$page.allWordPressPost.pageInfo"/ -->
+          </div><!-- row -->
         
-        <div class="row mb-md-12 align-center justify-end">
-          <div class="d-block d-md-none p-top-news--more col col-5 align-self-end">
-            <g-link to="/news/">More Details</g-link>
+          <div class="p-blog-contents row">
+            <!--div v-for="{ node } in $page.allWordPressBlog.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-6">
+              <!--BlogCard :post="node" /-->
+            <!--/div-->
           </div>
-        </div><!-- row -->
+          <!-- Pager :info="$page.allWordPressPost.pageInfo"/ -->
+          
+          <div class="row mb-md-12 align-center justify-end">
+            <div class="d-block d-md-none p-top-news--more col col-5 align-self-end">
+              <g-link to="/news/">More Details</g-link>
+            </div>
+          </div><!-- row -->
 
-      </div><!-- container -->
+        </div><!-- container -->
 
 
-    </div><!-- v-content__wrap -->
-  </div><!-- v-content -->
+      </div><!-- v-content__wrap -->
+    </div><!-- v-content -->
+  </div>
 </template>
 
 <page-query>
 query ($page: Int) {
-  allWordPressBlog (page: $page, perPage: 21) @paginate {
+  allWordPressBlog (page: $page, perPage: 4) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -49,13 +51,6 @@ query ($page: Int) {
         title
         date (format: "YYYY.MM.DD")
         path
-        featuredMedia {
-          sourceUrl
-          altText
-          mediaDetails {
-            width
-          }
-        }
         categories {
           id
           title
@@ -73,19 +68,13 @@ query ($page: Int) {
 </page-query>
 
 <script>
-import { Pager } from 'gridsome'
 import BlogCard from '~/components/BlogCard.vue'
 
 export default {
   components: {
-    Pager,
     BlogCard
   },
-  metaInfo () {
-    return {
-      title: `Blog ${this.$page.allWordPressBlog.pageInfo.currentPage} / ${this.$page.allWordPressBlog.pageInfo.totalPages}`
-    }
-  }
+  props: ['blog'],
 }
 </script>
 
