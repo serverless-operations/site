@@ -35,7 +35,7 @@
 
       <div class="p-news-bg"></div>
 
-      <div class="container mt-md-12">
+      <!--div class="container mt-md-12">
 
         <div class="row mt-md-12 align-center justify-space-between">
 
@@ -225,11 +225,11 @@
                 </v-row>
               </v-form>
             </div><!-- p-top-contact--form-shadow -->
-          </div>
+          <!--/div>
 
         </div><!-- mt-md-12 -->
 
-      </div><!-- container -->
+      <!--/div --><!-- container -->
       
     </div><!-- v-content__wrap -->
   </div><!-- v-content -->
