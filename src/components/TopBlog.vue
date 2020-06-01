@@ -38,7 +38,7 @@
   </div>
 </template>
 
-<page-query>
+<!--page-query>
 query ($page: Int) {
   allWordPressBlog (page: $page, perPage: 4) @paginate {
     pageInfo {
@@ -65,7 +65,7 @@ query ($page: Int) {
     }
   }
 }
-</page-query>
+</page-query-->
 
 <script>
 import BlogCard from '~/components/BlogCard.vue'
