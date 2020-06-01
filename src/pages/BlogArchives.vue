@@ -22,6 +22,8 @@
 
       </div><!-- container -->
 
+      <div class="serverless-bg"></div>
+
     </div><!-- v-content__wrap -->
 
   </Layout>
@@ -141,5 +143,24 @@ export default {
     }
   }
 } // p-news-header
+
+.p-blog-contents {
+  padding: 180px 0;
+}
+
+.serverless-bg {
+  display: block;
+  background-color: #fff;
+  width: 100vw;
+  background-image: url(/assets/img/top-service-clients-bk.svg);
+  background-size: contain;
+  background-position: bottom 32px center;
+  height: 800px;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  opacity: 0.5;
+}
+
 
 </style>

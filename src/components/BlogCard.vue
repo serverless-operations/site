@@ -59,6 +59,7 @@ export default {
           color: $tertiary;
         }
         background-color: rgba($secondary, 0.05);
+        // filter: blur(2px);
         // アイキャッチにprimary colorがかかる
         .p-blog-contents__image-cover::after {
           transform: scaleX(1);
@@ -85,8 +86,8 @@ export default {
       font-size: 0.75rem;
       color: $mid-gray-2;
       padding: 0;
+      margin-bottom: 16px;
       @include media-breakpoint-up(sm) {
-        
         font-size: 0.875rem;
       }
       @include media-breakpoint-up(md) {
@@ -101,6 +102,7 @@ export default {
       text-align: justify;
       color: $primary;
       padding: 0;
+      margin-bottom: 24px;
       @include media-breakpoint-up(sm) {
         font-size: 18px;
         
@@ -109,6 +111,16 @@ export default {
         
       }
     } // &__title
+
+    .category-name {
+      padding: 6px 16px;
+      display: inline;
+      font-size: 12px;
+      background-color: $tertiary;
+      color: $white;
+      margin-right: 8px;
+      border-radius: 100px;
+    }
 
     .v-card--link:focus:before {
       opacity: 0;

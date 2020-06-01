@@ -86,7 +86,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 .p-news-articles {
   // 記事内画像
   img {
