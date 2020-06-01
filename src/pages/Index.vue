@@ -36,6 +36,8 @@
 
       <top-services-clients />
 
+      <top-blog />
+
       <top-news-contact />
 
     </div>
@@ -73,6 +75,7 @@ query Home ($page: Int) {
 <script>
 import { Pager } from 'gridsome'
 import TopConcept from '~/components/TopConcept.vue'
+import TopBlog from '~/components/TopBlog.vue'
 import TopServicesClients from '~/components/TopServicesClients.vue'
 import TopNewsContact from '~/components/TopNewsContact.vue'
 import Post from '~/components/Post.vue'
@@ -82,6 +85,7 @@ export default {
     Pager,
     Post,
     TopConcept,
+    TopBlog,
     TopServicesClients,
     TopNewsContact
   },
