@@ -22,6 +22,7 @@ module.exports = {
     WordPressPost: '/news/:id', // adds a route for the "post" post type (Optional)
     WordPressPostTag: '/tag/:slug', // adds a route for the "post_tag" post type (Optional)
     WordPressBlog: '/blog/:id',
+    WordPressWorks: '/works/:id',
     WordPressPage: [
       {
         path: (node) => {
