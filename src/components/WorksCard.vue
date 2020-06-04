@@ -2,13 +2,21 @@
 
   <div class="c-card-border">
 
-    <g-link :to="post.path" class="p-blog-contents-link">
+    <g-link :to="post.path" class="p-works-contents-link">
 
-      <v-card class="p-blog-contents__card">
+       <g-image class="object-cover h-64 w-full c-card-border"
+          v-if="post.featuredMedia"
+          :src="post.featuredMedia.sourceUrl"
+          :width="`${post.featuredMedia.mediaDetails.width}`"
+          :alt="post.featuredMedia.altText"
+        />
 
-        <div class="p-blog-contents__title-block">
-          <div class="v-card__text p-blog-contents__date" :datetime="post.date">{{post.date}}</div>
-          <h3 v-html="post.title" class="v-card__title p-blog-contents__title" />
+      <v-card class="p-works-contents__card">
+
+        <div class="p-works-contents__title-block">
+          
+          <div class="v-card__text p-works-contents__date" :datetime="post.date">{{post.date}}</div>
+          <h3 v-html="post.title" class="v-card__title p-works-contents__title" />
           <div class="category-name" v-for="tags in post.tags" :key="tags.id" >
             <span>{{ tags.title }}</span>
           </div>
@@ -35,12 +43,17 @@ export default {
 
 <style lang="scss" scoped>
   
-  .p-blog-contents-link {
+  .p-works-contents-link {
     text-decoration: none;
+    img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+    }
   }
 
   // ニュースのカード部分
-  .p-blog-contents {
+  .p-works-contents {
     color: $black;
     font-family: $font-jp-normal;
     z-index: 1;
@@ -50,20 +63,23 @@ export default {
     &__card {
       padding: 40px;
       position: relative;
+      z-index: 3;
       box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
-      width: 100%;
+      width: 60%;
+      margin-left: 10%;
+      margin-top: -100px;
       transition: all 0.4s cubic-bezier(0.76, 0, 0.3, 1);
 
       &:hover {
-        .p-blog-contents__title {
+        .p-works-contents__title {
           color: $tertiary;
         }
-        background-color: rgba($secondary, 0.05);
+        //background-color: rgba($secondary, 0.05);
         // filter: blur(2px);
         // アイキャッチにprimary colorがかかる
-        .p-blog-contents__image-cover::after {
-          transform: scaleX(1);
-          transform-origin: right center;
+        .p-works-contents__image-cover::after {
+          // transform: scaleX(1);
+          //transform-origin: right center;
         }
       }
      // clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
@@ -132,7 +148,7 @@ export default {
     border: 1px solid none;
     position: relative;
     height: 100%;
-    z-index: 2;
+    z-index: 1;
     // 線の設定
     &::before {
       z-index: 1;
@@ -143,7 +159,7 @@ export default {
       transition: transform 0.4s cubic-bezier(0.76, 0, 0.3, 1);
       transform: scaleX(0);
       transform-origin: right center;
-      bottom: 0px;
+      top: -1px;
       height: 1px;
       left: 0;
       width: 100%;

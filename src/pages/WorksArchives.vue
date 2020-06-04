@@ -12,8 +12,8 @@
 
       <div class="container">
   
-        <div class="p-blog-contents row">
-          <div v-for="{ node } in $page.allWordPressWorks.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-6">
+        <div class="p-works-contents row">
+          <div v-for="{ node } in $page.allWordPressWorks.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-12">
             <WorksCard :post="node" />
           </div>
         </div>
@@ -144,7 +144,7 @@ export default {
   }
 } // p-news-header
 
-.p-blog-contents {
+.p-works-contents {
   padding: 180px 0;
 }
 
