@@ -38,7 +38,7 @@
 
       <top-blog />
 
-      <!--top-news-contact /-->
+      <top-news-contact />
 
     </div>
 
@@ -47,7 +47,7 @@
 
 <page-query>
 query Home ($page: Int) {
-  allWordPressBlog (page: $page, perPage: 10) @paginate {
+  allWordPressPost (page: $page, perPage: 10) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -75,6 +75,7 @@ query Home ($page: Int) {
 import { Pager } from 'gridsome'
 import TopConcept from '~/components/TopConcept.vue'
 import TopBlog from '~/components/TopBlog.vue'
+import BlogCard from '~/components/BlogCard.vue'
 import TopServicesClients from '~/components/TopServicesClients.vue'
 import TopNewsContact from '~/components/TopNewsContact.vue'
 import Post from '~/components/Post.vue'
@@ -85,6 +86,7 @@ export default {
     Post,
     TopConcept,
     TopBlog,
+    BlogCard,
     TopServicesClients,
     TopNewsContact
   },

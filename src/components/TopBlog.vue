@@ -17,7 +17,7 @@
         </div><!-- row -->
       
         <div class="p-blog-contents row">
-          <div v-for="{ node } in $page.allWordPressBlog.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-3 col-6">
+          <div v-for="{ node } in $static.blog.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-3 col-6">
             <BlogCard :post="node" />
           </div>
         </div>
@@ -36,8 +36,8 @@
 </template>
 
 <static-query>
-query ($page: Int) {
-  allWordPressBlog (page: $page, perPage: 4) @paginate {
+query {
+  blog: allWordPressBlog {
     pageInfo {
       totalPages
       currentPage
@@ -48,6 +48,13 @@ query ($page: Int) {
         title
         date (format: "YYYY.MM.DD")
         path
+        featuredMedia {
+          sourceUrl
+          altText
+          mediaDetails {
+            width
+          }
+        }
         categories {
           id
           title

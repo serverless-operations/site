@@ -268,8 +268,6 @@ query ($page: Int) {
 }
 </static-query>
 
-
-
 <script>
 import Post from '~/components/Post.vue'
 
