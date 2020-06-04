@@ -17,16 +17,10 @@
         </div><!-- row -->
       
         <div class="p-blog-contents row">
-          <div v-for="{ node } in $static.blog.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-3 col-6">
+          <div v-for="{ node } in $static.blog.edges" :key="node.id" class="r-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-6">
             <BlogCard :post="node" />
           </div>
         </div>
-        
-        <div class="row mb-md-12 align-center justify-end">
-          <div class="d-block d-md-none p-top-news--more col col-5 align-self-end">
-            <g-link to="/news/">More Details</g-link>
-          </div>
-        </div><!-- row -->
 
       </div><!-- container -->
 
@@ -84,6 +78,67 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.v-content {
+  width: 100vw;
+  background-image: url('../assets/images/top-news-contact-bk.svg');
+  background-position: center 420px;
+  background-size: 300%;
+  background-color: $light-gray-2;
+  position: relative;
+  z-index: 1;
+  @include media-breakpoint-up(md) {
+    background-position: center 420px;
+    background-size: 100%;
+  }
+  @include media-breakpoint-up(lg) {
+    background-position: center 350px;
+  }
+  h2 {
+    margin-top: 24px;
+    font-size: 4rem;
+    font-family: $font-en-normal;
+    font-weight: normal;
+    line-height: 1.25;
+    @include media-breakpoint-up(md) {
+      margin-top: 88px;
+    }
+    span {
+      display: block;
+      font-size: 1rem;
+      margin-top: 8px;
+      font-weight: normal;
+      font-family: $font-jp-normal;
+    }
+  }
+  .p-top-news {
+    &--title {
+      color: $primary;
+    }
+    &--more {
+      text-align: right;
+      z-index: 3;
+      position: relative;
+      a {
+        color: $primary;
+        font-family: $font-en-normal;
+        font-size: 1rem;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        &::before {
+          content: '';
+          background-image: url('../assets/images/top-news-more-object.svg');
+          display: inline-block;
+          height: 16px;
+          width: 16px;
+          position: absolute;
+          top: 4px;
+          left: -24px;
+        }
+      }
+    }
+  }
+}
 .p-blog-header {
   background: url('../assets/images/privacy-policy-header-bg-img.svg') no-repeat,
     linear-gradient(206.56deg, $tertiary -0.06%, $secondary 100.25%);
@@ -142,7 +197,7 @@ export default {
 } // p-news-header
 
 .p-blog-contents {
-  padding: 180px 0;
+  padding: 0 0 180px 0;
 }
 
 .serverless-bg {
@@ -156,7 +211,7 @@ export default {
   position: absolute;
   bottom: 0;
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0;
 }
 
 
