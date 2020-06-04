@@ -38,7 +38,7 @@
 
       <top-blog />
 
-      <top-news-contact />
+      <!--top-news-contact /-->
 
     </div>
 
@@ -47,7 +47,7 @@
 
 <page-query>
 query Home ($page: Int) {
-  allWordPressPost (page: $page, perPage: 10) @paginate {
+  allWordPressBlog (page: $page, perPage: 10) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -58,7 +58,6 @@ query Home ($page: Int) {
         title
         path
         date (format: "YYYY.MM.DD")
-        excerpt
         featuredMedia {
           sourceUrl
           altText

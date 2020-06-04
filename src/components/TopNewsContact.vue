@@ -236,7 +236,7 @@
 </template>
 
 
-<page-query>
+<static-query>
 query ($page: Int) {
   allWordPressPost (page: $page, perPage: 10) @paginate {
     pageInfo {
@@ -266,7 +266,7 @@ query ($page: Int) {
     }
   }
 }
-</page-query>
+</static-query>
 
 
 

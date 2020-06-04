@@ -1,44 +1,41 @@
 <template>
-  <div>
-     <div class="v-content">
-      <div class="v-content__wrap">
+  <div class="v-content">
+    <div class="v-content__wrap">
 
-        <div class="container">
+      <div class="container">
 
-          <div class="row align-center justify-space-between">
-            
-            <div class="col-md-6 col-12">
-              <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title">News<span>お知らせ</span></h2>
-            </div>
-
-            <div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
-              <g-link to="/news-archives">More Details</g-link>
-            </div>
-
-          </div><!-- row -->
-        
-          <div class="p-blog-contents row">
-            <!--div v-for="{ node } in $page.allWordPressBlog.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-6">
-              <!--BlogCard :post="node" /-->
-            <!--/div-->
-          </div>
-          <!-- Pager :info="$page.allWordPressPost.pageInfo"/ -->
+        <div class="row align-center justify-space-between">
           
-          <div class="row mb-md-12 align-center justify-end">
-            <div class="d-block d-md-none p-top-news--more col col-5 align-self-end">
-              <g-link to="/news/">More Details</g-link>
-            </div>
-          </div><!-- row -->
+          <div class="col-md-6 col-12">
+            <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title">Blog<span>開発ブログ</span></h2>
+          </div>
 
-        </div><!-- container -->
+          <div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
+            <g-link to="/blog-archives">More Details</g-link>
+          </div>
+
+        </div><!-- row -->
+      
+        <div class="p-blog-contents row">
+          <div v-for="{ node } in $page.allWordPressBlog.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-3 col-6">
+            <BlogCard :post="node" />
+          </div>
+        </div>
+        
+        <div class="row mb-md-12 align-center justify-end">
+          <div class="d-block d-md-none p-top-news--more col col-5 align-self-end">
+            <g-link to="/news/">More Details</g-link>
+          </div>
+        </div><!-- row -->
+
+      </div><!-- container -->
 
 
-      </div><!-- v-content__wrap -->
-    </div><!-- v-content -->
-  </div>
+    </div><!-- v-content__wrap -->
+  </div><!-- v-content -->
 </template>
 
-<!--page-query>
+<static-query>
 query ($page: Int) {
   allWordPressBlog (page: $page, perPage: 4) @paginate {
     pageInfo {
@@ -65,7 +62,7 @@ query ($page: Int) {
     }
   }
 }
-</page-query-->
+</static-query>
 
 <script>
 import BlogCard from '~/components/BlogCard.vue'
@@ -74,8 +71,9 @@ export default {
   components: {
     BlogCard
   },
-  props: ['blog'],
+  // props: ['blog']
 }
+
 </script>
 
 <style lang="scss" scoped>
