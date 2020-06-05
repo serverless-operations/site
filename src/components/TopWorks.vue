@@ -59,6 +59,13 @@ query {
           title
           path
         }
+        acf {
+          companyProfile,
+          companyLogo {
+            sourceUrl,
+            altText
+          }
+        }
       }
     }
   }

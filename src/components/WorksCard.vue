@@ -4,7 +4,7 @@
 
     <g-link :to="post.path" class="p-works-contents-link">
 
-       <g-image class="object-cover h-64 w-full c-card-border"
+       <g-image class="works-image object-cover h-64 w-full c-card-border"
           v-if="post.featuredMedia"
           :src="post.featuredMedia.sourceUrl"
           :width="`${post.featuredMedia.mediaDetails.width}`"
@@ -13,12 +13,16 @@
 
       <v-card class="p-works-contents__card">
 
-        <div class="p-works-contents__title-block">
-          
-          <div class="v-card__text p-works-contents__date" :datetime="post.date">{{post.date}}</div>
-          <h3 v-html="post.title" class="v-card__title p-works-contents__title" />
-          <div class="category-name" v-for="tags in post.tags" :key="tags.id" >
-            <span>{{ tags.title }}</span>
+        <div class="p-works-contents__title-block row">
+          <div class="col-3">
+             <g-image :src="post.acf.companyLogo.sourceUrl" :alt="post.acf.companyLogo.altText" class="company-logo"/>
+          </div>
+          <div class="col-9">
+            <div class="v-card__text p-works-contents__date" :datetime="post.date">{{post.date}}</div>
+            <h3 v-html="post.title" class="v-card__title p-works-contents__title" />
+            <div class="category-name" v-for="tags in post.tags" :key="tags.id" >
+              <span>{{ tags.title }}</span>
+            </div>
           </div>
         </div>
 
@@ -45,7 +49,7 @@ export default {
   
   .p-works-contents-link {
     text-decoration: none;
-    img {
+    .works-image {
       width: 100%;
       height: 480px;
       object-fit: cover;
@@ -65,7 +69,7 @@ export default {
       position: relative;
       z-index: 3;
       box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
-      width: 60%;
+      width: 70%;
       margin-left: 10%;
       margin-top: -100px;
       transition: all 0.4s cubic-bezier(0.76, 0, 0.3, 1);
@@ -88,6 +92,9 @@ export default {
     // 日付とタイトル部分
     &__title-block {
       min-height: 100px;
+      .company-logo {
+        width: 100%;
+      }
       @include media-breakpoint-up(sm) {
         min-height: 112px;
       }
