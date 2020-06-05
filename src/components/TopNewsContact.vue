@@ -224,10 +224,10 @@
                         type="submit">上記の内容で送信する</v-btn>
                 </v-row>
               </v-form>
-            </div><!-- p-top-contact--form-shadow -->
+            </div><p-top-contact--form-shadow -->
           <!--/div>
 
-        </div><!-- mt-md-12 -->
+        </div><mt-md-12 -->
 
       <!--/div --><!-- container -->
       
