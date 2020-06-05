@@ -17,6 +17,36 @@ module.exports = {
   siteName: 'Serverless Operations',
   siteDescription: 'Serverless Operationsは、これまでグローバルの第一線で培ってきたクラウド技術（AWS − アマゾンウェブサービス）の豊富な実績と知見を活かし、お客さまのサーバーレスによる開発や運用の支援、コンサルティングまで一貫してサポート。サーバーレスに関するさまざまな課題を解決いたします。',
 
+  meta: [
+    {
+      hid: 'og:site_name',
+      property: 'og:site_name',
+      content: 'Serverless Operations'
+    },
+    { hid: 'og:type', property: 'og:type', content: 'website' },
+    {
+      hid: 'og:url',
+      property: 'og:url',
+      content: 'https://serverless.co.jp'
+    },
+    {
+      hid: 'og:title',
+      property: 'og:title',
+      content: 'Serverless Operations'
+    },
+    {
+      hid: 'og:description',
+      property: 'og:description',
+      content:
+        'Serverless Operationsは、これまでグローバルの第一線で培ってきたクラウド技術（AWS − アマゾンウェブサービス）の豊富な実績と知見を活かし、お客さまのサーバーレスによる開発や運用の支援、コンサルティングまで一貫してサポート。サーバーレスに関するさまざまな課題を解決いたします。'
+    },
+    {
+      hid: 'og:image',
+      property: 'og:image',
+      content: 'https://serverless.co.jp/ogp.png'
+    }
+  ],
+
   templates: {
     WordPressCategory: '/category/:slug', // adds a route for the "category" post type (Optional)
     WordPressPost: '/news/:id', // adds a route for the "post" post type (Optional)

@@ -67,7 +67,7 @@
             </v-col>
 
             <v-col cols="6" md="3" class="c-modal__menu-column">
-              <g-link @click.native="$emit('close');" to="/works-achives" class="c-modal__link">
+              <g-link @click.native="$emit('close');" to="/works-archives" class="c-modal__link">
                 <span class="c-modal__link--menu">Works</span>
                 <span class="c-modal__link--ja">導入事例</span>
               </g-link>
