@@ -105,16 +105,12 @@
             <div class="c-footer-menu__subtitle">導入事例</div>
           </g-link>
           <ul class="c-footer-list">
-            <li class="c-footer-list__item">
-              <g-link to="/our-products" class="c-footer-list__link">
-                事例ループ
-              </g-link>
-            </li>
+            <footer-works />
           </ul>
         </v-col>
 
         <v-col cols="12" sm="6" md="3">     
-          <g-link to="/our-products" class="c-footer-list__link">
+          <g-link to="/blog-archives" class="c-footer-list__link">
             <div class="c-footer-menu__title">Blog</div>
             <div class="c-footer-menu__subtitle">開発ブログ</div>
           </g-link>
@@ -166,10 +162,12 @@
 
 <script>
 import FooterBlog from '~/components/FooterBlog.vue'
+import FooterWorks from '~/components/FooterWorks.vue'
 
 export default {
   components: {
-    FooterBlog
+    FooterBlog,
+    FooterWorks
   },
 }
 
