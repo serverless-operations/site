@@ -23,6 +23,11 @@ export default {
     HeaderComponent,
     CallToAction,
     FooterComponent
+  },
+  mounted() {
+    if (globalThis.FONTPLUS) {
+      globalThis.FONTPLUS.start();
+    }
   }
 }
 
