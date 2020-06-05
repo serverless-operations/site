@@ -87,117 +87,6 @@ export default {
 
 
 <style lang="scss" scoped>
-.p-news-articles {
-  // 記事内画像
-  img {
-    width: 100%;
-    height: auto;
-    margin: 16px 0;
-  }
-
-  p {
-    line-height: 1.5;
-    letter-spacing: 1px;
-  }
-
-  // 太字
-  b {
-    font-family: $font-jp-bold;
-  }
-
-  hr {
-    margin: 16px 0;
-  }
-
-  // 見出し
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: $font-jp-bold;
-    color: $primary;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-  }
-
-  h1 {
-    position: relative;
-    color: $primary;
-    font-size: 1.5rem;
-    font-family: $font-jp-bold;
-    line-height: 30px;
-    // margin: 12px 0 36px;
-    @include media-breakpoint-up(md) {
-      // margin: 24px 0 88px;
-      font-size: 2rem;
-      line-height: 52px;
-    }
-  }
-
-  h2 {
-    position: relative;
-    color: $primary;
-    font-size: 1.4rem;
-    font-family: $font-jp-bold;
-    margin-bottom: 1.5rem;
-    @include media-breakpoint-up(md) {
-      font-size: 1.5rem;
-      line-height: 42px;
-      margin-bottom: 1.5rem;
-    }
-    &:after {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: $primary;
-      position: absolute;
-      bottom: -8px;
-      left: 0px;
-      z-index: 1;
-      @include media-breakpoint-up(md) {
-        width: 80px;
-        bottom: -8px;
-      }
-    }
-  } // h2
-
-  ul {
-    list-style: none;
-    li {
-      position: relative;
-      &:before {
-        display: inline-block;
-        content: '・';
-        margin-left: -1rem;
-        position: absolute;
-      }
-      // リストの項目内容
-      p {
-        display: inline-block;
-        width: auto;
-        margin-bottom: 1rem;
-      }
-    } //li
-  } // ul
-
-  // 引用
-  blockquote {
-    background: $light-gray-1;
-    display: inline-block;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    p {
-      line-height: 1.5;
-      margin-bottom: 0;
-    }
-  }
-} // p-news-contents
-</style>
-
-<style lang="scss" scoped>
 .p-news-header {
   background: url('../assets/images/privacy-policy-header-bg-img.svg') no-repeat,
     linear-gradient(206.56deg, $tertiary -0.06%, $secondary 100.25%);
@@ -380,4 +269,114 @@ export default {
     height: 1300px;
   }
 } // p-news-bg
+
+
+.p-news-articles {
+  // 記事内画像
+  /deep/ img {
+    width: 100%;
+    height: auto;
+    margin: 16px 0;
+  }
+
+  /deep/ p {
+    line-height: 1.5;
+    letter-spacing: 1px;
+  }
+
+  // 太字
+  /deep/ b {
+    font-family: $font-jp-bold;
+  }
+
+  /deep/ hr {
+    margin: 16px 0;
+  }
+
+  // 見出し
+  /deep/ h1,
+  /deep/ h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-jp-bold;
+    color: $primary;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  /deep/ h1 {
+    position: relative;
+    color: $primary;
+    font-size: 1.5rem;
+    font-family: $font-jp-bold;
+    line-height: 30px;
+    // margin: 12px 0 36px;
+    @include media-breakpoint-up(md) {
+      // margin: 24px 0 88px;
+      font-size: 2rem;
+      line-height: 52px;
+    }
+  }
+
+  /deep/ h2 {
+    position: relative;
+    color: $primary;
+    font-size: 1.4rem;
+    font-family: $font-jp-bold;
+    margin-bottom: 1.5rem;
+    @include media-breakpoint-up(md) {
+      font-size: 1.5rem;
+      line-height: 42px;
+      margin-bottom: 1.5rem;
+    }
+    &:after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: $primary;
+      position: absolute;
+      bottom: -8px;
+      left: 0px;
+      z-index: 1;
+      @include media-breakpoint-up(md) {
+        width: 80px;
+        bottom: -8px;
+      }
+    }
+  } // h2
+
+  /deep/ ul {
+    list-style: none;
+    li {
+      position: relative;
+      &:before {
+        display: inline-block;
+        content: '・';
+        margin-left: -1rem;
+        position: absolute;
+      }
+      // リストの項目内容
+      p {
+        display: inline-block;
+        width: auto;
+        margin-bottom: 1rem;
+      }
+    } //li
+  } // ul
+
+  // 引用
+  /deep/ blockquote {
+    background: $light-gray-1;
+    display: inline-block;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    p {
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+  }
+} // p-news-contents
 </style>
