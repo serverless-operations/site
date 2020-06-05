@@ -7,18 +7,18 @@
         <div class="row align-center justify-space-between">
           
           <div class="col-md-6 col-12">
-            <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title">Blog<span>開発ブログ</span></h2>
+            <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title">Works<span>導入事例</span></h2>
           </div>
 
           <div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
-            <g-link to="/blog-archives">More Details</g-link>
+            <g-link to="/works-archives">More Details</g-link>
           </div>
 
         </div><!-- row -->
       
-        <div class="p-blog-contents row">
-          <div v-for="{ node } in $static.blog.edges" :key="node.id" class="r-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-6">
-            <BlogCard :post="node" />
+        <div class="p-works-contents row">
+          <div v-for="{ node } in $static.works.edges" :key="node.id" class="r-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-12">
+            <WorksCard :post="node" />
           </div>
         </div>
 
@@ -31,7 +31,7 @@
 
 <static-query>
 query {
-  blog: allWordPressBlog {
+  works: allWordPressWorks {
     pageInfo {
       totalPages
       currentPage
@@ -66,11 +66,11 @@ query {
 </static-query>
 
 <script>
-import BlogCard from '~/components/BlogCard.vue'
+import WorksCard from '~/components/WorksCard.vue'
 
 export default {
   components: {
-    BlogCard
+    WorksCard
   },
   // props: ['blog']
 }

@@ -36,6 +36,8 @@
 
       <top-services-clients />
 
+      <top-works />
+
       <top-blog />
 
       <top-news-contact />
@@ -76,6 +78,8 @@ import { Pager } from 'gridsome'
 import TopConcept from '~/components/TopConcept.vue'
 import TopBlog from '~/components/TopBlog.vue'
 import BlogCard from '~/components/BlogCard.vue'
+import TopWorks from '~/components/TopWorks.vue'
+import WorksCard from '~/components/WorksCard.vue'
 import TopServicesClients from '~/components/TopServicesClients.vue'
 import TopNewsContact from '~/components/TopNewsContact.vue'
 import Post from '~/components/Post.vue'
@@ -87,6 +91,8 @@ export default {
     TopConcept,
     TopBlog,
     BlogCard,
+    TopWorks,
+    WorksCard,
     TopServicesClients,
     TopNewsContact
   },
