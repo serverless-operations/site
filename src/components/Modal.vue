@@ -24,13 +24,9 @@
           <v-row class="c-modal__menu">
             <!-- サービス -->
             <v-col cols="12" md="3" class="c-modal__menu-column">
-              <g-link
-                @click.native="$emit('close');"
-                to="/services"
-                class="c-modal__link pl-md-0">
-
+              <g-link @click.native="$emit('close');" to="/services" class="c-modal__link pl-md-0">
                 <span class="c-modal__link--menu">Services</span> 
-                <span @click.native="$emit('close');" class="c-modal__link--ja">サービス</span>
+                <span class="c-modal__link--ja">サービス</span>
               </g-link>
             </v-col><!-- c-modal__menu-column -->
 
@@ -38,22 +34,14 @@
             <v-col
               cols="12" md="3" class="d-block d-md-none c-modal__menu-column">
               <div class="c-modal__services-block">
-                <g-link
-                  to="/services/serverless-consulting"
-                  class="c-modal__services-link pt-1"
-                  @click.native="$emit('close');">
+                <g-link to="/services/serverless-consulting" class="c-modal__services-link pt-1" @click.native="$emit('close');">
                   <div class="c-modal__services-menu">
                     <span class="c-modal__services-menu-serverless">Serverless</span>
-                    Consulting
-                    <span
-                      class="c-modal__services-menu-ja"
-                    >サーバーレスコンサルティング</span>
+                      Consulting
+                    <span class="c-modal__services-menu-ja">サーバーレスコンサルティング</span>
                   </div>
                 </g-link><!-- c-modal__services-link -->
-                <g-link
-                  to="/services/serverless-development"
-                  class="c-modal__services-link"
-                  @click.native="$emit('close');">
+                <g-link to="/services/serverless-development" class="c-modal__services-link" @click.native="$emit('close');">
                   <div class="c-modal__services-menu">
                     <span class="c-modal__services-menu-serverless">Serverless</span>Development
                     <span class="c-modal__services-menu-ja">サーバーレスディべロプメント</span>
