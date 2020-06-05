@@ -31,9 +31,9 @@
             </v-col><!-- c-modal__menu-column -->
 
             <!-- ConsultingとDevelopment(タブレット、スマホ) -->
-            <v-col
-              cols="12" md="3" class="d-block d-md-none c-modal__menu-column">
+            <v-col cols="12" md="3" class="d-block d-md-none c-modal__menu-column">
               <div class="c-modal__services-block">
+
                 <g-link to="/services/serverless-consulting" class="c-modal__services-link pt-1" @click.native="$emit('close');">
                   <div class="c-modal__services-menu">
                     <span class="c-modal__services-menu-serverless">Serverless</span>
@@ -41,12 +41,21 @@
                     <span class="c-modal__services-menu-ja">サーバーレスコンサルティング</span>
                   </div>
                 </g-link><!-- c-modal__services-link -->
+
                 <g-link to="/services/serverless-development" class="c-modal__services-link" @click.native="$emit('close');">
                   <div class="c-modal__services-menu">
                     <span class="c-modal__services-menu-serverless">Serverless</span>Development
                     <span class="c-modal__services-menu-ja">サーバーレスディべロプメント</span>
                   </div>
                 </g-link><!-- c-modal__services-link -->
+
+                <g-link to="/services/serverless-development" class="c-modal__services-link" @click.native="$emit('close');">
+                  <div class="c-modal__services-menu">
+                    <span class="c-modal__services-menu-serverless">Serverless</span>Products
+                    <span class="c-modal__services-menu-ja">私たちが開発したプロダクト</span>
+                  </div>
+                </g-link><!-- c-modal__services-link -->
+
               </div><!-- c-modal__services-block -->
             </v-col>
 
@@ -58,9 +67,16 @@
             </v-col>
 
             <v-col cols="6" md="3" class="c-modal__menu-column">
-              <g-link @click.native="$emit('close');" to="/news" class="c-modal__link">
-                <span class="c-modal__link--menu">News</span>
-                <span class="c-modal__link--ja">お知らせ</span>
+              <g-link @click.native="$emit('close');" to="/works-achives" class="c-modal__link">
+                <span class="c-modal__link--menu">Works</span>
+                <span class="c-modal__link--ja">導入事例</span>
+              </g-link>
+            </v-col>
+
+            <v-col cols="6" md="3" class="c-modal__menu-column">
+              <g-link @click.native="$emit('close');" to="/blog-archives" class="c-modal__link">
+                <span class="c-modal__link--menu">Blog</span>
+                <span class="c-modal__link--ja">開発ブログ</span>
               </g-link>
             </v-col>
             <!-- c-modal__menu-column -->
@@ -72,10 +88,7 @@
             <v-col cols="6" md="5" class="d-none d-md-block">
               <div class="c-modal__services-block">
 
-                <g-link
-                  to="/services/serverless-consulting"
-                  class="c-modal__services-link"
-                  @click.native="$emit('close');">
+                <g-link to="/services/serverless-consulting" class="c-modal__services-link" @click.native="$emit('close');">
                   <div class="c-modal__services-menu">
                     <span class="c-modal__services-menu-serverless">Serverless</span>
                     <span class="c-modal__services-name">Consulting</span>
@@ -83,36 +96,25 @@
                   </div>
                 </g-link>
 
-                <g-link
-                  @click.native="$emit('close');"
-                  to="/services/serverless-development"
-                  class="c-modal__services-link">
-
+                <g-link @click.native="$emit('close');" to="/services/serverless-development" class="c-modal__services-link">
                   <div class="c-modal__services-menu">
                     <span class="c-modal__services-menu-serverless">Serverless</span>
                     <span class="c-modal__services-name">Development</span>
                     <span class="c-modal__services-menu-ja">サーバーレスディべロプメント</span>
-                    <!--div class="default" :class="{ active: hover , leave :leave }" ></div-->
                   </div>
-           
                 </g-link>
 
-                 <g-link
-                  @click.native="$emit('close');"
-                  to="/our-products"
-                  class="c-modal__services-link">
-
+                <g-link @click.native="$emit('close');" to="/our-products" class="c-modal__services-link">
                   <div class="c-modal__services-menu">
                     <span class="c-modal__services-menu-serverless">Serverless</span>
                     <span class="c-modal__services-name">Products</span>
                     <span class="c-modal__services-menu-ja">私たちが開発したプロダクト</span>
-                    <!--div class="default" :class="{ active: hover , leave :leave }" ></div-->
                   </div>
-           
                 </g-link>
 
               </div>
             </v-col>
+
             <v-col cols="8" md="4" lg="4" xl="3" offset="2" offset-md="1" offset-lg="0">
               <div class="c-modal__contact-button-wrapper">
                 <g-link
@@ -124,12 +126,10 @@
                 </g-link>
               </div><!-- c-modal__contact-button-wrapper -->
             </v-col>
+
           </v-row>
         </v-container>
 
-        <!-- <h3>Modal</h3>
-
-        <button @click="$emit('close');">close</button>-->
         <span class="c-modal__copyright d-none d-md-block">© 2019 Serverless Operations</span>
 
         <span class="c-modal__copyright">© 2019 Serverless Operations</span>
