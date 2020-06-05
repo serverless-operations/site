@@ -1,6 +1,6 @@
 <template>
   <transition name="modal" appear>
-    <!-- <div class="modal__overlay" @click="$emit('close')"> -->
+    <div class="modal__overlay" @click="$emit('close')">
 
     <div class="modal__panel">
       <div class="c-modal__innner">
@@ -9,13 +9,13 @@
           <v-row>
             <v-col cols="3" offset="1" offset-md="0" class="pt-0 pb-0">
               <div class="c-modal__logo-link">
-                <nuxt-link @click.native="$emit('close');" to="/" class>
+                <g-link @click.native="$emit('close');" to="/" class>
                   <img
                     src="../assets/images/header-modal-logo.svg"
                     alt="Severless Operations ロゴ"
                     class="c-modal__logo"
                   />
-                </nuxt-link>
+                </g-link>
               </div>
             </v-col>
           </v-row>
@@ -24,21 +24,21 @@
           <v-row class="c-modal__menu">
             <!-- サービス -->
             <v-col cols="12" md="3" class="c-modal__menu-column">
-              <nuxt-link
+              <g-link
                 @click.native="$emit('close');"
                 to="/services"
                 class="c-modal__link pl-md-0">
 
                 <span class="c-modal__link--menu">Services</span> 
                 <span @click.native="$emit('close');" class="c-modal__link--ja">サービス</span>
-              </nuxt-link>
+              </g-link>
             </v-col><!-- c-modal__menu-column -->
 
             <!-- ConsultingとDevelopment(タブレット、スマホ) -->
             <v-col
               cols="12" md="3" class="d-block d-md-none c-modal__menu-column">
               <div class="c-modal__services-block">
-                <nuxt-link
+                <g-link
                   to="/services/serverless-consulting"
                   class="c-modal__services-link pt-1"
                   @click.native="$emit('close');">
@@ -49,8 +49,8 @@
                       class="c-modal__services-menu-ja"
                     >サーバーレスコンサルティング</span>
                   </div>
-                </nuxt-link><!-- c-modal__services-link -->
-                <nuxt-link
+                </g-link><!-- c-modal__services-link -->
+                <g-link
                   to="/services/serverless-development"
                   class="c-modal__services-link"
                   @click.native="$emit('close');">
@@ -58,29 +58,29 @@
                     <span class="c-modal__services-menu-serverless">Serverless</span>Development
                     <span class="c-modal__services-menu-ja">サーバーレスディべロプメント</span>
                   </div>
-                </nuxt-link><!-- c-modal__services-link -->
+                </g-link><!-- c-modal__services-link -->
               </div><!-- c-modal__services-block -->
             </v-col>
 
             <v-col cols="6" md="3" offset-md="0" class="c-modal__menu-column mt-6 mt-md-0">
-              <nuxt-link @click.native="$emit('close');" to="/company" class="c-modal__link">
+              <g-link @click.native="$emit('close');" to="/company" class="c-modal__link">
                 <span class="c-modal__link--menu">Company</span> 
                 <span class="c-modal__link--ja">会社案内</span>
-              </nuxt-link>
+              </g-link>
             </v-col>
 
             <v-col cols="6" md="3" class="c-modal__menu-column mt-6 mt-md-0">
-              <nuxt-link @click.native="$emit('close');" to="/our-products" class="c-modal__link">
+              <g-link @click.native="$emit('close');" to="/our-products" class="c-modal__link">
                 <span class="c-modal__link--menu">Products</span> 
                 <span class="c-modal__link--ja">私たちが開発したプロダクト</span>
-              </nuxt-link>
+              </g-link>
             </v-col>
 
             <v-col cols="6" md="3" class="c-modal__menu-column">
-              <nuxt-link @click.native="$emit('close');" to="/news" class="c-modal__link">
+              <g-link @click.native="$emit('close');" to="/news" class="c-modal__link">
                 <span class="c-modal__link--menu">News</span>
                 <span class="c-modal__link--ja">お知らせ</span>
-              </nuxt-link>
+              </g-link>
             </v-col>
             <!-- c-modal__menu-column -->
 
@@ -90,7 +90,7 @@
           <v-row>
             <v-col cols="6" md="5" class="d-none d-md-block">
               <div class="c-modal__services-block">
-                <nuxt-link
+                <g-link
                   to="/services/serverless-consulting"
                   class="c-modal__services-link"
                   @click.native="$emit('close');">
@@ -101,9 +101,9 @@
                       class="c-modal__services-menu-ja"
                     >サーバーレスコンサルティング</span>
                   </div>
-                </nuxt-link>
+                </g-link>
 
-                <nuxt-link
+                <g-link
                   @click.native="$emit('close');"
                   to="/services/serverless-development"
                   class="c-modal__services-link">
@@ -115,19 +115,19 @@
                     <div class="default" :class="{ active: hover , leave :leave }" ></div>
                   </div>
            
-                </nuxt-link>
+                </g-link>
 
               </div>
             </v-col>
             <v-col cols="8" md="4" lg="4" xl="3" offset="2" offset-md="1" offset-lg="0">
               <div class="c-modal__contact-button-wrapper">
-                <nuxt-link
+                <g-link
                   to="/contact"
                   class="c-modal__contact-button"
                   @click.native="$emit('close');">
                   <span class="c-modal__contact">Contact</span>
                   <span class="c-modal__contact-ja">お問い合わせ</span>
-                </nuxt-link>
+                </g-link>
               </div><!-- c-modal__contact-button-wrapper -->
             </v-col>
           </v-row>
@@ -154,7 +154,7 @@
       </div>
       <!-- modal__panel -->
 
-      <!-- </div> -->
+      </div>
     </div>
   </transition>
 </template>

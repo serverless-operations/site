@@ -1,5 +1,6 @@
 // v2.0
 import Vuetify from 'vuetify'
+import Vuex from 'vuex'
 import 'vuetify/dist/vuetify.min.css'
 import DefaultLayout from '~/layouts/Default.vue'
 
@@ -23,6 +24,21 @@ export default function (Vue, { appOptions, head }) {
   
   //const opts = { ... } //opts includes, vuetify themes, icons, etc.
   Vue.use(Vuetify)
+  Vue.use(Vuex)
+
+  appOptions.store = new Vuex.Store({
+    state: {
+      showModal: false
+    },
+    mutations: {
+      toggleModal(state) {
+        state.showModal = !state.showModal
+      },
+      resetModal(state) {
+        state.showModal = false
+      }
+    }
+  })
   
   // appOptions.vuetify = new Vuetify(opts);
   

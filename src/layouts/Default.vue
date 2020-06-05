@@ -31,6 +31,15 @@ export default {
 
 <style lang="scss">
 
+.fade-enter-active {
+  transition: all 2s cubic-bezier(.93,0,.1,1);
+  opacity: 1;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
 .theme--dark.v-application {
     background: #fff;
 }
@@ -102,7 +111,7 @@ export default {
 }
 
 .fade-enter-active {
-  transition: all .8s cubic-bezier(.93,0,.1,1);
+  transition: all 2s cubic-bezier(.93,0,.1,1);
   opacity: 1;
 }
 

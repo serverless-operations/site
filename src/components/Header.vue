@@ -31,13 +31,13 @@
 
 <script>
 // モーダルの読み込み
-//import { mapMutations } from 'vuex'
+import { mapMutations } from 'vuex'
 import Modal from '~/components/Modal.vue'
 
 export default {
   computed: {
     showModal() {
-      //return this.$store.state.showModal
+      return this.$store.state.showModal
     }
   },
   components: {
