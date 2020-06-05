@@ -70,6 +70,13 @@ query ($id: ID!) {
       title
       path
     }
+    acf {
+      companyProfile,
+      companyLogo {
+        sourceUrl,
+        altText
+      }
+    }
   }
 }
 </page-query>

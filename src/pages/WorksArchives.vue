@@ -60,6 +60,13 @@ query ($page: Int) {
           title
           path
         }
+        acf {
+          companyProfile,
+          companyLogo {
+            sourceUrl,
+            altText
+          }
+        }
       }
     }
   }
