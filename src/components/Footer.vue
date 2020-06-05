@@ -91,6 +91,11 @@
                 未来像
               </g-link>
             </li>
+            <li class="c-footer-list__item">
+              <g-link to="/news-archives/" class="c-footer-list__link">
+                おしらせ
+              </g-link>
+            </li>
           </ul>
         </v-col>
 
@@ -114,11 +119,7 @@
             <div class="c-footer-menu__subtitle">開発ブログ</div>
           </g-link>
           <ul class="c-footer-list">
-            <li class="c-footer-list__item">
-              <g-link to="/our-products" class="c-footer-list__link">
-                ブログループ出力
-              </g-link>
-            </li>
+            <footer-blog />
           </ul>
         </v-col>
       </v-row>
@@ -164,6 +165,16 @@
 </template>
 
 <script>
+import FooterBlog from '~/components/FooterBlog.vue'
+
+export default {
+  components: {
+    FooterBlog
+  },
+}
+
+
+
 if (process.client) {
   (function(){
 var w=window,d=document;
