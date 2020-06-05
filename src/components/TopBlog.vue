@@ -30,8 +30,8 @@
 </template>
 
 <static-query>
-query {
-  blog: allWordPressBlog {
+query ($page: Int) {
+  blog: allWordPressBlog (page: $page, perPage: 6, sortBy: "date", order: DESC) @paginate {
     pageInfo {
       totalPages
       currentPage

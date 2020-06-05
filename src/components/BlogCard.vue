@@ -101,6 +101,7 @@ export default {
       line-height: 1.5;
       text-align: justify;
       color: $primary;
+      font-family: $font-jp-bold;
       padding: 0;
       margin-bottom: 24px;
       @include media-breakpoint-up(sm) {
