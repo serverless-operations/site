@@ -1,6 +1,6 @@
 <template>
   <transition name="modal" appear>
-    <div class="modal__overlay" @click="$emit('close')">
+    <!--div class="modal__overlay" @click="$emit('close')"-->
 
     <div class="modal__panel">
       <div class="c-modal__innner">
@@ -69,13 +69,6 @@
               </g-link>
             </v-col>
 
-            <v-col cols="6" md="3" class="c-modal__menu-column mt-6 mt-md-0">
-              <g-link @click.native="$emit('close');" to="/our-products" class="c-modal__link">
-                <span class="c-modal__link--menu">Products</span> 
-                <span class="c-modal__link--ja">私たちが開発したプロダクト</span>
-              </g-link>
-            </v-col>
-
             <v-col cols="6" md="3" class="c-modal__menu-column">
               <g-link @click.native="$emit('close');" to="/news" class="c-modal__link">
                 <span class="c-modal__link--menu">News</span>
@@ -90,6 +83,7 @@
           <v-row>
             <v-col cols="6" md="5" class="d-none d-md-block">
               <div class="c-modal__services-block">
+
                 <g-link
                   to="/services/serverless-consulting"
                   class="c-modal__services-link"
@@ -97,9 +91,7 @@
                   <div class="c-modal__services-menu">
                     <span class="c-modal__services-menu-serverless">Serverless</span>
                     <span class="c-modal__services-name">Consulting</span>
-                    <span
-                      class="c-modal__services-menu-ja"
-                    >サーバーレスコンサルティング</span>
+                    <span class="c-modal__services-menu-ja">サーバーレスコンサルティング</span>
                   </div>
                 </g-link>
 
@@ -112,7 +104,21 @@
                     <span class="c-modal__services-menu-serverless">Serverless</span>
                     <span class="c-modal__services-name">Development</span>
                     <span class="c-modal__services-menu-ja">サーバーレスディべロプメント</span>
-                    <div class="default" :class="{ active: hover , leave :leave }" ></div>
+                    <!--div class="default" :class="{ active: hover , leave :leave }" ></div-->
+                  </div>
+           
+                </g-link>
+
+                 <g-link
+                  @click.native="$emit('close');"
+                  to="/our-products"
+                  class="c-modal__services-link">
+
+                  <div class="c-modal__services-menu">
+                    <span class="c-modal__services-menu-serverless">Serverless</span>
+                    <span class="c-modal__services-name">Products</span>
+                    <span class="c-modal__services-menu-ja">私たちが開発したプロダクト</span>
+                    <!--div class="default" :class="{ active: hover , leave :leave }" ></div-->
                   </div>
            
                 </g-link>
@@ -155,7 +161,7 @@
       <!-- modal__panel -->
 
       </div>
-    </div>
+    <!--/div-->
   </transition>
 </template>
 
