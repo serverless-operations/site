@@ -60,6 +60,14 @@ query ($id: ID!) {
     title
     content
     date (format: "YYYY.MM.DD")
+    path
+    featuredMedia {
+      sourceUrl
+      altText
+      mediaDetails {
+        width
+      }
+    }
     categories {
       id
       title
@@ -78,6 +86,10 @@ query ($id: ID!) {
       }
     }
   }
+  metadata {
+    siteName
+    siteUrl
+  }
 }
 </page-query>
 
@@ -86,7 +98,27 @@ query ($id: ID!) {
 export default {
   metaInfo () {
     return {
-      title: this.$page.wordPressWorks.title
+      title: this.$page.wordPressWorks.title,
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: this.$page.metadata.siteUrl + this.$page.wordPressWorks.path,
+        },
+      ],
+      meta: [
+        { key: `og:type`, property: `og:type`, content: `article` },
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: this.$page.wordPressWorks.featuredMedia.sourceUrl,
+        },
+        {
+          key: `og:title`,
+          property: `og:title`,
+          content: `${this.$page.wordPressWorks.title} | ${this.$page.metadata.siteName}`,
+        },
+      ]
     }
   }
 }
