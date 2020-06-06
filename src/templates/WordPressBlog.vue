@@ -79,7 +79,27 @@ query ($id: ID!) {
 export default {
   metaInfo () {
     return {
-      title: this.$page.wordPressBlog.title
+      title: this.$page.wordPressBlog.title,
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: this.$page.metadata.siteUrl + this.$page.wordPressBlog.path,
+        },
+      ],
+      meta: [
+        { key: `og:type`, property: `og:type`, content: `article` },
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: this.$page.metadata.siteUrl + 'ogp.png',
+        },
+        {
+          key: `og:title`,
+          property: `og:title`,
+          content: `${this.$page.wordPressBlog.title} | ${this.$page.metadata.siteName}`,
+        },
+      ]
     }
   }
 }
