@@ -71,6 +71,10 @@ query ($id: ID!) {
       path
     }
   }
+  metadata {
+    siteName
+    siteUrl
+  }
 }
 </page-query>
 
