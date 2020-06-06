@@ -4,6 +4,8 @@ import Vuex from 'vuex'
 import 'vuetify/dist/vuetify.min.css'
 import DefaultLayout from '~/layouts/Default.vue'
 
+require("gridsome-plugin-remark-prismjs-all/themes/night-owl.css");
+
 export default function (Vue, { appOptions, head }) {
   
   // Add an external Javascript before the closing </body> tag
