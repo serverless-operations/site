@@ -308,6 +308,11 @@ export default {
       }
     }
   }
+
+  /deep/ strong {
+    font-family: $font-jp-bold;
+    color: $primary;
+  }
 } // p-news-contents
 </style>
 
