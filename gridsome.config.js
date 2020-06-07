@@ -38,6 +38,37 @@ module.exports = {
     ],
   },
 
+  transformers: {
+    //Add markdown support to all file-system sources
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      anchorClassName: 'icon icon-link',
+      plugins: [
+        ['gridsome-plugin-remark-prismjs-all', {
+            highlightClassName: "myCustomClass", //Default `gridsome-highlight`
+            codeTitleClassName: "customCodeTitle", //Default 'gridsome-code-title'
+            showLineNumbers: true, //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
+            languageExtensions: [
+              {
+                language: "superscript",
+                extend: "javascript",
+                definition: {
+                  superscript_types: /(SuperType)/,
+                },
+                insertBefore: {
+                  function: {
+                    superscript_keywords: /(superif|superelse)/,
+                  },
+                },
+              },
+            ],
+
+        }]
+      ]
+    }
+  },
+
   plugins: [
     {
       use: '@gridsome/source-wordpress',
