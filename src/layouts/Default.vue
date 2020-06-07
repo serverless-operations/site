@@ -63,6 +63,11 @@ export default {
     max-width: 1232px;
   }
 }
+
+.v-application code {
+  background-color: transparent !important;
+}
+
 .p-top-contact {
   &--form {
     .v-text-field {
