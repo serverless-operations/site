@@ -107,7 +107,27 @@ export default {
   },
   metaInfo () {
     return {
-      title: this.$page.wordPressPost.title
+      title: this.$page.wordPressPost.title,
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: this.$page.metadata.siteUrl + this.$page.wordPressPost.path,
+        },
+      ],
+      meta: [
+        { key: `og:type`, property: `og:type`, content: `article` },
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: this.$page.wordPressPost.featuredMedia.sourceUrl,
+        },
+        {
+          key: `og:title`,
+          property: `og:title`,
+          content: `${this.$page.wordPressPost.title} | ${this.$page.metadata.siteName}`,
+        },
+      ]
     }
   },
   data() {

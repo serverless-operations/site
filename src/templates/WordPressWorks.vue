@@ -63,7 +63,7 @@
               </v-col>
               <v-col cols="11" md="8">
                 <!-- シェアボタン -->
-                <!--share-buttons :title="title" /-->
+                <share-buttons :title="title" />
               </v-col>
             </v-row>
             </v-container>
@@ -117,7 +117,12 @@ query ($id: ID!) {
 </page-query>
 
 <script>
+import ShareButtons from '~/components/ShareButtons'
+
 export default {
+  components: {
+    ShareButtons
+  },
   metaInfo () {
     return {
       title: this.$page.wordPressWorks.title,
@@ -142,7 +147,15 @@ export default {
         },
       ]
     }
-  }
+  },
+  data() {
+    return {
+      result: [],
+      title: '',
+      description: '',
+      bodyHtml: ''
+    }
+  },
 }
 </script>
 
