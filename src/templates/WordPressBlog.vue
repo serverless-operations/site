@@ -87,6 +87,9 @@ query ($id: ID!) {
 
 
 <script>
+
+import Prism from 'prismjs'
+
 export default {
   metaInfo () {
     return {
@@ -112,6 +115,9 @@ export default {
         },
       ]
     }
+  },
+  mounted() {
+    Prism.highlightAll()
   }
 }
 </script>
