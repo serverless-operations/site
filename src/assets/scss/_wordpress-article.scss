@@ -32,10 +32,18 @@
 
   // 埋め込み
   /deep/ .wp-block-embed__wrapper {
+    position: relative;
     width: 100%;
-    iframe {
-      width: 100%;
-    }
+    height: 0;
+    padding-top: 56.25%;
+  }
+
+  /deep/ .wp-block-embed__wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   // 見出し共通スタイル
