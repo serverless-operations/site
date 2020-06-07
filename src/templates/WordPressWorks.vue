@@ -145,6 +145,13 @@ export default {
           property: `og:title`,
           content: `${this.$page.wordPressWorks.title} | ${this.$page.metadata.siteName}`,
         },
+        { name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        {
+          name: 'twitter:image',
+          content: this.$page.wordPressWorks.featuredMedia.sourceUrl,
+        }
       ]
     }
   },
