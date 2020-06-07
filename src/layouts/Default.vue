@@ -68,6 +68,10 @@ export default {
   background-color: transparent !important;
   color: inherit !important;
   box-shadow: none !important;
+  &::before {
+    content: none !important;
+    letter-spacing: 0 !important;
+  }
 }
 
 .p-top-contact {
