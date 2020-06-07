@@ -148,6 +148,9 @@ export default {
 
 
 <style lang="scss" scoped>
+.works-image {
+  width: 100%;
+}
 .works-company-profile {
   padding: 24px 40px;
   margin-top: -80px;
@@ -164,13 +167,14 @@ export default {
     color: $primary;
     padding-bottom: 16px;
     margin-bottom: 16px;
-    border-bottom: 1px solid #CFD6E2;
+    border-bottom: 1px solid $mid-gray-3;
   }
 
   .company-profile {
 
   }
 }
+
 
 .p-news-articles {
   // 記事内画像
@@ -195,6 +199,8 @@ export default {
 
   /deep/ hr {
     margin: 16px 0;
+    border: 0;
+    border-bottom: 1px solid $mid-gray-3;
   }
 
   // 見出し
@@ -229,11 +235,11 @@ export default {
     color: $primary;
     font-size: 1.4rem;
     font-family: $font-jp-bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     @include media-breakpoint-up(md) {
       font-size: 1.5rem;
       line-height: 42px;
-      margin-bottom: 1.5rem;
+      margin: 80px 0;
     }
     &:after {
       content: '';
@@ -241,6 +247,21 @@ export default {
       width: 40px;
       height: 1px;
       background: $primary;
+      position: absolute;
+      bottom: -8px;
+      left: 0px;
+      z-index: 1;
+      @include media-breakpoint-up(md) {
+        width: 80px;
+        bottom: -8px;
+      }
+    }
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: $mid-gray-3;
       position: absolute;
       bottom: -8px;
       left: 0px;
@@ -274,12 +295,17 @@ export default {
   // 引用
   /deep/ blockquote {
     background: $light-gray-1;
+    width: 100%;
     display: inline-block;
     padding: 1rem;
     margin-bottom: 1.5rem;
+    opacity: 0.8;
     p {
       line-height: 1.5;
-      margin-bottom: 0;
+      margin-bottom: 24px;
+      strong {
+        color: $primary;
+      }
     }
   }
 } // p-news-contents
@@ -432,24 +458,6 @@ export default {
       content: none;
     }
   }
-
-  .container {
-    // アイキャッチ画像
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: calc(98vw / 8 * 5);
-      @include media-breakpoint-up(md) {
-        height: 580px;
-      }
-      @include media-breakpoint-up(lg) {
-        height: 750px;
-      }
-      @include media-breakpoint-up(xl) {
-        height: 770px;
-      }
-    } // img
-  } // .container
 }
 
 .p-news-bg {
