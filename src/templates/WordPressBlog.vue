@@ -60,6 +60,7 @@ query ($id: ID!) {
     title
     content
     date (format: "YYYY.MM.DD")
+    path
     featuredMedia {
       sourceUrl
       altText
