@@ -23,10 +23,19 @@
     color: $primary;
   }
 
+  // ボーダー
   /deep/ hr {
     margin: 16px 0;
     border: 0;
     border-bottom: 1px solid $mid-gray-3;
+  }
+
+  // 埋め込み
+  /deep/ .wp-block-embed__wrapper {
+    width: 100%;
+    iframe {
+      width: 100%;
+    }
   }
 
   // 見出し共通スタイル
