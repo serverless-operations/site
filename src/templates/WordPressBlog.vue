@@ -41,7 +41,7 @@
               </v-col>
               <v-col cols="11" md="8">
                 <!-- シェアボタン -->
-                <!--share-buttons :title="title" /-->
+                <share-buttons :title="$page.wordPressBlog.title" />
               </v-col>
             </v-row>
             </v-container>
@@ -89,8 +89,12 @@ query ($id: ID!) {
 <script>
 
 import Prism from 'prismjs'
+import ShareButtons from '~/components/ShareButtons'
 
 export default {
+  components: {
+    ShareButtons
+  },
   metaInfo () {
     return {
       title: this.$page.wordPressBlog.title,

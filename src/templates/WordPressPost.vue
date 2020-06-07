@@ -52,7 +52,7 @@
               </v-col>
               <v-col cols="11" md="8">
                 <!-- シェアボタン -->
-                <share-buttons :title="title" />
+                <share-buttons :title="$page.wordPressPost.title" />
               </v-col>
             </v-row>
             </v-container>
