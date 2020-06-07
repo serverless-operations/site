@@ -3,7 +3,6 @@ import Vuetify from 'vuetify'
 import Vuex from 'vuex'
 import 'vuetify/dist/vuetify.min.css'
 import DefaultLayout from '~/layouts/Default.vue'
-//import 'gridsome-plugin-remark-prismjs-all/themes/night-owl.css'
 
 export default function (Vue, { appOptions, head }) {
   
