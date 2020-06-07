@@ -66,6 +66,8 @@ export default {
 
 .v-application code {
   background-color: transparent !important;
+  color: inherit !important;
+  box-shadow: none !important;
 }
 
 .p-top-contact {

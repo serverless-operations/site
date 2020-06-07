@@ -4,10 +4,7 @@ import Vuex from 'vuex'
 import 'vuetify/dist/vuetify.min.css'
 import DefaultLayout from '~/layouts/Default.vue'
 import Prism from 'prismjs'
-// import 'prismjs/themes/prism-okaidia.css'
-
 import '~/assets/css/prism-okaidia.css'
-// import '~/assets/js/prism.js'
 
 export default function (Vue, { appOptions, head }) {
   
