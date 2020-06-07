@@ -138,7 +138,7 @@ export default {
         {
           key: `og:url`,
           property: `og:url`,
-          content: this.$page.metadata.siteUrl + this.$page.wordPressPost.path,
+          content: this.$page.metadata.siteUrl + this.$page.wordPressWorks.path,
         },
         {
           key: `og:title`,
