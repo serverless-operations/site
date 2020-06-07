@@ -120,12 +120,17 @@ export default {
         {
           key: `og:url`,
           property: `og:url`,
-          content: this.$page.wordPressPost.featuredMedia.sourceUrl,
+          content: this.$page.metadata.siteUrl + this.$page.wordPressPost.path,
         },
         {
           key: `og:title`,
           property: `og:title`,
           content: `${this.$page.wordPressPost.title} | ${this.$page.metadata.siteName}`,
+        },
+        {
+          key: 'og:image',
+          property: 'og:image',
+          content: this.$page.wordPressPost.featuredMedia.sourceUrl,
         },
         { name: 'twitter:card',
           content: 'summary_large_image',
