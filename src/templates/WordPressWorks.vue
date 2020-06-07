@@ -32,6 +32,24 @@
                   </time>
 
                   <h1 v-html="$page.wordPressWorks.title" class="p-news-contents__title" />
+
+                  <g-image class="works-image object-cover h-64 w-full c-card-border"
+                    v-if="$page.wordPressWorks.featuredMedia"
+                    :src="$page.wordPressWorks.featuredMedia.sourceUrl"
+                    :width="`${$page.wordPressWorks.featuredMedia.mediaDetails.width}`"
+                    :alt="$page.wordPressWorks.featuredMedia.altText"
+                  />
+
+
+                  <div class="col-3">
+                    <g-image :src="$page.wordPressWorks.acf.companyLogo.sourceUrl" :alt="$page.wordPressWorks.acf.companyLogo.altText" class="company-logo"/>
+                  </div>
+
+                  <div class="col-3">
+                    <h3 v-html="$page.wordPressWorks.acf.companyName" class="company-name"/>
+                    <p v-html="$page.wordPressWorks.acf.companyProfile" class="company-profile"/>
+                  </div>
+
                 </section>
               </v-col>
 
@@ -79,6 +97,7 @@ query ($id: ID!) {
       path
     }
     acf {
+      companyName,
       companyProfile,
       companyLogo {
         sourceUrl,

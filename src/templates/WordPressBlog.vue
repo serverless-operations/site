@@ -60,6 +60,13 @@ query ($id: ID!) {
     title
     content
     date (format: "YYYY.MM.DD")
+    featuredMedia {
+      sourceUrl
+      altText
+      mediaDetails {
+        width
+      }
+    }
     categories {
       id
       title
