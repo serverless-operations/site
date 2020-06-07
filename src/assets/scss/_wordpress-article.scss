@@ -18,6 +18,10 @@
   /deep/ b {
     font-family: $font-jp-bold;
   }
+  /deep/ strong {
+    font-family: $font-jp-bold;
+    color: $primary;
+  }
 
   /deep/ hr {
     margin: 16px 0;
@@ -25,7 +29,7 @@
     border-bottom: 1px solid $mid-gray-3;
   }
 
-  // 見出し
+  // 見出し共通スタイル
   /deep/ h1,
   /deep/ h2,
   /deep/ h3,
@@ -131,10 +135,5 @@
         color: $primary;
       }
     }
-  }
-
-  /deep/ strong {
-    font-family: $font-jp-bold;
-    color: $primary;
   }
 }

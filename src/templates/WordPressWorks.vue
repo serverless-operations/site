@@ -33,7 +33,7 @@
 
                   <h1 v-html="$page.wordPressWorks.title" class="p-news-contents__title" />
 
-                  <g-image class="works-image object-cover h-64 w-full c-card-border"
+                  <g-image class="works-image object-cover h-64 w-full"
                     v-if="$page.wordPressWorks.featuredMedia"
                     :src="$page.wordPressWorks.featuredMedia.sourceUrl"
                     :width="`${$page.wordPressWorks.featuredMedia.mediaDetails.width}`"
