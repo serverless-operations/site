@@ -110,7 +110,7 @@ export default {
         {
           key: `og:url`,
           property: `og:url`,
-          content: this.$page.metadata.siteUrl + 'ogp.png',
+          content: this.$page.metadata.siteUrl + this.$page.wordPressBlog.path,
         },
         {
           key: `og:title`,
