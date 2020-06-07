@@ -7,7 +7,7 @@
             <v-row>
               <v-col>
                 <h1 class="p-news-header__page-title">
-                  News
+                  Newstttttt
                   <span class="p-news-header__page-title-ja">お知らせ</span>
                 </h1>
               </v-col>
