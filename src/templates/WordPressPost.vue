@@ -52,7 +52,7 @@
               </v-col>
               <v-col cols="11" md="8">
                 <!-- シェアボタン -->
-                <!--share-buttons :title="title" /-->
+                <share-buttons :title="title" />
               </v-col>
             </v-row>
             </v-container>
@@ -71,6 +71,7 @@ query ($id: ID!) {
     title
     content
     date (format: "YYYY.MM.DD")
+    path
     featuredMedia {
       sourceUrl
       altText
@@ -89,17 +90,34 @@ query ($id: ID!) {
       path
     }
   }
+  metadata {
+    siteName
+    siteUrl
+  }
 }
 </page-query>
 
 
 <script>
+import ShareButtons from '~/components/ShareButtons'
+
 export default {
+  components: {
+    ShareButtons
+  },
   metaInfo () {
     return {
       title: this.$page.wordPressPost.title
     }
-  }
+  },
+  data() {
+    return {
+      result: [],
+      title: '',
+      description: '',
+      bodyHtml: ''
+    }
+  },
 }
 </script>
 
