@@ -40,15 +40,19 @@
                     :alt="$page.wordPressWorks.featuredMedia.altText"
                   />
 
+                  <v-row class="justify-center">
+                    <div class="works-company-profile col-10 row">
+                      <div class="col-4">
+                        <g-image :src="$page.wordPressWorks.acf.companyLogo.sourceUrl" :alt="$page.wordPressWorks.acf.companyLogo.altText" class="company-logo"/>
+                      </div>
 
-                  <div class="col-3">
-                    <g-image :src="$page.wordPressWorks.acf.companyLogo.sourceUrl" :alt="$page.wordPressWorks.acf.companyLogo.altText" class="company-logo"/>
-                  </div>
-
-                  <div class="col-3">
-                    <h3 v-html="$page.wordPressWorks.acf.companyName" class="company-name"/>
-                    <p v-html="$page.wordPressWorks.acf.companyProfile" class="company-profile"/>
-                  </div>
+                      <div class="col-8">
+                        <h3 v-html="$page.wordPressWorks.acf.companyName" class="company-name"/>
+                        <p v-html="$page.wordPressWorks.acf.companyProfile" class="company-profile"/>
+                      </div>
+                    </div>
+                  </v-row>
+                 
 
                 </section>
               </v-col>
@@ -112,7 +116,6 @@ query ($id: ID!) {
 }
 </page-query>
 
-
 <script>
 export default {
   metaInfo () {
@@ -145,17 +148,44 @@ export default {
 
 
 <style lang="scss" scoped>
+.works-company-profile {
+  padding: 24px 40px;
+  margin-top: -80px;
+  margin-bottom: 104px;
+  background-color: #fff;
+  box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
+  .company-logo {
+    width: 100%;
+    height: auto !important;
+  }
+  .company-name {
+    font-size: 24px;
+    font-family: $font-jp-bold;
+    color: $primary;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #CFD6E2;
+  }
+
+  .company-profile {
+
+  }
+}
+
 .p-news-articles {
   // 記事内画像
-  /deep/ img {
-    width: 100%;
-    height: auto;
-    margin: 16px 0;
+  /deep/ .wp-block-image {
+    img {
+      width: 100%;
+      height: auto;
+      margin: 16px 0 40px 0;
+    }
   }
 
   /deep/ p {
-    line-height: 1.5;
+    line-height: 1.8;
     letter-spacing: 1px;
+    margin-bottom: 32px;
   }
 
   // 太字
@@ -188,7 +218,7 @@ export default {
     line-height: 30px;
     // margin: 12px 0 36px;
     @include media-breakpoint-up(md) {
-      // margin: 24px 0 88px;
+      margin: 24px 0 44px;
       font-size: 2rem;
       line-height: 52px;
     }
