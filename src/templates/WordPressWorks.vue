@@ -141,6 +141,11 @@ export default {
           content: this.$page.metadata.siteUrl + this.$page.wordPressWorks.path,
         },
         {
+          key: `og:image`,
+          property: `og:image`,
+          content:  this.$page.wordPressWorks.featuredMedia.sourceUrl,
+        },
+        {
           key: `og:title`,
           property: `og:title`,
           content: `${this.$page.wordPressWorks.title} | ${this.$page.metadata.siteName}`,

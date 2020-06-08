@@ -123,6 +123,11 @@ export default {
           content: this.$page.metadata.siteUrl + this.$page.wordPressPost.path,
         },
         {
+          key: `og:image`,
+          property: `og:image`,
+          content:  this.$page.wordPressPost.featuredMedia.sourceUrl,
+        },
+        {
           key: `og:title`,
           property: `og:title`,
           content: `${this.$page.wordPressPost.title} | ${this.$page.metadata.siteName}`,
