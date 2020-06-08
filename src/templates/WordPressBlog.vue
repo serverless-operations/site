@@ -44,8 +44,9 @@
                 <share-buttons :title="$page.wordPressBlog.title" />
               </v-col>
             </v-row>
-            </v-container>
-            <!-- l-news-contents-container -->
+          </v-container>
+          <!-- l-news-contents-container -->
+
           <div class="p-news-bg"></div>
         </article>
         <!-- p-news-contents -->
