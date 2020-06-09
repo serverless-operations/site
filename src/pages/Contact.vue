@@ -1,8 +1,7 @@
 <template>
   <Layout>
     <div class="v-content__wrap">
-
-      
+  
       <div class="l-contact-page">
         <!-- ページヘッダー -->
         <div class="p-contact-header">
@@ -48,14 +47,14 @@
                 <form action="https://formspree.io/xpzypqoe" method="POST" class="v-form">
                   <v-row no-gutters>
                     <v-col cols="12" sm="4" md="5" lg="4">
-                      <v-subheader>お名前<small>（漢字）</small>*</v-subheader>
+                      <v-subheader>お名前<small>（漢字）</small></v-subheader>
                     </v-col>
                     <v-col cols="12" sm="8" md="7" lg="8">
                       <v-text-field name="name"/>
                     </v-col>
 
                     <v-col cols="12" sm="4" md="5" lg="4">
-                      <v-subheader>お名前<small>（ふりがな）</small>*</v-subheader>
+                      <v-subheader>お名前<small>（ふりがな）</small></v-subheader>
                     </v-col>
                     <v-col cols="12" sm="8" md="7" lg="8">
                       <v-text-field name="name"/>
@@ -76,19 +75,19 @@
                     </v-col>
 
                     <v-col cols="12" sm="4" md="5" lg="4">
-                      <v-subheader>ご検討中のサービス*</v-subheader>
+                      <v-subheader>ご検討中のサービス</v-subheader>
                     </v-col>
                     <v-col cols="12" sm="8" md="7" lg="8">
-                      <label> 
-                        <input type="checkbox" name="serverless-consulting" value="サーバーレスコンサルティング" class="info--text p-top-contact--check-label info"> 
+                      <label class="info--text p-top-contact--check-label info">
+                        <input type="checkbox" name="serverless-consulting" value="サーバーレスコンサルティング"> 
                         サーバーレスコンサルティング
                       </label>
-                      <label> 
-                        <input type="checkbox" name="serverless-consulting" value="サーバーレスコンサルティング" class="info--text p-top-contact--check-label info"> 
+                      <label class="info--text p-top-contact--check-label info">
+                        <input type="checkbox" name="serverless-development" value="サーバーレスディベロップメント"> 
                         サーバーレスディベロップメント
                       </label>
-                      <label> 
-                        <input type="checkbox" name="serverless-consulting" value="サーバーレスコンサルティング" class="info--text p-top-contact--check-label info"> 
+                      <label class="info--text p-top-contact--check-label info">
+                        <input type="checkbox" name="other" value="その他" > 
                         その他
                       </label>
                     </v-col>
@@ -327,9 +326,13 @@ export default {
         margin-bottom: 24px;
       }
     }
+
     &--check-label {
       font-family: $font-jp-normal;
+      color: $primary;
+      display: block;
     }
+
     &--note {
       padding-top: 28px;
       border-top: 1px solid $light-gray-1;
