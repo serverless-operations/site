@@ -55,14 +55,14 @@
                     </v-col>
 
                     <v-col cols="12" sm="4" md="5" lg="4">
-                      <v-subheader>お名前<small>（漢字）</small>*</v-subheader>
+                      <v-subheader>お名前<small>（ふりがな）</small>*</v-subheader>
                     </v-col>
                     <v-col cols="12" sm="8" md="7" lg="8">
                       <v-text-field name="name"/>
                     </v-col>
 
                     <v-col cols="12" sm="4" md="5" lg="4">
-                      <v-subheader>お名前<small>（漢字）</small>*</v-subheader>
+                      <v-subheader>会社名</v-subheader>
                     </v-col>
                     <v-col cols="12" sm="8" md="7" lg="8">
                       <v-text-field name="name"/>
@@ -75,7 +75,23 @@
                       <v-text-field name="_replyto"/>
                     </v-col>
 
-
+                    <v-col cols="12" sm="4" md="5" lg="4">
+                      <v-subheader>ご検討中のサービス*</v-subheader>
+                    </v-col>
+                    <v-col cols="12" sm="8" md="7" lg="8">
+                      <label> 
+                        <input type="checkbox" name="serverless-consulting" value="サーバーレスコンサルティング" class="info--text p-top-contact--check-label info"> 
+                        サーバーレスコンサルティング
+                      </label>
+                      <label> 
+                        <input type="checkbox" name="serverless-consulting" value="サーバーレスコンサルティング" class="info--text p-top-contact--check-label info"> 
+                        サーバーレスディベロップメント
+                      </label>
+                      <label> 
+                        <input type="checkbox" name="serverless-consulting" value="サーバーレスコンサルティング" class="info--text p-top-contact--check-label info"> 
+                        その他
+                      </label>
+                    </v-col>
 
                     <v-col cols="12" sm="4" md="5" lg="4">
                       <v-subheader>ご相談<br class="d-none d-sm-block">
