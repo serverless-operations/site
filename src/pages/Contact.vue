@@ -41,206 +41,73 @@
         </div>
 
         <v-container class="p-top-contact--container">
-          <v-row align="center"
-             justify="center">
-        <v-col cols="12"
-               md="10"
-               lg="8"
-               class="p-top-contact--form">
-          <div class="p-top-contact--form-shadow" />
-          <v-form v-model="valid"
-                  name="contact"
-                  netlify>
-            <input type="hidden"
-                   name="form-name"
-                   value="contact">
-            <v-row no-gutters>
-              <v-col cols="12"
-                     sm="4"
-                     md="5"
-                     lg="4">
-                <v-subheader>お名前<small>（漢字）</small>*</v-subheader>
-              </v-col>
-              <v-col cols="12"
-                     sm="8"
-                     md="7"
-                     lg="8">
-                <v-text-field v-model="name"
-                              :rules="nameRules"
-                              name="name"
-                              single-line
-                              outlined
-                              solo
-                              flat
-                              dense
-                              required
-                              filled />
-              </v-col>
+          <v-row align="center" justify="center">
+            <v-col cols="12" md="10" lg="8" class="p-top-contact--form">
+              <div class="p-top-contact--form-shadow" />
 
-              <v-col cols="12"
-                     sm="4"
-                     md="5"
-                     lg="4">
-                <v-subheader>お名前<small>（ふりがな）</small>*</v-subheader>
-              </v-col>
-              <v-col cols="12"
-                     sm="8"
-                     md="7"
-                     lg="8">
-                <v-text-field v-model="nameFurigana"
-                              :rules="nameFuriganaRules"
-                              name="name-furigana"
-                              single-line
-                              outlined
-                              solo
-                              flat
-                              dense
-                              required
-                              filled />
-              </v-col>
+                <form action="https://formspree.io/xpzypqoe" method="POST" class="v-form">
+                  <v-row no-gutters>
+                    <v-col cols="12" sm="4" md="5" lg="4">
+                      <v-subheader>お名前<small>（漢字）</small>*</v-subheader>
+                    </v-col>
+                    <v-col cols="12" sm="8" md="7" lg="8">
+                      <v-text-field name="name"/>
+                    </v-col>
 
-              <v-col cols="12"
-                     sm="4"
-                     md="5"
-                     lg="4">
-                <v-subheader>会社名</v-subheader>
-              </v-col>
-              <v-col cols="12"
-                     sm="8"
-                     md="7"
-                     lg="8">
-                <v-text-field v-model="companyName"
-                              name="company-name"
-                              single-line
-                              outlined
-                              solo
-                              flat
-                              dense
-                              filled />
-              </v-col>
+                    <v-col cols="12" sm="4" md="5" lg="4">
+                      <v-subheader>お名前<small>（漢字）</small>*</v-subheader>
+                    </v-col>
+                    <v-col cols="12" sm="8" md="7" lg="8">
+                      <v-text-field name="name"/>
+                    </v-col>
 
-              <v-col cols="12"
-                     sm="4"
-                     md="5"
-                     lg="4">
-                <v-subheader>Eメール*</v-subheader>
-              </v-col>
-              <v-col cols="12"
-                     sm="8"
-                     md="7"
-                     lg="8">
-                <v-text-field v-model="email"
-                              :rules="emailRules"
-                              name="email"
-                              single-line
-                              outlined
-                              solo
-                              flat
-                              dense
-                              required
-                              filled />
-              </v-col>
+                    <v-col cols="12" sm="4" md="5" lg="4">
+                      <v-subheader>お名前<small>（漢字）</small>*</v-subheader>
+                    </v-col>
+                    <v-col cols="12" sm="8" md="7" lg="8">
+                      <v-text-field name="name"/>
+                    </v-col>
 
-              <v-col cols="12"
-                     sm="4"
-                     md="5"
-                     lg="4">
-                <v-subheader>ご検討中のサービス*</v-subheader>
-              </v-col>
-              <v-col cols="12"
-                     sm="8"
-                     md="7"
-                     lg="8">
-                <v-checkbox v-model="serviceSelect"
-                            :input-value="serviceSelect"
-                            name="select-service[]"
-                            class="p-top-contact--check"
-                            :rules="selectRules"
-                            light
-                            hide-details
-                            dense
-                            color="info"
-                            value="サーバーレスコンサルティング">
-                  <template v-slot:label>
-                    <div class="info--text p-top-contact--check-label">サーバーレスコンサルティング</div>
-                  </template>
-                </v-checkbox>
-                <v-checkbox v-model="serviceSelect"
-                            :input-value="serviceSelect"
-                            name="select-service[]"
-                            class="p-top-contact--check"
-                            :rules="selectRules"
-                            light
-                            hide-details
-                            dense
-                            color="info"
-                            value="サーバーレスディベロップメント">
-                  <template v-slot:label>
-                    <div class="info--text p-top-contact--check-label">サーバーレスディベロップメント</div>
-                  </template>
-                </v-checkbox>
-                <v-checkbox v-model="serviceSelect"
-                            :input-value="serviceSelect"
-                            name="select-service[]"
-                            class="p-top-contact--check"
-                            :rules="selectRules"
-                            light
-                            dense
-                            color="info"
-                            value="その他">
-                  <template v-slot:label>
-                    <div class="info--text p-top-contact--check-label">その他</div>
-                  </template>
-                </v-checkbox>
-              </v-col>
+                    <v-col cols="12" sm="4" md="5" lg="4">
+                      <v-subheader>Eメール</v-subheader>
+                    </v-col>
+                    <v-col cols="12" sm="8" md="7" lg="8">
+                      <v-text-field name="_replyto"/>
+                    </v-col>
 
-              <v-col cols="12"
-                     sm="4"
-                     md="5"
-                     lg="4">
-                <v-subheader>ご相談<br class="d-none d-sm-block"><span class="d-block d-sm-none">・</span>お問い合わせ内容*</v-subheader>
-              </v-col>
-              <v-col cols="12"
-                     sm="8"
-                     md="7"
-                     lg="8">
-                <v-textarea v-model="message"
-                            name="message"
-                            :rules="messageRules"
-                            solo
-                            outlined
-                            flat
-                            required
-                            filled />
-              </v-col>
 
-            </v-row>
-            <v-row align="center"
-                   justify="end">
-              <v-col cols="12"
-                     sm="8"
-                     md="7"
-                     lg="8">
-                <p class="p-top-contact--note">
-                  <nuxt-link to="/privacy-policy">個人情報保護方針</nuxt-link>をご覧いただき、内容に同意いただけましたら、下記の送信ボタンを押してください。
-                </p>
-              </v-col>
-            </v-row>
-            <v-row align="center"
-                   justify="center"
-                   justify-sm="end">
-              <v-btn :disabled="!valid"
-                     class="mr-4"
-                     large
-                     depressed
-                     tile
-                     light
-                     color="info"
-                     type="submit">上記の内容で送信する</v-btn>
-            </v-row>
-          </v-form>
-        </v-col>
-      </v-row>
+
+                    <v-col cols="12" sm="4" md="5" lg="4">
+                      <v-subheader>ご相談<br class="d-none d-sm-block">
+                        <span class="d-block d-sm-none">・</span>お問い合わせ内容*
+                      </v-subheader>
+                    </v-col>
+                    <v-col cols="12" sm="8" md="7" lg="8">
+                      <v-textarea v-model="message" name="message"/>
+                    </v-col>
+  
+                  </v-row>
+
+                  <v-row align="center" justify="end">
+                    <v-col cols="12" sm="8" md="7" lg="8">
+                      <p class="p-top-contact--note">
+                        <nuxt-link to="/privacy-policy">個人情報保護方針</nuxt-link>をご覧いただき、内容に同意いただけましたら、下記の送信ボタンを押してください。
+                      </p>
+                    </v-col>
+                  </v-row>
+
+                  <v-row align="center" justify="center" justify-sm="end">
+                    <button type="submit" class="mr-4 v-btn v-btn--depressed v-btn--tile v-size--large info">
+                      <span class="v-btn__content">
+                        上記の内容で送信する
+                      </span>
+                    </button>
+                  </v-row>
+
+                </form>
+
+            </v-col>
+          </v-row>
         </v-container>
       </div>
 
@@ -492,6 +359,7 @@ export default {
   }
   .v-btn {
     font-family: $font-jp-normal;
+    background-color: $primary;
     clip-path: polygon(
       calc(100% - 8px) 0,
       0 0,
@@ -500,9 +368,6 @@ export default {
       100% 100%,
       100% 8px
     );
-  }
-  .theme--light.v-btn.v-btn--disabled:not(.v-btn--text):not(.v-btn--outlined) {
-    background-color: $light-gray-1 !important;
   }
 }
 </style>
