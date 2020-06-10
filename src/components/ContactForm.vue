@@ -193,4 +193,8 @@ export default {
     100% 8px
   );
 }
+
+.v-input--is-focused {
+  
+}
 </style>

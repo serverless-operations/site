@@ -48,7 +48,7 @@ export default {
 
     // お知らせのカード
     &__card {
-      padding: 40px;
+      padding: 40px 40px 24px 40px;
       position: relative;
       box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
       width: 100%;
@@ -58,7 +58,7 @@ export default {
         .p-blog-contents__title {
           color: $tertiary;
         }
-        background-color: rgba($secondary, 0.05);
+        background-color: #F3F4FC;
         // filter: blur(2px);
         // アイキャッチにprimary colorがかかる
         .p-blog-contents__image-cover::after {
