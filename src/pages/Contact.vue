@@ -50,21 +50,21 @@
                       <v-subheader>お名前<small>（漢字）</small></v-subheader>
                     </v-col>
                     <v-col cols="12" sm="8" md="7" lg="8">
-                      <v-text-field name="name"/>
+                      <v-text-field name="name-kanji"/>
                     </v-col>
 
                     <v-col cols="12" sm="4" md="5" lg="4">
                       <v-subheader>お名前<small>（ふりがな）</small></v-subheader>
                     </v-col>
                     <v-col cols="12" sm="8" md="7" lg="8">
-                      <v-text-field name="name"/>
+                      <v-text-field name="name-frigana"/>
                     </v-col>
 
                     <v-col cols="12" sm="4" md="5" lg="4">
                       <v-subheader>会社名</v-subheader>
                     </v-col>
                     <v-col cols="12" sm="8" md="7" lg="8">
-                      <v-text-field name="name"/>
+                      <v-text-field name="company-name"/>
                     </v-col>
 
                     <v-col cols="12" sm="4" md="5" lg="4">
@@ -87,7 +87,7 @@
                         サーバーレスディベロップメント
                       </label>
                       <label class="info--text p-top-contact--check-label info">
-                        <input type="checkbox" name="other" value="その他" > 
+                        <input type="checkbox" name="service-other" value="その他" > 
                         その他
                       </label>
                     </v-col>
