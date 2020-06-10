@@ -36,7 +36,7 @@
       <div class="p-news-bg"></div>
        
       <div class="container top-contact-form-container">
-        <div class="row justify-content-center">
+        <v-row align="center" justify="center">
           <div class="col-md-6 col-12">
             <h2 class="d-flex flex-column justify-center p-top-contact--title">
             Contact<span>お問い合わせ</span>
@@ -45,7 +45,7 @@
               AWS<small>（アマゾンウェブサービス）</small>などを利用したサーバーレスアプリケーションの設計・開発・保守運用等について<br>お困りの方は、こちらのフォームから気軽にお問い合わせください。2〜3営業日以内にメールで返信いたします。
             </p>
           </div>
-        </div>
+        </v-row>
       </div>
 
       <contact-form />
