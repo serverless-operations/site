@@ -34,203 +34,22 @@
       </div><!-- container -->
 
       <div class="p-news-bg"></div>
-
-      <!--div class="container mt-md-12">
-
-        <div class="row mt-md-12 align-center justify-space-between">
-
-          <div class="col-md-4 col-lg-5 col-12">
-            <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-contact--title">Contact<span>お問い合わせ</span></h2>
-            <p class="p-top-contact--paragraph">AWS<small>（アマゾンウェブサービス）</small>などを利用したサーバーレスアプリケーションの設計・開発・保守運用等についてお困りの方は、こちらのフォームから気軽にお問い合わせください。2〜3営業日以内にメールで返信いたします。</p>
+       
+      <div class="container top-contact-form-container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-12">
+            <h2 class="d-flex flex-column justify-center p-top-contact--title">
+            Contact<span>お問い合わせ</span>
+            </h2>
+            <p class="p-top-contact--paragraph">
+              AWS<small>（アマゾンウェブサービス）</small>などを利用したサーバーレスアプリケーションの設計・開発・保守運用等について<br>お困りの方は、こちらのフォームから気軽にお問い合わせください。2〜3営業日以内にメールで返信いたします。
+            </p>
           </div>
+        </div>
+      </div>
 
-          <div class="p-top-contact--form col-md-7 col-lg-6 col-12">
-            <div class="p-top-contact--form-shadow">
-              <v-form v-model="valid"
-                      name="contact"
-                      netlify>
-                <input type="hidden"
-                      name="form-name"
-                      value="contact">
-                <div class="row no-gutters" >
-                  <v-col cols="12"
-                        md="5"
-                        lg="4">
-                    <v-subheader>お名前<small>（漢字）</small>*</v-subheader>
-                  </v-col>
-                  <v-col cols="12"
-                        md="7"
-                        lg="8">
-                    <v-text-field v-model="name"
-                                  :rules="nameRules"
-                                  name="name"
-                                  single-line
-                                  outlined
-                                  solo
-                                  flat
-                                  dense
-                                  required
-                                  filled />
-                  </v-col>
+      <contact-form />
 
-                  <v-col cols="12"
-                        md="5"
-                        lg="4">
-                    <v-subheader>お名前<small>（ふりがな）</small>*</v-subheader>
-                  </v-col>
-                  <v-col cols="12"
-                        md="7"
-                        lg="8">
-                    <v-text-field v-model="nameFurigana"
-                                  :rules="nameFuriganaRules"
-                                  name="name-furigana"
-                                  single-line
-                                  outlined
-                                  solo
-                                  flat
-                                  dense
-                                  required
-                                  filled />
-                  </v-col>
-
-                  <v-col cols="12"
-                        md="5"
-                        lg="4">
-                    <v-subheader>会社名</v-subheader>
-                  </v-col>
-                  <v-col cols="12"
-                        md="7"
-                        lg="8">
-                    <v-text-field v-model="companyName"
-                                  name="company-name"
-                                  single-line
-                                  outlined
-                                  solo
-                                  flat
-                                  dense
-                                  filled />
-                  </v-col>
-
-                  <v-col cols="12"
-                        md="5"
-                        lg="4">
-                    <v-subheader>Eメール*</v-subheader>
-                  </v-col>
-                  <v-col cols="12"
-                        md="7"
-                        lg="8">
-                    <v-text-field v-model="email"
-                                  :rules="emailRules"
-                                  name="email"
-                                  single-line
-                                  outlined
-                                  solo
-                                  flat
-                                  dense
-                                  required
-                                  filled />
-                  </v-col>
-
-                  <v-col cols="12"
-                        md="5"
-                        lg="4">
-                    <v-subheader>ご検討中のサービス*</v-subheader>
-                  </v-col>
-                  <v-col cols="12"
-                        md="7"
-                        lg="8">
-                    <v-checkbox v-model="serviceSelect"
-                                :input-value="serviceSelect"
-                                name="select-service[]"
-                                class="p-top-contact--check"
-                                :rules="selectRules"
-                                light
-                                hide-details
-                                dense
-                                color="info"
-                                value="サーバーレスコンサルティング">
-                      <template v-slot:label>
-                        <div class="info--text p-top-contact--check-label">サーバーレスコンサルティング</div>
-                      </template>
-                    </v-checkbox>
-                    <v-checkbox v-model="serviceSelect"
-                                :input-value="serviceSelect"
-                                name="select-service[]"
-                                class="p-top-contact--check"
-                                :rules="selectRules"
-                                light
-                                hide-details
-                                dense
-                                color="info"
-                                value="サーバーレスディベロップメント">
-                      <template v-slot:label>
-                        <div class="info--text p-top-contact--check-label">サーバーレスディベロップメント</div>
-                      </template>
-                    </v-checkbox>
-                    <v-checkbox v-model="serviceSelect"
-                                :input-value="serviceSelect"
-                                name="select-service[]"
-                                class="p-top-contact--check"
-                                :rules="selectRules"
-                                light
-                                dense
-                                color="info"
-                                value="その他">
-                      <template v-slot:label>
-                        <div class="info--text p-top-contact--check-label">その他</div>
-                      </template>
-                    </v-checkbox>
-                  </v-col>
-
-                  <v-col cols="12"
-                        md="5"
-                        lg="4">
-                    <v-subheader>ご相談<br class="d-none d-md-block"><span class="d-block d-md-none">・</span>お問い合わせ内容*</v-subheader>
-                  </v-col>
-                  <v-col cols="12"
-                        md="7"
-                        lg="8">
-                    <v-textarea v-model="message"
-                                name="message"
-                                :rules="messageRules"
-                                solo
-                                outlined
-                                flat
-                                required
-                                filled />
-                  </v-col>
-
-                </div>
-                <v-row align="center"
-                      justify="end">
-                  <v-col cols="12"
-                        md="7"
-                        lg="8">
-                    <p class="p-top-contact--note">
-                      <g-link to="/privacy-policy">個人情報保護方針</g-link>をご覧いただき、内容に同意いただけましたら、下記の送信ボタンを押してください。
-                    </p>
-                  </v-col>
-                </v-row>
-                <v-row align="center"
-                      justify="center"
-                      justify-md="end">
-                  <v-btn :disabled="!valid"
-                        class="mr-4"
-                        large
-                        depressed
-                        tile
-                        light
-                        color="info"
-                        type="submit">上記の内容で送信する</v-btn>
-                </v-row>
-              </v-form>
-            </div><p-top-contact--form-shadow -->
-          <!--/div>
-
-        </div><mt-md-12 -->
-
-      <!--/div --><!-- container -->
-      
     </div><!-- v-content__wrap -->
   </div><!-- v-content -->
 </template>
@@ -270,10 +89,12 @@ query ($page: Int) {
 
 <script>
 import Post from '~/components/Post.vue'
+import ContactForm from '~/components/ContactForm.vue'
 
 export default {
    components: {
-    Post
+    Post,
+    ContactForm
   },
   props: ['news'],
   data() {
@@ -419,26 +240,16 @@ export default {
   }
 }
 
-// 右下下がりの背景パターン
-// .p-news-bg {
-//   pointer-events: none;
-//   background: url('~assets/images/pattern-bg-right.svg') no-repeat 50% 59px;
-//   width: 100%;
-//   background-size: cover;
-//   position: absolute;
-//   top: 5%;
-//   height: 1000px;
-//   @include media-breakpoint-up(sm) {
-//     top: 21%;
-//     height: 1000px;
-//   }
-//   @include media-breakpoint-up(md) {
-//     top: 18%;
-//     height: 800px;
-//   }
-//   @include media-breakpoint-up(lg) {
-//     top: 12%;
-//     height: 1300px;
-//   }
-// } // p-news-bg
+// お問い合わせセクション
+.top-contact-form-container {
+  padding: 120px 0;
+  h2 {
+    color: $primary;
+    margin-bottom: 48px;
+  }
+  p {
+    color: $primary;
+  }
+}
+
 </style>
