@@ -44,7 +44,7 @@
             <v-col cols="12" md="10" lg="8" class="p-top-contact--form">
               <div class="p-top-contact--form-shadow" />
 
-                <form action="https://formspree.io/xpzypqoe" method="POST" class="v-form">
+                <form action="https://formspree.io/mlepngje" method="POST" class="v-form">
                   <v-row no-gutters>
                     <v-col cols="12" sm="4" md="5" lg="4">
                       <v-subheader>お名前<small>（漢字）</small></v-subheader>
