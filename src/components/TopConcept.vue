@@ -173,8 +173,8 @@ export default {
     &--image-square,
     &--image-core {
       position: absolute;
-      top: -1% !important;
-      left: 6% !important;
+      top: 35%;
+      left: 50%;
       transform: translateY(-50%) translateX(-50%);
       @include media-breakpoint-up(md) {
         top: 45%;

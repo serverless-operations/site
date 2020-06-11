@@ -5,7 +5,7 @@ import 'vuetify/dist/vuetify.min.css'
 import DefaultLayout from '~/layouts/Default.vue'
 import Prism from 'prismjs'
 import '~/assets/css/prism-okaidia.css'
-import VueScrollReveal from 'gridsome-scroll-reveal';
+import VueScrollReveal from 'gridsome-scroll-reveal'
 
 export default function (Vue, { appOptions, head }) {
   
@@ -23,7 +23,7 @@ export default function (Vue, { appOptions, head }) {
   head.link.push({
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',
-  });
+  })
   
   //const opts = { ... } //opts includes, vuetify themes, icons, etc.
   Vue.use(Vuetify)
@@ -51,7 +51,7 @@ export default function (Vue, { appOptions, head }) {
     distance: '20px',
     reset: false,
     mobile: false
-  });
+  })
   
   // appOptions.vuetify = new Vuetify(opts);
   
