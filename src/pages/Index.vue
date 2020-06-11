@@ -9,18 +9,41 @@
                 src="../assets/images/top-main-logo.svg"
                 alt="Serverless Operations サーバーレスオペレーションズ ロゴマーク">
           </h1>
-          <div class="l-mainvisual-copytext">
-            <h2 class="p-mainvisual__japanese-sloagan">
-              サーバーレスで<br>
-              クラウドの価値を<br>
-              最大限に
-            </h2>
-            <p>
-              <img class="p-mainvisual__english-sloagan"
-                  src="../assets/images/top-main-copy.svg"
-                  alt="Maximize the cloud value with serverless">
-            </p>
-          </div>
+
+          
+            <div class="l-mainvisual-copytext">
+
+              
+                <h2 class="p-mainvisual__japanese-sloagan">
+                  <transition name="brandslogan-jp-1" appear>
+                    <span>
+                      サーバーレスで<br>
+                    </span> 
+                  </transition>
+                  <transition name="brandslogan-jp-2" appear>
+                    <span>
+                      クラウドの価値を<br>
+                    </span>
+                  </transition>
+                  <transition name="brandslogan-jp-3" appear>
+                    <span>
+                      最大限に
+                    </span>
+                  </transition>
+                </h2>
+              
+
+              <transition name="brandslogan-en" appear>
+                <p>
+                  <img class="p-mainvisual__english-sloagan"
+                      src="../assets/images/top-main-copy.svg"
+                      alt="Maximize the cloud value with serverless">
+                </p>
+              </transition>
+
+            </div>
+         
+
           <img class="p-mainvisual__brandsquare"
               src="../assets/images/top-main-square.svg"
               alt="Serverless Operations スクエアパターン">
@@ -283,5 +306,49 @@ export default {
       }
     }
   }
+
+  // Animation
+  .brandslogan-jp-1-enter-active {
+    transition: all 1.3s cubic-bezier(.93,0,.1,1);
+    opacity: 1;
+  }
+
+  .brandslogan-jp-1-enter {
+    opacity: 0;
+    padding-left: 64px;
+    background-color: #fff;
+  }
+
+  .brandslogan-jp-2-enter-active {
+    transition: all 1.8s cubic-bezier(.93,0,.1,1);
+    opacity: 1;
+  }
+
+  .brandslogan-jp-2-enter {
+    opacity: 0;
+    padding-left: 64px;
+    background-color: #fff;
+  }
+
+  .brandslogan-jp-3-enter-active {
+    transition: all 2.2s cubic-bezier(.93,0,.1,1);
+    opacity: 1;
+  }
+
+  .brandslogan-jp-3-enter {
+    opacity: 0;
+    padding-left: 64px;
+    background-color: #fff;
+  }
+
+  .brandslogan-en-enter-active {
+    transition: all 1.7s cubic-bezier(.93,0,.1,1);
+    opacity: 1;
+  }
+
+  .brandslogan-en-enter {
+    opacity: 0;
+  }
+
 } // p-mainvisual-content
 </style>
