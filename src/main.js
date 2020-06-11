@@ -7,7 +7,7 @@ import Prism from 'prismjs'
 import '~/assets/css/prism-okaidia.css'
 import VueScrollReveal from 'gridsome-scroll-reveal'
 
-export default function (Vue, { appOptions, head }) {
+export default function (Vue, { appOptions, head, VueScrollReveal }) {
   
   // Add an external Javascript before the closing </body> tag
   head.script.push({
