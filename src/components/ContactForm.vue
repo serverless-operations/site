@@ -58,7 +58,7 @@
                 </v-subheader>
               </v-col>
               <v-col cols="12" sm="8" md="7" lg="8">
-                <v-textarea v-model="message" name="message"/>
+                <v-textarea name="message"/>
               </v-col>
 
             </v-row>
@@ -66,7 +66,7 @@
             <v-row align="center" justify="end">
               <v-col cols="12" sm="8" md="7" lg="8">
                 <p class="p-top-contact--note">
-                  <nuxt-link to="/privacy-policy">個人情報保護方針</nuxt-link>をご覧いただき、内容に同意いただけましたら、下記の送信ボタンを押してください。
+                  <g-link to="/privacy-policy">個人情報保護方針</g-link>をご覧いただき、内容に同意いただけましたら、下記の送信ボタンを押してください。
                 </p>
               </v-col>
             </v-row>
@@ -195,6 +195,6 @@ export default {
 }
 
 .v-input--is-focused {
-  
+
 }
 </style>

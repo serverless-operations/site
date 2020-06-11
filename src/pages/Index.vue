@@ -83,6 +83,7 @@ import WorksCard from '~/components/WorksCard.vue'
 import TopServicesClients from '~/components/TopServicesClients.vue'
 import TopNewsContact from '~/components/TopNewsContact.vue'
 import Post from '~/components/Post.vue'
+import ContactForm from '~/components/ContactForm.vue'
 
 export default {
   components: {
@@ -94,7 +95,8 @@ export default {
     TopWorks,
     WorksCard,
     TopServicesClients,
-    TopNewsContact
+    TopNewsContact,
+    ContactForm
   },
   metaInfo: {
     title: 'Serverless Operations'
