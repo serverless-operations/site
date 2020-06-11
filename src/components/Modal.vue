@@ -424,6 +424,7 @@
     font-size: 1.5rem;
     font-family: $font-en-normal;
     transition: all 0.55s cubic-bezier(0.76, 0, 0.3, 1);
+    margin-right: 8px;
     @include media-breakpoint-up(md) {
       display: inline-block;
 
