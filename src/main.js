@@ -5,7 +5,7 @@ import 'vuetify/dist/vuetify.min.css'
 import DefaultLayout from '~/layouts/Default.vue'
 import Prism from 'prismjs'
 import '~/assets/css/prism-okaidia.css'
-import GridsomeScrollReveal from 'gridsome-scroll-reveal'
+import VueScrollReveal from 'gridsome-scroll-reveal'
 
 export default function (Vue, { appOptions, head }) {
   
@@ -44,13 +44,7 @@ export default function (Vue, { appOptions, head }) {
   })
 
   // Scroll Animation
-  Vue.use(GridsomeScrollReveal, {
-    class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
-    duration: 800,
-    scale: 1,
-    distance: '60px',
-    mobile: false
-  })
+  Vue.use(VueScrollReveal);
   
   // appOptions.vuetify = new Vuetify(opts);
   
