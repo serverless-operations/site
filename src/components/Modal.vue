@@ -66,17 +66,24 @@
               </g-link>
             </v-col>
 
-            <v-col cols="6" md="3" offset-md="0" class="c-modal__menu-column mt-6 mt-md-0">
+            <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-6 mt-md-0">
               <g-link @click.native="$emit('close');" to="/works-archives" class="c-modal__link">
                 <span class="c-modal__link--menu">Works</span>
                 <span class="c-modal__link--ja">導入事例</span>
               </g-link>
             </v-col>
 
-            <v-col cols="6" md="3" offset-md="0" class="c-modal__menu-column mt-6 mt-md-0">
+            <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-6 mt-md-0">
               <g-link @click.native="$emit('close');" to="/blog-archives" class="c-modal__link">
                 <span class="c-modal__link--menu">Blog</span>
                 <span class="c-modal__link--ja">開発ブログ</span>
+              </g-link>
+            </v-col>
+
+            <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-6 mt-md-0">
+              <g-link @click.native="$emit('close');" to="/news-archives" class="c-modal__link">
+                <span class="c-modal__link--menu">News</span>
+                <span class="c-modal__link--ja">おしらせ</span>
               </g-link>
             </v-col>
             <!-- c-modal__menu-column -->
