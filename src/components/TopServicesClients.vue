@@ -372,6 +372,7 @@ export default {
           width: 100%;
           li {
             padding: 10px 24px;
+            margin-right: 8px;
             font-size: 0.875rem;
             font-family: $font-jp-normal;
             display: inline-block;
@@ -412,6 +413,7 @@ export default {
         text-decoration: none;
         display: block;
         position: absolute;
+        color: $primary;
         &::before {
           content: '';
           background-image: url('../assets/images/icon-more-detail-blue.svg');
