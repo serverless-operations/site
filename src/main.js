@@ -24,6 +24,9 @@ export default function (Vue, { router, head, appOptions }) {
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',
   })
+
+  // Set default layout as a global component
+  Vue.component('Layout', DefaultLayout)
   
   //const opts = { ... } //opts includes, vuetify themes, icons, etc.
   Vue.use(Vuetify)
@@ -52,9 +55,4 @@ export default function (Vue, { router, head, appOptions }) {
     mobile: true,
     interval: 600
   })
-  
-  // appOptions.vuetify = new Vuetify(opts);
-  
-  // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout)
 }
