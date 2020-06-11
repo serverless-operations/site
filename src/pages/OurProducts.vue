@@ -170,15 +170,10 @@ Vue.use(VueGitHubButtons, { useCache: false });
 
 export default {
   // mixins: [Meta],
-  data() {
+  metaInfo () {
     return {
-      meta: {
-        title: '私たちが開発したプロダクト',
-        description:
-          'サーバーレスアプリケーションの開発をより簡単に・容易にするために、私たちが独自に開発したプロダクトをご紹介します。',
-        type: 'article',
-        url: 'https://serverless.co.jp/our-products/'
-      }
+      title: '私達が開発したプロダクト',
+      description: 'サーバーレスアプリケーションの開発をより簡単に・容易にするために、私たちが独自に開発したプロダクトをご紹介します。'
     }
   },
   components: {

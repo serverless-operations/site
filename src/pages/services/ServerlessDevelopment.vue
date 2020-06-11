@@ -266,17 +266,10 @@
 <script>
 // import Meta from '@/assets/mixins/meta'
 export default {
-  // mixins: [Meta],
-  data() {
+  metaInfo () {
     return {
-      meta: {
-        title: 'サーバーレスディベロップメント',
-        description:
-          'サーバーレスアプリケーションの開発サービスです。Serverless Consultingは開発や運用はお客さまが実施しますが、それとは反対にServerless Developmentは設計・開発・保守運用までわれわれが請け負います。',
-        type: 'article',
-        url: 'https://serverless.co.jp/services/serverless-development/'
-        // image: 'https://example.com/img/ogp/test.jpg'
-      }
+      title: 'サーバーレスディベロップメント',
+      description: 'サーバーレスアプリケーションの開発サービスです。Serverless Consultingは開発や運用はお客さまが実施しますが、それとは反対にServerless Developmentは設計・開発・保守運用までわれわれが請け負います。'
     }
   },
   fetch({ store }) {

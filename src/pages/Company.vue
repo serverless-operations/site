@@ -246,19 +246,12 @@
 </template>
 
 <script>
-// import Meta from '~/assets/mixins/meta'
+
 export default {
-  // mixins: [Meta],
-  data() {
+  metaInfo () {
     return {
-      meta: {
-        title: '会社概要',
-        description:
-          'われわれのミッションは、サーバーレスでの開発を通しクラウドの価値そのものを最大限引き出し、顧客のビジネスを大きく加速させることにあります。',
-        type: 'article',
-        url: 'https://serverless.co.jp/company/'
-        // image: 'https://example.com/img/ogp/test.jpg'
-      }
+      title: '会社案内',
+      description: 'われわれのミッションは、サーバーレスでの開発を通しクラウドの価値そのものを最大限引き出し、顧客のビジネスを大きく加速させることにあります。'
     }
   },
   components: {},

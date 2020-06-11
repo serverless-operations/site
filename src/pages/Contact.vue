@@ -21,10 +21,10 @@
             <img src="@/assets/images/company-main-logo-sp.svg"
                 class="p-contact-header__logo-sp d-md-none" />
           </div>
+
           <v-container class="p-contact-header__container">
             <v-row>
-              <v-col cols="12"
-                    md="6">
+              <v-col cols="12" md="6">
                 <h2 class="p-contact-header__title">
                   Contact
                   <span class="p-contact-header__title-jp">お問い合わせ</span>
@@ -37,6 +37,7 @@
               </v-col>
             </v-row>
           </v-container>
+
         </div>
 
         <contact-form />
@@ -54,6 +55,11 @@ import ContactForm from '~/components/ContactForm.vue'
 export default {
   components: {
     ContactForm
+  },
+  metaInfo () {
+    return {
+      title: 'お問い合わせ'
+    }
   },
 }
 

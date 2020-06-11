@@ -303,17 +303,10 @@
 <script>
 // import Meta from '/assets/mixins/meta'
 export default {
-  // mixins: [Meta],
-  data() {
+  metaInfo () {
     return {
-      meta: {
-        title: 'サーバーレスオペレーションズ',
-        description:
-          'サーバーレスとは、付加価値を産まない重労働をクラウドへアウトソースし、開発者がビジネスのコアバリューに集中するための クラウドの利用方法であり開発のための手段です。',
-        type: 'article',
-        url: 'https://serverless.co.jp/serverless-operations/'
-        // image: 'https://example.com/img/ogp/test.jpg'
-      }
+      title: 'サーバーレスオペレーションズ',
+      description: 'サーバーレスとは、付加価値を産まない重労働をクラウドへアウトソースし、開発者がビジネスのコアバリューに集中するための クラウドの利用方法であり開発のための手段です。'
     }
   },
   fetch({ store }) {

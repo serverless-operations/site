@@ -272,17 +272,10 @@
 <script>
 // import Meta from '@/assets/mixins/meta'
 export default {
-  // mixins: [Meta],
-  data() {
+  metaInfo () {
     return {
-      meta: {
-        title: 'サーバーレスコンサルティング',
-        description:
-          'お客さまが開発・運用するサーバーレスアプリケーションのコンサルティングをいたします。',
-        type: 'article',
-        url: 'https://serverless.co.jp/services/serverless-consulting/'
-        // image: 'https://example.com/img/ogp/test.jpg'
-      }
+      title: 'サーバーレスコンサルティング',
+      description: 'お客さまが開発・運用するサーバーレスアプリケーションのコンサルティングをいたします。'
     }
   },
   fetch({ store }) {
