@@ -569,6 +569,7 @@
     }
     .v-icon {
       font-size: 26px;
+      color: #fff;
     }
   }
   &__sns-link {
