@@ -1,15 +1,15 @@
 <template>
-  <div class="v-application v-application--is-ltr theme--dark">
-    <div class="v-application--wrap">
-      <header-component />
-        <transition name="fade" appear>
+  <div id="main-wrapper" class="v-application v-application--is-ltr theme--dark">
+    <transition name="fade" appear>
+      <div class="v-application--wrap">
+        <header-component />
           <main class="v-content">
             <slot/>
           </main>
-        </transition>
-      <call-to-action />
-      <footer-component />
-    </div>
+        <call-to-action />
+        <footer-component />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -37,7 +37,7 @@ export default {
 <style lang="scss">
 
 .fade-enter-active {
-  transition: all 2s cubic-bezier(.93,0,.1,1);
+  transition: all 0.6s cubic-bezier(.93,0,.1,1);
   opacity: 1;
 }
 
@@ -126,12 +126,4 @@ export default {
   }
 }
 
-.fade-enter-active {
-  transition: all 2s cubic-bezier(.93,0,.1,1);
-  opacity: 1;
-}
-
-.fade-enter {
-  opacity: 0;
-}
 </style>
