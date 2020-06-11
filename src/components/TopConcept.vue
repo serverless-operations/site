@@ -3,25 +3,29 @@
     <div class="container">
       <v-row>
         <v-col class="p-top-concept--vertical-title">
-          <h2>Concept</h2>
+          <h2 v-scroll-reveal.reset="{ delay: 500 }">Concept</h2>
         </v-col>
         <v-col cols="auto"
-               class="p-top-concept--body">
+               class="p-top-concept--body"
+               v-scroll-reveal.reset="{ delay: 250 }">
           <img class="p-top-concept--image-circles"
                src="../assets/images/top-concept-body-circles.svg"
-               alt="コンセプトイメージ 中心の円筒">
+               alt="コンセプトイメージ 中心の円筒"
+               v-scroll-reveal.reset="{ delay: 1400 }">
           <img class="p-top-concept--image-square"
                src="../assets/images/top-concept-body-square.svg"
-                alt="Serverless Operations Brand Square">
+               alt="Serverless Operations Brand Square"
+               v-scroll-reveal.reset="{ delay: 700 }">
           <img class="p-top-concept--image-core"
                src="../assets/images/top-concept-body-core.svg"
-               alt="Serverless Operations 中心の小さい四角型のコアイメージ">
+               alt="Serverless Operations 中心の小さい四角型のコアイメージ"
+               v-scroll-reveal.reset="{ delay: 300 }">
 
           <v-row justify="start"
                  justify-md="end">
             <v-col class="p-top-concept--logo"
                    cols="auto">
-              <img src="../assets/images/top-concept-logo.svg" alt="Serverless Operations 英語ロゴタイプフェイス">
+              <img src="../assets/images/top-concept-logo.svg" alt="Serverless Operations 英語ロゴタイプフェイス" v-scroll-reveal.reset="{ delay: 1200 }">
             </v-col>
           </v-row>
 
@@ -29,15 +33,21 @@
                  justify-md="start">
             <v-col class="p-top-concept--content"
                    cols="12"
-                   md="8"
-                   lg="6"
-                   xl="4">
-              <h3>
-                サーバーレスで<br>
-                ビジネスのコアバリューに<br>
-                集中する
+                   md="7"
+                   lg="5"
+                   xl="3">
+
+              <h3 v-scroll-reveal.reset="{ delay: 900  }">
+                <transition name="top-concept-jp-1" appear>
+                  <span>
+                  サーバーレスで<br>
+                  ビジネスのコアバリューに<br>
+                  集中する
+                  </span>
+                </transition>
               </h3>
-              <p>Serverless Operationsは、これまでグローバルの第一線で培ってきたクラウド技術<small>（AWS − アマゾンウェブサービス）</small>の豊富な実績と知見を活かし、お客さまのサーバーレスによる開発や運用の支援、コンサルティングまで一貫してサポート。サーバーレスに関するさまざまな課題を解決いたします。</p>
+
+              <p v-scroll-reveal.reset="{ delay: 1100  }">Serverless Operationsは、これまでグローバルの第一線で培ってきたクラウド技術<small>（AWS − アマゾンウェブサービス）</small>の豊富な実績と知見を活かし、お客さまのサーバーレスによる開発や運用の支援、コンサルティングまで一貫してサポート。サーバーレスに関するさまざまな課題を解決いたします。</p>
               <span class="p-top-concept--more">
                 <g-link to="/services">About Serverless Operations</g-link>
               </span>

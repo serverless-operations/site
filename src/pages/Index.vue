@@ -10,28 +10,25 @@
                 alt="Serverless Operations サーバーレスオペレーションズ ロゴマーク">
           </h1>
 
-          
             <div class="l-mainvisual-copytext">
 
-              
-                <h2 class="p-mainvisual__japanese-sloagan">
-                  <transition name="brandslogan-jp-1" appear>
-                    <span>
-                      サーバーレスで<br>
-                    </span> 
-                  </transition>
-                  <transition name="brandslogan-jp-2" appear>
-                    <span>
-                      クラウドの価値を<br>
-                    </span>
-                  </transition>
-                  <transition name="brandslogan-jp-3" appear>
-                    <span>
-                      最大限に
-                    </span>
-                  </transition>
-                </h2>
-              
+              <h2 class="p-mainvisual__japanese-sloagan">
+                <transition name="brandslogan-jp-1" appear>
+                  <span>
+                    サーバーレスで<br>
+                  </span> 
+                </transition>
+                <transition name="brandslogan-jp-2" appear>
+                  <span>
+                    クラウドの価値を<br>
+                  </span>
+                </transition>
+                <transition name="brandslogan-jp-3" appear>
+                  <span>
+                    最大限に
+                  </span>
+                </transition>
+              </h2>
 
               <transition name="brandslogan-en" appear>
                 <p>
@@ -47,11 +44,14 @@
           <img class="p-mainvisual__brandsquare"
               src="../assets/images/top-main-square.svg"
               alt="Serverless Operations スクエアパターン">
+
           <div id="scroll-line-animation"
-              class="l-scroll-animation">
+              class="l-scroll-animation"
+              v-scroll-reveal.reset="{ delay: 2600 }">
             <span class="p-scroll-text">Scroll</span>
             <span class="p-scroll-line"></span>
           </div>
+
         </v-container>
       </div>
 
@@ -342,7 +342,8 @@ export default {
   }
 
   .brandslogan-en-enter-active {
-    transition: all 1.7s cubic-bezier(.93,0,.1,1);
+    transition: all 2s ease-in-out;
+    transition-delay: 1s;
     opacity: 1;
   }
 
