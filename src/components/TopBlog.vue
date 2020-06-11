@@ -7,7 +7,7 @@
         <div class="row align-center justify-space-between">
           
           <div class="col-md-6 col-12">
-            <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title">Blog<span>開発ブログ</span></h2>
+            <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title" v-scroll-reveal.reset="{ delay: 500 }">Blog<span>開発ブログ</span></h2>
           </div>
 
           <div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
@@ -17,7 +17,7 @@
         </div><!-- row -->
       
         <div class="p-blog-contents row">
-          <div v-for="{ node } in $static.blog.edges" :key="node.id" class="r-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-6">
+          <div v-for="{ node } in $static.blog.edges" :key="node.id" class="r-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-6" v-scroll-reveal.reset="{ delay: 600 }">
             <BlogCard :post="node" />
           </div>
         </div>

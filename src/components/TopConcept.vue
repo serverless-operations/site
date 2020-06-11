@@ -5,9 +5,11 @@
         <v-col class="p-top-concept--vertical-title">
           <h2 v-scroll-reveal.reset="{ delay: 500 }">Concept</h2>
         </v-col>
+
         <v-col cols="auto"
                class="p-top-concept--body"
                v-scroll-reveal.reset="{ delay: 250 }">
+          
           <img class="p-top-concept--image-circles"
                src="../assets/images/top-concept-body-circles.svg"
                alt="コンセプトイメージ 中心の円筒"
@@ -171,8 +173,8 @@ export default {
     &--image-square,
     &--image-core {
       position: absolute;
-      top: 35%;
-      left: 50%;
+      top: -1% !important;
+      left: 6% !important;
       transform: translateY(-50%) translateX(-50%);
       @include media-breakpoint-up(md) {
         top: 45%;
