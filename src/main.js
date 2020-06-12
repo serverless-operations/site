@@ -5,7 +5,6 @@ import 'vuetify/dist/vuetify.min.css'
 import DefaultLayout from '~/layouts/Default.vue'
 import Prism from 'prismjs'
 import '~/assets/css/prism-okaidia.css'
-//import GridsomeScrollReveal from 'gridsome-scroll-reveal';
 
 export default function (Vue, { head, appOptions }) {
   
@@ -24,9 +23,6 @@ export default function (Vue, { head, appOptions }) {
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',
   })
-
-  // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout)
   
   //const opts = { ... } //opts includes, vuetify themes, icons, etc.
   Vue.use(Vuetify)
@@ -46,13 +42,7 @@ export default function (Vue, { head, appOptions }) {
     }
   })
 
-  // Scroll Animation
-  /*Vue.use(GridsomeScrollReveal, {
-    reset: true,
-    class: 'v-scroll-reveal',
-    duration: 500,
-    distance: '20px',
-    mobile: true,
-    interval: 600
-  })*/
+  // Set default layout as a global component
+  Vue.component('Layout', DefaultLayout)
+
 }
