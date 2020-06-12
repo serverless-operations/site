@@ -5,9 +5,9 @@ import 'vuetify/dist/vuetify.min.css'
 import DefaultLayout from '~/layouts/Default.vue'
 import Prism from 'prismjs'
 import '~/assets/css/prism-okaidia.css'
-import VueScrollReveal from 'vue-scroll-reveal';
+import GridsomeScrollReveal from 'gridsome-scroll-reveal';
 
-export default function (Vue, { router, head, appOptions, isClient, isServer }) {
+export default function (Vue, { router, head, appOptions }) {
   
   // Add an external Javascript before the closing </body> tag
   head.script.push({
@@ -47,5 +47,12 @@ export default function (Vue, { router, head, appOptions, isClient, isServer }) 
   })
 
   // Scroll Animation
-  Vue.use(VueScrollReveal);
+  Vue.use(GridsomeScrollReveal, {
+    reset: true,
+    class: 'v-scroll-reveal',
+    duration: 500,
+    distance: '20px',
+    mobile: true,
+    interval: 600
+  })
 }
