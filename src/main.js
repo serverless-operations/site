@@ -5,7 +5,7 @@ import 'vuetify/dist/vuetify.min.css'
 import DefaultLayout from '~/layouts/Default.vue'
 import Prism from 'prismjs'
 import '~/assets/css/prism-okaidia.css'
-import GridsomeScrollReveal from 'gridsome-scroll-reveal';
+//import GridsomeScrollReveal from 'gridsome-scroll-reveal';
 
 export default function (Vue, { router, head, appOptions }) {
   
