@@ -47,12 +47,12 @@ export default function (Vue, { router, head, appOptions }) {
   })
 
   // Scroll Animation
-  Vue.use(GridsomeScrollReveal, {
+  /*Vue.use(GridsomeScrollReveal, {
     reset: true,
     class: 'v-scroll-reveal',
     duration: 500,
     distance: '20px',
     mobile: true,
     interval: 600
-  })
+  })*/
 }
