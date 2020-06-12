@@ -66,17 +66,10 @@
 <script>
 // import Meta from '~/assets/mixins/meta'
 export default {
-  // mixins: [Meta],
-  data() {
+  metaInfo () {
     return {
-      meta: {
-        title: 'プライバシーポリシー',
-        // description:
-        // 'サーバーレスアプリケーションの設計・開発・保守運用等についてお困りの方は、こちらのフォームから気軽にお問い合わせください。2〜3営業日以内にメールで返信いたします。',
-        type: 'article',
-        url: 'https://serverless.co.jp/privacy-policy/'
-        // image: 'https://example.com/img/ogp/test.jpg'
-      }
+      title: 'プライバシーポリシー',
+      description: '個人情報保護方針'
     }
   },
   fetch({ store }) {
