@@ -8,7 +8,7 @@ import '~/assets/css/prism-okaidia.css'
 import '~/assets/js/chatplus.js'
 import GridsomeScrollReveal from 'gridsome-scroll-reveal'
 
-export default function (Vue, { head, appOptions }) {
+export default function (Vue, { head, appOptions, isClient }) {
   
   // Add an external Javascript before the closing </body> tag
   head.script.push({
