@@ -67,7 +67,7 @@ module.exports = {
           '/blog/*': {
             changefreq: 'weekly',
             priority: 0.7
-          }
+          },
           '/works/*': {
             changefreq: 'monthly',
             priority: 0.7
