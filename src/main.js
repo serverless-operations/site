@@ -48,12 +48,13 @@ export default function (Vue, { head, appOptions, isClient }) {
   Vue.component('Layout', DefaultLayout)
 
   if (process.isClient) {
-    Vue.use(VueScrollReveal, {
-      class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
-      duration: 800,
-      scale: 1,
-      distance: '10px',
-      mobile: false
+    Vue.use(require('vue-scroll-reveal').default, {
+      reset: true,
+      class: 'v-scroll-reveal',
+      duration: 500,
+      distance: '20px',
+      mobile: true,
+      interval: 600
     })
   }
 }
