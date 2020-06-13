@@ -6,7 +6,7 @@
         <v-container>
           <h1>
             <img class="p-mainvisual__logomark"
-                src="../assets/images/top-main-logo.svg"
+                src="@/assets/images/top-main-logo.svg"
                 alt="Serverless Operations サーバーレスオペレーションズ ロゴマーク">
           </h1>
 
@@ -33,7 +33,7 @@
               <transition name="brandslogan-en" appear>
                 <p>
                   <img class="p-mainvisual__english-sloagan"
-                      src="../assets/images/top-main-copy.svg"
+                      src="@/assets/images/top-main-copy.svg"
                       alt="Maximize the cloud value with serverless">
                 </p>
               </transition>

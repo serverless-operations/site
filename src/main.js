@@ -5,6 +5,7 @@ import 'vuetify/dist/vuetify.min.css'
 import DefaultLayout from '~/layouts/Default.vue'
 import Prism from 'prismjs'
 import '~/assets/css/prism-okaidia.css'
+import '~/assets/js/chatplus.js'
 
 export default function (Vue, { head, appOptions }) {
   
