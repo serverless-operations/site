@@ -39,6 +39,7 @@ module.exports = {
   },
 
   plugins: [
+    // Data Source WordPress
     {
       use: '@gridsome/source-wordpress',
       options: {
@@ -46,10 +47,32 @@ module.exports = {
         typeName: 'WordPress', // GraphQL schema name (Optional)
       }
     },
+    // Google Analytics
     {
       use: '@gridsome/plugin-google-analytics',
       options: {
         id: 'UA-149835018-1'
+      }
+    }
+    // Sitemap.xml
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        // exclude: ['/exclude-me'],
+        config: {
+          '/news/*': {
+            changefreq: 'weekly',
+            priority: 0.5
+          },
+          '/blog/*': {
+            changefreq: 'weekly',
+            priority: 0.7
+          }
+          '/works/*': {
+            changefreq: 'monthly',
+            priority: 0.7
+          }
+        }
       }
     }
   ],
