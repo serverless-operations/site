@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.2",
+    "@gridsome/plugin-google-analytics": "^0.1.1",
     "@gridsome/source-wordpress": "^0.5.0",
     "gridsome": "^0.7.14",
     "gridsome-plugin-remark-prismjs-all": "^0.3.5",

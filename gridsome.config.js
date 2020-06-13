@@ -45,6 +45,12 @@ module.exports = {
         baseUrl: 'https://f6642def64a63651c07142605e040674c5441f6d.hl-a.getshifter.co', // required
         typeName: 'WordPress', // GraphQL schema name (Optional)
       }
+    },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'UA-149835018-1'
+      }
     }
   ],
 
