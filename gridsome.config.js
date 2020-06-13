@@ -53,7 +53,7 @@ module.exports = {
       options: {
         id: 'UA-149835018-1'
       }
-    }
+    },
     // Sitemap.xml
     {
       use: '@gridsome/plugin-sitemap',
