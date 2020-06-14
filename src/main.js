@@ -6,9 +6,9 @@ import DefaultLayout from '~/layouts/Default.vue'
 import Prism from 'prismjs'
 import '~/assets/css/prism-okaidia.css'
 import '~/assets/js/chatplus.js'
-import VueScrollReveal from 'vue-scroll-reveal';
+import GridsomeScrollReveal from 'gridsome-scroll-reveal';
 
-export default function (Vue, { head, appOptions, isClient }) {
+export default function (Vue, { router, head, appOptions, isClient, isServer }) {
   
   // Add an external Javascript before the closing </body> tag
   head.script.push({
@@ -47,14 +47,5 @@ export default function (Vue, { head, appOptions, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
 
-  if (process.isClient) {
-    Vue.use(require('vue-scroll-reveal').default, {
-      reset: true,
-      class: 'v-scroll-reveal',
-      duration: 500,
-      distance: '20px',
-      mobile: true,
-      interval: 600
-    })
-  }
+  Vue.use(GridsomeScrollReveal);
 }
