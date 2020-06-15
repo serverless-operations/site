@@ -376,7 +376,7 @@ export default {
       font-size: 1.5rem;
       line-height: 1;
       @include media-breakpoint-up(lg) {
-        font-size: 3.4rem;
+        font-size: 3rem;
       }
     }
   } // &__title
