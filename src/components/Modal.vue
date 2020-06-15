@@ -60,28 +60,28 @@
               </div><!-- c-modal__services-block -->
             </v-col>
 
-            <v-col cols="6" md="3" offset-md="0" class="c-modal__menu-column mt-6 mt-md-0">
+            <v-col cols="6" md="3" offset-md="0" class="c-modal__menu-column mt-3 mt-md-0">
               <g-link @click.native="$emit('close');" to="/company" class="c-modal__link" v-scroll-reveal.reset="{ delay: 250 }">
                 <span class="c-modal__link--menu">Company</span> 
                 <span class="c-modal__link--ja">会社案内</span>
               </g-link>
             </v-col>
 
-            <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-6 mt-md-0">
+            <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-3 mt-md-0">
               <g-link @click.native="$emit('close');" to="/works-archives" class="c-modal__link" v-scroll-reveal.reset="{ delay: 300 }">
                 <span class="c-modal__link--menu">Works</span>
                 <span class="c-modal__link--ja">導入事例</span>
               </g-link>
             </v-col>
 
-            <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-6 mt-md-0">
+            <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-3 mt-md-0">
               <g-link @click.native="$emit('close');" to="/blog-archives" class="c-modal__link" v-scroll-reveal.reset="{ delay: 350 }">
                 <span class="c-modal__link--menu">Blog</span>
                 <span class="c-modal__link--ja">開発ブログ</span>
               </g-link>
             </v-col>
 
-            <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-6 mt-md-0">
+            <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-3 mt-md-0">
               <g-link @click.native="$emit('close');" to="/news-archives" class="c-modal__link" v-scroll-reveal.reset="{ delay: 400 }">
                 <span class="c-modal__link--menu">News</span>
                 <span class="c-modal__link--ja">おしらせ</span>
@@ -123,7 +123,7 @@
               </div>
             </v-col>
 
-            <v-col cols="8" md="4" lg="4" xl="3" offset="2" offset-md="1" offset-lg="0">
+            <v-col cols="12" md="4" lg="4" xl="3" offset-md="2" offset-lg="0">
               <div class="c-modal__contact-button-wrapper" v-scroll-reveal.reset="{ delay: 400 }">
                 <g-link
                   to="/contact"
@@ -333,7 +333,7 @@
     // 各メニューの文字
     &--menu {
       color: white;
-      font-size: 1.9rem;
+      font-size: 1rem;
       line-height: 1;
       display: block;
       transition: all 0.825s cubic-bezier(0.76, 0, 0.3, 1);
