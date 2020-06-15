@@ -49,7 +49,7 @@
           <v-col cols="1"
                  md="1"
                  class="offset-md-1">
-            <h2 class="p-company-information__header">Company Infomation</h2>
+            <h2 class="p-company-information__header">Company Information</h2>
           </v-col>
 
           <v-col cols="11"
