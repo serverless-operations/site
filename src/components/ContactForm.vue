@@ -4,13 +4,29 @@
       <v-col cols="12" md="10" lg="8" class="p-top-contact--form">
         <div class="p-top-contact--form-shadow" />
 
-          <form action="https://formspree.io/mlepngje" method="POST" class="v-form">
+          <form action="https://formspree.io/mlepngje" 
+                submit="checkForm" 
+                method="POST" 
+                class="v-form"
+                novalidate="true"
+          >
+            <!--  ttps://formspree.io/xpzypqoeh-->
+
+            <!--p v-if="errors && errors.length">
+              <b>Please correct the following error(s):</b>
+              <ul>
+                <li v-for="error in errors" :key="error">{{ error }}</li>
+              </ul>
+            </p -->
+            
             <v-row no-gutters>
               <v-col cols="12" sm="4" md="5" lg="4">
                 <v-subheader>お名前<small>（漢字）</small></v-subheader>
               </v-col>
               <v-col cols="12" sm="8" md="7" lg="8">
-                <v-text-field name="name-kanji"/>
+                <v-text-field
+                  name="name-kanji"
+                />
               </v-col>
 
               <v-col cols="12" sm="4" md="5" lg="4">
@@ -88,7 +104,7 @@
 
 <script>
 export default {
-
+  
 }
 
 </script>

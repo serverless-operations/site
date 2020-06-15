@@ -42,17 +42,16 @@
 
                   <v-row class="justify-center">
                     <div class="works-company-profile col-10 row">
-                      <div class="col-4">
+                      <v-col cols="12" md="4" class="company-logo-container">
                         <g-image :src="$page.wordPressWorks.acf.companyLogo.sourceUrl" :alt="$page.wordPressWorks.acf.companyLogo.altText" class="company-logo"/>
-                      </div>
+                      </v-col>
 
-                      <div class="col-8">
+                      <v-col cols="12" md="8">
                         <h3 v-html="$page.wordPressWorks.acf.companyName" class="company-name"/>
                         <p v-html="$page.wordPressWorks.acf.companyProfile" class="company-profile"/>
-                      </div>
+                      </v-col>
                     </div>
                   </v-row>
-                 
 
                 </section>
               </v-col>
@@ -175,17 +174,35 @@ export default {
 <style lang="scss" scoped>
 .works-image {
   width: 100%;
+  @include media-breakpoint-up(md) {
+    width: 100%;
+  }
 }
 .works-company-profile {
-  padding: 24px 40px;
-  margin-top: -80px;
-  margin-bottom: 104px;
+  padding: 8px 16px;
+  margin-top: -32px;
+  margin-bottom: 56px;
   background-color: #fff;
   box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
-  .company-logo {
-    width: 100%;
-    height: auto !important;
+  @include media-breakpoint-up(md) {
+    padding: 24px 40px;
+    margin-top: -80px;
+    margin-bottom: 104px;
+    background-color: #fff;
+    box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
   }
+  .company-logo-container {
+    text-align: center;
+    .company-logo {
+      width: 60%;
+      height: auto !important;
+      @include media-breakpoint-up(md) {
+        width: 100%;
+        height: auto !important;
+      }
+    }
+  }
+  
   .company-name {
     font-size: 24px;
     font-family: $font-jp-bold;
@@ -193,10 +210,6 @@ export default {
     padding-bottom: 16px;
     margin-bottom: 16px;
     border-bottom: 1px solid $mid-gray-3;
-  }
-
-  .company-profile {
-
   }
 }
 
@@ -300,8 +313,8 @@ export default {
   // 記事部分
   &__article {
     margin-top: 24px;
-    @include media-breakpoint-up(lg) {
-      margin-top: 66px;
+    @include media-breakpoint-up(md) {
+      margin-top: 56px;
     }
   }
 
@@ -336,6 +349,7 @@ export default {
     font-size: 1.5rem;
     font-family: $font-jp-bold;
     line-height: 30px;
+    padding: 0;
     margin: 12px 0 18px;
     @include media-breakpoint-up(md) {
       margin: 24px 0 56px;
