@@ -221,7 +221,7 @@
       &--top {
         display: block;
         font-size: 0.75rem;
-        margin: 8px 0 4px;
+        margin: 8px 0 14px;
         font-family: $font-jp-normal;
         line-height: 1;
         @include media-breakpoint-up(lg) {
@@ -233,6 +233,7 @@
       &--bottom {
         display: block;
         font-size: 0.875rem;
+        margin-top: 12px;
         @include media-breakpoint-up(lg) {
           font-size: 1rem;
         }
