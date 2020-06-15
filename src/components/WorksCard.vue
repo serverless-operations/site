@@ -82,7 +82,7 @@ export default {
       @include media-breakpoint-up(md) {
         padding: 40px;
         width: 70%;
-        margin-left: 10%;
+        margin-left: 15%;
         margin-top: -100px;
       }
 
