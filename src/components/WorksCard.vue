@@ -14,16 +14,16 @@
       <v-card class="p-works-contents__card">
 
         <div class="p-works-contents__title-block row">
-          <div class="col-3">
+          <v-col cols="12" md="3" class="company-logo-container">
              <g-image :src="post.acf.companyLogo.sourceUrl" :alt="post.acf.companyLogo.altText" class="company-logo"/>
-          </div>
-          <div class="col-9">
+          </v-col>
+          <v-col cols="12" md="9">
             <div class="v-card__text p-works-contents__date" :datetime="post.date">{{post.date}}</div>
             <h3 v-html="post.title" class="v-card__title p-works-contents__title" />
             <div class="category-name" v-for="tags in post.tags" :key="tags.id" >
               <span>{{ tags.title }}</span>
             </div>
-          </div>
+          </v-col>
         </div>
 
       </v-card>
@@ -51,8 +51,13 @@ export default {
     text-decoration: none;
     .works-image {
       width: 100%;
-      height: 480px;
+      height: 240px;
       object-fit: cover;
+      @include media-breakpoint-up(md) {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+      }
     }
   }
 
@@ -65,14 +70,33 @@ export default {
 
     // お知らせのカード
     &__card {
-      padding: 40px;
+      padding: 24px;
       position: relative;
       z-index: 3;
       box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
-      width: 70%;
-      margin-left: 10%;
-      margin-top: -100px;
+      width: 90%;
+      margin-left: 5%;
+      margin-top: -32px;
       transition: all 0.4s cubic-bezier(0.76, 0, 0.3, 1);
+
+      @include media-breakpoint-up(md) {
+        padding: 40px;
+        width: 70%;
+        margin-left: 10%;
+        margin-top: -100px;
+      }
+
+      .company-logo-container {
+        text-align: center;
+        .company-logo {
+          width: 60%;
+          height: auto !important;
+          @include media-breakpoint-up(md) {
+            width: 100%;
+            height: auto !important;
+          }
+        }
+      }
 
       &:hover {
         .p-works-contents__title {

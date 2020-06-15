@@ -152,7 +152,10 @@ export default {
 } // p-news-header
 
 .p-works-contents {
-  padding: 180px 0;
+  padding: 64px 0;
+  @include media-breakpoint-up(md) {
+    padding: 180px 0;
+  }
 }
 
 .serverless-bg {
