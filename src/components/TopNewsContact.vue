@@ -36,7 +36,7 @@
       <div class="p-news-bg"></div>
        
       <div class="container top-contact-form-container">
-        <v-row align="center" justify="center">
+        <div class="align-center justify-center">
           <v-col cols="12" md="10" lg="8">
             <h2 class="d-flex flex-column justify-center p-top-contact--title">
             Contact<span>お問い合わせ</span>
@@ -45,7 +45,7 @@
               AWS<small>（アマゾンウェブサービス）</small>などを利用したサーバーレスアプリケーションの設計・開発・保守運用等について<br>お困りの方は、こちらのフォームから気軽にお問い合わせください。2〜3営業日以内にメールで返信いたします。
             </p>
           </v-col>
-        </v-row>
+        </div>
       </div>
 
       <contact-form />
@@ -92,43 +92,12 @@ import Post from '~/components/Post.vue'
 import ContactForm from '~/components/ContactForm.vue'
 
 export default {
-   components: {
+  components: {
     Post,
     ContactForm
   },
   props: ['news'],
-  data() {
-    return {
-      valid: true,
-      name: '',
-      nameFurigana: '',
-      companyName: '',
-      message: '',
-      serviceSelect: [],
-      nameRules: [v => !!v || 'お名前（漢字）は必須です。'],
-      nameFuriganaRules: [v => !!v || 'お名前（ふりがな）は必須です。'],
-      email: '',
-      emailRules: [
-        v => !!v || 'Eメールは必須です。',
-        v => /.+@.+/.test(v) || 'Eメールの形式ではありません'
-      ],
-      messageRules: [v => !!v || 'ご相談・お問い合わせ内容は必須です。']
-    }
-  },
-  computed: {
-    selectRules() {
-      return [this.serviceSelect.length > 0 || 'ご検討中のサービスは必須です。']
-    }
-  },
-  methods: {
-    formatDate(iso) {
-      const date = new Date(iso)
-      const yyyy = new String(date.getFullYear())
-      const mm = new String(date.getMonth() + 1).padStart(2, '0')
-      const dd = new String(date.getDate()).padStart(2, '0')
-      return `${yyyy}.${mm}.${dd}`
-    }
-  }
+  
 }
 </script>
 
@@ -242,13 +211,21 @@ export default {
 
 // お問い合わせセクション
 .top-contact-form-container {
-  padding: 120px 0;
+  padding: 60px 0;
+  @include media-breakpoint-up(md) {
+    padding: 120px 0;
+  }
   h2 {
     color: $primary;
     margin-bottom: 48px;
   }
   p {
     color: $primary;
+    font-size: 0.9rem;
+    @include media-breakpoint-up(md) {
+      padding: 120px 0;
+      font-size: 1rem;
+    }
   }
 }
 
