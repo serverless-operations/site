@@ -116,6 +116,14 @@
     }
   } // h2
 
+  /deep/ h3 {
+    font-size: 1.2rem;
+    margin-top: 32px;
+    @include media-breakpoint-up(md) {
+      margin-top: 40px;
+    }
+  }
+
   /deep/ ul {
     list-style: none;
     margin-bottom: 32px;
