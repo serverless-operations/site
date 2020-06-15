@@ -379,7 +379,7 @@ export default {
             color: $white;
             background-color: $tertiary;
             border-radius: 24px;
-            width: 48%;
+            width: 47%;
             text-align: center;
             margin-bottom: 8px;
             @include media-breakpoint-up(md) {
