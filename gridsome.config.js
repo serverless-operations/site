@@ -80,8 +80,8 @@ module.exports = {
       options: {
         redirections: [
           {
-            from: "/news/jeffy-ga-release",
-            to: "/news/66/",
+            from: "news/jeffy-ga-release",
+            to: "news/66/",
           },
         ],
       },
