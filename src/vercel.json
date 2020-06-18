@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/news/jeffy-ga-release", "destination": "/news/66/", "permanent": true }
+  ]
+}
