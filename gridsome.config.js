@@ -74,13 +74,7 @@ module.exports = {
           }
         }
       }
-    }, // sitemap
-    {
-      use: "gridsome-plugin-htaccess",
-      options: {
-        textCompression: ["text/html"],
-      },
-    }
+    } // sitemap
   ],
 
   modules: [
