@@ -74,6 +74,17 @@ module.exports = {
           }
         }
       }
+    }, // sitemap
+    {
+      use: "gridsome-plugin-htaccess",
+      options: {
+        redirections: [
+          {
+            from: "/news/jeffy-ga-release",
+            to: "news/66/",
+          },
+        ],
+      },
     }
   ],
 
