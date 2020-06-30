@@ -6,6 +6,7 @@ import DefaultLayout from '~/layouts/Default.vue'
 import Prism from 'prismjs'
 import '~/assets/css/prism-okaidia.css'
 import '~/assets/js/chatplus.js'
+import Vuelidate from 'vuelidate'
 // import GridsomeScrollReveal from 'gridsome-scroll-reveal';
 
 export default function (Vue, { router, head, appOptions, isClient, isServer }) {
@@ -29,6 +30,7 @@ export default function (Vue, { router, head, appOptions, isClient, isServer }) 
   //const opts = { ... } //opts includes, vuetify themes, icons, etc.
   Vue.use(Vuetify)
   Vue.use(Vuex)
+  Vue.use(Vuelidate)
 
   appOptions.store = new Vuex.Store({
     state: {

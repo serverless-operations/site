@@ -4,13 +4,14 @@
       <v-col cols="12" md="10" lg="8" class="p-top-contact--form">
         <div class="p-top-contact--form-shadow" />
 
-          <form action="https://formspree.io/mlepngje" 
+          <form action="https://formspree.io/xpzypqoeh" 
                 submit="checkForm" 
                 method="POST" 
                 class="v-form"
-                novalidate="true"
+                enctype="multipart/form-data"
+                @submit="submit"
           >
-            <!--  ttps://formspree.io/xpzypqoeh-->
+            <!--  https://formspree.io/xpzypqoeh https://formspree.io/mlepngje Test form URL-->
 
             <!--p v-if="errors && errors.length">
               <b>Please correct the following error(s):</b>
@@ -47,7 +48,14 @@
                 <v-subheader>Eメール</v-subheader>
               </v-col>
               <v-col cols="12" sm="8" md="7" lg="8">
-                <v-text-field name="_replyto"/>
+                <v-text-field 
+                  name="_replyto"
+                  :class="{ 'border-red': !$v.form.name.$error }"
+                  v-model.trim="$v.form.name.$model"
+                />
+                <p v-if="$v.form.name.$error && !$v.form.name.required">
+                  メールアドレスを入力してください。
+                </p>
               </v-col>
 
               <v-col cols="12" sm="4" md="5" lg="4">
@@ -103,8 +111,43 @@
 </template>
 
 <script>
+import { required, minLength, email } from 'vuelidate/lib/validators'
+
 export default {
-  
+  data: () => ({
+    form: {
+      name: '',
+      _replyto: '',
+      //tel: '',
+      //file: '',
+      //content: '',
+    },
+    serverErrors: {}
+  }),
+  validations: {
+    form: {
+      name: {
+        required,
+      },
+      _replyto: {
+        required,
+        email,
+      }
+      //content: {
+      //  required,
+      //  minLength: minLength(4)
+      // }
+    }
+  },
+  methods: {
+    submit: function (event) {
+      this.$v.$touch()
+      if (this.$v.$invalid) {
+        if (event) event.preventDefault()
+        return false
+      }
+    }
+  }
 }
 
 </script>
