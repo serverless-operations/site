@@ -4,7 +4,7 @@
       <v-col cols="12" md="10" lg="8" class="p-top-contact--form">
         <div class="p-top-contact--form-shadow" />
 
-          <form action="https://getform.io/f/6fd5daa3-4ce6-4a21-bb63-db375dae6411" 
+          <form action="https://getform.io/f/c49d25a9-26c7-4da4-a475-38ff6c466543" 
             method="POST" 
             class="v-form"
             enctype="multipart/form-data"
@@ -65,7 +65,7 @@
                 <p
                   class="error-text-red"
                   v-if="$v.form.email.$error && !$v.form.email.required"
-                >メールアドレスは必須です</p>
+                >メールアドレスは必須です。</p>
                 <p
                   class="error-text-red"
                   v-if="$v.form.email.$error && !$v.form.email.email"
@@ -104,7 +104,7 @@
                 <p
                   class="error-text-red"
                   v-if="$v.form.content.$error && !$v.form.content.required"
-                >ご相談内容は必須です</p>
+                >ご相談内容は必須です。</p>
               </v-col>
 
             </v-row>
