@@ -102,7 +102,7 @@
                   v-model.trim="$v.form.content.$model"
                 />
                 <p
-                  class="text-red text-xs italic"
+                  class="error-text-red"
                   v-if="$v.form.content.$error && !$v.form.content.required"
                 >問い合わせ内容は必須です</p>
               </v-col>
