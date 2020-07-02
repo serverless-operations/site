@@ -50,10 +50,9 @@
               <v-col cols="12" sm="8" md="7" lg="8">
                 <v-text-field 
                   name="_replyto"
-                  :class="{ 'border-red': !$v.form.name.$error }"
                   v-model.trim="$v.form.name.$model"
                 />
-                <p v-if="$v.form.name.$error && !$v.form.name.required">
+                <p class="error-text" v-if="$v.form.name.$error && !$v.form.name.required">
                   メールアドレスを入力してください。
                 </p>
               </v-col>
@@ -117,10 +116,10 @@ export default {
   data: () => ({
     form: {
       name: '',
-      _replyto: '',
-      //tel: '',
-      //file: '',
-      //content: '',
+      email: '',
+      tel: '',
+      file: '',
+      content: '',
     },
     serverErrors: {}
   }),
@@ -129,14 +128,14 @@ export default {
       name: {
         required,
       },
-      _replyto: {
+      email: {
         required,
         email,
+      },
+      content: {
+        required,
+        minLength: minLength(4)
       }
-      //content: {
-      //  required,
-      //  minLength: minLength(4)
-      // }
     }
   },
   methods: {
@@ -239,6 +238,9 @@ export default {
   padding-top: 16px;
   height: 100%;
   margin-bottom: 8px;
+}
+.error-text {
+  color: red;
 }
 .v-btn {
   font-family: $font-jp-normal;
