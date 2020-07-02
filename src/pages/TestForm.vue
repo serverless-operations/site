@@ -7,10 +7,10 @@
         <form
           action="https://formspree.io/xpzypqoeh"
           method="POST"
+          enctype="multipart/form-data"
           class="bg-white border shadow-md rounded lg:px-8 pt-6 pb-8 mt-10 mb-4"
           @submit="submit"
         >
-        <!-- enctype="multipart/form-data" -->
           <div class="flex flex-wrap mx-3 mb-6">
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
@@ -42,19 +42,19 @@
               <input
                 id="email"
                 type="email"
-                name="_replyto"
+                name="email"
                 placeholder="example@nnn.com"
                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
-                :class="{ 'border-red': $v.form._replyto.$error }"
-                v-model.trim="$v.form._replyto.$model"
+                :class="{ 'border-red': $v.form.email.$error }"
+                v-model.trim="$v.form.email.$model"
               >
               <p
                 class="text-red text-xs italic"
-                v-if="$v.form._replyto.$error && !$v.form._replyto.required"
+                v-if="$v.form.email.$error && !$v.form.email.required"
               >メールアドレスは必須です</p>
               <p
                 class="text-red text-xs italic"
-                v-if="$v.form._replyto.$error && !$v.form._replyto._replyto"
+                v-if="$v.form.email.$error && !$v.form.email.email"
               >メールアドレスの形式が不正です。</p>
             </div>
           </div>
@@ -75,6 +75,19 @@
                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               >
             </div>
+            <div class="w-full md:w-1/2 px-3">
+              <label
+                class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+                for="file">
+                添付ファイル<small class="ml-1">(任意)</small>
+              </label>
+              <input
+                id="file"
+                type="file"
+                name="file"
+                class="w-full"
+              >
+            </div>
           </div>
           <div class="mx-3 mb-6 px-3">
             <label
@@ -83,15 +96,15 @@
               問い合わせ内容
             </label>
             <textarea
-              name="message"
+              name="content"
               rows="6"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker mb-3 bg-grey-lighter focus:outline-none focus:bg-white"
-              :class="{ 'border-red': $v.form.message.$error }"
-              v-model.trim="$v.form.message.$model"
+              :class="{ 'border-red': $v.form.content.$error }"
+              v-model.trim="$v.form.content.$model"
             ></textarea>
             <p
               class="text-red text-xs italic"
-              v-if="$v.form.message.$error && !$v.form.message.required"
+              v-if="$v.form.content.$error && !$v.form.content.required"
             >問い合わせ内容は必須です</p>
           </div>
 
@@ -120,9 +133,10 @@ export default {
   data: () => ({
     form: {
       name: '',
-      _replyto: '',
+      email: '',
       tel: '',
-      message: '',
+      file: '',
+      content: '',
     },
   }),
   validations: {
@@ -130,11 +144,11 @@ export default {
       name: {
         required,
       },
-      _replyto: {
+      email: {
         required,
         email,
       },
-      message: {
+      content: {
         required,
         minLength: minLength(4)
       }

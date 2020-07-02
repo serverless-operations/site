@@ -4,37 +4,46 @@
       <v-col cols="12" md="10" lg="8" class="p-top-contact--form">
         <div class="p-top-contact--form-shadow" />
 
-          <form action="https://formspree.io/xpzypqoeh" 
-                submit="checkForm" 
-                method="POST" 
-                class="v-form"
-                enctype="multipart/form-data"
-                @submit="submit"
+          <form action="https://getform.io/f/6fd5daa3-4ce6-4a21-bb63-db375dae6411" 
+            method="POST" 
+            class="v-form"
+            enctype="multipart/form-data"
+            @submit="submit"
           >
-            <!--  https://formspree.io/xpzypqoeh https://formspree.io/mlepngje Test form URL-->
 
-            <!--p v-if="errors && errors.length">
-              <b>Please correct the following error(s):</b>
-              <ul>
-                <li v-for="error in errors" :key="error">{{ error }}</li>
-              </ul>
-            </p -->
-            
             <v-row no-gutters>
               <v-col cols="12" sm="4" md="5" lg="4">
-                <v-subheader>お名前<small>（漢字）</small></v-subheader>
+                <v-subheader>お名前<small>（漢字）</small>*</v-subheader>
               </v-col>
               <v-col cols="12" sm="8" md="7" lg="8">
                 <v-text-field
-                  name="name-kanji"
+                  name="name1"
+                  :class="{ 'border-red': $v.form.name1.$error }"
+                  v-model.trim="$v.form.name1.$model"
                 />
+                <p
+                  class="error-text-red"
+                  v-if="$v.form.name1.$error && !$v.form.name1.required"
+                >
+                  お名前<small>（漢字）</small>は必須です。
+                </p>
               </v-col>
 
               <v-col cols="12" sm="4" md="5" lg="4">
-                <v-subheader>お名前<small>（ふりがな）</small></v-subheader>
+                <v-subheader>お名前<small>（ふりがな）</small>*</v-subheader>
               </v-col>
               <v-col cols="12" sm="8" md="7" lg="8">
-                <v-text-field name="name-frigana"/>
+                <v-text-field
+                  name="name2"
+                  :class="{ 'border-red': $v.form.name2.$error }"
+                  v-model.trim="$v.form.name2.$model"
+                />
+                <p
+                  class="error-text-red"
+                  v-if="$v.form.name2.$error && !$v.form.name2.required"
+                >
+                  お名前<small>（ふりがな）</small>は必須です。
+                </p>
               </v-col>
 
               <v-col cols="12" sm="4" md="5" lg="4">
@@ -45,16 +54,22 @@
               </v-col>
 
               <v-col cols="12" sm="4" md="5" lg="4">
-                <v-subheader>Eメール</v-subheader>
+                <v-subheader>Eメール*</v-subheader>
               </v-col>
               <v-col cols="12" sm="8" md="7" lg="8">
                 <v-text-field 
-                  name="_replyto"
-                  v-model.trim="$v.form.name.$model"
+                  name="email"
+                  :class="{ 'border-red': $v.form.email.$error }"
+                  v-model.trim="$v.form.email.$model"
                 />
-                <p class="error-text" v-if="$v.form.name.$error && !$v.form.name.required">
-                  メールアドレスを入力してください。
-                </p>
+                <p
+                  class="error-text-red"
+                  v-if="$v.form.email.$error && !$v.form.email.required"
+                >メールアドレスは必須です</p>
+                <p
+                  class="error-text-red"
+                  v-if="$v.form.email.$error && !$v.form.email.email"
+                >メールアドレスの形式が不正です。</p>
               </v-col>
 
               <v-col cols="12" sm="4" md="5" lg="4">
@@ -81,7 +96,15 @@
                 </v-subheader>
               </v-col>
               <v-col cols="12" sm="8" md="7" lg="8">
-                <v-textarea name="message"/>
+                <v-textarea
+                  name="content"
+                  :class="{ 'border-red': $v.form.content.$error }"
+                  v-model.trim="$v.form.content.$model"
+                />
+                <p
+                  class="text-red text-xs italic"
+                  v-if="$v.form.content.$error && !$v.form.content.required"
+                >問い合わせ内容は必須です</p>
               </v-col>
 
             </v-row>
@@ -115,17 +138,18 @@ import { required, minLength, email } from 'vuelidate/lib/validators'
 export default {
   data: () => ({
     form: {
-      name: '',
+      name1: '',
+      name2: '',
       email: '',
-      tel: '',
-      file: '',
       content: '',
     },
-    serverErrors: {}
   }),
   validations: {
     form: {
-      name: {
+      name1: {
+        required,
+      },
+      name2: {
         required,
       },
       email: {
@@ -239,8 +263,13 @@ export default {
   height: 100%;
   margin-bottom: 8px;
 }
-.error-text {
+.error-text-red {
   color: red;
+}
+.border-red {
+  .v-input__control>.v-input__slot:before {
+    border-color: red;
+  }
 }
 .v-btn {
   font-family: $font-jp-normal;
