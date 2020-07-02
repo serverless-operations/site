@@ -104,7 +104,7 @@
                 <p
                   class="error-text-red"
                   v-if="$v.form.content.$error && !$v.form.content.required"
-                >問い合わせ内容は必須です</p>
+                >ご相談内容は必須です</p>
               </v-col>
 
             </v-row>
@@ -253,6 +253,7 @@ export default {
     padding: 80px 48px;
   }
 }
+
 .v-subheader {
   color: $tertiary;
   font-size: 1rem;
@@ -263,14 +264,11 @@ export default {
   height: 100%;
   margin-bottom: 8px;
 }
+
 .error-text-red {
   color: red;
 }
-.border-red {
-  .v-input__control>.v-input__slot:before {
-    border-color: red;
-  }
-}
+
 .v-btn {
   font-family: $font-jp-normal;
   background-color: $primary;
@@ -283,7 +281,9 @@ export default {
     100% 8px
   );
 }
-
+.v-text-field__details {
+  display: none !important;
+}
 .v-input--is-focused {
 
 }
