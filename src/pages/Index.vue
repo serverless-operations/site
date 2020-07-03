@@ -108,6 +108,8 @@ import TopNewsContact from '~/components/TopNewsContact.vue'
 import Post from '~/components/Post.vue'
 import ContactForm from '~/components/ContactForm.vue'
 
+import { required, minLength, email } from 'vuelidate/lib/validators'
+
 export default {
   components: {
     Pager,
