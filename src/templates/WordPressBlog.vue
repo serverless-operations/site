@@ -82,7 +82,9 @@ query ($id: ID!) {
   }
   metadata {
     siteName
+    siteDescription
     siteUrl
+    siteOgImage
   }
 }
 </page-query>
