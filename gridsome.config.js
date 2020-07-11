@@ -19,7 +19,7 @@ module.exports = {
   siteUrl: `https://serverless.co.jp`,
   siteDescription: `Serverless Operationsは、これまでグローバルの第一線で培ってきたクラウド技術（AWS − アマゾンウェブサービス）の豊富な実績と知見を活かし、お客さまのサーバーレスによる開発や運用の支援、コンサルティングまで一貫してサポート。サーバーレスに関するさまざまな課題を解決いたします。`,
   metadata: {
-    siteOgImage: siteUrl + require(`!!assets-loader!@images/ogp.png`).src,
+    siteOgImage: `https://serverless.co.jp` + require(`!!assets-loader!@images/ogp.png`).src,
   },
 
   templates: {
