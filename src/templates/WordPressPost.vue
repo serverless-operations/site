@@ -132,11 +132,6 @@ export default {
           property: `og:title`,
           content: `${this.$page.wordPressPost.title} | ${this.$page.metadata.siteName}`,
         },
-        {
-          key: 'og:image',
-          property: 'og:image',
-          content: this.$page.wordPressPost.featuredMedia.sourceUrl,
-        },
         { name: 'twitter:card',
           content: 'summary_large_image',
         },

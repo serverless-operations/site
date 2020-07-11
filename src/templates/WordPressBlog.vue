@@ -115,10 +115,22 @@ export default {
           content: this.$page.metadata.siteUrl + this.$page.wordPressBlog.path,
         },
         {
+          key: `og:image`,
+          property: `og:image`,
+          content:  this.$page.wordPressBlog.featuredMedia.sourceUrl,
+        },
+        {
           key: `og:title`,
           property: `og:title`,
           content: `${this.$page.wordPressBlog.title} | ${this.$page.metadata.siteName}`,
         },
+        { name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        {
+          name: 'twitter:image',
+          content: this.$page.wordPressBlog.featuredMedia.sourceUrl,
+        }
       ]
     }
   },
