@@ -119,7 +119,7 @@ export default {
         {
           key: `og:image`,
           property: `og:image`,
-          content:  this.$page.wordPressBlog.featuredMedia.sourceUrl,
+          content:  `https://serverless.co.jp/ogp.png`,
         },
         {
           key: `og:title`,
@@ -131,7 +131,7 @@ export default {
         },
         {
           name: 'twitter:image',
-          content: this.$page.wordPressBlog.featuredMedia.sourceUrl,
+          content: `https://serverless.co.jp/ogp.png`,
         }
       ]
     }
