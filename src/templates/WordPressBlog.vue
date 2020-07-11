@@ -119,7 +119,7 @@ export default {
         {
           key: `og:image`,
           property: `og:image`,
-          content:  `https://serverless.co.jp/ogp.png`,
+          content: this.$page.metadata.siteOgImage,
         },
         {
           key: `og:title`,
@@ -131,7 +131,7 @@ export default {
         },
         {
           name: 'twitter:image',
-          content: `https://serverless.co.jp/ogp.png`,
+          content: this.$page.metadata.siteOgImage,
         }
       ]
     }
