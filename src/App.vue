@@ -42,6 +42,13 @@ export default {
           property: `og:image`,
           content:  this.$static.metadata.siteOgImage,
         },
+        { name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        {
+          name: 'twitter:image',
+          content: this.$static.metadata.siteOgImage,
+        }
       ]
     }
   }
