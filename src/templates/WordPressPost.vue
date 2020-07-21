@@ -143,15 +143,7 @@ export default {
         }
       ]
     }
-  },
-  data() {
-    return {
-      result: [],
-      title: '',
-      description: '',
-      bodyHtml: ''
-    }
-  },
+  }
 }
 </script>
 
