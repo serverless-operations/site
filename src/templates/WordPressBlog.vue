@@ -98,6 +98,11 @@ import ShareButtons from '~/components/ShareButtons'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-json'
 import 'prismjs/components/prism-typescript'
+import 'prismjs/components/prism-graphql'
+import 'prismjs/components/prism-bash'
+import 'prismjs/components/prism-markdown'
+import 'prismjs/components/prism-markup-templating'
+import 'prismjs/components/prism-php'
 
 export default {
   components: {
