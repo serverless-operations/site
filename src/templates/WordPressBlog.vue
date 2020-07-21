@@ -95,6 +95,10 @@ query ($id: ID!) {
 import Prism from 'prismjs'
 import ShareButtons from '~/components/ShareButtons'
 
+import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-json'
+import 'prismjs/components/prism-typescript'
+
 export default {
   components: {
     ShareButtons
