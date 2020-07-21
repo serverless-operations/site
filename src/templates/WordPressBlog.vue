@@ -129,7 +129,7 @@ export default {
         {
           key: `og:image`,
           property: `og:image`,
-          content: this.$page.wordPressBlog.featuredMedia.sourceUrl,
+          content: this.$page.metadata.siteOgImage,
         },
         {
           key: `og:title`,
@@ -141,7 +141,7 @@ export default {
         },
         {
           name: 'twitter:image',
-          content: this.$page.wordPressBlog.featuredMedia.sourceUrl,
+          content: this.$page.metadata.siteOgImage,
         }
       ]
     }
