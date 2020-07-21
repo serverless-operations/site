@@ -31,6 +31,7 @@ export default function (Vue, { router, head, appOptions, isClient, isServer }) 
   Vue.use(Vuetify)
   Vue.use(Vuex)
   Vue.use(Vuelidate)
+  Vue.use(Prism)
 
   appOptions.store = new Vuex.Store({
     state: {
