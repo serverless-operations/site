@@ -139,7 +139,7 @@ export default {
         },
         {
           name: 'twitter:image',
-          content: this.$page.wordPressPost.featuredMedia.sourceUrl,
+          content: this.$page.metadata.siteOgImage,
         }
       ]
     }
