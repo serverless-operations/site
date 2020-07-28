@@ -6,7 +6,7 @@
 
       <v-row>
 
-        <swiper :options="swiperOption">
+        <swiper class="swiper" :options="swiperOption">
 
           <swiper-slide>
             <a href="https://aws.amazon.com/jp/partners/consulting/">
@@ -35,21 +35,21 @@
 
 <script>
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/swiper.scss'
 
 export default {
   data() {
     return {
       swiperOption: {
-        speed: 1000, //スライドの切り替わりスピード
-        spaceBetween: 0, //各スライドの余白
+        spaceBetween: 20, //各スライドの余白
         centeredSlides: true, //スライダーを真ん中に
         loop: true, //無限ループ
         slidesPerView: 3,
+        freeMode: true,
         breakpoints: {
-          // when window width is >= 640px
           768: {
             slidesPerView: 5,
-            spaceBetween: 4
+            spaceBetween: 40
           }
         }
       }
