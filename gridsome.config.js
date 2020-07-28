@@ -74,8 +74,17 @@ module.exports = {
           }
         }
       }
-    } // sitemap
+    }, // sitemap
+    { 
+      use: 'vue-awesome-swiper',
+      ssr: false 
+    }
   ],
+  build: {
+    vendor: [
+      'vue-awesome-swiper'
+    ]
+  },
 
   modules: [
     ['vue-github-buttons/nuxt', {

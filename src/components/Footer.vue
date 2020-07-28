@@ -1,5 +1,7 @@
 <template>
   <footer class="v-footer footer v-sheet v-sheet--tile theme--dark">
+
+    
     <!-- <v-container>
       <v-col cols="12" class="c-footer-breadcrumb">
         <nuxt-link to="/" class="c-footer-breadcrumb__home">

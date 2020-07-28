@@ -4,14 +4,14 @@
     
     <div class="container p-top-services--container">
       <div class="row">
-        <v-col class="p-top-services--body" v-scroll-reveal.reset="{ delay: 250 }">
+        <v-col class="p-top-services--body">
           <div class="row p-top-services--consulting">
             <v-col order="1"
                    order-md="1"
                    cols="12"
                    md="6"
                    class="p-top-services--consulting-title">
-              <h3 v-scroll-reveal.reset="{ delay: 300 }">
+              <h3>
                 <small>Serverless</small>
                 Consulting
                 <span>サーバーレスコンサルティング</span>
@@ -22,7 +22,7 @@
                    cols="12"
                    md="6"
                    class="p-top-services--consulting-text">
-              <div class="p-top-services--consulting-text-block" v-scroll-reveal.reset="{ delay: 400 }">
+              <div class="p-top-services--consulting-text-block">
                 <h4>
                   お客さまが開発・運用する<br>
                   サーバーレスアプリケーションの<br>
@@ -45,7 +45,7 @@
                    cols="12"
                    md="6"
                    class="p-top-services--development-text">
-              <div class="p-top-services--development-text-block" v-scroll-reveal.reset="{ delay: 700 }">
+              <div class="p-top-services--development-text-block">
                 <h4>
                   サーバーレスアプリケーションの<br class="">
                   設計・開発・保守運用を<br>
@@ -66,7 +66,7 @@
                    cols="12"
                    md="6"
                    class="p-top-services--development-title">
-              <h3 v-scroll-reveal.reset="{ delay: 600 }">
+              <h3>
                 <small>Serverless</small>
                 Development
                 <span>サーバーレスディベロップメント</span>
@@ -76,21 +76,21 @@
         </v-col>
         <v-col cols="auto"
                class="p-top-services--vertical-title">
-          <h2 v-scroll-reveal.reset="{ delay: 500 }">Services</h2>
+          <h2>Services</h2>
         </v-col>
       </div>
     </div>
 
     <div class="container p-top-clients--container">
-      <div class="p-top-clients--body-shadow" v-scroll-reveal.reset="{ delay: 300 }" />
-      <div class="p-top-clients--body" v-scroll-reveal.reset="{ delay: 250 }">
+      <div class="p-top-clients--body-shadow" />
+      <div class="p-top-clients--body" >
         <div class="row">
           <v-col cols="12"
                  md="6"
                  lg="5"
                  justify-self="center"
                  align-self="center">
-            <h2 class="d-flex flex-column justify-center align-center align-md-start" v-scroll-reveal.reset="{ delay: 500 }">
+            <h2 class="d-flex flex-column justify-center align-center align-md-start" >
               Our Clients
               <span>クライアント</span>
             </h2>

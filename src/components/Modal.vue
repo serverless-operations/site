@@ -14,7 +14,6 @@
                     src="../assets/images/header-modal-logo.svg"
                     alt="Severless Operations ロゴ"
                     class="c-modal__logo"
-                    v-scroll-reveal.reset="{ delay: 400 }"
                   />
                 </g-link>
               </div>
@@ -25,7 +24,7 @@
           <v-row class="c-modal__menu">
             <!-- サービス -->
             <v-col cols="12" md="3" class="c-modal__menu-column">
-              <g-link @click.native="$emit('close');" to="/services" class="c-modal__link pl-md-0" v-scroll-reveal.reset="{ delay: 200 }">
+              <g-link @click.native="$emit('close');" to="/services" class="c-modal__link pl-md-0">
                 <span class="c-modal__link--menu">Services</span> 
                 <span class="c-modal__link--ja">サービス</span>
               </g-link>
@@ -36,7 +35,7 @@
               <div class="c-modal__services-block">
 
                 <g-link to="/services/serverless-consulting" class="c-modal__services-link pt-1" @click.native="$emit('close');">
-                  <div class="c-modal__services-menu" v-scroll-reveal.reset="{ delay: 250 }">
+                  <div class="c-modal__services-menu">
                     <span class="c-modal__services-menu-serverless">Serverless</span>
                       Consulting
                     <span class="c-modal__services-menu-ja">サーバーレスコンサルティング</span>
@@ -44,7 +43,7 @@
                 </g-link><!-- c-modal__services-link -->
 
                 <g-link to="/services/serverless-development" class="c-modal__services-link" @click.native="$emit('close');">
-                  <div class="c-modal__services-menu" v-scroll-reveal.reset="{ delay: 300 }">
+                  <div class="c-modal__services-menu">
                     <span class="c-modal__services-menu-serverless">Serverless</span>Development
                     <span class="c-modal__services-menu-ja">サーバーレスディべロプメント</span>
                   </div>
@@ -61,14 +60,14 @@
             </v-col>
 
             <v-col cols="6" md="3" offset-md="0" class="c-modal__menu-column mt-3 mt-md-0">
-              <g-link @click.native="$emit('close');" to="/company" class="c-modal__link" v-scroll-reveal.reset="{ delay: 250 }">
+              <g-link @click.native="$emit('close');" to="/company" class="c-modal__link">
                 <span class="c-modal__link--menu">Company</span> 
                 <span class="c-modal__link--ja">会社案内</span>
               </g-link>
             </v-col>
 
             <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-3 mt-md-0">
-              <g-link @click.native="$emit('close');" to="/works-archives" class="c-modal__link" v-scroll-reveal.reset="{ delay: 300 }">
+              <g-link @click.native="$emit('close');" to="/works-archives" class="c-modal__link">
                 <span class="c-modal__link--menu">Works</span>
                 <span class="c-modal__link--ja">導入事例</span>
               </g-link>
@@ -105,7 +104,7 @@
                 </g-link>
 
                 <g-link @click.native="$emit('close');" to="/services/serverless-development" class="c-modal__services-link">
-                  <div class="c-modal__services-menu" v-scroll-reveal.reset="{ delay: 300 }">
+                  <div class="c-modal__services-menu">
                     <span class="c-modal__services-menu-serverless">Serverless</span>
                     <span class="c-modal__services-name">Development</span>
                     <span class="c-modal__services-menu-ja">サーバーレスディべロプメント</span>

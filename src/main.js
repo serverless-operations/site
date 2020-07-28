@@ -7,6 +7,8 @@ import Prism from 'prismjs'
 import '~/assets/css/prism-okaidia.css'
 import '~/assets/js/chatplus.js'
 import Vuelidate from 'vuelidate'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
 // import GridsomeScrollReveal from 'gridsome-scroll-reveal';
 
 export default function (Vue, { router, head, appOptions, isClient, isServer }) {
@@ -32,6 +34,7 @@ export default function (Vue, { router, head, appOptions, isClient, isServer }) 
   Vue.use(Vuex)
   Vue.use(Vuelidate)
   Vue.use(Prism)
+  Vue.use(VueAwesomeSwiper)
 
   appOptions.store = new Vuex.Store({
     state: {

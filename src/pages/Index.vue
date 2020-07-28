@@ -47,7 +47,7 @@
 
           <div id="scroll-line-animation"
               class="l-scroll-animation"
-              v-scroll-reveal.reset="{ delay: 2600 }">
+          >
             <span class="p-scroll-text">Scroll</span>
             <span class="p-scroll-line"></span>
           </div>
@@ -72,7 +72,7 @@
 
 <page-query>
 query Home ($page: Int) {
-  allWordPressPost (page: $page, perPage: 10) @paginate {
+  allWordPressPost (page: $page, perPage: 4) @paginate {
     pageInfo {
       totalPages
       currentPage

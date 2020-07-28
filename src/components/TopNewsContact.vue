@@ -57,7 +57,7 @@
 
 <static-query>
 query ($page: Int) {
-  allWordPressPost (page: $page, perPage: 10) @paginate {
+  allWordPressPost (page: $page, perPage: 4) @paginate {
     pageInfo {
       totalPages
       currentPage
