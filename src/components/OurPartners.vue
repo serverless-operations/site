@@ -41,15 +41,15 @@ export default {
     return {
       swiperOption: {
         speed: 1000, //スライドの切り替わりスピード
-        spaceBetween: 2, //各スライドの余白
+        spaceBetween: 0, //各スライドの余白
         centeredSlides: true, //スライダーを真ん中に
         loop: true, //無限ループ
-        slidesPerView: 2,
+        slidesPerView: 3,
         breakpoints: {
           // when window width is >= 640px
           768: {
             slidesPerView: 5,
-            spaceBetween: 2
+            spaceBetween: 4
           }
         }
       }
@@ -66,8 +66,17 @@ export default {
     font-weight: normal;
     padding: 16px;
   }
+  .container {
+    overflow: hidden;
+  }
   /deep/ .swiper-wrapper {
     display: flex;
-    
+    .swiper-slide {
+      a {
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 </style>
