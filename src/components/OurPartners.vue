@@ -4,31 +4,33 @@
 
       <h4>Our Partners</h4>
 
-      <v-row>
+      <client-only>
+        <v-row>
 
-        <swiper class="swiper" :options="swiperOption">
+          <swiper class="swiper" :options="swiperOption">
 
-          <swiper-slide>
-            <a href="https://aws.amazon.com/jp/partners/consulting/">
-              <img
-                src="@/assets/images/our-partners/aws-logo.svg"
-                alt="sample1"
-              >
-            </a>
-          </swiper-slide>
+            <swiper-slide>
+              <a href="https://aws.amazon.com/jp/partners/consulting/">
+                <img
+                  src="@/assets/images/our-partners/aws-logo.svg"
+                  alt="sample1"
+                >
+              </a>
+            </swiper-slide>
 
-          <swiper-slide>
-            <a href="https://spn.getshifter.io/">
-              <img
-                src="@/assets/images/our-partners/shifter-logo.svg"
-                alt="sample2"
-              >
-            </a>
-          </swiper-slide>
+            <swiper-slide>
+              <a href="https://spn.getshifter.io/">
+                <img
+                  src="@/assets/images/our-partners/shifter-logo.svg"
+                  alt="sample2"
+                >
+              </a>
+            </swiper-slide>
 
-        </swiper>
+          </swiper>
 
-      </v-row>
+        </v-row>
+      </client-only>
     </div>
   </div>
 </template>
