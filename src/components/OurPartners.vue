@@ -31,6 +31,7 @@
 
         </v-row>
       </client-only>
+
     </div>
   </div>
 </template>
