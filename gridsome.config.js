@@ -81,9 +81,11 @@ module.exports = {
       mode: 'client'
     }
   ],
+
   css: [
     'swiper/swiper.scss'
   ],
+  
   build: {
     vendor: [
       'vue-awesome-swiper'

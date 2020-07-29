@@ -38,7 +38,7 @@
 
 <script>
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import 'swiper/swiper.scss'
+// import 'swiper/swiper.scss'
 
 export default {
   data() {
