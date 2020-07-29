@@ -46,13 +46,15 @@ export default {
       swiperOption: {
         spaceBetween: 20, //各スライドの余白
         centeredSlides: true, //スライダーを真ん中に
-        loop: true, //無限ループ
-        slidesPerView: 3,
+        loop: false, //無限ループ
+        slidesPerView: 2,
         freeMode: true,
         breakpoints: {
           768: {
-            slidesPerView: 5,
-            spaceBetween: 40
+            slidesPerView: 2,
+            spaceBetween: 120,
+            freeMode: true,
+            centeredSlides: true
           }
         }
       }
