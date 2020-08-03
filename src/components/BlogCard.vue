@@ -114,11 +114,13 @@ export default {
     } // &__title
 
     .category-name {
-      padding: 6px 16px;
-      display: inline;
-      font-size: 12px;
-      background-color: $tertiary;
-      color: $white;
+      font-family: $font-en-normal;
+      padding: 4px 8px;
+      margin-bottom: 6px;
+      display: inline-block;
+      font-size: 10px;
+      background-color: #2c48ff;
+      color: #fff;
       margin-right: 8px;
       border-radius: 100px;
     }

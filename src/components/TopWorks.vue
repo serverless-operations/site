@@ -7,7 +7,7 @@
         <div class="row align-center justify-space-between">
           
           <div class="col-md-6 col-12">
-            <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title" v-scroll-reveal.reset="{ delay: 500 }">Works<span>導入事例</span></h2>
+            <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title">Works<span>導入事例</span></h2>
           </div>
 
           <div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
@@ -17,7 +17,7 @@
         </div><!-- row -->
       
         <div class="p-works-contents row">
-          <div v-for="{ node } in $static.works.edges" :key="node.id" class="r-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-12" v-scroll-reveal.reset="{ delay: 600 }">
+          <div v-for="{ node } in $static.works.edges" :key="node.id" class="r-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-12">
             <WorksCard :post="node" />
           </div>
         </div>
@@ -99,6 +99,9 @@ export default {
   }
   @include media-breakpoint-up(lg) {
     background-position: center 350px;
+  }
+  .p-works-contents {
+    padding-bottom: 120px;
   }
   h2 {
     margin-top: 24px;

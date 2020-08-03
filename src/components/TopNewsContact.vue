@@ -36,19 +36,23 @@
       <div class="p-news-bg"></div>
        
       <div class="container top-contact-form-container">
-        <div class="align-center justify-center">
-          <v-col cols="12" md="10" lg="8">
-            <h2 class="d-flex flex-column justify-center p-top-contact--title">
+        <v-row>
+
+          <v-col cols="12" md="4" lg="4">
+            <h2 class="p-top-contact--title">
             Contact<span>お問い合わせ</span>
             </h2>
             <p class="p-top-contact--paragraph">
               AWS<small>（アマゾンウェブサービス）</small>などを利用したサーバーレスアプリケーションの設計・開発・保守運用等について<br>お困りの方は、こちらのフォームから気軽にお問い合わせください。2〜3営業日以内にメールで返信いたします。
             </p>
           </v-col>
-        </div>
-      </div>
 
-      <contact-form />
+          <v-col cols="12" md="8" lg="8">
+            <top-contact-form />
+          </v-col>
+
+        </v-row>
+      </div>
 
     </div><!-- v-content__wrap -->
   </div><!-- v-content -->
@@ -57,7 +61,7 @@
 
 <static-query>
 query ($page: Int) {
-  allWordPressPost (page: $page, perPage: 10) @paginate {
+  allWordPressPost (page: $page, perPage: 4) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -89,12 +93,12 @@ query ($page: Int) {
 
 <script>
 import Post from '~/components/Post.vue'
-import ContactForm from '~/components/ContactForm.vue'
+import TopContactForm from '~/components/TopContactForm.vue'
 
 export default {
   components: {
     Post,
-    ContactForm
+    TopContactForm
   },
   props: ['news'],
   
@@ -163,6 +167,15 @@ export default {
     }
   }
 
+  .p-top-contact--container {
+    @include media-breakpoint-up(md) {
+      width: 110% !important;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 100% !important;
+    }
+  }
+
   .v-input__slot .v-label,
   .v-form label.v-label {
     color: $tertiary !important;
@@ -211,9 +224,9 @@ export default {
 
 // お問い合わせセクション
 .top-contact-form-container {
-  padding: 60px 0;
+  padding-top: 60px;
   @include media-breakpoint-up(md) {
-    padding: 120px 0;
+    padding-top: 120px;
   }
   h2 {
     color: $primary;
@@ -223,8 +236,8 @@ export default {
     color: $primary;
     font-size: 0.9rem;
     @include media-breakpoint-up(md) {
-      padding: 120px 0;
       font-size: 1rem;
+      line-height: 2;
     }
   }
 }

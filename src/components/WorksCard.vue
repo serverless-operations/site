@@ -67,6 +67,7 @@ export default {
     font-family: $font-jp-normal;
     z-index: 1;
     position: relative;
+    padding-bottom: 120px;
 
     // お知らせのカード
     &__card {
@@ -83,7 +84,7 @@ export default {
         padding: 40px;
         width: 70%;
         margin-left: 15%;
-        margin-top: -100px;
+        margin-top: -64px;
       }
 
       .company-logo-container {
@@ -160,9 +161,10 @@ export default {
     } // &__title
 
     .category-name {
-      padding: 6px 16px;
-      display: inline;
-      font-size: 12px;
+      padding: 4px 8px;
+      font-family: $font-en-normal;
+      display: inline-block;
+      font-size: 10px;
       background-color: $tertiary;
       color: $white;
       margin-right: 8px;

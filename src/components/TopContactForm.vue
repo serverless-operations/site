@@ -1,7 +1,7 @@
 <template>
-  <v-container class="p-top-contact--container">
+  <div class="p-top-contact--container">
     <v-row align="center" justify="center">
-      <v-col cols="12" md="10" lg="8" class="p-top-contact--form">
+      <div class="p-top-contact--form">
         <div class="p-top-contact--form-shadow" />
 
           <form action="https://getform.io/f/c49d25a9-26c7-4da4-a475-38ff6c466543" 
@@ -127,9 +127,9 @@
 
           </form>
 
-      </v-col>
+      </div>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -178,14 +178,14 @@ export default {
 <style lang="scss" scoped>
 .p-top-contact {
   &--container {
-    padding-bottom: 160px;
+    padding-bottom: 120px;
   }
 
   &--form {
     position: relative;
     padding-right: 24px;
     padding-left: 12px;
-    margin-top: -96px;
+    margin-top: -24px;
   }
   &--form-shadow {
     display: block;

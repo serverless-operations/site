@@ -92,6 +92,26 @@
                 <th class="p-company-information__th">事業内容</th>
                 <td>クラウドサービスを使ったServerlessアプリケーションの開発運用支援</td>
               </tr>
+              <tr class="p-company-information__table-row">
+                <th class="p-company-information__th">パートナー</th>
+                <td>
+                  <div class="company-partners-logo">
+                    <a href="https://aws.amazon.com/jp/partners/consulting/">
+                      <img
+                        src="@/assets/images/our-partners/aws-logo.svg"
+                        alt="AWS Consulting Partner"
+                      >
+                    </a>
+                    <a href="https://spn.getshifter.io/">
+                      <img
+                        src="@/assets/images/our-partners/shifter-logo.svg"
+                        alt="Digitalcube Shifter Partner Network"
+                      >
+                    </a>
+                  </div>
+                  
+                </td>
+              </tr>
             </table><!-- p-company-information__table -->
           </v-col>
 
@@ -506,6 +526,16 @@ export default {
     font-size: 0.87rem;
     @include media-breakpoint-up(md) {
       font-size: 1rem;
+    }
+  }
+  .company-partners-logo {
+    display: flex;
+    a {
+      display: block;
+      width: 50%;
+      img {
+        width: 100%;
+      }
     }
   }
 }

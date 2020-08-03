@@ -47,7 +47,7 @@
 
           <div id="scroll-line-animation"
               class="l-scroll-animation"
-              v-scroll-reveal.reset="{ delay: 2600 }">
+          >
             <span class="p-scroll-text">Scroll</span>
             <span class="p-scroll-line"></span>
           </div>
@@ -58,6 +58,8 @@
       <top-concept />
 
       <top-services-clients />
+
+      <top-our-partners />
 
       <top-works />
 
@@ -72,7 +74,7 @@
 
 <page-query>
 query Home ($page: Int) {
-  allWordPressPost (page: $page, perPage: 10) @paginate {
+  allWordPressPost (page: $page, perPage: 4) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -104,6 +106,7 @@ import BlogCard from '~/components/BlogCard.vue'
 import TopWorks from '~/components/TopWorks.vue'
 import WorksCard from '~/components/WorksCard.vue'
 import TopServicesClients from '~/components/TopServicesClients.vue'
+import TopOurPartners from '~/components/TopOurPartners.vue'
 import TopNewsContact from '~/components/TopNewsContact.vue'
 import Post from '~/components/Post.vue'
 import ContactForm from '~/components/ContactForm.vue'
@@ -119,6 +122,7 @@ export default {
     WorksCard,
     TopServicesClients,
     TopNewsContact,
+    TopOurPartners,
     ContactForm
   },
   metaInfo: {

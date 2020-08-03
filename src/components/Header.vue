@@ -1,5 +1,5 @@
 <template>
-  <header class="header-nav" v-scroll-reveal.reset="{ delay: 800 }">
+  <header class="header-nav">
     <div class="header-nav__logo-block">
       <g-link to="/" class="header-nav__logo-link">
         <img
