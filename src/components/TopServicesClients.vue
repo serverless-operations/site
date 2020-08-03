@@ -82,44 +82,20 @@
     </div>
 
     <div class="container p-top-clients--container">
-      <div class="p-top-clients--body-shadow" />
+     
       <div class="p-top-clients--body" >
         <div class="row">
-          <v-col cols="12"
-                 md="6"
-                 lg="5"
-                 justify-self="center"
-                 align-self="center">
-            <h2 class="d-flex flex-column justify-center align-center align-md-start" >
-              Our Clients
-              <span>クライアント</span>
-            </h2>
-          </v-col>
-          <v-col cols="12"
-                 md="6"
-                 lg="5"
-                 offset-lg="1">
+
+          <h2>
+            Our Clients
+            <span>クライアント</span>
+          </h2>
+
+          <v-col cols="12" md="12" lg="12">
             <v-row>
               <v-col cols="6"
                      sm="4"
-                     justify-self="center"
-                     align-self="center">
-                <img class="p-top-clients--image"
-                     src="../assets/images/top-clients-infas.svg"
-                     alt="ServerlessOperations Clients INFAS" />
-              </v-col>
-
-              <v-col cols="6"
-                     sm="4"
-                     justify-self="center"
-                     align-self="center">
-                <img class="p-top-clients--image"
-                     src="../assets/images/top-clients-serverworks.svg"
-                     alt="ServerlessOperations Clients Serverworks" />
-              </v-col>
-
-              <v-col cols="6"
-                     sm="4"
+                     md="2"
                      justify-self="center"
                      align-self="center">
                 <img class="p-top-clients--image"
@@ -129,6 +105,31 @@
 
               <v-col cols="6"
                      sm="4"
+                     md="2"
+                     justify-self="center"
+                     align-self="center">
+                <img class="p-top-clients--image"
+                     src="../assets/images/top-clients-serverworks.svg"
+                     alt="ServerlessOperations Clients Serverworks" />
+              </v-col>
+
+              <v-col cols="6"
+                     sm="4"
+                     md="2"
+                     justify-self="center"
+                     align-self="center">
+                <img class="p-top-clients--image"
+                     src="../assets/images/top-clients-infas.png"
+                     alt="ServerlessOperations Clients INFAS" />
+              </v-col>
+
+             
+
+              
+
+              <v-col cols="6"
+                     sm="4"
+                     md="2"
                      justify-self="center"
                      align-self="center">
                 <img class="p-top-clients--image"
@@ -138,15 +139,17 @@
 
               <v-col cols="6"
                      sm="4"
+                     md="2"
                      justify-self="center"
                      align-self="center">
                 <img class="p-top-clients--image"
-                     src="../assets/images/top-clients-maas.svg"
+                     src="../assets/images/top-clients-maas.png"
                      alt="ServerlessOperations Clients MaaS Global" />
               </v-col>
 
               <v-col cols="6"
                      sm="4"
+                     md="2"
                      justify-self="center"
                      align-self="center">
                 <img class="p-top-clients--image"
@@ -163,6 +166,7 @@
           </v-col> -->
         </div>
       </div>
+
     </div>
 
   </div>
@@ -630,8 +634,8 @@ export default {
       position: relative;
       margin-bottom: 48px;
       @include media-breakpoint-up(md) {
-        margin-top: 262px;
-        margin-bottom: 192px;
+        margin-top: 120px;
+        margin-bottom: 120px;
       }
     }
     &--body-shadow {
@@ -652,26 +656,15 @@ export default {
       }
     }
     &--body {
-      background-color: $white;
-      padding: 40px 32px 28px;
-      position: relative;
-      z-index: 3;
-      width: calc(100% - 12px);
-      box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
-      @include media-breakpoint-up(md) {
-        padding: 80px 64px 60px;
-        width: 100%;
-      }
-      &::before {
-        background-color: $white;
-      }
-
       h2 {
         color: $primary;
         font-size: 3.5rem;
         font-family: $font-en-normal;
         font-weight: normal;
         line-height: 1.25;
+        text-align: center;
+        display: block;
+        width: 100%;
         @include media-breakpoint-up(md) {
           font-size: 4rem;
         }
@@ -685,8 +678,13 @@ export default {
       }
     }
     &--image {
-      width: 100%;
+      width: 70%;
       height: auto;
+      margin: 0 auto;
+      display: block;
+      @include media-breakpoint-up(md) {
+        width: 80%;
+      }
     }
     &--more {
       text-align: right;
