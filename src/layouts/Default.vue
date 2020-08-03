@@ -6,7 +6,7 @@
           <main class="v-content">
             <slot/>
           </main>
-        <our-partners />
+        <footer-our-partners />
         <call-to-action />
         <footer-component />
       </div>
@@ -16,14 +16,14 @@
 
 <script>
 import HeaderComponent from '~/components/Header.vue'
-import OurPartners from '~/components/OurPartners.vue'
+import FooterOurPartners from '~/components/FooterOurPartners.vue'
 import CallToAction from '~/components/CallToAction.vue'
 import FooterComponent from '~/components/Footer.vue'
 
 export default {
   components: {
     HeaderComponent,
-    OurPartners,
+    FooterOurPartners,
     CallToAction,
     FooterComponent
   },
