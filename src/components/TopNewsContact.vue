@@ -37,7 +37,8 @@
        
       <div class="container top-contact-form-container">
         <v-row>
-          <v-col cols="12" md="4" lg="3">
+
+          <v-col cols="12" md="4" lg="4">
             <h2 class="p-top-contact--title">
             Contact<span>お問い合わせ</span>
             </h2>
@@ -45,9 +46,11 @@
               AWS<small>（アマゾンウェブサービス）</small>などを利用したサーバーレスアプリケーションの設計・開発・保守運用等について<br>お困りの方は、こちらのフォームから気軽にお問い合わせください。2〜3営業日以内にメールで返信いたします。
             </p>
           </v-col>
-          <v-col cols="12" md="8" lg="9">
+
+          <v-col cols="12" md="8" lg="8">
             <top-contact-form />
           </v-col>
+
         </v-row>
       </div>
 
@@ -166,7 +169,7 @@ export default {
 
   .p-top-contact--container {
     @include media-breakpoint-up(md) {
-      width: 105% !important;
+      width: 110% !important;
     }
     @include media-breakpoint-up(lg) {
       width: 100% !important;
