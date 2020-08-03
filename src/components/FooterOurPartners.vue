@@ -13,7 +13,7 @@
               <a href="https://aws.amazon.com/jp/partners/consulting/">
                 <img
                   src="@/assets/images/our-partners/aws-logo.svg"
-                  alt="sample1"
+                  alt="AWS Consulting Partner"
                 >
               </a>
             </swiper-slide>
@@ -22,7 +22,7 @@
               <a href="https://spn.getshifter.io/">
                 <img
                   src="@/assets/images/our-partners/shifter-logo.svg"
-                  alt="sample2"
+                  alt="Digitalcube Shifter Partner Network"
                 >
               </a>
             </swiper-slide>

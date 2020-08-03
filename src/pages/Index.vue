@@ -59,6 +59,8 @@
 
       <top-services-clients />
 
+      <top-our-partners />
+
       <top-works />
 
       <top-blog />
@@ -104,6 +106,7 @@ import BlogCard from '~/components/BlogCard.vue'
 import TopWorks from '~/components/TopWorks.vue'
 import WorksCard from '~/components/WorksCard.vue'
 import TopServicesClients from '~/components/TopServicesClients.vue'
+import TopOurPartners from '~/components/TopOurPartners.vue'
 import TopNewsContact from '~/components/TopNewsContact.vue'
 import Post from '~/components/Post.vue'
 import ContactForm from '~/components/ContactForm.vue'
@@ -119,6 +122,7 @@ export default {
     WorksCard,
     TopServicesClients,
     TopNewsContact,
+    TopOurPartners,
     ContactForm
   },
   metaInfo: {
