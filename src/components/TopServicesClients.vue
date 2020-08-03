@@ -665,6 +665,7 @@ export default {
         text-align: center;
         display: block;
         width: 100%;
+        margin-bottom: 64px;
         @include media-breakpoint-up(md) {
           font-size: 4rem;
         }

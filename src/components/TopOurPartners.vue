@@ -62,7 +62,7 @@ h2 {
   font-family: $font-en-normal;
   font-weight: normal;
   line-height: 1.25;
-  margin-bottom: 80px;
+  margin-bottom: 64px;
   @include media-breakpoint-up(md) {
     font-size: 4rem;
   }

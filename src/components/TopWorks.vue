@@ -100,6 +100,9 @@ export default {
   @include media-breakpoint-up(lg) {
     background-position: center 350px;
   }
+  .p-works-contents {
+    padding-bottom: 120px;
+  }
   h2 {
     margin-top: 24px;
     font-size: 4rem;
