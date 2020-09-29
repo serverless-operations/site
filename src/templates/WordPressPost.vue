@@ -147,7 +147,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 .p-news-header {
   background: url('../assets/images/privacy-policy-header-bg-img.svg') no-repeat,
