@@ -2,7 +2,7 @@
    // 記事内画像
    /deep/ .wp-block-image {
     img {
-      width: 100%;
+      width: 100% !important;
       height: auto;
       margin: 16px 0 40px 0;
     }
