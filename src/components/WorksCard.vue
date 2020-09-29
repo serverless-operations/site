@@ -1,7 +1,5 @@
 <template>
-
   <div class="c-card-border">
-
     <g-link :to="post.path" class="p-works-contents-link">
 
        <g-image class="works-image object-cover h-64 w-full c-card-border"
@@ -49,6 +47,7 @@ export default {
   
   .p-works-contents-link {
     text-decoration: none;
+    display: block;
     .works-image {
       width: 100%;
       height: 240px;

@@ -17,21 +17,28 @@
         </div><!-- row -->
       
         <div class="p-works-contents row">
-          <div v-for="{ node } in $static.works.edges" :key="node.id" class="r-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-12">
-            <WorksCard :post="node" />
-          </div>
+
+          <client-only>
+            <swiper class="swiper" :options="swiperOption">
+              <swiper-slide v-for="{ node } in $static.works.edges" :key="node.id">
+                <div class="r-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-12">
+                  <WorksCard :post="node" />
+                </div> 
+              </swiper-slide>
+            </swiper>
+          </client-only>
+
         </div>
 
       </div><!-- container -->
-
 
     </div><!-- v-content__wrap -->
   </div><!-- v-content -->
 </template>
 
 <static-query>
-query {
-  works: allWordPressWorks {
+query ($page: Int) {
+  works: allWordPressWorks (page: $page, perPage: 6, sortBy: "date", order: DESC) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -74,11 +81,33 @@ query {
 
 <script>
 import WorksCard from '~/components/WorksCard.vue'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 export default {
   components: {
-    WorksCard
+    WorksCard,
+    VueAwesomeSwiper
   },
+  data() {
+    return {
+      swiperOption: {
+        spaceBetween: 20, //各スライドの余白
+        centeredSlides: true, //スライダーを真ん中に
+        loop: false, //無限ループ
+        slidesPerView: 1,
+        freeMode: false,
+        breakpoints: {
+          768: {
+            slidesPerView: 1,
+            centeredSlides: true, //スライダーを真ん中に
+            spaceBetween: 10,
+            freeMode: true,
+            centeredSlides: true
+          }
+        }
+      }
+    }
+  }
   // props: ['blog']
 }
 
@@ -222,6 +251,13 @@ export default {
   bottom: 0;
   z-index: 0;
   opacity: 0;
+}
+
+/deep/ .swiper-wrapper {
+  display: flex;
+  .swiper-slide {
+    max-width: 1200px;
+  }
 }
 
 
