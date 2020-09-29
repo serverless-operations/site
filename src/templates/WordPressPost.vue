@@ -147,14 +147,7 @@ export default {
 }
 </script>
 
-
 <style lang="scss">
-.p-news-articles {
-  @include wordpress_article_style;
-} // p-news-contents
-</style>
-
-<style lang="scss" scoped>
 .p-news-header {
   background: url('../assets/images/privacy-policy-header-bg-img.svg') no-repeat,
     linear-gradient(206.56deg, $tertiary -0.06%, $secondary 100.25%);
@@ -337,4 +330,9 @@ export default {
     height: 1300px;
   }
 } // p-news-bg
+
+.p-news-articles {
+  @include wordpress_article_style;
+} // p-news-contents
+
 </style>
