@@ -337,7 +337,6 @@ export default {
   }
 } // p-news-bg
 
-
 .p-news-articles {
   @include wordpress_article_style;
 } // p-news-contents
