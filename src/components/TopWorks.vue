@@ -101,8 +101,8 @@ export default {
             slidesPerView: 1,
             centeredSlides: true, //スライダーを真ん中に
             spaceBetween: 1,
-            freeMode: false,
-            loop: true
+            freeMode: true,
+            centeredSlides: true
           }
         }
       }
@@ -262,6 +262,7 @@ export default {
   display: flex;
   .swiper-slide {
     @include media-breakpoint-up(md) {
+      width: 100%;
       max-width: 1200px;
     }
   }
