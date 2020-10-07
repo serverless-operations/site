@@ -91,7 +91,7 @@ export default {
   data() {
     return {
       swiperOption: {
-        spaceBetween: 20, //各スライドの余白
+        spaceBetween: 1, //各スライドの余白
         centeredSlides: true, //スライダーを真ん中に
         loop: false, //無限ループ
         slidesPerView: 1,
@@ -100,9 +100,9 @@ export default {
           768: {
             slidesPerView: 1,
             centeredSlides: true, //スライダーを真ん中に
-            spaceBetween: 10,
-            freeMode: true,
-            centeredSlides: true
+            spaceBetween: 1,
+            freeMode: false,
+            loop: true
           }
         }
       }
@@ -131,6 +131,11 @@ export default {
   }
   .p-works-contents {
     padding-bottom: 120px;
+    overflow: hidden;
+    @include media-breakpoint-up(md) {
+      padding-bottom: 60px;
+      overflow: scroll;
+    }
   }
   h2 {
     margin-top: 24px;
@@ -256,7 +261,9 @@ export default {
 /deep/ .swiper-wrapper {
   display: flex;
   .swiper-slide {
-    max-width: 1200px;
+    @include media-breakpoint-up(md) {
+      max-width: 1200px;
+    }
   }
 }
 
