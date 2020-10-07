@@ -49,7 +49,7 @@ export default {
     text-decoration: none;
     display: block;
     .works-image {
-      width: 100%;
+      width: auto;
       height: 240px;
       object-fit: cover;
       @include media-breakpoint-up(md) {
@@ -74,8 +74,8 @@ export default {
       position: relative;
       z-index: 3;
       box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
-      width: 90%;
-      margin-left: 5%;
+      width: 90vw;
+      margin-left: 3vw;
       margin-top: -32px;
       transition: all 0.4s cubic-bezier(0.76, 0, 0.3, 1);
 
