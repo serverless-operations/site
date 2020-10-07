@@ -99,7 +99,7 @@
                      justify-self="center"
                      align-self="center">
                 <img class="p-top-clients--image"
-                     src="../assets/images/top-clients-alis.svg"
+                     src="../assets/images/clients/top-clients-alis.svg"
                      alt="ServerlessOperations Clients ALIS" />
               </v-col>
 
@@ -109,7 +109,7 @@
                      justify-self="center"
                      align-self="center">
                 <img class="p-top-clients--image"
-                     src="../assets/images/top-clients-serverworks.svg"
+                     src="../assets/images/clients/top-clients-serverworks.svg"
                      alt="ServerlessOperations Clients Serverworks" />
               </v-col>
 
@@ -119,13 +119,9 @@
                      justify-self="center"
                      align-self="center">
                 <img class="p-top-clients--image"
-                     src="../assets/images/top-clients-infas.png"
+                     src="../assets/images/clients/top-clients-infas.png"
                      alt="ServerlessOperations Clients INFAS" />
               </v-col>
-
-             
-
-              
 
               <v-col cols="6"
                      sm="4"
@@ -133,7 +129,7 @@
                      justify-self="center"
                      align-self="center">
                 <img class="p-top-clients--image"
-                     src="../assets/images/top-clients-lixil.svg"
+                     src="../assets/images/clients/top-clients-lixil.svg"
                      alt="ServerlessOperations Clients LIXIL" />
               </v-col>
 
@@ -143,7 +139,7 @@
                      justify-self="center"
                      align-self="center">
                 <img class="p-top-clients--image"
-                     src="../assets/images/top-clients-maas.png"
+                     src="../assets/images/clients/top-clients-maas.png"
                      alt="ServerlessOperations Clients MaaS Global" />
               </v-col>
 
@@ -153,8 +149,38 @@
                      justify-self="center"
                      align-self="center">
                 <img class="p-top-clients--image"
-                     src="../assets/images/top-clients-libelize.svg"
+                     src="../assets/images/clients/top-clients-libelize.svg"
                      alt="ServerlessOperations Clients Libelize" />
+              </v-col>
+
+              <v-col cols="6"
+                     sm="4"
+                     md="2"
+                     justify-self="center"
+                     align-self="center">
+                <img class="p-top-clients--image"
+                     src="../assets/images/clients/top-clients-htb.svg"
+                     alt="ServerlessOperations Clients HTB" />
+              </v-col>
+
+              <v-col cols="6"
+                     sm="4"
+                     md="2"
+                     justify-self="center"
+                     align-self="center">
+                <img class="p-top-clients--image"
+                     src="../assets/images/clients/top-clients-tokion.png"
+                     alt="ServerlessOperations Clients TOKION" />
+              </v-col>
+
+              <v-col cols="6"
+                     sm="4"
+                     md="2"
+                     justify-self="center"
+                     align-self="center">
+                <img class="p-top-clients--image"
+                     src="../assets/images/clients/top-clients-geolonia.png"
+                     alt="ServerlessOperations Clients Geolonia" />
               </v-col>
             </v-row>
           </v-col>
