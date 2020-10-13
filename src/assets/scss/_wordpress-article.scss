@@ -1,11 +1,20 @@
 @mixin wordpress_article_style {
    // 記事内画像
-   /deep/ .wp-block-image img {
-    max-width: 100%;
-    width: 100% !important;
-    height: auto;
-    margin: 16px 0 40px 0;
+  /deep/ .wp-block-image {
+    img {
+      max-width: 100%;
+      width: 100% !important;
+      height: auto;
+      margin: 16px 0 32px 0;
+    }
+    figcaption {
+      font-size: 12px;
+      text-align: center;
+      margin: 0 0 48px 0;
+      color: $mid-gray-1;
+    }
   }
+  
 
   /deep/ p {
     line-height: 1.8;
