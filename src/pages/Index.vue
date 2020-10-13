@@ -125,9 +125,12 @@ export default {
     TopOurPartners,
     ContactForm
   },
-  metaInfo: {
-    title: 'Serverless Operations'
-  }
+  metaInfo () {
+    return {
+      title: 'Serverless Operations | サーバーレスでクラウドの価値を最大限に',
+      description: 'Serverless Operationsは、これまでグローバルの第一線で培ってきたクラウド技術（AWS − アマゾンウェブサービス）の豊富な実績と知見を活かし、お客さまのサーバーレスによる開発や運用の支援、コンサルティングまで一貫してサポート。サーバーレスに関するさまざまな課題を解決いたします。'
+    }
+  },
 }
 </script>
 
