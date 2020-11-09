@@ -9,8 +9,6 @@ import '~/assets/js/chatplus.js'
 import Vuelidate from 'vuelidate'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
-// import GridsomeScrollReveal from 'gridsome-scroll-reveal';
-
 export default function (Vue, { router, head, appOptions, isClient, isServer }) {
   
   // Add an external Javascript before the closing </body> tag
@@ -53,5 +51,4 @@ export default function (Vue, { router, head, appOptions, isClient, isServer }) 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
 
-  // Vue.use(GridsomeScrollReveal);
 }

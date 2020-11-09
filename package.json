@@ -17,7 +17,6 @@
     "global": "^4.4.0",
     "gridsome": "^0.7.14",
     "gridsome-plugin-remark-prismjs-all": "^0.3.5",
-    "gridsome-scroll-reveal": "^1.0.11",
     "prismjs": "^1.20.0",
     "swiper": "^6.0.4",
     "vercel": "^20.1.1",
