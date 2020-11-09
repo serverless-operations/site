@@ -1,19 +1,6 @@
 <template>
   <footer class="v-footer footer v-sheet v-sheet--tile theme--dark">
 
-    
-    <!-- <v-container>
-      <v-col cols="12" class="c-footer-breadcrumb">
-        <nuxt-link to="/" class="c-footer-breadcrumb__home">
-          <span>Serverless Operations - Home</span>
-        </nuxt-link>
-        <span class="c-footer-breadcrumb__separater">/</span>
-        <span class="c-footer-breadcrumb__category">カテゴリー名</span>
-        <span class="c-footer-breadcrumb__separater">/</span>
-        <span class="c-footer-breadcrumb__current">現在のページ</span>
-      </v-col>
-    </v-container> -->
-
     <v-container>
       <v-row>
         <v-col cols="12"
@@ -46,31 +33,7 @@
             </li>
           </ul>
         </v-col>
-
-        <!-- <v-col cols="12" sm="6" md="3">
-          <div class="c-footer-menu__title">Works</div>
-          <div class="c-footer-menu__subtitle">導入事例</div>
-          <ul class="c-footer-list">
-            <li class="c-footer-list__item">事例一覧</li>
-            <li class="c-footer-list__item">Development</li>
-            <li class="c-footer-list__item">Auth0</li>
-          </ul>
-        </v-col> -->
-
-        <!-- <v-col cols="12" sm="6" md="3">
-          <div class="c-footer-menu__title">News</div>
-          <div class="c-footer-menu__subtitle">お知らせ</div>
-          <ul class="c-footer-list">
-            <li class="c-footer-list__item">お知らせの記事タイトルがはいります。ダミーテキストダミーテキスト</li>
-            <li
-              class="c-footer-list__item"
-            >お知らせの記事タイトルがはいります。ダミーテキストダミーテキストお知らせの記事タイトルがはいります。ダミーテキストダミーテキスト</li>
-            <li class="c-footer-list__item">お知らせの記事タイトルがはいります。ダミーテキストダミーテキスト</li>
-            <li class="c-footer-list__item">お知らせの記事タイトルがはいります。ダミーテキストダミーテキスト</li>
-          </ul>
-        </v-col> -->
        
-
         <v-col cols="12" sm="6" md="3">
           <g-link to="/company/" class="c-footer-list__link">
             <div class="c-footer-menu__title">Company</div>
@@ -173,8 +136,6 @@ export default {
   },
 }
 
-
-
 if (process.client) {
   (function(){
   var w=window,d=document;
@@ -204,7 +165,8 @@ if (process.client) {
 }
 
 .footer {
-  background: $secondary;
+  background-image: url(../assets/images/footer/footer-particle.svg),
+                    linear-gradient(50.89deg, #00007D 8%, #2C48FF 148.73%);
 }
 
 // パンくず

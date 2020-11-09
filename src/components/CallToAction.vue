@@ -1,19 +1,32 @@
 <template>
   <div class="v-content">
     <div class="container">
+
       <v-row align="center"
              justify="center">
         <v-col cols="11">
-          <h2>サーバーレスで<br class="d-block d-md-none">クラウドの価値を最大限に<span>Maximize the cloud value with serverless</span></h2>
+          <h2>オンライン無料相談</h2>
+          <h3>サーバーレスの悩み事、お気軽にご相談ください</h3>
         </v-col>
       </v-row>
-      <v-row align="center"
-             justify="center">
-        <v-col cols="10"
-               md="6">
-          <p class="p-cta__paragraph">Serverless Operationsはこれまでグローバルの第一線で培ってきたクラウド技術<small>（AWS − アマゾンウェブサービス）</small>の豊富な実績と知見を活かし、お客さまのサーバーレスに関するさまざまな課題を解決します。</p>
+      <v-row 
+        align="center"
+        justify="center"
+      >
+        <v-col
+          cols="10"
+          md="6"
+        >
+          <p class="p-cta__paragraph">
+            Serverless Operations の担当者がオンラインで皆さんのサーバーレスに関するご相談やお問い合わせに無料でお答えいたします。
+              <a href="https://calendly.com/slsops/office-hours">カレンダー
+                <small>(Calendly)</small>
+              </a>
+            からお好きな日程をブッキングしていたくだけで、お申込みいただけます。
+          </p>
         </v-col>
       </v-row>
+
       <v-row align="center"
              justify="center"
              justify-md="space-between"
@@ -22,12 +35,14 @@
                sm="10"
                md="6"
                >
-          <v-card flat
-                  to="/services/serverless-consulting/"
-                  :hover="false"
-                  height="158px"
-                  width="100%"
-                  class="d-flex justify-center align-center p-cta__consulting theme--dark">
+          <v-card 
+            flat
+            to="/services/serverless-consulting/"
+            :hover="false"
+            height="158px"
+            width="100%"
+            class="d-flex justify-center align-center p-cta__consulting theme--dark"
+          >
            
             <v-card-title class="flex-column justify-end justify-sm-center align-start p-cta__menu">
               <span class="p-cta__menu--top">Serverless</span>
@@ -94,6 +109,9 @@
       }
     }
   }
+  h3 {
+    text-align: center;
+  }
   .v-card__link:focus:before {
     opacity: 0;
   }
@@ -104,6 +122,13 @@
       font-size: 1rem;
       text-align: justify;
       line-height: 2;
+      a {
+        color: #fff;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
     &__contact {
