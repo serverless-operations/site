@@ -6,14 +6,14 @@
       <div class="container">
 
         <v-row align="center" justify="center">
-          <v-col cols="11">
+          <v-col cols="12">
             <h2>オンライン無料相談</h2>
             <h3>サーバーレスの悩み事、お気軽にご相談ください</h3>
           </v-col>
         </v-row>
 
         <v-row align="center" justify="center">
-          <v-col cols="10" md="6">
+          <v-col cols="12" md="6">
             <p class="cta-header-text">
               Serverless Operations の担当者がオンラインで皆さんのサーバーレスに関するご相談やお問い合わせに無料でお答えいたします。
                 <a href="https://calendly.com/slsops/office-hours">カレンダー
@@ -25,8 +25,8 @@
         </v-row>
 
         <v-row align="center" justify="center" justify-md="space-between" class="cta-task-container">
-          <v-col class="cta-task-list-container" cols="12" sm="8" md="9">
-            <h3>こんなお悩みや課題を抱えていませんか？</h3>
+          <v-col class="cta-task-list-container" cols="12" sm="7" md="9">
+            <h3>こんなお悩みや課題を<br class="d-md-none" />抱えていませんか？</h3>
             <div class="cta-task-list">
               <ul>
                 <li>サーバーレスでやりたいことがあるが<br>何から始めていいかわからない</li>
@@ -42,7 +42,7 @@
             
           </v-col>
 
-          <v-col class="cta-task-overview" align="start" justify="center" cols="12" sm="4" md="3">
+          <v-col class="cta-task-overview" align="start" justify="center" cols="12" sm="5" md="3">
             <ul>
               <li class="target">対象：法人・個人</li>
               <li class="hour">平日 10:00 – 19:00</li>
@@ -58,7 +58,7 @@
     </div>
 
     <a class="cta-button" href="https://calendly.com/slsops/office-hours">
-      オンライン無料相談をカレンダーから予約する
+      オンライン無料相談を<br class="d-md-none" />カレンダーから予約する
     </a>
 
   </div>
@@ -73,15 +73,28 @@
   background-size: cover;
   background-color: $tertiary;
 
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 64px;
+    background-image: url('../assets/images/cta/cta-particle.svg');
+  }
+
+  .container {
+    @include media-breakpoint-down(sm) {
+      width: 90vw;
+    }
+  }
+  
   h2 {
     margin-top: 120px;
-    font-size: 1.5rem;
+    font-size: 48px;
     text-align: center;
     font-family: $font-jp-bold;
     margin-bottom: 40px;
 
-    @include media-breakpoint-up(md) {
-      font-size: 2.5rem;
+    @include media-breakpoint-down(sm) {
+      margin-top: 64px;
+      margin-bottom: 16px;
+      font-size: 24px;
     }
     span {
       display: block;
@@ -90,7 +103,7 @@
       opacity: 0.5;
       font-weight: normal;
       font-family: $font-en-normal;
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(sm) {
         font-size: 1.5rem;
       }
     }
@@ -98,6 +111,9 @@
   h3 {
     text-align: center;
     font-size: 24px;
+    @include media-breakpoint-down(sm) {
+      font-size: 14px;
+    }
   }
   .v-card__link:focus:before {
     opacity: 0;
@@ -110,6 +126,9 @@
     line-height: 2;
     padding: 0;
     margin-bottom: 40px;
+    @include media-breakpoint-down(sm) {
+      font-size: 14px;
+    }
     a {
       color: #fff;
       text-decoration: none;
@@ -129,6 +148,9 @@
     .cta-task-list-container {
       font-size: 14px;
       padding: 0 48px 16px 48px;
+      @include media-breakpoint-down(sm) {
+        padding: 0 24px 24px 24px;
+      }
 
       // こんなお悩み
       h3 {
@@ -140,14 +162,27 @@
       }
       .cta-task-list {
         display: flex;
+        @include media-breakpoint-down(sm) {
+          flex-direction: column;
+        }
         ul {
           margin-right: 4px;
+          @include media-breakpoint-down(sm) {
+            padding-left: 0;
+            margin-right: 0;
+          }
           li {
             list-style: none;
             margin-bottom: 16px;
             background-image: url("../assets/images/cta/cta-icon-check.svg");
             padding-left: 32px;
             background-position:0px 1px;
+            @include media-breakpoint-down(sm) {
+              margin-bottom: 8px;
+              br {
+                display: none;
+              }
+            }
           }
         }
       }
@@ -155,15 +190,25 @@
     .cta-task-overview {
       background-color: $primary;
       color: #fff;
-      min-height: 270px;
+      min-height: 320px;
       display: flex;
       justify-content: center;
       align-items: center;
+      @include media-breakpoint-down(sm) {
+        min-height: 460px;
+      }
+      @include media-breakpoint-down(xs) {
+        min-height: 200px;
+      }
       ul {
         li {
           margin-bottom: 14px;
           font-size: 14px;
           list-style: none;
+          @include media-breakpoint-down(sm) {
+            margin-bottom: 8px;
+            font-size: 14px;
+          }
           &.target {
             background-image: url("../assets/images/cta/cta-icon-target.svg");
             padding-left: 32px;
@@ -199,6 +244,13 @@
   font-size: 24px;
   font-family: $font-jp-bold;
   line-height: 360px;
+  @include media-breakpoint-down(sm) {
+    margin-top: 0;
+    min-height: 176px;
+    line-height: 1.2;
+    font-size: 18px;
+    padding-top: 18%;
+  }
   &::before {
     content: 'Office Hours';
     position: absolute;
@@ -210,7 +262,10 @@
     bottom: 0;
     opacity: 0.1;
     font-family: $font-en-light;
-    font-size: 14vw;
+    font-size: 15vw;
+    @include media-breakpoint-down(sm) {
+      top: 30%;
+    }
   }
   &::after {
     content: '';
