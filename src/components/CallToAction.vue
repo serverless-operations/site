@@ -61,9 +61,12 @@
 
     </div>
 
-    <a class="cta-button" href="https://calendly.com/slsops/office-hours">
-      オンライン無料相談を<br class="d-md-none" />カレンダーから予約する
-    </a>
+    <div class="cta-button-container">
+      <a class="cta-button" href="https://calendly.com/slsops/office-hours">
+        オンライン無料相談を<br class="d-md-none" />カレンダーから予約する
+      </a>
+    </div>
+   
 
   </div>
 
@@ -252,6 +255,10 @@
     }
   }
 }
+// フルサイズのボタン
+.cta-button-container {
+  background-color: $tertiary;
+}
 .cta-button {
   margin-top: -80px;
   display: block;
@@ -265,8 +272,9 @@
   font-size: 24px;
   font-family: $font-jp-bold;
   line-height: 360px;
-  transition: all 1s cubic-bezier(0.76, 0, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.76, 0, 0.3, 1);
   &:hover {
+    // background-color: $tertiary;
     opacity: 0.9;
   }
   @include media-breakpoint-down(md) {
