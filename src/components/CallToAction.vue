@@ -1,86 +1,111 @@
 <template>
-  <div class="v-content">
-    <div class="container">
-      <v-row align="center"
-             justify="center">
-        <v-col cols="11">
-          <h2>サーバーレスで<br class="d-block d-md-none">クラウドの価値を最大限に<span>Maximize the cloud value with serverless</span></h2>
-        </v-col>
-      </v-row>
-      <v-row align="center"
-             justify="center">
-        <v-col cols="10"
-               md="6">
-          <p class="p-cta__paragraph">Serverless Operationsはこれまでグローバルの第一線で培ってきたクラウド技術<small>（AWS − アマゾンウェブサービス）</small>の豊富な実績と知見を活かし、お客さまのサーバーレスに関するさまざまな課題を解決します。</p>
-        </v-col>
-      </v-row>
-      <v-row align="center"
-             justify="center"
-             justify-md="space-between"
-             class="mt-12 mb-12">
-        <v-col cols="12"
-               sm="10"
-               md="6"
-               >
-          <v-card flat
-                  to="/services/serverless-consulting/"
-                  :hover="false"
-                  height="158px"
-                  width="100%"
-                  class="d-flex justify-center align-center p-cta__consulting theme--dark">
-           
-            <v-card-title class="flex-column justify-end justify-sm-center align-start p-cta__menu">
-              <span class="p-cta__menu--top">Serverless</span>
-              Consulting
-              <span class="p-cta__menu--bottom">サーバーレスコンサルテイング</span>
-            </v-card-title>
-          </v-card>
+  <div class="">
 
-          <v-card flat
-                  to="/services/serverless-development"
-                  height="158px"
-                  width="100%"
-                  class="d-flex justify-center align-center p-cta__development theme--dark">
+    <div class="v-content">
+
+      <div class="container">
+
+        <v-row align="center" justify="center">
+          <v-col cols="12">
+            <h2>オンライン無料相談</h2>
+            <h3>サーバーレスの悩み事、お気軽にご相談ください</h3>
+          </v-col>
+        </v-row>
+
+        <v-row align="center" justify="center">
+          <v-col cols="12" md="6">
+            <p class="cta-header-text">
+              Serverless Operations の担当者がオンラインで皆さんのサーバーレスに関するご相談やお問い合わせに無料でお答えいたします。
+                <a href="https://calendly.com/slsops/office-hours">カレンダー
+                  <small>(Calendly)</small>
+                </a>
+              からお好きな日程をブッキングしていたくだけで、お申込みいただけます。
+            </p>
+          </v-col>
+        </v-row>
+
+        <v-row align="center" justify="center" justify-md="space-between" class="cta-task-container">
+          <v-col class="cta-task-list-container" cols="12" sm="7" md="9">
+            <h3>こんなお悩みや課題を<br class="d-md-none" />抱えていませんか？</h3>
+            <div class="cta-task-list">
+              <ul>
+                <li>サーバーレスでやりたいことがあるが<br>何から始めていいかわからない</li>
+                <li>サーバーレスのアーキテクチャレビューをしてほしい</li>
+                <li>サーバーレスで進めようとしているが<br>適しているのかわからない</li>
+              </ul>
+              <ul>
+                <li>クラウド技術習得やこれからのキャリアに迷っている</li>
+                <li>社内でサーバーレスを広めたいがブロッカーがある</li>
+                <li>新卒エンジニアだがサーバーレスの勉強を<br>どうしたらいいのかわからない</li>
+              </ul>
+            </div>
             
-            <v-card-title class="flex-column justify-end justify-sm-center align-start p-cta__menu">
-              <span class="p-cta__menu--top">Serverless</span>
-              Development
-              <span class="p-cta__menu--bottom">サーバーレスディベロップメント</span>
-            </v-card-title>
-          </v-card>
+          </v-col>
 
-        </v-col>
-        <v-col cols="12"
-               sm="8"
-               md="5">
-          <v-card color="#FFFFFF"
-                  class="d-flex justify-center align-center p-cta__contact"
-                  to="/contact">
-            <h3 class="d-flex justify-center align-center">Contact<span>お問い合わせ</span></h3>
-          </v-card>
-        </v-col>
-      </v-row>
+          <v-col class="cta-task-overview" align="start" justify="center" cols="12" sm="5" md="3">
+            <ul>
+              <li class="target">対象：法人・個人</li>
+              <li class="hour">平日 10:00 – 19:00</li>
+              <li class="min">1社 or 1人 / 60分</li>
+              <li class="calendar">
+                <a href="https://calendly.com/slsops/office-hours"> 
+                  カレンダーから簡単予約
+                </a>
+              </li>
+            </ul>
+          </v-col>
+
+        </v-row>
+
+      </div>
 
     </div>
+
+    <div class="cta-button-container">
+      <a class="cta-button" href="https://calendly.com/slsops/office-hours">
+        オンライン無料相談を<br class="d-md-none" />カレンダーから予約する
+      </a>
+    </div>
+   
+
   </div>
+
 </template>
 
 <style lang="scss" scoped>
 .v-content {
-  background: url('../assets/images/cta-logo.svg') no-repeat,
-    linear-gradient(206.56deg, $tertiary -0.06%, $secondary 100.25%);
+  background-image: url('../assets/images/cta/cta-particle.svg');
   background-repeat: no-repeat, no-repeat;
-  background-position: top 88px center, center;
-  background-size: 100%;
-  // margin-top: -72px;
+  background-position: center, center;
+  background-size: cover;
+  background-color: $tertiary;
+
+  @include media-breakpoint-down(md) {
+    padding-bottom: 64px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 64px;
+    background-image: url('../assets/images/cta/cta-particle.svg');
+  }
+
+  .container {
+    @include media-breakpoint-down(sm) {
+      width: 90vw;
+    }
+  }
+  
   h2 {
     margin-top: 120px;
-    font-size: 1.5rem;
+    font-size: 48px;
     text-align: center;
-    font-family: $font-jp-normal;
-    font-weight: normal;
-    @include media-breakpoint-up(md) {
-      font-size: 2.5rem;
+    font-family: $font-jp-bold;
+    margin-bottom: 40px;
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 64px;
+      margin-bottom: 16px;
+      font-size: 24px;
     }
     span {
       display: block;
@@ -89,156 +114,238 @@
       opacity: 0.5;
       font-weight: normal;
       font-family: $font-en-normal;
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(sm) {
         font-size: 1.5rem;
       }
+    }
+  }
+  h3 {
+    text-align: center;
+    font-size: 24px;
+    @include media-breakpoint-down(sm) {
+      font-size: 14px;
     }
   }
   .v-card__link:focus:before {
     opacity: 0;
   }
 
-  .p-cta {
-    &__paragraph {
-      font-family: $font-jp-normal;
-      font-size: 1rem;
-      text-align: justify;
-      line-height: 2;
+  .cta-header-text{
+    font-family: $font-jp-normal;
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 2;
+    padding: 0;
+    margin-bottom: 40px;
+    @include media-breakpoint-down(sm) {
+      font-size: 14px;
     }
-
-    &__contact {
-      height: 48px;
-      @include media-breakpoint-up(md) {
-        height: 100px;
-      }
-
-      h3 {
-        color: $tertiary;
-        font-size: 2rem;
-        padding: 0;
-        line-height: 1;
-        font-family: $font-en-normal;
-        font-weight: normal;
-        @include media-breakpoint-up(md) {
-          font-size: 3.5rem;
-        }
-        span {
-          display: inline-block;
-          font-size: 0.875rem;
-          margin-left: 28px;
-          @include media-breakpoint-up(md) {
-            font-size: 1rem;
-          }
-        } //span
-      } // h3
-    }
-    // コンサルティング、ディベロップメントのメニュー
-    &__consulting,
-    &__development {
-      background-color: initial;
-      background-repeat: no-repeat;
-      background-position: right 20px bottom 54px;
-      background-size: auto;
-      @include media-breakpoint-up(sm) {
-        background-position: right 20px center;
-      }
-      @include media-breakpoint-up(md) {
-        background-size: auto;
-      }
-    }
-    // コンサルティング
-    &__consulting {
-      background-image: url('../assets/images/cta-arrow.svg');
-      margin-bottom: 16px;
-      position: relative;
-      @include media-breakpoint-up(md) {
-        margin-bottom: 64px;
-        position: relative;
-      }
-
-      // コンサルティングの背景のアイコン
-      &:after {
-        pointer-events: none;
-        display: block;
-        width: 100%;
-        height: 100%;
-        content: ' ';
-        position: absolute;
-        background: url('../assets/images/service-icon-consulting.svg');
-        background-repeat: no-repeat;
-        background-position: left top 8px;
-        background-size: auto 80%;
-        opacity: 0.6;
-        z-index: 1;
-        @include media-breakpoint-up(md) {
-          background-size: auto 90%;
-        }
-      } //&:after
-    } // &__consulting
-
-    // ディベロップメント
-    &__development {
-      background-image: url('../assets/images/cta-arrow.svg');
-      margin-bottom: 32px;
-      position: relative;
-      @include media-breakpoint-up(md) {
-        margin-bottom: 0;
-      }
-      // 背景のアイコン
-      &:after {
-        pointer-events: none;
-        display: block;
-        width: 100%;
-        height: 100%;
-        content: ' ';
-        position: absolute;
-        background: url('../assets/images/service-icon-development.svg');
-        background-repeat: no-repeat;
-        background-position: left top 8px;
-        background-size: auto 80%;
-        opacity: 0.7;
-        z-index: 1;
-        @include media-breakpoint-up(md) {
-          background-size: auto 90%;
-        }
-      } //&:after
-    } // &__development
-
-    // CTAのリンクメニュー名部分
-    &__menu {
-      padding-left: 0;
-      font-size: 2rem;
-      font-family: $font-en-normal;
-      font-weight: normal;
-      height: 100%;
-
-      @include media-breakpoint-up(md) {
-        padding-left: 64px;
-        font-size: 3rem;
-      }
-
-      // メニュー上のServerless
-      &--top {
-        display: block;
-        font-size: 0.75rem;
-        margin: 8px 0 14px;
-        font-family: $font-jp-normal;
-        line-height: 1;
-        @include media-breakpoint-up(lg) {
-          font-size: 1.5rem;
-        }
-      }
-
-      // メニュー下のサービス名(日本語)
-      &--bottom {
-        display: block;
-        font-size: 0.875rem;
-        margin-top: 12px;
-        @include media-breakpoint-up(lg) {
-          font-size: 1rem;
-        }
+    a {
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
       }
     }
   } // p-cta
+
+  .cta-task-container {
+    background-color: #fff;
+    border-radius: 3px;
+    color: $primary;
+    box-shadow: 8px 24px 50px rgba($primary, 0.4);
+    position: relative;
+    z-index: 1;
+    .cta-task-list-container {
+      font-size: 14px;
+      padding: 0 48px 16px 48px;
+      @include media-breakpoint-down(sm) {
+        padding: 0 24px 24px 24px;
+      }
+
+      // こんなお悩み
+      h3 {
+        font-family: $font-jp-bold;
+        font-size: 18px;
+        padding-bottom: 16px;
+        margin: 32px 0 24px 0;
+        border-bottom: 1px solid $light-gray-1;
+        color: $secondary;
+      }
+      .cta-task-list {
+        display: flex;
+        @include media-breakpoint-down(sm) {
+          flex-direction: column;
+        }
+        ul {
+          margin-right: 4px;
+          @include media-breakpoint-down(sm) {
+            padding-left: 0;
+            margin-right: 0;
+          }
+          li {
+            list-style: none;
+            margin-bottom: 16px;
+            background-image: url("../assets/images/cta/cta-icon-check.svg");
+            padding-left: 32px;
+            background-position:0px 1px;
+            font-family: $font-jp-bold;
+            color: $secondary;
+            @include media-breakpoint-down(sm) {
+              margin-bottom: 8px;
+              br {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .cta-task-overview {
+      background-color: $primary;
+      color: #fff;
+      min-height: 320px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include media-breakpoint-down(sm) {
+        min-height: 480px;
+      }
+      @include media-breakpoint-down(xs) {
+        min-height: 200px;
+      }
+      ul {
+        padding: 0;
+        li {
+          margin-bottom: 14px;
+          font-size: 14px;
+          list-style: none;
+          @include media-breakpoint-down(sm) {
+            margin-bottom: 8px;
+            font-size: 14px;
+          }
+          &.target {
+            background-image: url("../assets/images/cta/cta-icon-target.svg");
+            padding-left: 32px;
+          }
+          &.hour {
+            background-image: url("../assets/images/cta/cta-icon-hour.svg");
+            padding-left: 32px;
+          }
+          &.min {
+            background-image: url("../assets/images/cta/cta-icon-min.svg");
+            padding-left: 32px;
+            background-position: 0px 3px;
+          }
+          &.calendar {
+            background-image: url("../assets/images/cta/cta-icon-calendar.svg");
+            padding-left: 32px;
+            a {
+              color: #fff;
+              text-decoration: none;
+              transition: all 2s cubic-bezier(0.76, 0, 0.3, 1);
+              &:hover {
+                opacity: 0.9;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// フルサイズのボタン
+.cta-button-container {
+  background-color: $tertiary;
+}
+.cta-button {
+  margin-top: -80px;
+  display: block;
+  text-align: center;
+  background: $secondary;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  z-index: 0;
+  min-height: 360px;
+  font-size: 24px;
+  font-family: $font-jp-bold;
+  line-height: 360px;
+  transition: all 0.4s cubic-bezier(0.76, 0, 0.3, 1);
+  &:hover {
+    // background-color: $tertiary;
+    opacity: 0.9;
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: -120px;
+    min-height: 240px;
+    line-height: 1.2;
+    font-size: 18px;
+    padding-top: 110px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-top: 0;
+    min-height: 176px;
+    line-height: 1.2;
+    font-size: 18px;
+    padding-top: 68px;
+  }
+  &::before {
+    content: 'Office Hours';
+    position: absolute;
+    display: block;
+    z-index: 0;
+    left: 0;
+    top: 24px;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    font-family: $font-en-light;
+    font-size: 15vw;
+    transition: all 0.4s cubic-bezier(0.76, 0, 0.3, 1);
+    @include media-breakpoint-down(md) {
+      top: 10%;
+      font-size: 14vw;
+    }
+    @include media-breakpoint-down(sm) {
+      top: 20%;
+      font-size: 14vw;
+    }
+  }
+  &:hover::before {
+      opacity: 0.15;
+    }
+  // Border
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    z-index: 0;
+    width: 100px;
+    height: 1px;
+    background: #fff;
+    right: 20%;
+    bottom: 50%;
+    transition: transform 0.4s cubic-bezier(0.76, 0, 0.3, 1);
+    transform: scaleX(0);
+    transform-origin: right center;
+    @include media-breakpoint-down(md) {
+      right: 16%;
+    }
+    @include media-breakpoint-down(sm) {
+      right: 20%;
+      width: 80px;
+    }
+    @include media-breakpoint-down(xs) {
+      right: 6%;
+      width: 32px;
+    }
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition: transform 0.4s cubic-bezier(0.76, 0, 0.3, 1);
+  }
 }
 </style>
