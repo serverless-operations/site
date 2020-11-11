@@ -47,7 +47,11 @@
               <li class="target">対象：法人・個人</li>
               <li class="hour">平日 10:00 – 19:00</li>
               <li class="min">1社 or 1人 / 60分</li>
-              <li class="calendar">カレンダーから簡単予約</li>
+              <li class="calendar">
+                <a href="https://calendly.com/slsops/office-hours"> 
+                  カレンダーから簡単予約
+                </a>
+              </li>
             </ul>
           </v-col>
 
@@ -72,6 +76,10 @@
   background-position: center, center;
   background-size: cover;
   background-color: $tertiary;
+
+  @include media-breakpoint-down(md) {
+    padding-bottom: 64px;
+  }
 
   @include media-breakpoint-down(sm) {
     padding-bottom: 64px;
@@ -159,6 +167,7 @@
         padding-bottom: 16px;
         margin: 32px 0 24px 0;
         border-bottom: 1px solid $light-gray-1;
+        color: $secondary;
       }
       .cta-task-list {
         display: flex;
@@ -177,6 +186,8 @@
             background-image: url("../assets/images/cta/cta-icon-check.svg");
             padding-left: 32px;
             background-position:0px 1px;
+            font-family: $font-jp-bold;
+            color: $secondary;
             @include media-breakpoint-down(sm) {
               margin-bottom: 8px;
               br {
@@ -195,12 +206,13 @@
       justify-content: center;
       align-items: center;
       @include media-breakpoint-down(sm) {
-        min-height: 460px;
+        min-height: 480px;
       }
       @include media-breakpoint-down(xs) {
         min-height: 200px;
       }
       ul {
+        padding: 0;
         li {
           margin-bottom: 14px;
           font-size: 14px;
@@ -225,6 +237,15 @@
           &.calendar {
             background-image: url("../assets/images/cta/cta-icon-calendar.svg");
             padding-left: 32px;
+            a {
+              color: #fff;
+              text-decoration: none;
+              transition: all 2s cubic-bezier(0.76, 0, 0.3, 1);
+              &:hover {
+                opacity: 0.9;
+                text-decoration: underline;
+              }
+            }
           }
         }
       }
@@ -244,12 +265,23 @@
   font-size: 24px;
   font-family: $font-jp-bold;
   line-height: 360px;
+  transition: all 1s cubic-bezier(0.76, 0, 0.3, 1);
+  &:hover {
+    opacity: 0.9;
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: -120px;
+    min-height: 240px;
+    line-height: 1.2;
+    font-size: 18px;
+    padding-top: 110px;
+  }
   @include media-breakpoint-down(sm) {
     margin-top: 0;
     min-height: 176px;
     line-height: 1.2;
     font-size: 18px;
-    padding-top: 18%;
+    padding-top: 68px;
   }
   &::before {
     content: 'Office Hours';
@@ -263,10 +295,20 @@
     opacity: 0.1;
     font-family: $font-en-light;
     font-size: 15vw;
+    transition: all 0.4s cubic-bezier(0.76, 0, 0.3, 1);
+    @include media-breakpoint-down(md) {
+      top: 10%;
+      font-size: 14vw;
+    }
     @include media-breakpoint-down(sm) {
-      top: 30%;
+      top: 20%;
+      font-size: 14vw;
     }
   }
+  &:hover::before {
+      opacity: 0.15;
+    }
+  // Border
   &::after {
     content: '';
     position: absolute;
@@ -275,8 +317,27 @@
     width: 100px;
     height: 1px;
     background: #fff;
-    right: 28%;
+    right: 20%;
     bottom: 50%;
+    transition: transform 0.4s cubic-bezier(0.76, 0, 0.3, 1);
+    transform: scaleX(0);
+    transform-origin: right center;
+    @include media-breakpoint-down(md) {
+      right: 16%;
+    }
+    @include media-breakpoint-down(sm) {
+      right: 20%;
+      width: 80px;
+    }
+    @include media-breakpoint-down(xs) {
+      right: 6%;
+      width: 32px;
+    }
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition: transform 0.4s cubic-bezier(0.76, 0, 0.3, 1);
   }
 }
 </style>
