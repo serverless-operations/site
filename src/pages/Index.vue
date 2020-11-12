@@ -67,6 +67,8 @@
 
       <top-news-contact />
 
+      <top-clients />
+
     </div>
 
   </Layout>
@@ -110,6 +112,7 @@ import TopOurPartners from '~/components/TopOurPartners.vue'
 import TopNewsContact from '~/components/TopNewsContact.vue'
 import Post from '~/components/Post.vue'
 import ContactForm from '~/components/ContactForm.vue'
+import TopClients from '~/components/TopClients.vue'
 
 export default {
   components: {
@@ -123,7 +126,8 @@ export default {
     TopServicesClients,
     TopNewsContact,
     TopOurPartners,
-    ContactForm
+    ContactForm,
+    TopClients
   },
   metaInfo :{
     title: 'サーバーレスでクラウドの価値を最大限に',

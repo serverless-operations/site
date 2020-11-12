@@ -3,6 +3,17 @@
 
     <v-container>
       <v-row>
+
+        <v-col cols="12" sm="6" md="3">     
+          <g-link to="/our-products" class="c-footer-list__link">
+            <div class="c-footer-menu__title">Works</div>
+            <div class="c-footer-menu__subtitle">導入事例</div>
+          </g-link>
+          <ul class="c-footer-list">
+            <footer-works />
+          </ul>
+        </v-col>
+
         <v-col cols="12"
                sm="6"
                md="3">
@@ -33,10 +44,20 @@
             </li>
           </ul>
         </v-col>
+
+        <v-col cols="12" sm="6" md="3">     
+          <g-link to="/blog-archives" class="c-footer-list__link">
+            <div class="c-footer-menu__title">Blog</div>
+            <div class="c-footer-menu__subtitle">開発ブログ</div>
+          </g-link>
+          <ul class="c-footer-list">
+            <footer-blog />
+          </ul>
+        </v-col>
        
         <v-col cols="12" sm="6" md="3">
           <g-link to="/company/" class="c-footer-list__link">
-            <div class="c-footer-menu__title">Company</div>
+            <div class="c-footer-menu__title">About</div>
             <div class="c-footer-menu__subtitle">会社案内</div>
           </g-link>
 
@@ -61,33 +82,29 @@
                 おしらせ
               </g-link>
             </li>
+            <li class="c-footer-list__item">
+              <g-link to="/news-archives/" class="c-footer-list__link">
+                プライバシーポリシー
+              </g-link>
+            </li>
+            <li class="c-footer-list__item">
+              <a href="https://calendly.com/slsops/office-hours" class="c-footer-list__link">
+                オンライン無料相談
+              </a>
+            </li>
+            <li class="c-footer-list__item">
+              <g-link to="/contact" class="c-footer-list__link">
+                お問い合わせ
+              </g-link>
+            </li>
           </ul>
         </v-col>
 
-        <v-col cols="12" sm="6" md="3">     
-          <g-link to="/our-products" class="c-footer-list__link">
-            <div class="c-footer-menu__title">Works</div>
-            <div class="c-footer-menu__subtitle">導入事例</div>
-          </g-link>
-          <ul class="c-footer-list">
-            <footer-works />
-          </ul>
-        </v-col>
-
-        <v-col cols="12" sm="6" md="3">     
-          <g-link to="/blog-archives" class="c-footer-list__link">
-            <div class="c-footer-menu__title">Blog</div>
-            <div class="c-footer-menu__subtitle">開発ブログ</div>
-          </g-link>
-          <ul class="c-footer-list">
-            <footer-blog />
-          </ul>
-        </v-col>
       </v-row>
 
       <v-row class="mt-8 mt-md-12">
-        <v-col cols="12"
-               md="2">
+
+        <v-col cols="12" md="2">
           <div>
             <g-link to="/">
               <img src="../assets/images/footer-severless-operations-logo.svg"
@@ -95,14 +112,19 @@
             </g-link>
           </div>
         </v-col>
-        <v-col cols="12"
-               md="10"
-               class="text-center text-md-right">
-          <div class="sns-link text-right">
+
+        <v-col cols="12" md="10">
+
+          <div class="sns-link text-md-right">
+            <a href="https://github.com/serverless-operations"
+               target="_blank"
+               class="sns-link__github">
+              <v-icon>mdi-github</v-icon>
+            </a>
             <a href="https://www.facebook.com/ServerlessOperations"
                target="_blank"
                class="sns-link__facebook">
-              <v-icon>mdi-facebook-box</v-icon>
+              <v-icon>mdi-facebook</v-icon>
             </a>
             <a href="https://twitter.com/slsopsinc"
                class="sns-link__twitter"
@@ -110,16 +132,10 @@
               <v-icon>mdi-twitter</v-icon>
             </a>
           </div>
-
-          <div class="c-footer-submenu">
-            <g-link to="/contact"
-                       class="c-footer-submenu__link">Contact</g-link>
-            <g-link to="/privacy-policy"
-                       class="c-footer-submenu__link">Privacy Policy</g-link>
-          </div>
-
-          <div class="footer-copyright">© 2019 Serverless Operations All Rights Reserved.</div>
         </v-col>
+        <div class="footer-copyright">
+          © 2019 Serverless Operations All Rights Reserved.
+        </div>
       </v-row>
     </v-container>
   </footer>
@@ -165,6 +181,7 @@ if (process.client) {
 }
 
 .footer {
+  padding-top: 48px;
   background-image: url(../assets/images/footer/footer-particle.svg),
                     linear-gradient(50.89deg, #00007D 8%, #2C48FF 148.73%);
 }
@@ -255,14 +272,15 @@ if (process.client) {
 } // c-footer-list
 
 .sns-link {
-  margin-bottom: 52px;
+  margin: 16px 0 40px 0;
   .v-icon {
     font-size: 26px;
   }
 
-  &__twitter {
+  &__github {
     text-decoration: none;
     transition: all 0.3s ease;
+    margin-right: 24px;
     i {
       color: #fff;
     }
@@ -274,6 +292,19 @@ if (process.client) {
     text-decoration: none;
     margin-right: 24px;
     transition: all 0.3s ease;
+    i {
+      color: #fff;
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  &__twitter {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    i {
+      color: #fff;
+    }
     &:hover {
       opacity: 0.5;
     }
@@ -317,5 +348,6 @@ if (process.client) {
   opacity: 0.3;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
+  margin-bottom: 48px;
 }
 </style>

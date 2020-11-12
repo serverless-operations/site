@@ -6,7 +6,7 @@
           <main class="v-content">
             <slot/>
           </main>
-        <footer-our-partners />
+        <!--footer-our-partners /-->
         <call-to-action />
         <footer-component />
       </div>
