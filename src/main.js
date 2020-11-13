@@ -8,6 +8,9 @@ import '~/assets/css/prism-okaidia.css'
 import '~/assets/js/chatplus.js'
 import Vuelidate from 'vuelidate'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import gsap from "gsap";
+
+Vue.prototype.$gsap = gsap;
 
 export default function (Vue, { router, head, appOptions, isClient, isServer }) {
   
