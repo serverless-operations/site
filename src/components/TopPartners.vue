@@ -114,20 +114,44 @@ h2 {
   margin: 24px;
   height: 100%;
   background: #fff;
+  &:hover {
+    .partner-card-logo::after {
+      transform: scaleX(1);
+      transform-origin: left center;
+      transition: transform 0.4s cubic-bezier(0.76, 0, 0.3, 1);
+    }
+  }
   @include media-breakpoint-down(sm) {
     margin: 6px;
   }
   .partner-card-logo {
     padding-bottom: 64px;
     border-bottom: 1px solid $light-gray-1;
-    img {
-      max-height: 56px;
-      @include media-breakpoint-down(sm) {
-        max-height: 32px;
-        max-width: 80%;
+    position: relative;
+      // Border
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        z-index: 0;
+        width: 100%;
+        height: 1px;
+        background: $secondary;
+        left: 0;
+        bottom: 0;
+        transition: transform 0.4s cubic-bezier(0.76, 0, 0.3, 1);
+        transform: scaleX(0);
+        transform-origin: right center;
+      }
+      
+      img {
+        max-height: 56px;
+        @include media-breakpoint-down(sm) {
+          max-height: 32px;
+          max-width: 80%;
+        }
       }
     }
-  }
   .partner-card-text {
     padding: 40px 24px;
     background: $light-gray-2;
