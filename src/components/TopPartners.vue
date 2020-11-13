@@ -1,7 +1,7 @@
 <template>
   <div class="v-content">
     
-    <div class="container">
+    <div class="container section-title-partner">
       <div class="row">
         <h2 class="text-center">
           Partners
@@ -11,7 +11,7 @@
     </div>
 
     <v-container>
-      <div class="row justify-center">
+      <div class="row justify-center partner-card-container">
 
         <a class="partner-card col col-md-4 col-lg-3" href="https://aws.amazon.com/jp/partners/consulting/">
           <div class="partner-card-logo d-flex justify-center align-center">
@@ -48,9 +48,68 @@
   </div>
 </template>
 
+
 <script>
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
 export default {
-  
+  mounted() {
+    this.titleAnimation(),
+    this.imageStagger()
+  },
+  methods: {
+    titleAnimation() {
+      gsap
+        .timeline({
+          defaults: { ease: 'Expo.easeInOut', duration: 1.6 }, // timelineのプロパティ
+          scrollTrigger: {
+            // markers: true, // マーカーを表示するか（開発用）
+            trigger: '.section-title-partner', // この要素と交差するとイベントが発火
+            start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
+            end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
+            toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
+          },
+        })
+        .fromTo('.section-title-partner h2', {
+          opacity: 0,
+          y: 0,
+          scale: 0.98,
+        }, {
+          opacity: 1,
+          scale: 1,
+          y: -20,
+        })
+    },
+    imageStagger() {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            // markers: true, // マーカーを表示するか（開発用）
+            // scrub: 1,
+            trigger: '.partner-card-container', // この要素と交差するとイベントが発火
+            start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
+            end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
+            toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
+          },
+        })
+        .to('.partner-card', {
+          y: 0, // 少し上に移動させる
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          ease: 'Expo.easeInOut',
+          duration: 1.6,
+          // 複数要素を扱うプロパティ
+          stagger: {
+            from: 'start', //左側から
+            axis: 'x',
+            amount: 0.3 // 0.8秒おきに
+          }
+        })
+      }
+  }
 }
 </script>
 
@@ -69,7 +128,7 @@ export default {
     padding: 40px 0;
   }
 }
-h2 {
+.section-title-partner h2 {
   color: $secondary;
   font-size: 3.5rem;
   font-family: $font-en-normal;
@@ -106,6 +165,7 @@ h2 {
   }
 }
 .partner-card {
+  opacity: 0;
   display: block;
   border-radius: 3px;
   box-shadow: 8px 24px 50px rgba(207, 214, 226, 0.6);
