@@ -50,10 +50,10 @@
 
 
 <script>
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
-// const ScrollTrigger = process.browser ? require("gsap/ScrollTrigger") : undefined;
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   mounted() {
