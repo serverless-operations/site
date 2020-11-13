@@ -50,12 +50,13 @@
 
 
 <script>
-/*import { gsap } from 'gsap'
+import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)*/
+gsap.registerPlugin(ScrollTrigger)
+// const ScrollTrigger = process.browser ? require("gsap/ScrollTrigger") : undefined;
 
 export default {
-  /*mounted() {
+  mounted() {
     this.titleAnimation(),
     this.imageStagger()
   },
@@ -100,16 +101,16 @@ export default {
           x: 0,
           scale: 1,
           ease: 'Expo.easeInOut',
-          duration: 1.6,
+          duration: 1,
           // 複数要素を扱うプロパティ
           stagger: {
             from: 'start', //左側から
             axis: 'x',
-            amount: 0.3 // 0.8秒おきに
+            amount: 0.4 // 0.8秒おきに
           }
         })
       }
-  }*/
+  }
 }
 </script>
 

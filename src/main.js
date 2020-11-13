@@ -2,18 +2,23 @@
 import Vuetify from 'vuetify'
 import Vuex from 'vuex'
 import 'vuetify/dist/vuetify.min.css'
-import DefaultLayout from '~/layouts/Default.vue'
 import Prism from 'prismjs'
 import '~/assets/css/prism-okaidia.css'
 import '~/assets/js/chatplus.js'
 import Vuelidate from 'vuelidate'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+import DefaultLayout from '~/layouts/Default.vue'
+
 import gsap from "gsap";
 import Vue from "vue";
 
 Vue.prototype.$gsap = gsap;
 
 export default function (Vue, { router, head, isClient, appOptions }) {
+
+  // Set default layout as a global component
+  Vue.component('Layout', DefaultLayout)
   
   // Add an external Javascript before the closing </body> tag
   head.script.push({
@@ -46,8 +51,4 @@ export default function (Vue, { router, head, isClient, appOptions }) {
       }
     }
   })
-
-  // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout)
-
 }

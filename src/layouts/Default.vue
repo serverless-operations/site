@@ -49,7 +49,7 @@ export default {
 }
 
 .theme--dark.v-application {
-    background: #fff;
+  background: #fff;
 }
 .v-content .container {
   width: 98vw;
