@@ -63,12 +63,12 @@
 </template>
 
 <script>
-import { gsap } from 'gsap'
+/*import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger)*/
 
 export default {
-  mounted() {
+  /*mounted() {
     this.titleAnimation(),
     this.imageStagger()
   },
@@ -122,7 +122,7 @@ export default {
           }
         })
       }
-  }
+  }*/
 }
 </script>
 
