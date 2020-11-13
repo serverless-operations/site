@@ -54,6 +54,10 @@
 </template>
 
 <script>
+/*import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)*/
+
 export default {
   
 }
@@ -61,7 +65,7 @@ export default {
 
 <style lang="scss" scoped>
   .v-content {
-    padding: 80px 0;
+    padding: 80px 0 160px 0;
     background: $light-gray-2;
     display: block;
     flex: initial;
@@ -71,7 +75,7 @@ export default {
     }
   }
   h2 {
-    color: $primary;
+    color: $secondary;
     font-size: 3.5rem;
     font-family: $font-en-normal;
     font-weight: normal;
@@ -80,6 +84,7 @@ export default {
     display: block;
     width: 100%;
     margin-bottom: 64px;
+    position: relative;
     @include media-breakpoint-up(md) {
       font-size: 4rem;
     }
@@ -92,6 +97,17 @@ export default {
       margin-top: 8px;
       font-weight: normal;
       font-family: $font-jp-normal;
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 1px;
+      background-color: $secondary;
+      position: absolute;
+      left: 50%;
+      margin-left: -40px;
+      bottom: -24px;
     }
   }
   .clients-image-container {
@@ -115,6 +131,7 @@ export default {
       margin: 12px;
       box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
       border-radius: 3px;
+      backface-visibility: hidden;
       @include media-breakpoint-down(md) {
         flex-basis: calc(25% - 36px);
         margin: 12px;

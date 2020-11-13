@@ -56,17 +56,11 @@
       </div>
 
       <top-concept />
-
       <top-services-clients />
-
-      <top-our-partners />
-
       <top-works />
-
       <top-blog />
-
       <top-news-contact />
-
+      <top-partners />
       <top-clients />
 
     </div>
@@ -108,10 +102,10 @@ import BlogCard from '~/components/BlogCard.vue'
 import TopWorks from '~/components/TopWorks.vue'
 import WorksCard from '~/components/WorksCard.vue'
 import TopServicesClients from '~/components/TopServicesClients.vue'
-import TopOurPartners from '~/components/TopOurPartners.vue'
 import TopNewsContact from '~/components/TopNewsContact.vue'
 import Post from '~/components/Post.vue'
 import ContactForm from '~/components/ContactForm.vue'
+import TopPartners from '~/components/TopPartners.vue'
 import TopClients from '~/components/TopClients.vue'
 
 export default {
@@ -125,7 +119,7 @@ export default {
     WorksCard,
     TopServicesClients,
     TopNewsContact,
-    TopOurPartners,
+    TopPartners,
     ContactForm,
     TopClients
   },
