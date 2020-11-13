@@ -13,7 +13,7 @@ import Vue from "vue";
 
 Vue.prototype.$gsap = gsap;
 
-export default function (Vue, { router, head, appOptions, isClient, isServer }) {
+export default function (Vue, { router, head, isClient, appOptions }) {
   
   // Add an external Javascript before the closing </body> tag
   head.script.push({
@@ -25,12 +25,7 @@ export default function (Vue, { router, head, appOptions, isClient, isServer }) 
     rel: 'stylesheet',
     href: 'https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css',
   })
-  
-  head.link.push({
-    rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',
-  })
-  
+
   //const opts = { ... } //opts includes, vuetify themes, icons, etc.
   Vue.use(Vuetify)
   Vue.use(Vuex)
@@ -54,9 +49,5 @@ export default function (Vue, { router, head, appOptions, isClient, isServer }) 
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
-
-  build: {
-    transpile: ['gsap']
-  }
 
 }

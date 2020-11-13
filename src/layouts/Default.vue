@@ -19,6 +19,7 @@ import HeaderComponent from '~/components/Header.vue'
 import FooterOurPartners from '~/components/FooterOurPartners.vue'
 import CallToAction from '~/components/CallToAction.vue'
 import FooterComponent from '~/components/Footer.vue'
+import { gsap } from 'gsap'
 
 export default {
   components: {
