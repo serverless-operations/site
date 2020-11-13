@@ -13,7 +13,7 @@
     <v-container>
       <div class="row justify-center">
 
-        <a class="partner-card col-10 col-sm-6 col-md-4 col-lg-3" href="https://aws.amazon.com/jp/partners/consulting/">
+        <a class="partner-card col col-md-4 col-lg-3" href="https://aws.amazon.com/jp/partners/consulting/">
           <div class="partner-card-logo d-flex justify-center align-center">
             <img
               src="@/assets/images/partners/aws-logo.svg"
@@ -27,7 +27,7 @@
           </div>
         </a>
       
-        <a class="partner-card col-10 col-sm-6 col-md-4 col-lg-3" href="https://spn.getshifter.io/">
+        <a class="partner-card col col-md-4 col-lg-3" href="https://spn.getshifter.io/">
           <div class="partner-card-logo d-flex justify-center align-center">
             <img
               src="@/assets/images/partners/shifter-logo.svg"
@@ -115,7 +115,7 @@ h2 {
   height: 100%;
   background: #fff;
   @include media-breakpoint-down(sm) {
-    margin: 12px;
+    margin: 6px;
   }
   .partner-card-logo {
     padding-bottom: 64px;
@@ -123,7 +123,7 @@ h2 {
     img {
       max-height: 56px;
       @include media-breakpoint-down(sm) {
-        max-height: 40px;
+        max-height: 32px;
         max-width: 80%;
       }
     }
@@ -135,7 +135,7 @@ h2 {
     border-radius: 0 0 3px 3px;
     @include media-breakpoint-down(sm) {
       padding: 20px 12px;
-       min-height: 220px;
+      min-height: 220px;
     }
     .partner-company-name {
       color: $mid-gray-1;
