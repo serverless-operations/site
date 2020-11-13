@@ -55,4 +55,8 @@ export default function (Vue, { router, head, appOptions, isClient, isServer }) 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
 
+  build: {
+    transpile: ['gsap']
+  }
+
 }
