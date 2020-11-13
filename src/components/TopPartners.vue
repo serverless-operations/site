@@ -13,7 +13,7 @@
     <v-container>
       <div class="row justify-center">
 
-        <a class="partner-card col col-md-4 col-lg-3" href="https://aws.amazon.com/jp/partners/consulting/">
+        <a class="partner-card col-10 col-sm-6 col-md-4 col-lg-3" href="https://aws.amazon.com/jp/partners/consulting/">
           <div class="partner-card-logo d-flex justify-center align-center">
             <img
               src="@/assets/images/partners/aws-logo.svg"
@@ -27,7 +27,7 @@
           </div>
         </a>
       
-        <a class="partner-card col col-md-4 col-lg-3" href="https://spn.getshifter.io/">
+        <a class="partner-card col-10 col-sm-6 col-md-4 col-lg-3" href="https://spn.getshifter.io/">
           <div class="partner-card-logo d-flex justify-center align-center">
             <img
               src="@/assets/images/partners/shifter-logo.svg"
@@ -60,6 +60,11 @@ export default {
   display: block;
   flex: initial;
   overflow: hidden;
+  background-image: url('../assets/images/top-news-contact-bk.svg');
+  background-position: top 420px;
+  background-size: 100%;
+  background-color:rgba(255, 255, 255, 0.7);
+  background-blend-mode:lighten;
   @include media-breakpoint-down(md) {
     padding: 40px 0;
   }
@@ -74,6 +79,7 @@ h2 {
   display: block;
   width: 100%;
   margin-bottom: 64px;
+  position: relative;
   @include media-breakpoint-up(md) {
     font-size: 4rem;
   }
@@ -87,6 +93,17 @@ h2 {
     font-weight: normal;
     font-family: $font-jp-normal;
   }
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 1px;
+    background-color: $secondary;
+    position: absolute;
+    left: 50%;
+    margin-left: -40px;
+    bottom: -24px;
+  }
 }
 .partner-card {
   display: block;
@@ -96,13 +113,30 @@ h2 {
   text-decoration: none;
   margin: 24px;
   height: 100%;
+  background: #fff;
+  @include media-breakpoint-down(sm) {
+    margin: 12px;
+  }
   .partner-card-logo {
     padding-bottom: 64px;
     border-bottom: 1px solid $light-gray-1;
+    img {
+      max-height: 56px;
+      @include media-breakpoint-down(sm) {
+        max-height: 40px;
+        max-width: 80%;
+      }
+    }
   }
   .partner-card-text {
     padding: 40px 24px;
     background: $light-gray-2;
+    min-height: 240px;
+    border-radius: 0 0 3px 3px;
+    @include media-breakpoint-down(sm) {
+      padding: 20px 12px;
+       min-height: 220px;
+    }
     .partner-company-name {
       color: $mid-gray-1;
       font-size: 10px;
@@ -114,6 +148,9 @@ h2 {
       font-size: 24px;
       margin-bottom: 16px;
       line-height: 1.2;
+      @include media-breakpoint-down(sm) {
+        font-size: 14px;
+      }
     }
     .partner-desc {
       color: $text-black;

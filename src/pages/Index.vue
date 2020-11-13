@@ -102,10 +102,10 @@ import BlogCard from '~/components/BlogCard.vue'
 import TopWorks from '~/components/TopWorks.vue'
 import WorksCard from '~/components/WorksCard.vue'
 import TopServicesClients from '~/components/TopServicesClients.vue'
-import TopPartners from '~/components/TopPartners.vue'
 import TopNewsContact from '~/components/TopNewsContact.vue'
 import Post from '~/components/Post.vue'
 import ContactForm from '~/components/ContactForm.vue'
+import TopPartners from '~/components/TopPartners.vue'
 import TopClients from '~/components/TopClients.vue'
 
 export default {

@@ -201,6 +201,7 @@
         }
       }
     }
+    // 対象、時間、カレンダー
     .cta-task-overview {
       background-color: $primary;
       color: #fff;
@@ -208,6 +209,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      border-radius: 0 3px 3px 0;
       @include media-breakpoint-down(sm) {
         min-height: 480px;
       }

@@ -84,6 +84,7 @@ export default {
     display: block;
     width: 100%;
     margin-bottom: 64px;
+    position: relative;
     @include media-breakpoint-up(md) {
       font-size: 4rem;
     }
@@ -96,6 +97,17 @@ export default {
       margin-top: 8px;
       font-weight: normal;
       font-family: $font-jp-normal;
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 1px;
+      background-color: $secondary;
+      position: absolute;
+      left: 50%;
+      margin-left: -40px;
+      bottom: -24px;
     }
   }
   .clients-image-container {
