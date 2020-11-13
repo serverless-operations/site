@@ -10,8 +10,10 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 import DefaultLayout from '~/layouts/Default.vue'
 
-import gsap from "gsap";
 import Vue from "vue";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger)
 
 Vue.prototype.$gsap = gsap;
 
