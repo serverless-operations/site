@@ -1,0 +1,53 @@
+@mixin linkList {
+  .c-footer-list {
+    list-style: none;
+    padding-left: 14px;
+  
+    &__item {
+      position: relative;
+      font-size: 0.87rem;
+      line-height: 18px;
+      margin-bottom: 1.4rem;
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        content: '';
+        display: block;
+        color: #fff;
+        width: 10px;
+        height: 1px;
+        background: $mid-gray-2;
+        transition: $soease;
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+      &:hover::before {
+        transform: scaleX(1);
+        transform-origin: right center;
+      }
+      &:after {
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        content: '';
+        display: block;
+        color: #fff;
+        width: 10px;
+        height: 1px;
+        background: $mid-gray-2;
+        transition: $soease;
+        opacity: 0.5;
+      }
+    } //&__list-item
+  
+    &__link {
+      text-decoration: none;
+      color: $white;
+      transition: $soease;
+      &:hover {
+        color: $mid-gray-2;
+      }
+    }
+  } // c-footer-list
+}
