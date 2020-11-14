@@ -79,11 +79,6 @@ module.exports = {
       use: 'vue-awesome-swiper',
       ssr: false,
       mode: 'client'
-    },
-    { 
-      use: 'gsap',
-      ssr: false,
-      mode: 'client'
     }
   ],
 
@@ -93,8 +88,7 @@ module.exports = {
   
   build: {
     vendor: [
-      'vue-awesome-swiper',
-      'gsap'
+      'vue-awesome-swiper'
     ]
   },
 

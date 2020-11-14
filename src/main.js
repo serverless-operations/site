@@ -10,8 +10,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 import DefaultLayout from '~/layouts/Default.vue'
 
-import Vue from "vue";
 import gsap from "gsap";
+import Vue from "vue";
 
 Vue.prototype.$gsap = gsap;
 
