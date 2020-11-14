@@ -5,6 +5,7 @@
         <h2 class="text-center">
           Partners
           <span>パートナー</span>
+          <hr class="title-bottom-line">
         </h2>
       </div>
     </div>
@@ -80,6 +81,12 @@ export default {
           scale: 1,
           y: -20,
         })
+        .fromTo('.title-bottom-line', {
+          width: 0,
+        }, {
+          delay: 0.2,
+          width: 80,
+        },'<')
     },
     imageStagger() {
       gsap
@@ -94,7 +101,7 @@ export default {
           },
         })
         .to('.partner-card', {
-          delay: 0.2,
+          delay: 0.3,
           y: 0, // 少し上に移動させる
           opacity: 1,
           x: 0,
@@ -152,10 +159,10 @@ export default {
     font-weight: normal;
     font-family: $font-jp-normal;
   }
-  &::after {
-    content: '';
+  .title-bottom-line {
+    border: 0;
     display: block;
-    width: 80px;
+    width: 0;
     height: 1px;
     background-color: $secondary;
     position: absolute;
