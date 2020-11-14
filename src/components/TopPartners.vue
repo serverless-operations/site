@@ -102,7 +102,7 @@ export default {
         })
         .to('.partner-card', {
           delay: 0.3,
-          y: 0, // 少し上に移動させる
+          y: -10, // 少し上に移動させる
           opacity: 1,
           x: 0,
           scale: 1,

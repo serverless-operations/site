@@ -116,7 +116,7 @@ export default {
           },
         })
         .to('.clients-image', {
-          y: 0, // 少し上に移動させる
+          y: -10, // 少し上に移動させる
           opacity: 1,
           x: 0,
           scale: 1,
