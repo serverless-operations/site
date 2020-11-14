@@ -283,15 +283,15 @@
     margin-top: -120px;
     min-height: 240px;
     line-height: 1.2;
-    font-size: 18px;
+    font-size: 24px;
     padding-top: 110px;
   }
   @include media-breakpoint-down(sm) {
     margin-top: 0;
-    min-height: 176px;
-    line-height: 1.2;
-    font-size: 18px;
-    padding-top: 68px;
+    min-height: 240px;
+    line-height: 1.4;
+    font-size: 24px;
+    padding-top: 90px;
   }
   &::before {
     content: 'Office Hours';
@@ -314,6 +314,7 @@
     @include media-breakpoint-down(sm) {
       top: 20%;
       font-size: 14.5vw;
+      filter: blur(1px);
     }
   }
   &:hover::before {

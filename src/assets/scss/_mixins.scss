@@ -8,6 +8,10 @@
       font-size: 0.87rem;
       line-height: 18px;
       margin-bottom: 1.4rem;
+      @include media-breakpoint-down(sm) {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+      }
       &:before {
         position: absolute;
         top: 50%;
