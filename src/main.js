@@ -13,12 +13,12 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 import DefaultLayout from '~/layouts/Default.vue'
 
+Vue.prototype.$gsap = gsap;
+
 export default function (Vue, { router, head, isClient, appOptions }) {
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
-
-  Vue.prototype.$gsap = gsap;
   
   // Add an external Javascript before the closing </body> tag
   head.script.push({
