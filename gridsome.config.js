@@ -81,7 +81,7 @@ module.exports = {
       mode: 'client'
     },
     { 
-      use: 'ScrollTrigger',
+      use: 'gsap/ScrollTrigger',
       ssr: false,
       mode: 'client'
     }
