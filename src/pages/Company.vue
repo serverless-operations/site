@@ -98,13 +98,13 @@
                   <div class="company-partners-logo">
                     <a href="https://aws.amazon.com/jp/partners/consulting/">
                       <img
-                        src="@/assets/images/our-partners/aws-logo.svg"
+                        src="@/assets/images/our-partners/company-aws-logo.svg"
                         alt="AWS Consulting Partner"
                       >
                     </a>
                     <a href="https://spn.getshifter.io/">
                       <img
-                        src="@/assets/images/our-partners/shifter-logo.svg"
+                        src="@/assets/images/our-partners/company-shifter-logo.svg"
                         alt="Digitalcube Shifter Partner Network"
                       >
                     </a>

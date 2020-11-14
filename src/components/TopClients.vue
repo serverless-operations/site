@@ -63,68 +63,68 @@
 </template>
 
 <script>
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// import { gsap } from "gsap/dist/gsap";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-export default {
-  mounted() {
-    this.titleAnimation(),
-    this.imageStagger()
-  },
-  methods: {
-    titleAnimation() {
-      gsap
-        .timeline({
-          defaults: { ease: 'Expo.easeInOut', duration: 1.6 }, // timelineのプロパティ
-          scrollTrigger: {
-            // markers: true, // マーカーを表示するか（開発用）
-            trigger: '.section-title', // この要素と交差するとイベントが発火
-            start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
-            end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
-            toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
-          },
-        })
-        .fromTo('.section-title h2', {
-          opacity: 0,
-          y: 0,
-          scale: 0.98,
-        }, {
-          opacity: 1,
-          scale: 1,
-          y: -20,
-        })
-    },
-    imageStagger() {
-      gsap
-        .timeline({
-          scrollTrigger: {
-            // markers: true, // マーカーを表示するか（開発用）
-            // scrub: 1,
-            trigger: '.clients-image-container', // この要素と交差するとイベントが発火
-            start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
-            end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
-            toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
-          },
-        })
-        .to('.clients-image', {
-          y: 0, // 少し上に移動させる
-          opacity: 1,
-          x: 0,
-          scale: 1,
-          ease: 'Expo.easeInOut',
-          duration: 1.6,
-          // 複数要素を扱うプロパティ
-          stagger: {
-            from: 'start', //左側から
-            axis: 'x',
-            amount: 0.8 // 0.8秒おきに
-          }
-        })
-      }
-  }
-}
+// export default {
+//   mounted() {
+//     this.titleAnimation(),
+//     this.imageStagger()
+//   },
+//   methods: {
+//     titleAnimation() {
+//       gsap
+//         .timeline({
+//           defaults: { ease: 'Expo.easeInOut', duration: 1.6 }, // timelineのプロパティ
+//           scrollTrigger: {
+//             // markers: true, // マーカーを表示するか（開発用）
+//             trigger: '.section-title', // この要素と交差するとイベントが発火
+//             start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
+//             end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
+//             toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
+//           },
+//         })
+//         .fromTo('.section-title h2', {
+//           opacity: 0,
+//           y: 0,
+//           scale: 0.98,
+//         }, {
+//           opacity: 1,
+//           scale: 1,
+//           y: -20,
+//         })
+//     },
+//     imageStagger() {
+//       gsap
+//         .timeline({
+//           scrollTrigger: {
+//             // markers: true, // マーカーを表示するか（開発用）
+//             // scrub: 1,
+//             trigger: '.clients-image-container', // この要素と交差するとイベントが発火
+//             start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
+//             end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
+//             toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
+//           },
+//         })
+//         .to('.clients-image', {
+//           y: 0, // 少し上に移動させる
+//           opacity: 1,
+//           x: 0,
+//           scale: 1,
+//           ease: 'Expo.easeInOut',
+//           duration: 1.6,
+//           // 複数要素を扱うプロパティ
+//           stagger: {
+//             from: 'start', //左側から
+//             axis: 'x',
+//             amount: 0.8 // 0.8秒おきに
+//           }
+//         })
+//       }
+//   }
+// }
 </script>
 
 <style lang="scss" scoped>

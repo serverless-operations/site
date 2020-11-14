@@ -52,6 +52,7 @@
 <script>
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
@@ -95,6 +96,7 @@ export default {
           },
         })
         .to('.partner-card', {
+          delay: 0.2,
           y: 0, // 少し上に移動させる
           opacity: 1,
           x: 0,
