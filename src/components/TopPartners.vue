@@ -63,7 +63,7 @@ export default {
     titleAnimation() {
       gsap
         .timeline({
-          defaults: { ease: 'Expo.easeInOut', duration: 1.6 }, // timelineのプロパティ
+          defaults: { ease: 'Expo.easeInOut', duration: 1.2 }, // timelineのプロパティ
           scrollTrigger: {
             // markers: true, // マーカーを表示するか（開発用）
             trigger: '.section-title-partner', // この要素と交差するとイベントが発火

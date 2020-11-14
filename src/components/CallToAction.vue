@@ -295,6 +295,7 @@
   }
   &::before {
     content: 'Office Hours';
+    filter: blur(2px);
     position: absolute;
     display: block;
     z-index: 0;
@@ -302,7 +303,7 @@
     top: 24px;
     right: 0;
     bottom: 0;
-    opacity: 0.1;
+    opacity: 0.08;
     font-family: $font-en-light;
     font-size: 15vw;
     transition: all 0.4s cubic-bezier(0.76, 0, 0.3, 1);
@@ -312,12 +313,14 @@
     }
     @include media-breakpoint-down(sm) {
       top: 20%;
-      font-size: 14vw;
+      font-size: 14.5vw;
     }
   }
   &:hover::before {
-      opacity: 0.15;
-    }
+    opacity: 0.2;
+    left: 16px;
+    filter: blur(0);
+  }
   // Border
   &::after {
     content: '';

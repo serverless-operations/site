@@ -78,7 +78,7 @@ export default {
     titleAnimation() {
       gsap
         .timeline({
-          defaults: { ease: 'Expo.easeInOut', duration: 1.6 }, // timelineのプロパティ
+          defaults: { ease: 'Expo.easeInOut', duration: 1.2 }, // timelineのプロパティ
           scrollTrigger: {
             // markers: true, // マーカーを表示するか（開発用）
             trigger: '.section-title', // この要素と交差するとイベントが発火
@@ -99,7 +99,6 @@ export default {
         .fromTo('.title-bottom-line', {
           width: 0,
         }, {
-          delay: 0.2,
           width: 80,
         },'<')
     },
