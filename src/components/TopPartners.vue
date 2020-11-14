@@ -1,6 +1,5 @@
 <template>
   <div class="v-content">
-    
     <div class="container section-title-partner">
       <div class="row">
         <h2 class="text-center">
@@ -41,7 +40,6 @@
           </div>
         </a>
       </div>
-
     </v-container>
     
 

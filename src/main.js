@@ -1,4 +1,7 @@
 // v2.0
+
+import gsap from "gsap";
+import Vue from "vue";
 import Vuetify from 'vuetify'
 import Vuex from 'vuex'
 import 'vuetify/dist/vuetify.min.css'
@@ -10,8 +13,6 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 import DefaultLayout from '~/layouts/Default.vue'
 
-import gsap from "gsap";
-import Vue from "vue";
 
 Vue.prototype.$gsap = gsap;
 
