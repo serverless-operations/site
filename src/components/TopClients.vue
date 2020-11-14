@@ -169,6 +169,7 @@ export default {
       font-family: $font-jp-normal;
     }
     .title-bottom-line {
+      border: 0;
       display: block;
       width: 80px;
       height: 1px;
