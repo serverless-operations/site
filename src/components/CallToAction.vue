@@ -318,7 +318,7 @@
   }
   &:hover::before {
     opacity: 0.2;
-    left: 16px;
+    left: 8px;
     filter: blur(0);
   }
   // Border
