@@ -79,12 +79,12 @@ module.exports = {
       use: 'vue-awesome-swiper',
       ssr: false,
       mode: 'client'
-    },
-    { 
-      use: 'gsap/ScrollTrigger',
-      ssr: false,
-      mode: 'client'
     }
+    // { 
+    //   use: 'gsap/ScrollTrigger',
+    //   ssr: false,
+    //   mode: 'client'
+    // }
   ],
 
   css: [
