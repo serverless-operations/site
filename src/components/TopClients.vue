@@ -202,7 +202,7 @@ export default {
       margin: 12px;
       box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
       border-radius: 3px;
-      backface-visibility: hidden;
+      background: #fff;
       @include media-breakpoint-down(md) {
         flex-basis: calc(25% - 36px);
         margin: 12px;
