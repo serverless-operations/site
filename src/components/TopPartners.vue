@@ -54,10 +54,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  components: {
-    gsap,
-    ScrollTrigger
-  },
   mounted() {
     this.titleAnimation(),
     this.imageStagger()
