@@ -79,6 +79,11 @@ module.exports = {
       use: 'vue-awesome-swiper',
       ssr: false,
       mode: 'client'
+    },
+    { 
+      use: 'ScrollTrigger',
+      ssr: false,
+      mode: 'client'
     }
   ],
 
