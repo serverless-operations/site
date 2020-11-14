@@ -239,37 +239,7 @@ if (process.client) {
 } // c-footer-menu
 
 // メニューのリスト
-.c-footer-list {
-  list-style: none;
-  padding-left: 14px;
-
-  &__item {
-    position: relative;
-    font-size: 0.87rem;
-    line-height: 28px;
-    margin-bottom: 0.5rem;
-    &:before {
-      position: absolute;
-      top: 50%;
-      left: -12px;
-      content: '';
-      display: block;
-      color: #fff;
-      width: 5px;
-      height: 1px;
-      background: $mid-gray-2;
-    }
-  } //&__list-item
-
-  &__link {
-    text-decoration: none;
-    color: $white;
-    transition: all 0.3s ease;
-    &:hover {
-      color: $mid-gray-2;
-    }
-  }
-} // c-footer-list
+@include linkList;
 
 .sns-link {
   margin: 16px 0 40px 0;

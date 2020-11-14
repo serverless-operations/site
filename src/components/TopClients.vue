@@ -1,11 +1,12 @@
 <template>
   <div class="v-content">
     
-    <div class="container">
+    <div class="container section-title">
       <div class="row">
         <h2 class="text-center">
           Clients
           <span>クライアント</span>
+          <hr class="title-bottom-line">
         </h2>
       </div>
     </div>
@@ -15,38 +16,47 @@
       <img
         src="../assets/images/clients/clients-lixil.svg"
         alt="ServerlessOperations Clients LIXIL"
+        class="clients-image"
       />
       <img
         src="../assets/images/clients/clients-htb.svg"
         alt="ServerlessOperations Clients HTB 北海道テレビ"
+        class="clients-image"
       />
       <img
         src="../assets/images/clients/clients-tokion.svg"
         alt="ServerlessOperations Clients TOKION"
+        class="clients-image"
       />
       <img
         src="../assets/images/clients/clients-serverworks.svg"
         alt="ServerlessOperations Clients Serverworks"
+        class="clients-image"
       />
       <img
         src="../assets/images/clients/clients-geolonia.svg"
         alt="ServerlessOperations Clients GEOLONIA"
+        class="clients-image"
       />
       <img
         src="../assets/images/clients/clients-infas.svg"
         alt="ServerlessOperations Clients INFAS PIBLICATIONS"
+        class="clients-image"
       />
       <img
         src="../assets/images/clients/clients-libelize.svg"
         alt="ServerlessOperations Clients LIBELIZE"
+        class="clients-image"
       />
       <img
         src="../assets/images/clients/clients-maas.svg"
         alt="ServerlessOperations Clients MAAS GLOBAL"
+        class="clients-image"
       />
       <img
         src="../assets/images/clients/clients-alis.svg"
         alt="ServerlessOperations Clients ALIS"
+        class="clients-image"
       />
 
     </div>
@@ -54,12 +64,72 @@
 </template>
 
 <script>
-/*import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)*/
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  
+  mounted() {
+    this.titleAnimation(),
+    this.imageStagger()
+  },
+  methods: {
+    titleAnimation() {
+      gsap
+        .timeline({
+          defaults: { ease: 'Expo.easeInOut', duration: 1.2 }, // timelineのプロパティ
+          scrollTrigger: {
+            // markers: true, // マーカーを表示するか（開発用）
+            trigger: '.section-title', // この要素と交差するとイベントが発火
+            start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
+            end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
+            toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
+          },
+        })
+        .fromTo('.section-title h2', {
+          opacity: 0,
+          y: 0,
+          scale: 0.98,
+        }, {
+          opacity: 1,
+          scale: 1,
+          y: -20,
+        })
+        .fromTo('.title-bottom-line', {
+          width: 0,
+        }, {
+          width: 80,
+        },'<')
+    },
+    imageStagger() {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            // markers: true, // マーカーを表示するか（開発用）
+            // scrub: 1,
+            trigger: '.clients-image-container', // この要素と交差するとイベントが発火
+            start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
+            end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
+            toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
+          },
+        })
+        .to('.clients-image', {
+          y: -10, // 少し上に移動させる
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          ease: 'Expo.easeInOut',
+          duration: 1.6,
+          // 複数要素を扱うプロパティ
+          stagger: {
+            from: 'start', //左側から
+            axis: 'x',
+            amount: 0.8 // 0.8秒おきに
+          }
+        })
+      }
+  }
 }
 </script>
 
@@ -74,7 +144,7 @@ export default {
       padding: 40px 0;
     }
   }
-  h2 {
+  .section-title h2 {
     color: $secondary;
     font-size: 3.5rem;
     font-family: $font-en-normal;
@@ -98,8 +168,8 @@ export default {
       font-weight: normal;
       font-family: $font-jp-normal;
     }
-    &::after {
-      content: '';
+    .title-bottom-line {
+      border: 0;
       display: block;
       width: 80px;
       height: 1px;
@@ -124,7 +194,8 @@ export default {
       width: 100%;
       max-width: 100%;
     }
-    img {
+    .clients-image {
+      opacity: 0;
       width: 100%;
       height: auto;
       flex-basis: calc(20% - 24px);

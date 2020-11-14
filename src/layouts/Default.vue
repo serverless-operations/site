@@ -16,14 +16,13 @@
 
 <script>
 import HeaderComponent from '~/components/Header.vue'
-import FooterOurPartners from '~/components/FooterOurPartners.vue'
 import CallToAction from '~/components/CallToAction.vue'
 import FooterComponent from '~/components/Footer.vue'
+import { gsap } from 'gsap'
 
 export default {
   components: {
     HeaderComponent,
-    FooterOurPartners,
     CallToAction,
     FooterComponent
   },
@@ -48,7 +47,7 @@ export default {
 }
 
 .theme--dark.v-application {
-    background: #fff;
+  background: #fff;
 }
 .v-content .container {
   width: 98vw;
