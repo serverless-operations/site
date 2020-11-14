@@ -93,7 +93,8 @@ module.exports = {
   
   build: {
     vendor: [
-      'vue-awesome-swiper'
+      'vue-awesome-swiper',
+      'gsap'
     ]
   },
 
