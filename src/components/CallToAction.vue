@@ -85,8 +85,7 @@
   }
 
   @include media-breakpoint-down(sm) {
-    padding-bottom: 64px;
-    background-image: url('../assets/images/cta/cta-particle.svg');
+    background-image: url('../assets/images/cta/cta-texture-sp.svg');
   }
 
   .container {
