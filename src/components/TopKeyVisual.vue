@@ -26,17 +26,17 @@
           <h2 class="p-mainvisual__japanese-sloagan">
             <transition name="brandslogan-jp-1" appear>
               <span>
-                サーバーレスで<br>
+                サーバーレスオペレーションズは<br>
               </span> 
             </transition>
             <transition name="brandslogan-jp-2" appear>
               <span>
-                クラウドの価値を<br>
+                お客さまと1つの“チーム”になり、<br>
               </span>
             </transition>
             <transition name="brandslogan-jp-3" appear>
               <span>
-                最大限に
+                サーバーレスに関する悩みを共に解決します。
               </span>
             </transition>
           </h2>
@@ -144,7 +144,7 @@ export default {
     @include media-breakpoint-up(md) {
       bottom: 7%;
       left: 7%;
-      width: 774px;
+      width: 800px;
     }
 
     @include media-breakpoint-down(sm) {
@@ -161,10 +161,10 @@ export default {
     .p-mainvisual__japanese-sloagan {
       font-family: $font-jp-normal;
       letter-spacing: 0.16em;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
 
       @include media-breakpoint-down(sm) {
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 1.6;
         margin-bottom: 0;
       }
@@ -174,8 +174,8 @@ export default {
       }
 
       @include media-breakpoint-up(md) {
-        font-size: 3rem;
-        line-height: 1.6;
+        font-size: 1.8rem;
+        line-height: 2;
         margin-bottom: 48px;
       }
     }
