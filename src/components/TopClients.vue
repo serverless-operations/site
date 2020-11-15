@@ -82,7 +82,7 @@ export default {
           scrollTrigger: {
             // markers: true, // マーカーを表示するか（開発用）
             trigger: '.section-title', // この要素と交差するとイベントが発火
-            start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
+            start: 'top 98%', // ウィンドウのどの位置を発火の基準点にするか
             end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
             toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
           },
