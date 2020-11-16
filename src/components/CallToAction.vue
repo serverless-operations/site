@@ -15,7 +15,7 @@
         <v-row align="center" justify="center">
           <v-col cols="12" md="6">
             <p class="cta-header-text">
-              Serverless Operations の担当者がオンラインで皆さんのサーバーレスに関するご相談やお問い合わせに無料でお答えいたします。
+              サーバーレスオペレーションズの担当者がオンラインで皆さんのサーバーレスに関するご相談やお問い合わせに無料でお答えいたします。
                 <a href="https://calendly.com/slsops/office-hours">カレンダー
                   <small>(Calendly)</small>
                 </a>

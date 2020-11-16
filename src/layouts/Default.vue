@@ -37,6 +37,18 @@ export default {
 
 <style lang="scss">
 
+body {
+  font-family: $font-jp-regular;
+  font-size: 16px;
+  color: $text-black;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 1;
+}
+
 .fade-enter-active {
   transition: all 0.6s cubic-bezier(.93,0,.1,1);
   opacity: 1;
