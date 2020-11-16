@@ -335,21 +335,6 @@ export default {
   }
 
   // gsap アニメーション
-  @mixin chromatic-aberration($name, $color) {
-  animation: #{$name} 1s linear infinite alternate both;
-    @keyframes #{$name} {
-      @for $i from 0 through 10 {
-        #{$i * 10%} {
-          text-shadow:
-          #{floor(random() * 17) - 8px}
-          #{floor(random() * 3) - 1px}
-          #{floor(random() * 2px)}
-          $color;
-        } 
-      }
-    }
-  }
-
   .rects {
     width: 100vw;
     height: 100vh;
@@ -369,34 +354,6 @@ export default {
     bottom: 0;
     margin: auto;
     z-index: 10;
-  }
-  .rect::before,
-  .rect::after {
-    content: '';
-    width: 100px;
-    height: 100px;
-    left: 0;
-    position: absolute;
-    top: 0;
-  }
-
-  .rect,
-  .rect::before,
-  .rect::after {
-    background-color: #fff;
-    background-blend-mode: screen;
-  }
-
-  .rect::before {
-    @include chromatic-aberration(r, #f00);
-  }
-
-  .rect {
-    @include chromatic-aberration(g, #0f0);
-  }
-
-  .rect::after {
-    @include chromatic-aberration(b, #00f);
   }
 
 } // p-mainvisual-content
