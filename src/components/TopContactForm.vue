@@ -213,7 +213,7 @@ export default {
   }
 
   &--check-label {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     color: $primary;
     display: block;
     margin: 16px 0;
@@ -223,7 +223,7 @@ export default {
     padding-top: 28px;
     border-top: 1px solid $light-gray-1;
     color: $tertiary;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 1rem;
     a {
       text-decoration: none;
@@ -257,7 +257,7 @@ export default {
 .v-subheader {
   color: $tertiary;
   font-size: 1rem;
-  font-family: $font-jp-normal;
+  font-family: $font-jp-regular;
   align-items: baseline;
   padding-left: 0;
   padding-top: 16px;
@@ -270,7 +270,7 @@ export default {
 }
 
 .v-btn {
-  font-family: $font-jp-normal;
+  font-family: $font-jp-regular;
   background-color: $primary;
   clip-path: polygon(
     calc(100% - 8px) 0,

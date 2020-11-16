@@ -42,7 +42,7 @@ export default {
   // ニュースのカード部分
   .p-blog-contents {
     color: $black;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     z-index: 1;
     position: relative;
 

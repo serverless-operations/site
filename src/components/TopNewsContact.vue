@@ -135,7 +135,7 @@ export default {
       font-size: 1rem;
       margin-top: 8px;
       font-weight: normal;
-      font-family: $font-jp-normal;
+      font-family: $font-jp-regular;
     }
   }
   .p-top-news {
@@ -200,14 +200,14 @@ export default {
   .v-subheader {
     color: $tertiary;
     font-size: 1rem;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     align-items: baseline;
     padding-left: 0;
     height: 100%;
     margin-bottom: 8px;
   }
   .v-btn {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     clip-path: polygon(
       calc(100% - 8px) 0,
       0 0,

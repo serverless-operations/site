@@ -140,7 +140,7 @@ export default {
 .p-privacy-policy-contents {
   background: $white;
   color: $black;
-  font-family: $font-jp-normal;
+  font-family: $font-jp-regular;
   padding: 48px 0 80px;
   background: url('../assets/images/privacy-policy-bg-img.svg') no-repeat center
       top 70%,
@@ -186,7 +186,7 @@ export default {
   }
   // 内容の文章
   &__contents-paragraph {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 2;
     color: $black;
   }
@@ -201,7 +201,7 @@ export default {
   }
   // 内容の住所
   &__contents-address {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-style: normal;
   }
 }

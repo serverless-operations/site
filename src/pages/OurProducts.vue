@@ -301,7 +301,7 @@ export default {
   // 日本語のタイトル
   &__title-jp {
     display: block;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 1.5rem;
     margin-top: 8px;
     @include media-breakpoint-up(lg) {
@@ -318,7 +318,7 @@ export default {
   }
   // タイトル下文章
   &__text {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 32px;
     margin-bottom: 204px;
   }

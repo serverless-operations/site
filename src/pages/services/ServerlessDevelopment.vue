@@ -381,7 +381,7 @@ export default {
   // 日本語のタイトル
   &__title-jp {
     display: block;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 1rem;
     margin-top: 16px;
 
@@ -393,7 +393,7 @@ export default {
 
   // タイトル下文章
   &__text {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 32px;
     // margin-bottom: 212px;
     @include media-breakpoint-up(lg) {
@@ -618,7 +618,7 @@ export default {
     background: $tertiary;
     border-radius: 32px;
     color: $white;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 0.87rem;
     &:nth-child(4) {
       margin-bottom: 24px;
@@ -649,7 +649,7 @@ export default {
   }
 
   &__header-paragraph {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 2;
     color: $black;
     margin-bottom: 0;
@@ -743,10 +743,10 @@ export default {
   }
   // 説明文
   &__paragraph {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 2;
     @include media-breakpoint-up(md) {
-      font-family: $font-jp-normal;
+      font-family: $font-jp-regular;
       line-height: 2;
     }
   }
@@ -1005,7 +1005,7 @@ export default {
 
   // フロー詳細
   &__list-item-detail {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     color: $black;
     margin-bottom: 0;
     @include media-breakpoint-down(sm) {
@@ -1081,7 +1081,7 @@ export default {
 
   &__desc {
     display: block;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     color: $black;
     line-height: 2;
     @include media-breakpoint-up(md) {
@@ -1244,7 +1244,7 @@ export default {
   // Serverless Consultingの説明
   &__contents-desc {
     line-height: 1.2;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     @include media-breakpoint-up(md) {
       line-height: 2;
     }
@@ -1253,7 +1253,7 @@ export default {
   // 解決できる課題の見出し
   &__contents-list-header {
     font-size: 0.87rem;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     margin-bottom: 8px;
     display: block;
   }
@@ -1267,7 +1267,7 @@ export default {
     background: $tertiary;
     border-radius: 32px;
     color: $white;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 0.87rem;
     line-height: 1;
     &:nth-child(4) {

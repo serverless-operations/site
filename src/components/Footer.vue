@@ -228,7 +228,7 @@ if (process.client) {
   }
   // サブタイトル
   &__subtitle {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     color: $mid-gray-2;
     font-size: 0.87rem;
     margin-bottom: 42px;

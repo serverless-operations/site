@@ -80,17 +80,17 @@ export default {
       }
       gsap.fromTo(object.el, {
         opacity: 'random(0, 0.4)',
-        y: 'random(-600, 100)',
+        y: 'random(-800, 100)',
         x: '-1',
-        scale: 'random(0.1, 2)',
+        scale: 'random(0, 3)',
         repeatRefresh: true,
         transformOrigin: 'right'
       }, {
         duration: 'random(6, 30)',
         opacity: 'random(0, 0.2)',
-        scale: 'random(0.1, 1)',
+        scale: 'random(0, 0.3)',
         x: '1',
-        y: 'random(-200, 800)',
+        y: 'random(-200, 900)',
         modifiers: {
           x: x => `${Math.sin(parseFloat(x)) * 1200}px`
         },
@@ -159,7 +159,7 @@ export default {
 
     // サーバーレスでクラウドの価値を最大限に
     .p-mainvisual__japanese-sloagan {
-      font-family: $font-jp-normal;
+      font-family: $font-jp-regular;
       letter-spacing: 0.16em;
       font-size: 1.4rem;
 
@@ -347,7 +347,7 @@ export default {
     width: 100px;
     height: 100px;
     background-color: #fff;
-    position: absolute;
+    position: relative;
     left: 0;
     right: 0;
     top: 0;
