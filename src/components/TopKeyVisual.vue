@@ -80,17 +80,17 @@ export default {
       }
       gsap.fromTo(object.el, {
         opacity: 'random(0, 0.4)',
-        y: 'random(-600, 100)',
+        y: 'random(-800, 100)',
         x: '-1',
-        scale: 'random(0.1, 2)',
+        scale: 'random(0, 3)',
         repeatRefresh: true,
         transformOrigin: 'right'
       }, {
         duration: 'random(6, 30)',
         opacity: 'random(0, 0.2)',
-        scale: 'random(0.1, 1)',
+        scale: 'random(0, 0.3)',
         x: '1',
-        y: 'random(-200, 800)',
+        y: 'random(-200, 900)',
         modifiers: {
           x: x => `${Math.sin(parseFloat(x)) * 1200}px`
         },
@@ -335,6 +335,21 @@ export default {
   }
 
   // gsap アニメーション
+  @mixin chromatic-aberration($name, $color) {
+  animation: #{$name} 1s linear infinite alternate both;
+    @keyframes #{$name} {
+      @for $i from 0 through 10 {
+        #{$i * 10%} {
+          text-shadow:
+          #{floor(random() * 17) - 8px}
+          #{floor(random() * 3) - 1px}
+          #{floor(random() * 2px)}
+          $color;
+        } 
+      }
+    }
+  }
+
   .rects {
     width: 100vw;
     height: 100vh;
@@ -347,13 +362,41 @@ export default {
     width: 100px;
     height: 100px;
     background-color: #fff;
-    position: absolute;
+    position: relative;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     margin: auto;
     z-index: 10;
+  }
+  .rect::before,
+  .rect::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  .rect,
+  .rect::before,
+  .rect::after {
+    background-color: #fff;
+    background-blend-mode: screen;
+  }
+
+  .rect::before {
+    @include chromatic-aberration(r, #f00);
+  }
+
+  .rect {
+    @include chromatic-aberration(g, #0f0);
+  }
+
+  .rect::after {
+    @include chromatic-aberration(b, #00f);
   }
 
 } // p-mainvisual-content
