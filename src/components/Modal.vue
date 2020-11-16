@@ -438,7 +438,7 @@
     font-size: 0.62rem;
     margin-left: 0px;
     display: block;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     transition: all 0.55s cubic-bezier(0.76, 0, 0.3, 1);
     @media screen and (min-width: 960px) {
       // margin-left: 8px;
@@ -557,7 +557,7 @@
     font-size: 0.6rem;
     line-height: 1;
     margin-left: 12px;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     color: white;
     @include media-breakpoint-up(lg) {
       font-size: 1rem;

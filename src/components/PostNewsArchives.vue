@@ -51,7 +51,7 @@ export default {
   // ニュースのカード部分
   .p-news-contents {
     color: $black;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     z-index: 1;
     position: relative;
     // hoverしたとき、画像部分に左から右へprimaryをかける

@@ -142,7 +142,7 @@ export default {
 .p-news-contents {
   background: $white;
   color: $black;
-  font-family: $font-jp-normal;
+  font-family: $font-jp-regular;
   padding: 48px 0 80px;
   @include media-breakpoint-up(lg) {
     padding: 78px 0 185px;

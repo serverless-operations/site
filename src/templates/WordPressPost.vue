@@ -209,7 +209,7 @@ export default {
 
   // ページタイトル(日本語)
   &__page-title-ja {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     display: block;
     font-size: 1rem;
     line-height: 42px;
@@ -240,7 +240,7 @@ export default {
   position: relative;
   background: $white;
   color: $black;
-  font-family: $font-jp-normal;
+  font-family: $font-jp-regular;
   padding-bottom: 0;
   @include media-breakpoint-up(lg) {
     padding-bottom: 352px;

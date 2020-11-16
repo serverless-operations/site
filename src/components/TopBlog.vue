@@ -107,7 +107,7 @@ export default {
       font-size: 1rem;
       margin-top: 8px;
       font-weight: normal;
-      font-family: $font-jp-normal;
+      font-family: $font-jp-regular;
     }
   }
   .p-top-news {

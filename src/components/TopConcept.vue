@@ -229,7 +229,7 @@ export default {
       margin-top: 220px;
       z-index: 4;
       h3 {
-        font-family: $font-jp-normal;
+        font-family: $font-jp-regular;
         font-size: 1.375rem;
         letter-spacing: 1px;
         line-height: 1.27;
@@ -242,7 +242,7 @@ export default {
         }
       }
       p {
-        font-family: $font-jp-normal;
+        font-family: $font-jp-regular;
         font-size: 1rem;
         line-height: 2;
         text-align: justify;

@@ -392,7 +392,7 @@ export default {
   // 日本語のタイトル
   &__title-jp {
     display: block;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 1.5rem;
     margin-top: 8px;
     @include media-breakpoint-up(lg) {
@@ -409,7 +409,7 @@ export default {
   }
   // タイトル下文章
   &__text {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 32px;
     margin-bottom: 212px;
     @include media-breakpoint-up(lg) {
@@ -444,7 +444,7 @@ export default {
     padding: 65px 70px;
   }
   &__mission-header {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 2.1rem;
     color: $secondary;
   }
@@ -484,7 +484,7 @@ export default {
     color: $black;
     border-collapse: collapse;
     width: 100%;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
   }
   &__header {
     color: $primary;
@@ -566,7 +566,7 @@ export default {
     }
   }
   &__header-paragraph-block {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
   }
   // 会社メッセージの見出し
   &__header-paragraph {
@@ -632,7 +632,7 @@ export default {
     }
   }
   &__paragraph {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 32px;
     margin-bottom: 30px;
     font-size: 0.87rem;
@@ -662,7 +662,7 @@ export default {
   }
   // 見出し文章
   &__paragraph-header {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 1.5rem;
     @include media-breakpoint-up(md) {
       font-size: 1.8rem;
@@ -766,7 +766,7 @@ export default {
   }
 
   &__paragraph {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 2;
     font-size: 0.87rem;
     margin-bottom: 24px;
@@ -830,7 +830,7 @@ export default {
   }
   // 見出し日本語
   &__header-ja {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 1.5rem;
     display: block;
     color: $primary;
@@ -849,7 +849,7 @@ export default {
   }
   &__paragraph {
     color: $primary;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 2;
     font-size: 0.87rem;
     @include media-breakpoint-up(md) {

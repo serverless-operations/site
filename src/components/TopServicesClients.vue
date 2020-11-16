@@ -206,7 +206,7 @@ export default {
           line-height: 2;
           display: block;
           font-size: 1rem;
-          font-family: $font-jp-normal;
+          font-family: $font-jp-regular;
           @include media-breakpoint-up(md) {
             font-size: 0.875rem;
             line-height: 2;
@@ -256,7 +256,7 @@ export default {
         background-color: $white;
         // タイトル下見出し文章
         h4 {
-          font-family: $font-jp-normal;
+          font-family: $font-jp-regular;
           font-size: 1.1rem;
           line-height: 1.33;
           background: linear-gradient(12.36deg, #00007d 11.76%, #2c48ff 88.21%);
@@ -278,7 +278,7 @@ export default {
         small {
           color: $primary;
           font-size: 0.875rem;
-          font-family: $font-jp-normal;
+          font-family: $font-jp-regular;
         }
         // 解決できる課題バッジ
         ul {
@@ -290,7 +290,7 @@ export default {
             padding: 10px 24px;
             margin-right: 8px;
             font-size: 0.875rem;
-            font-family: $font-jp-normal;
+            font-family: $font-jp-regular;
             display: inline-block;
             color: $white;
             background-color: $tertiary;
@@ -586,7 +586,7 @@ export default {
           font-size: 1rem;
           margin-top: 8px;
           font-weight: normal;
-          font-family: $font-jp-normal;
+          font-family: $font-jp-regular;
         }
       }
     }

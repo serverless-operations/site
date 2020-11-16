@@ -159,7 +159,7 @@ export default {
 
     // サーバーレスでクラウドの価値を最大限に
     .p-mainvisual__japanese-sloagan {
-      font-family: $font-jp-normal;
+      font-family: $font-jp-regular;
       letter-spacing: 0.16em;
       font-size: 1.4rem;
 

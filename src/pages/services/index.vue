@@ -447,7 +447,7 @@ export default {
   // 日本語のタイトル
   &__title-jp {
     display: block;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 1.5rem;
     margin-top: 8px;
     @include media-breakpoint-up(lg) {
@@ -456,7 +456,7 @@ export default {
   }
   // タイトル下文章の見出し
   &__text-header {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 1.5rem;
     @include media-breakpoint-up(lg) {
       font-size: 2.1rem;
@@ -464,7 +464,7 @@ export default {
   }
   // タイトル下文章
   &__text {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 32px;
     margin-bottom: 212px;
     @include media-breakpoint-up(lg) {
@@ -547,7 +547,7 @@ export default {
     margin-bottom: 0;
   }
   &__example-img {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     margin: 0 0 70px;
     max-width: 100%;
     height: auto;
@@ -593,7 +593,7 @@ export default {
   // &__example-text {
   //   display: block;
   //   color: $primary;
-  //   font-family: $font-jp-normal;
+  //   font-family: $font-jp-regular;
   //   font-size: 0.7rem;
   //   @include media-breakpoint-up(md) {
   //     font-size: 0.87rem;
@@ -690,7 +690,7 @@ export default {
 
   // 見出し下の文章
   &__header-paragraph {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 1.1rem;
     margin-bottom: 16px;
     @include media-breakpoint-up(lg) {
@@ -732,7 +732,7 @@ export default {
 
   // 強みの文章
   &__paragraph {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 32px;
     margin-bottom: 30px;
     font-size: 0.87rem;
@@ -805,7 +805,7 @@ export default {
     }
   }
   &__header-paragraph {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 1.1rem;
     margin-bottom: 16px;
     @include media-breakpoint-up(lg) {
@@ -842,7 +842,7 @@ export default {
     }
   }
   &__paragraph {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 32px;
     margin-bottom: 30px;
     font-size: 0.87rem;
@@ -918,7 +918,7 @@ export default {
   }
 
   &__paragraph {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     line-height: 2;
     font-size: 0.87rem;
     padding-left: 24px;
@@ -1045,7 +1045,7 @@ export default {
 
   // 各サービスの説明部分
   &__service-header-desc {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
   }
 
   // カラムの解決できる課題部分
@@ -1067,7 +1067,7 @@ export default {
 
   // 解決できる課題の項目
   &__service-bottom-issue {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     display: inline-block;
     background: $primary;
     color: $white;
@@ -1165,7 +1165,7 @@ export default {
   }
   // 見出しの日本語部分
   &__header-sub {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 1rem;
     @include media-breakpoint-up(md) {
       font-size: 1.5rem;
@@ -1174,7 +1174,7 @@ export default {
   }
 
   &__header-text {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     color: $primary;
     font-size: 1rem;
     margin-bottom: 48px;
@@ -1308,7 +1308,7 @@ export default {
   // カラム内見出し日本語
   &__column-header-sub {
     display: block;
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 0.87rem;
     line-height: 1;
     margin-top: 8px;
@@ -1320,7 +1320,7 @@ export default {
   } // &__column-header-sub
 
   &__column-paragraph {
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     color: $black;
     margin-top: 32px;
     font-size: 0.87rem;
@@ -1334,7 +1334,7 @@ export default {
       width: 100%;
     }
     &--first {
-      font-family: $font-jp-normal;
+      font-family: $font-jp-regular;
       color: $black;
       margin-top: 42px;
       font-size: 0.87rem;

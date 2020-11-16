@@ -130,7 +130,7 @@
   }
 
   .cta-header-text{
-    font-family: $font-jp-normal;
+    font-family: $font-jp-regular;
     font-size: 1rem;
     text-align: justify;
     line-height: 2;
