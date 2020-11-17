@@ -3,6 +3,18 @@
 
     <div class="v-content">
 
+      <div class="ctarects">
+        <div class="ctarect"></div>
+        <div class="ctarect"></div>
+        <div class="ctarect"></div>
+        <div class="ctarect"></div>
+        <div class="ctarect"></div>
+        <div class="ctarect"></div>
+        <div class="ctarect"></div>
+        <div class="ctarect"></div>
+        <div class="ctarect"></div>
+      </div>
+
       <div class="container">
 
         <v-row align="center" justify="center">
@@ -72,6 +84,49 @@
 
 </template>
 
+<script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default {
+  mounted() {
+    this.CtaSquareParticles()
+  },
+  methods: {
+    CtaSquareParticles() {
+      let object = {
+        el: '.ctarect',
+        duration: 12
+      }
+      gsap.fromTo(object.el, {
+        opacity: 'random(0, 0.4)',
+        y: 'random(-800, 100)',
+        x: '-1',
+        scale: 'random(0, 1)',
+        repeatRefresh: true,
+        transformOrigin: 'right'
+      }, {
+        duration: 'random(6, 30)',
+        opacity: 'random(0, 0.2)',
+        scale: 'random(0, 0.3)',
+        x: '1',
+        y: 'random(-200, 900)',
+        modifiers: {
+          x: x => `${Math.sin(parseFloat(x)) * 1200}px`
+        },
+        stagger: {
+          amount: 0.1, // 秒おきに
+          each: 3,
+          repeat: -1
+        }
+      })
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .v-content {
   background-image: url('../assets/images/cta/cta-particle.svg');
@@ -79,6 +134,7 @@
   background-position: center, center;
   background-size: cover;
   background-color: $tertiary;
+  position: relative;
 
   @include media-breakpoint-down(md) {
     padding-bottom: 64px;
@@ -154,7 +210,7 @@
     color: $primary;
     box-shadow: 8px 24px 50px rgba($primary, 0.4);
     position: relative;
-    z-index: 1;
+    z-index: 3;
     .cta-task-list-container {
       font-size: 14px;
       padding: 0 48px 16px 48px;
@@ -268,7 +324,7 @@
   color: #fff;
   text-decoration: none;
   position: relative;
-  z-index: 0;
+  z-index: 2;
   min-height: 360px;
   font-size: 24px;
   font-family: $font-jp-bold;
@@ -352,5 +408,26 @@
     transform-origin: left center;
     transition: transform 0.4s cubic-bezier(0.76, 0, 0.3, 1);
   }
+}
+// gsap アニメーション
+.ctarects {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.ctarect {
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
 }
 </style>
