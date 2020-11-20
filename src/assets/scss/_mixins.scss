@@ -58,3 +58,41 @@
     }
   } // c-footer-list
 }
+
+@mixin SectionTitle {
+  .content-section-title {
+    color: $secondary;
+    font-size: 3.5rem;
+    font-family: $font-en-normal;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-bottom: 64px;
+    position: relative;
+    @include media-breakpoint-up(md) {
+      font-size: 4rem;
+    }
+    @include media-breakpoint-down(md) {
+      margin-bottom: 32px;
+    }
+    span {
+      display: block;
+      font-size: 1rem;
+      margin-top: 8px;
+      font-family: $font-jp-bold;
+    }
+    .title-bottom-line {
+      border: 0;
+      display: block;
+      width: 0;
+      height: 1px;
+      background-color: $secondary;
+      position: absolute;
+      left: 50%;
+      margin-left: -40px;
+      bottom: -24px;
+    }
+  }
+}

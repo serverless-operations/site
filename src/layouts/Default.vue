@@ -29,6 +29,7 @@ export default {
   mounted() {
     if (globalThis.FONTPLUS) {
       globalThis.FONTPLUS.start();
+      
     }
   }
 }
