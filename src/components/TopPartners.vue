@@ -61,10 +61,6 @@ export default {
   },
   methods: {
     titleAnimation() {
-      let object = {
-        el: '.content-section-title',
-        duration: 1.2
-      }
       gsap
         .timeline({
           defaults: { ease: 'Expo.easeInOut', duration: 1.2 }, // timelineのプロパティ
@@ -76,7 +72,7 @@ export default {
             toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
           },
         })
-        .fromTo( object.el, {
+        .fromTo( '.top-partners h2', {
           opacity: 0,
           y: 0,
           scale: 0.98,
