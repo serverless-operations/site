@@ -1,8 +1,8 @@
 <template>
   <div class="v-content">
-    <div class="container section-title-partner">
+    <div class="container top-partners">
       <div class="row">
-        <h2 class="text-center">
+        <h2 class="text-center content-section-title">
           Partners
           <span>パートナー</span>
           <hr class="title-bottom-line">
@@ -61,18 +61,22 @@ export default {
   },
   methods: {
     titleAnimation() {
+      let object = {
+        el: '.content-section-title',
+        duration: 1.2
+      }
       gsap
         .timeline({
           defaults: { ease: 'Expo.easeInOut', duration: 1.2 }, // timelineのプロパティ
           scrollTrigger: {
             // markers: true, // マーカーを表示するか（開発用）
-            trigger: '.section-title-partner', // この要素と交差するとイベントが発火
+            trigger: '.top-partners', // この要素と交差するとイベントが発火
             start: 'top 98%', // ウィンドウのどの位置を発火の基準点にするか
             end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
             toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
           },
         })
-        .fromTo('.section-title-partner h2', {
+        .fromTo( object.el, {
           opacity: 0,
           y: 0,
           scale: 0.98,
@@ -135,42 +139,9 @@ export default {
     padding: 40px 0;
   }
 }
-.section-title-partner h2 {
-  color: $secondary;
-  font-size: 3.5rem;
-  font-family: $font-en-normal;
-  font-weight: normal;
-  line-height: 1.25;
-  text-align: center;
-  display: block;
-  width: 100%;
-  margin-bottom: 64px;
-  position: relative;
-  @include media-breakpoint-up(md) {
-    font-size: 4rem;
-  }
-  @include media-breakpoint-down(md) {
-    margin-bottom: 32px;
-  }
-  span {
-    display: block;
-    font-size: 1rem;
-    margin-top: 8px;
-    font-weight: normal;
-    font-family: $font-jp-regular;
-  }
-  .title-bottom-line {
-    border: 0;
-    display: block;
-    width: 0;
-    height: 1px;
-    background-color: $secondary;
-    position: absolute;
-    left: 50%;
-    margin-left: -40px;
-    bottom: -24px;
-  }
-}
+
+@include SectionTitle;
+
 .partner-card {
   opacity: 0;
   display: block;

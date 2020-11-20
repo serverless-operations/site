@@ -145,6 +145,8 @@ export default {
   }
 
   .container {
+    position: relative;
+    z-index: 3;
     @include media-breakpoint-down(sm) {
       width: 90vw;
     }
@@ -416,6 +418,7 @@ export default {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 0;
 }
 .ctarect {
   opacity: 0;
@@ -428,6 +431,6 @@ export default {
   top: 0;
   bottom: 0;
   margin: auto;
-  z-index: 1;
+  z-index: 0;
 }
 </style>
