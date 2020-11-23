@@ -75,6 +75,7 @@
       font-size: 4rem;
     }
     @include media-breakpoint-down(md) {
+      font-size: 40px;
       margin-bottom: 32px;
     }
     span {

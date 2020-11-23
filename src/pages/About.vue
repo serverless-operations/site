@@ -123,9 +123,71 @@
 
         </section><!-- p-company-information -->
 
+        <section class="about-message">
+
+          <div class="container about-message-title-container">
+            <div class="row">
+              <h2 class="content-section-title text-center">
+                Message
+                <span>メッセージ</span>
+                <hr class="title-bottom-line">
+              </h2>
+            </div>
+          </div>
+
+          <v-container class="about-message-container">
+            <v-row justify="center">
+              <v-col cols="11" md="7" lg="6">
+                <h3>
+                  サーバーレスによる開発を<br>
+                  より簡単に、より身近なものへ。
+                </h3>
+                <p>Serverless Operationsの存在理由は、アプリケーション開発をもっとシンプルで簡単なものにすることです。サーバーレスファーストで開発によりインフラの管理やスケーラビリティの事前予測といった作業をクラウドにアウトソーシングすることで、ビジネスのコアバリューの創出や改善のために多くのリソースを避けるようになります。</p>
+                <p>さらなる未来には、インフラの管理だけでなく、プログラミングも不要でアプリケーションが作れる時代が来ることでしょう。<br>そうなればアプリケーション開発はもっと簡単になり、リスクやコストをかけずにたくさんのアイデアがチャレンジできるようになるはずです。そしてサーバーレスはそんな未来の通過点にあると信じています。</p>
+                <p>われわれのミッションは、サーバーレスでの開発を通しクラウドの価値そのものを最大限引き出し、顧客のビジネスを大きく加速させることにあります。</p>
+                <p>今後は、グローバル向けにサーバーレスの開発をより簡単にやりやすくするためのSaaSサービスの展開を実施したいと考えています。</p>
+
+                <div class="ceo-sign">
+                  <div class="ceo-sign-container">
+                    <p>
+                      <span class="role">CEO</span>
+                      <span class="name-jp">堀家 隆宏</span>
+                      <span class="name-en">Takahiro Horike</span>
+                    </p>
+                    <ul class="author-sns">
+                      <li>
+                        <a href="https://github.com/horike37"
+                          target="_blank"
+                          class="github">
+                          <v-icon>mdi-github</v-icon>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.facebook.com/horike.takahiro"
+                          target="_blank"
+                          class="facebook">
+                          <v-icon>mdi-facebook</v-icon>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://twitter.com/horike37"
+                          class="twitter"
+                          target="_blank">
+                          <v-icon>mdi-twitter</v-icon>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>    
+                </div>
+
+              </v-col>
+            </v-row>
+          </v-container>
+
+        </section>
 
       </div><!-- l-company-page -->
-  
+
     </div>
   </Layout>
 </template>
@@ -149,12 +211,13 @@ export default {
   },
   scrollToTop: true,
   mounted() {
-    this.titleAnimation()
+    this.titleAnimation(),
+    this.titleAnimation2()
   },
   methods: {
     titleAnimation() {
       let object = {
-        el: '.content-section-title',
+        el: '.about-title-container h2',
         duration: 1.2
       }
       gsap
@@ -181,6 +244,57 @@ export default {
           width: 0,
         }, {
           width: 80,
+        },'<')
+        .fromTo('.comapny-info-table-container', {
+          opacity: 0,
+          y: 0,
+          scale: 0.98,
+        }, {
+          delay: 0.2,
+          opacity: 1,
+          scale: 1,
+          y: -20,
+        },'<')
+    },
+    titleAnimation2() {
+      let object = {
+        el: '.about-message-title-container h2',
+        duration: 1.2
+      }
+      gsap
+        .timeline({
+          defaults: { ease: 'Expo.easeInOut', duration: 1.2 }, // timelineのプロパティ
+          scrollTrigger: {
+            // markers: true, // マーカーを表示するか（開発用）
+            trigger: '.about-message-title-container', // この要素と交差するとイベントが発火
+            start: 'top 98%', // ウィンドウのどの位置を発火の基準点にするか
+            end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
+            toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
+          },
+        })
+        .fromTo( object.el, {
+          opacity: 0,
+          y: 0,
+          scale: 0.98,
+        }, {
+          opacity: 1,
+          scale: 1,
+          y: -20,
+        })
+        .fromTo('.title-bottom-line', {
+          width: 0,
+        }, {
+          width: 80,
+        },'<')
+        .fromTo('.about-message-container', {
+          opacity: 0,
+          y: 0,
+          scale: 0.98,
+        }, {
+          delay: 0.2,
+          opacity: 1,
+          scale: 1,
+          y: -20,
         },'<')
     },
   }
@@ -343,11 +457,13 @@ export default {
   }
 }
 
+@include SectionTitle;
+
 // 会社情報部分
 .company-info {
   padding: 80px 0 160px 0;
 
-  @include SectionTitle;
+  
   .comapny-info-table-container {
     display: flex;
     justify-content: center;
@@ -370,6 +486,7 @@ export default {
     }
   }
   th {
+    width: 30%;
     max-width: 176px;
     text-align: left;
     font-family: $font-jp-bold;
@@ -401,12 +518,84 @@ export default {
 }
 
 .about-message {
-  background: no-repeat url('../assets/images/company-bg-img.svg');
-  background-position: -100px 765px;
-  background-size: cover;
-  @include media-breakpoint-up(md) {
-    background: no-repeat url('../assets/images/company-bg-img.svg');
-    background-position: -100px 750px;
+  padding: 80px 0 160px 0;
+  background-image: url('../assets/images/top-news-contact-bk.svg');
+  background-position: top 420px;
+  background-size: 100%;
+  background-color: rgba($light-gray-2, 0.7);
+  background-blend-mode: lighten;
+  @include media-breakpoint-down(md) {
+    padding: 40px 0;
+  }
+  h3 {
+    color: $secondary;
+    font-family: $font-jp-regular;
+    font-size: 32px;
+    margin-bottom: 48px;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 24px;
+      font-size: 20px;
+    }
+  }
+  p {
+    color: $text-black;
+    font-family: $font-jp-regular;
+    line-height: 32px;
+    text-align: justify;
+  }
+  .ceo-sign {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 32px;
+    @include media-breakpoint-down(md) {
+      padding-top: 16px;
+    }
+    .ceo-sign-container {
+      .role {
+        color: $mid-gray-1;
+        display: block;
+        line-height: 3;
+        font-size: 12px;
+      }
+      .name-jp {
+        color: $secondary;
+        font-family: $font-jp-bold;
+        display: block;
+        line-height: 1;
+        font-size: 24px;
+      }
+      .name-en {
+        color: $mid-gray-1;
+        display: block;
+        line-height: 2;
+        font-size: 12px;
+      }
+      .author-sns {
+        display: flex;
+        padding: 0;
+        justify-content: space-between;
+        li {
+          a {
+            display: block;
+            text-decoration: none;
+            transition: $soease;
+            &.github i {
+              color: #000;
+            }
+            &.facebook i {
+              color:#1877F2;
+            }
+            &.twitter i {
+              color: #1DA1F2;
+            }
+            :hover {
+              margin-top: -2px;
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

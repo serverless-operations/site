@@ -63,8 +63,8 @@
 
           <ul class="c-footer-list">
             <li class="c-footer-list__item">
-              <g-link to="/company" class="c-footer-list__link">
-                会社概要
+              <g-link to="/about" class="c-footer-list__link">
+                会社案内
               </g-link>
             </li>
             <li class="c-footer-list__item">
