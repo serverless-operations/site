@@ -170,7 +170,8 @@ export default {
       }
 
       @include media-breakpoint-down(xs) {
-        font-size: 1.4rem;
+        padding-top: 40px;
+        font-size: 18px;
       }
 
       @include media-breakpoint-up(md) {
@@ -191,7 +192,7 @@ export default {
       }
 
       @include media-breakpoint-down(xs) {
-        height: 80px;
+        height: 64px;
       }
 
       @include media-breakpoint-up(md) {

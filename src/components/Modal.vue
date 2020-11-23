@@ -60,7 +60,7 @@
             </v-col>
 
             <v-col cols="6" md="3" offset-md="0" class="c-modal__menu-column mt-3 mt-md-0">
-              <g-link @click.native="$emit('close');" to="/company" class="c-modal__link">
+              <g-link @click.native="$emit('close');" to="/about" class="c-modal__link">
                 <span class="c-modal__link--menu">Company</span> 
                 <span class="c-modal__link--ja">会社案内</span>
               </g-link>
