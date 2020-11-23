@@ -529,7 +529,7 @@ export default {
   }
   h3 {
     color: $secondary;
-    font-family: $font-jp-regular;
+    font-family: $font-jp-bold;
     font-size: 32px;
     margin-bottom: 48px;
     @include media-breakpoint-down(md) {
