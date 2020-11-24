@@ -112,7 +112,7 @@ export default {
           stagger: {
             from: 'start', //左側から
             axis: 'x',
-            amount: 0.4 // 0.8秒おきに
+            amount: 0.2 // 0.8秒おきに
           }
         })
       }
