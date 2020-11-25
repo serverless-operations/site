@@ -8,9 +8,7 @@
       margin: 16px 0 32px 0;
       border: 3px solid $light-gray-1;
       border-radius: 6px;
-      padding: 16px;
       @include media-breakpoint-down(md) {
-        padding: 8px;
         border: 2px solid $light-gray-1;
         margin: 8px 0 16px 0;
       }
