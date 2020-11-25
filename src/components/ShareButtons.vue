@@ -1,7 +1,7 @@
 <template>
   <section class="l-share-button">
     <aside class="p-share-button">
-     <div class="p-share-button__header">Share</div>
+     <div class="p-share-button__header">SHARE</div>
       <a class="p-share-button__link--facebook "
         :href="facebookUrl()"
         target="_blank"
@@ -58,13 +58,7 @@ export default {
 <style lang="scss" scoped>
 // シェアボタンのレイアウト
 .l-share-button {
-  margin: 32px 0 56px;
-  @include media-breakpoint-up(md) {
-    margin: 72px 0 112px;
-  }
-  @include media-breakpoint-up(lg) {
-    margin: 158px 0 244px;
-  }
+  margin: 64px 0;
 }
 
 // シェアボタン
@@ -80,14 +74,14 @@ export default {
   &__header {
     width: 100%;
     font-family: $font-en-normal;
-    font-size: 2rem;
-    color: $primary;
+    font-size: 16px;
+    color: $secondary;
     text-align: center;
     margin-bottom: 16px;
     @include media-breakpoint-up(md) {
-      font-size: 3.1rem;
+      font-size: 24px;
       width: 25%;
-      text-align: initial;
+      text-align: center;
       margin-bottom: 0;
     }
   } // &__header
