@@ -556,6 +556,7 @@ export default {
         display: block;
         line-height: 3;
         font-size: 12px;
+        font-family: $font-en-normal;
       }
       .name-jp {
         color: $secondary;
@@ -569,6 +570,7 @@ export default {
         display: block;
         line-height: 2;
         font-size: 12px;
+        font-family: $font-en-normal;
       }
       .author-sns {
         display: flex;

@@ -120,12 +120,12 @@ export default {
           x: 0,
           scale: 1,
           ease: 'Expo.easeInOut',
-          duration: 1.6,
+          duration: 1.2,
           // 複数要素を扱うプロパティ
           stagger: {
             from: 'start', //左側から
             axis: 'x',
-            amount: 0.8 // 0.8秒おきに
+            amount: 0.6 // 0.8秒おきに
           }
         })
       }
