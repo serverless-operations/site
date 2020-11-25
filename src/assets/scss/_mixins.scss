@@ -97,3 +97,223 @@
     }
   }
 }
+
+@mixin PostDetails {
+
+  .v-content {
+    background: linear-gradient(272.99deg, #2C48FF -0.06%, #02007C 100.25%);
+    position: relative;
+  }
+
+  .v-content__wrap {
+    padding-top: 120px;
+    background: url('../assets/images/privacy-policy-header-bg-img.svg') no-repeat;
+    @include media-breakpoint-down(md) {
+      padding-top: 60px;
+      background: url('../assets/images/privacy-policy-header-bg-img.svg') no-repeat;
+    }
+  }
+
+  // カテゴリータイトル
+  .category-title {
+    font-size: 200px;
+    color: $white;
+    font-family: $font-en-normal;
+    position: absolute;
+    z-index: 0;
+    line-height: 1;
+    margin-bottom: 8px;
+    padding: 0;
+    background: linear-gradient(180deg, #02007C 0%, rgba(2, 0, 124, 0) 100%);
+    background-clip: text; //テキストでくり抜く
+    -webkit-text-fill-color: transparent; //くり抜いた部分は背景を表示
+    @include media-breakpoint-down(md) {
+      font-size: 96px;
+    }
+  }
+
+  // 投稿タイトル、タグ、日付
+  .post-header {
+    padding-top: 120px;
+    position: relative;
+    @include media-breakpoint-down(md) {
+      padding-top: 60px;
+    }
+    .post-title {
+      font-family: $font-jp-bold;
+      display: block;
+      font-size: 48px;
+      line-height: 64px;
+      margin-bottom: 24px;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      @include media-breakpoint-down(md) {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+    .post-tag-container {
+      display: flex;
+      .post-date {
+        font-size: 12px;
+        opacity: 0.5;
+        padding: 4px 24px 4px 0px;
+      }
+      .post-tags {
+        display: flex;
+        span {
+          display: block;
+          padding: 4px 12px 4px 20px;
+          background: $tertiary;
+          margin-right: 8px;
+          border-radius: 200px;
+          font-size: 12px;
+          position: relative;
+          font-family: $font-en-normal, $font-jp-regular;
+          &::before {
+            content: '#';
+            position: absolute;
+            opacity: 0.5;
+            left: 8px;
+            top: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .post-article-container {
+    position: relative;
+    background: #fff;
+    border-radius: 6px;
+    padding: 72px 120px;
+    margin-bottom: 240px;
+    @include media-breakpoint-down(md) {
+      padding: 36px 64px;
+      margin-bottom: 120px;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 36px 24px;
+    }
+    .post-article-main-img {
+      max-width: 100%;
+      width: 100% !important;
+      height: auto;
+      margin-bottom: 40px;
+      border: 3px solid $light-gray-1;
+      border-radius: 6px;
+      padding: 16px;
+      @include media-breakpoint-down(md) {
+        padding: 8px;
+        border: 2px solid $light-gray-1;
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  .post-article {
+    color: $text-black;
+    padding-bottom: 96px;
+    margin-bottom: 96px;
+    border-bottom: 1px solid $mid-gray-3;
+    @include wordpress_article_style;
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 48px;
+      margin-bottom: 48px;
+    }
+  } // p-news-articles
+
+  .post-author-container {
+    color: $text-black;
+    background: $light-gray-2;
+    padding: 32px 24px;
+    border-radius: 4px;
+    position: relative;
+    .post-author-text {
+      border-left: 1px solid $mid-gray-3;
+      margin-left: 80px;
+      padding-left: 32px;
+      @include media-breakpoint-down(sm) {
+        border-left: 0;
+        margin-left: 0;
+        padding-left: 0;
+        border-top: 1px solid $mid-gray-3;
+        margin-top: 8px;
+        padding-top: 24px;
+      }
+    }
+    .post-author-title {
+      color: $mid-gray-3;
+      font-size: 24px;
+      font-family: $font-en-normal;
+      transform: rotate(90deg);
+      transform-origin: left top;
+      display: block;
+      position: absolute;
+      left: 64px;
+      top: 32px;
+      @include media-breakpoint-down(sm) {
+        position: relative;
+        transform: none;
+        transform-origin: initial;
+        left: 0;
+        top: 0;
+        font-size: 16px;
+      }
+    }
+    .role {
+      color: $mid-gray-1;
+      display: block;
+      line-height: 3;
+      font-size: 14px;
+      font-family: $font-en-normal;
+      letter-spacing: 2px;
+    }
+    .name-jp {
+      color: $secondary;
+      font-family: $font-jp-bold;
+      display: block;
+      line-height: 1;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+    .name-en {
+      color: $mid-gray-1;
+      display: block;
+      line-height: 2.6;
+      font-size: 12px;
+      font-family: $font-en-normal;
+      letter-spacing: 2px;
+    }
+    .author-desc {
+      font-size: 14px;
+    }
+    .author-sns {
+      display: flex;
+      padding: 0 0 8px 0;
+      justify-content: flex-start;
+      li {
+        list-style: none;
+        margin-right: 8px;
+        a {
+          display: block;
+          text-decoration: none;
+          transition: $soease;
+          &.github i {
+            color: #000;
+          }
+          &.facebook i {
+            color:#1877F2;
+          }
+          &.twitter i {
+            color: #1DA1F2;
+          }
+          :hover {
+            margin-top: -2px;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}

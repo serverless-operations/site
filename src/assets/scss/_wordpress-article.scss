@@ -179,17 +179,21 @@
   /deep/ ul {
     list-style: none;
     margin-bottom: 32px;
-    padding: 8px 40px;
+    padding: 16px 24px;
     li {
       position: relative;
-      line-height: 1.8;
-      font-family: $font-jp-regular;
+      line-height: 1.6;
+      font-family: $font-jp-bold;
       margin-bottom: 8px;
       &:before {
-        display: inline-block;
+        display: block;
         content: '・';
         margin-left: -1rem;
         position: absolute;
+        left: -8px;
+        top: -8px;
+        color: $mid-gray-1;
+        font-size: 26px;
       }
       // リストの項目内容
       p {
@@ -235,11 +239,7 @@
       border-bottom: solid 1px #eee;
       // cursor: pointer;
     }
-    
-    table tr:hover{
-      // background-color: #d4f0fd;
-    }
-    
+
     table th, table td{
       font-size: 14px;
       text-align: left;
@@ -254,6 +254,8 @@
   /deep/ a {
     text-decoration: underline;
     transition: $soease;
+    color: $tertiary;
+    font-family: $font-jp-bold;
     &:hover {
       text-decoration: none;
       opacity: 0.7;
