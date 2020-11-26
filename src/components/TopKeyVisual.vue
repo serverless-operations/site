@@ -12,7 +12,6 @@
       <div class="rect"></div>
       <div class="rect"></div>
     </div>
-   
 
     <v-container>
       <h1>
@@ -70,9 +69,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   mounted() {
+    this.KeyVisualTextAnimation()
     this.SquareParticles()
   },
   methods: {
+    KeyVisualTextAnimation() {
+
+    },
     SquareParticles() {
       let object = {
         el: '.rect',

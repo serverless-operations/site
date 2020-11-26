@@ -243,6 +243,11 @@
     } //li
   } // ul
 
+  /deep/ ul + ul {
+    margin-top: -32px;
+    margin-bottom: 16px;
+  }
+
   // 引用
   /deep/ blockquote {
     background: $light-gray-1;
