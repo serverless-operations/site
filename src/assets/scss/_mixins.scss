@@ -146,9 +146,9 @@
       font-size: 48px;
       line-height: 64px;
       margin-bottom: 24px;
-      text-align: justify;
+      // text-align: justify;
       letter-spacing: -0.01em;
-      word-break: break-all;
+      // word-break: break-all;
       @include media-breakpoint-down(md) {
         font-size: 24px;
         line-height: 32px;
@@ -206,7 +206,10 @@
       margin-bottom: 40px;
       border: 3px solid $light-gray-1;
       border-radius: 6px;
-      padding: 16px;
+      // ワークスの場合のメインイメージ下調整
+      &.post-works-img {
+        margin-bottom: 16px;
+      }
       @include media-breakpoint-down(md) {
         padding: 8px;
         border: 2px solid $light-gray-1;
@@ -236,20 +239,20 @@
     position: relative;
     .post-author-text {
       border-left: 1px solid $mid-gray-3;
-      margin-left: 80px;
+      margin-left: 64px;
       padding-left: 32px;
       @include media-breakpoint-down(sm) {
         border-left: 0;
         margin-left: 0;
         padding-left: 0;
-        border-top: 1px solid $mid-gray-3;
+        border-top: 1px solid $light-gray-1;
         margin-top: 8px;
         padding-top: 24px;
       }
     }
     // Written by
     .post-author-title {
-      color: $mid-gray-3;
+      color: $mid-gray-2;
       font-size: 24px;
       font-family: $font-en-light;
       transform: rotate(90deg);
@@ -265,7 +268,7 @@
         transform-origin: initial;
         left: 0;
         top: 0;
-        font-size: 16px;
+        font-size: 24px;
       }
     }
     .role {
