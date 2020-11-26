@@ -19,6 +19,15 @@
       margin: -24px 0 48px 0;
       color: $mid-gray-1;
     }
+    img + img {
+      margin-bottom: 16px;
+    }
+  }
+  // 画像が連続した場合はマージンを少なくする
+  /deep/ .wp-block-image + .wp-block-image {
+    img {
+      margin: 8px 0 16px 0;
+    }
   }
   
   // 本文
@@ -34,10 +43,11 @@
   // 太字
   /deep/ b {
     font-family: $font-jp-bold;
+    color: $secondary;
   }
   /deep/ strong {
     font-family: $font-jp-bold;
-    color: $primary;
+    color: $secondary;
   }
 
   // ボーダー
@@ -118,7 +128,7 @@
       z-index: 1;
       @include media-breakpoint-up(md) {
         width: 80px;
-        bottom: -8px;
+        bottom: -16px;
       }
     }
     &:before {
@@ -133,7 +143,7 @@
       z-index: 1;
       @include media-breakpoint-up(md) {
         width: 80px;
-        bottom: -8px;
+        bottom: -16px;
       }
     }
   } // h2
@@ -204,6 +214,35 @@
     } //li
   } // ul
 
+  // 数字リスト
+  /deep/ ol {
+    margin-bottom: 32px;
+    padding: 16px 24px;
+    li {
+      position: relative;
+      line-height: 1.6;
+      font-family: $font-jp-bold;
+      margin-bottom: 8px;
+      &::marker {
+        display: block;
+        // content: '・';
+        // margin-left: -1rem;
+        position: absolute;
+        left: 0;
+        // top: -8px;
+        color: $mid-gray-1;
+        font-size: 24px;
+        font-family: $font-en-bold;
+      }
+      // リストの項目内容
+      p {
+        display: inline-block;
+        width: auto;
+        margin-bottom: 1rem;
+      }
+    } //li
+  } // ul
+
   // 引用
   /deep/ blockquote {
     background: $light-gray-1;
@@ -212,12 +251,14 @@
     padding: 1rem;
     margin-bottom: 1.5rem;
     opacity: 0.8;
+    border-radius: 6px;
+    padding: 24px 32px;
     p {
       line-height: 1.5;
       font-size: 14px;
       margin-bottom: 24px;
       strong {
-        color: $primary;
+        color: $secondary;
       }
     }
   }
@@ -251,11 +292,13 @@
   /deep/ pre[class*="language-"] {
     margin: 1rem 0;
   }
+  // リンク
   /deep/ a {
     text-decoration: underline;
     transition: $soease;
     color: $tertiary;
     font-family: $font-jp-bold;
+    padding: 0 6px;
     &:hover {
       text-decoration: none;
       opacity: 0.7;
