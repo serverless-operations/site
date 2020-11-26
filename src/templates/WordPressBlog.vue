@@ -102,6 +102,17 @@
 
         </article>
 
+        <v-container>
+          <v-row class="justify-center">
+            <g-link to="/blog-archives" class="post-archives-link">
+              <span class="post-archives-link-text">BACK TO LIST</span>
+              <span>
+                <img src="@/assets/images/icon/icon-back-to-list.svg" alt="BACK TO LIST アイコン">
+              </span>
+            </g-link>
+          </v-row>
+        </v-container>
+
       </div>
     </div>
   </Layout>
