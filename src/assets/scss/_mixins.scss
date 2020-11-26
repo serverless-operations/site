@@ -98,6 +98,7 @@
   }
 }
 
+// 記事詳細ページの共通設定
 @mixin PostDetails {
 
   .v-content {
@@ -156,8 +157,9 @@
       display: flex;
       .post-date {
         font-size: 12px;
-        opacity: 0.5;
+        opacity: 0.7;
         padding: 4px 24px 4px 0px;
+        letter-spacing: 1px;
       }
       .post-tags {
         display: flex;
@@ -169,6 +171,7 @@
           border-radius: 200px;
           font-size: 12px;
           position: relative;
+          letter-spacing: 1px;
           font-family: $font-en-normal, $font-jp-regular;
           &::before {
             content: '#';
@@ -187,7 +190,7 @@
     background: #fff;
     border-radius: 6px;
     padding: 72px 120px;
-    margin-bottom: 240px;
+    margin-bottom: 72px;
     @include media-breakpoint-down(md) {
       padding: 36px 64px;
       margin-bottom: 120px;
@@ -316,4 +319,22 @@
       }
     }
   }
-}
+
+  .post-archives-link {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    margin-bottom: 160px;
+    transition: $soease;
+    font-family: $font-en-normal;
+    letter-spacing: 4px;
+    color: $mid-gray-3;
+    align-items: center;
+    .post-archives-link-text {
+      margin-right: 16px;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+} // PostDetails
