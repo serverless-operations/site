@@ -78,6 +78,7 @@ export default {
     color: $secondary;
     text-align: center;
     margin-bottom: 16px;
+    letter-spacing: 1px;
     @include media-breakpoint-up(md) {
       font-size: 24px;
       width: 25%;

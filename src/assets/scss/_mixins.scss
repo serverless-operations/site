@@ -148,6 +148,7 @@
       margin-bottom: 24px;
       text-align: justify;
       letter-spacing: -0.01em;
+      word-break: break-all;
       @include media-breakpoint-down(md) {
         font-size: 24px;
         line-height: 32px;
@@ -226,6 +227,7 @@
     }
   } // p-news-articles
 
+  // 投稿者
   .post-author-container {
     color: $text-black;
     background: $light-gray-2;
@@ -245,16 +247,18 @@
         padding-top: 24px;
       }
     }
+    // Written by
     .post-author-title {
       color: $mid-gray-3;
       font-size: 24px;
-      font-family: $font-en-normal;
+      font-family: $font-en-light;
       transform: rotate(90deg);
       transform-origin: left top;
       display: block;
       position: absolute;
       left: 64px;
       top: 32px;
+      letter-spacing: 1px;
       @include media-breakpoint-down(sm) {
         position: relative;
         transform: none;
@@ -319,7 +323,7 @@
       }
     }
   }
-
+  // 一覧に戻るリンク
   .post-archives-link {
     color: #fff;
     text-decoration: none;
@@ -334,7 +338,7 @@
       margin-right: 16px;
     }
     &:hover {
-      opacity: 0.8;
+      opacity: 0.6;
     }
   }
 } // PostDetails
