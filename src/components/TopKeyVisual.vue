@@ -346,16 +346,6 @@ export default {
     }
   }
 
-  .brandslogan-en-enter-active {
-    transition: all 2s ease-in-out;
-    transition-delay: 1s;
-    opacity: 1;
-  }
-
-  .brandslogan-en-enter {
-    opacity: 0;
-  }
-
   // gsap 正方形ランダムアニメーション
   .rects {
     width: 100vw;
@@ -375,7 +365,7 @@ export default {
     top: 0;
     bottom: 0;
     margin: auto;
-    z-index: 10;
+    z-index: 0;
   }
 
 } // p-mainvisual-content

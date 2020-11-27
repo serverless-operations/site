@@ -46,6 +46,8 @@
 
                 <div v-html="$page.wordPressBlog.content" class="post-article" />
 
+                <PostCTA />
+
                 <div class="post-author-container">
                   <h5 class="post-author-title">Written by</h5>
                   <div class="post-author-text">
@@ -172,6 +174,7 @@ query ($id: ID!) {
 
 import Prism from 'prismjs'
 import ShareButtons from '~/components/ShareButtons'
+import PostCTA from '~/components/PostCTA'
 
 import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-json'
@@ -185,7 +188,8 @@ import 'prismjs/components/prism-python'
 
 export default {
   components: {
-    ShareButtons
+    ShareButtons,
+    PostCTA
   },
   metaInfo () {
     return {

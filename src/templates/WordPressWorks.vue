@@ -67,6 +67,8 @@
 
                 <div v-html="$page.wordPressWorks.content" class="post-article" />
 
+                <PostCTA />
+
                 <share-buttons :title="$page.wordPressWorks.title" />
 
               </v-col>
@@ -137,10 +139,12 @@ query ($id: ID!) {
 
 <script>
 import ShareButtons from '~/components/ShareButtons'
+import PostCTA from '~/components/PostCTA'
 
 export default {
   components: {
-    ShareButtons
+    ShareButtons,
+    PostCTA
   },
   metaInfo () {
     return {
