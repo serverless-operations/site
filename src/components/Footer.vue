@@ -56,7 +56,7 @@
         </v-col>
        
         <v-col cols="12" sm="6" md="3">
-          <g-link to="/company/" class="c-footer-list__link">
+          <g-link to="/about" class="c-footer-list__link">
             <div class="c-footer-menu__title">About</div>
             <div class="c-footer-menu__subtitle">会社案内</div>
           </g-link>
@@ -65,16 +65,6 @@
             <li class="c-footer-list__item">
               <g-link to="/about" class="c-footer-list__link">
                 会社案内
-              </g-link>
-            </li>
-            <li class="c-footer-list__item">
-              <g-link to="/company/#message" class="c-footer-list__link">
-                代表あいさつ
-              </g-link>
-            </li>
-            <li class="c-footer-list__item">
-              <g-link to="/company/#vision" class="c-footer-list__link">
-                未来像
               </g-link>
             </li>
             <li class="c-footer-list__item">

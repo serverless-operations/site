@@ -12,7 +12,6 @@
       <div class="rect"></div>
       <div class="rect"></div>
     </div>
-   
 
     <v-container>
       <h1>
@@ -24,30 +23,25 @@
         <div class="l-mainvisual-copytext">
 
           <h2 class="p-mainvisual__japanese-sloagan">
-            <transition name="brandslogan-jp-1" appear>
-              <span>
-                サーバーレスオペレーションズは<br>
-              </span> 
-            </transition>
-            <transition name="brandslogan-jp-2" appear>
-              <span>
-                お客さまと1つの“チーム”になり、<br>
-              </span>
-            </transition>
-            <transition name="brandslogan-jp-3" appear>
-              <span>
-                サーバーレスに関する悩みを共に解決します。
-              </span>
-            </transition>
+            <span>
+              <span class="text-anim">サーバーレスオペレーションズは</span> 
+              <span class="text-anim-bg"></span>
+            </span> 
+            <span>
+              <span class="text-anim">お客さまと1つの“チーム”になり、</span>
+              <span class="text-anim-bg"></span>
+            </span>
+            <span>
+              <span class="text-anim">サーバーレスに関する悩みを共に解決します。</span>
+              <span class="text-anim-bg"></span>
+            </span>
           </h2>
 
-          <transition name="brandslogan-en" appear>
-            <p>
-              <img class="p-mainvisual__english-sloagan"
-                  src="@/assets/images/top-main-copy.svg"
-                  alt="Maximize the cloud value with serverless">
-            </p>
-          </transition>
+          <p class="brandslogan-en">
+            <img class="p-mainvisual__english-sloagan"
+                src="@/assets/images/top-main-copy.svg"
+                alt="Maximize the cloud value with serverless">
+          </p>
 
         </div>
 
@@ -65,21 +59,69 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// import { SplitText } from "gsap/dist/SplitText";
 
 gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(SplitText);
 
 export default {
   mounted() {
+    this.KeyVisualTextAnimation()
     this.SquareParticles()
   },
   methods: {
+    KeyVisualTextAnimation() {
+      gsap.fromTo('.text-anim-bg', {
+        opacity: 1,
+        scaleX: 0,
+        transformOrigin: '0 0',
+      }, {
+        ease: 'Expo.easeInOut',
+        transformOrigin: '1 0',
+        scaleX: 1,
+        duration: 1.6,
+        opacity: 0,
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.4 // 0.8秒おきに
+        }
+      })
+      gsap.fromTo('.text-anim', {
+        opacity: 0,
+        x: 0,
+      }, {
+        delay: 0.2,
+        ease: 'Expo.easeInOut',
+        transformOrigin: '1 0',
+        x: 24,
+        duration: 2,
+        opacity: 1,
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.4 // 0.8秒おきに
+        }
+      })
+      gsap.fromTo('.brandslogan-en', {
+        opacity: 0,
+        x: 0,
+      }, {
+        delay: 1,
+        ease: 'Expo.easeInOut',
+        transformOrigin: '1 0',
+        x: 24,
+        duration: 3,
+        opacity: 1,
+      })
+    },
     SquareParticles() {
       let object = {
         el: '.rect',
         duration: 12
       }
       gsap.fromTo(object.el, {
-        opacity: 'random(0, 0.4)',
+        opacity: 'random(0.1, 0.15)',
         y: 'random(-800, 100)',
         x: '-1',
         scale: 'random(0, 3)',
@@ -87,7 +129,7 @@ export default {
         transformOrigin: 'right'
       }, {
         duration: 'random(6, 30)',
-        opacity: 'random(0, 0.2)',
+        opacity: 'random(0, 0.1)',
         scale: 'random(0, 0.3)',
         x: '1',
         y: 'random(-200, 900)',
@@ -162,6 +204,19 @@ export default {
       font-family: $font-jp-regular;
       letter-spacing: 0.16em;
       font-size: 1.4rem;
+      span {
+        display: inline-block;
+        position: relative;
+      }
+      .text-anim-bg {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
 
       @include media-breakpoint-down(sm) {
         font-size: 1.8rem;
@@ -291,40 +346,6 @@ export default {
     }
   }
 
-  // Animation
-  .brandslogan-jp-1-enter-active {
-    transition: all 1.3s cubic-bezier(.93,0,.1,1);
-    opacity: 1;
-  }
-
-  .brandslogan-jp-1-enter {
-    opacity: 0;
-    padding-left: 64px;
-    background-color: #fff;
-  }
-
-  .brandslogan-jp-2-enter-active {
-    transition: all 1.8s cubic-bezier(.93,0,.1,1);
-    opacity: 1;
-  }
-
-  .brandslogan-jp-2-enter {
-    opacity: 0;
-    padding-left: 64px;
-    background-color: #fff;
-  }
-
-  .brandslogan-jp-3-enter-active {
-    transition: all 2.2s cubic-bezier(.93,0,.1,1);
-    opacity: 1;
-  }
-
-  .brandslogan-jp-3-enter {
-    opacity: 0;
-    padding-left: 64px;
-    background-color: #fff;
-  }
-
   .brandslogan-en-enter-active {
     transition: all 2s ease-in-out;
     transition-delay: 1s;
@@ -335,7 +356,7 @@ export default {
     opacity: 0;
   }
 
-  // gsap アニメーション
+  // gsap 正方形ランダムアニメーション
   .rects {
     width: 100vw;
     height: 100vh;
