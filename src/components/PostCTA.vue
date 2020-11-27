@@ -101,6 +101,10 @@ export default {
     font-size: 88px;
     opacity: 0.1;
     transition: $soease;
+    @include media-breakpoint-down(md) {
+      font-size: 40px;
+      top: 8%;
+    }
   }
   &:hover {
     &::after {
@@ -110,7 +114,7 @@ export default {
     }
     &::before {
       top: 14%;
-      opacity: 0.8;
+      opacity: 0.9;
     }
     a {
       opacity: 0.1;
@@ -125,14 +129,24 @@ export default {
     position: relative;
     z-index: 1;
     transition: $soease;
+    @include media-breakpoint-down(md) {
+      padding: 40px 24px;
+    }
     h5 {
       font-size: 24px;
       margin-bottom: 24px;
       letter-spacing: 2px;
       font-family: $font-jp-bold;
+      @include media-breakpoint-down(md) {
+        font-size: 20px;
+      }
     }
     p {
       font-family: $font-jp-regular;
+      @include media-breakpoint-down(md) {
+        font-size: 14px;
+        margin-bottom: 0;
+      }
     }
   }
   // gsap 正方形ランダムアニメーション
