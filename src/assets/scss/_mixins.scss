@@ -191,7 +191,7 @@
     background: #fff;
     border-radius: 6px;
     padding: 72px 120px;
-    margin-bottom: 72px;
+    margin-bottom: 64px;
     @include media-breakpoint-down(md) {
       padding: 36px 64px;
       margin-bottom: 120px;
@@ -221,7 +221,7 @@
   .post-article {
     color: $text-black;
     padding-bottom: 96px;
-    margin-bottom: 96px;
+    margin-bottom: 32px;
     border-bottom: 1px solid $mid-gray-3;
     @include wordpress_article_style;
     @include media-breakpoint-down(sm) {

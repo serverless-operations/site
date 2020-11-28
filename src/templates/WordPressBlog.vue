@@ -46,6 +46,8 @@
 
                 <div v-html="$page.wordPressBlog.content" class="post-article" />
 
+                <share-buttons :title="$page.wordPressBlog.title" />
+
                 <PostCTA />
 
                 <div class="post-author-container">
@@ -93,8 +95,6 @@
                     </ul>
                   </div>
                 </div>
-
-                <share-buttons :title="$page.wordPressBlog.title" />
 
               </v-col>
             </v-row>
