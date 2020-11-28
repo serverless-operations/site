@@ -1,7 +1,9 @@
 <template>
   <section class="l-share-button">
     <aside class="p-share-button">
-     <div class="p-share-button__header">SHARE</div>
+     
+      <div class="p-share-button__header">SHARE</div>
+
       <a class="p-share-button__link--facebook "
         :href="facebookUrl()"
         target="_blank"
@@ -58,7 +60,7 @@ export default {
 <style lang="scss" scoped>
 // シェアボタンのレイアウト
 .l-share-button {
-  margin: 64px 0;
+  margin: 0 0 80px 0;
 }
 
 // シェアボタン
@@ -74,16 +76,15 @@ export default {
   &__header {
     width: 100%;
     font-family: $font-en-normal;
-    font-size: 16px;
+    font-size: 14px;
     color: $secondary;
     text-align: center;
     margin-bottom: 16px;
     letter-spacing: 1px;
     @include media-breakpoint-up(md) {
-      font-size: 24px;
-      width: 25%;
+      font-size: 16px;
       text-align: center;
-      margin-bottom: 0;
+      margin-bottom: 8px;
     }
   } // &__header
 
@@ -101,11 +102,11 @@ export default {
       padding: 12px 32px;
     }
     @include media-breakpoint-up(md) {
-      padding: 22px 80px;
-      width: 37.5%;
+      padding: 16px;
+      width: 10%;
     }
     @include media-breakpoint-up(lg) {
-      padding: 22px 122px;
+      padding: 16px;
     }
 
     //hoverしたときに影がつく

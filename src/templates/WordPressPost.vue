@@ -51,8 +51,11 @@
                   class="post-article-main-img"
                 />
                 <div v-html="$page.wordPressPost.content" class="post-article" />
-                <PostCTA />
+                
                 <share-buttons :title="$page.wordPressPost.title" />
+
+                <PostCTA />
+                
               </v-col>
             </v-row>
           </v-container>

@@ -67,9 +67,9 @@
 
                 <div v-html="$page.wordPressWorks.content" class="post-article" />
 
-                <PostCTA />
-
                 <share-buttons :title="$page.wordPressWorks.title" />
+
+                <PostCTA />
 
               </v-col>
             </v-row>
