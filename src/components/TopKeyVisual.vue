@@ -94,8 +94,8 @@ export default {
         delay: 0.2,
         ease: 'Expo.easeInOut',
         transformOrigin: '1 0',
-        x: 24,
-        duration: 2,
+        x: 40,
+        duration: 1.8,
         opacity: 1,
         stagger: {
           from: 'start', //左側から
