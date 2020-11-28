@@ -27,7 +27,7 @@
           <ul class="c-footer-list">
             <li class="c-footer-list__item">
               <g-link to="/services"
-                         class="c-footer-list__link">Serverless Oprationsとは</g-link>
+                         class="c-footer-list__link">サーバーレスオペレーションズの<br>サービスと強み</g-link>
             </li>
             <li class="c-footer-list__item">
               <g-link to="/services/serverless-consulting"
@@ -213,15 +213,19 @@ if (process.client) {
   // タイトル
   &__title {
     font-family: $font-en-normal;
-    font-size: 2rem;
-    margin: 10px 0 0px;
+    font-size: 1.8rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    line-height: 1;
   }
   // サブタイトル
   &__subtitle {
     font-family: $font-jp-regular;
     color: $mid-gray-2;
-    font-size: 0.87rem;
-    margin-bottom: 42px;
+    font-size: 12px;
+    margin-bottom: 40px;
     @media screen and (max-width: 600px) {
       margin-bottom: 16px;
     }
