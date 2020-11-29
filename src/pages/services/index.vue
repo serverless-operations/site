@@ -73,14 +73,46 @@
               </v-col>
             </v-row>
             <v-row justify="center">
-              <v-col cols="12" md="4">
-                カード
+              <v-col cols="11" md="4">
+
+                <div class="serivice-card">
+                  <div class="serivice-card-header">
+                    <h4>お客さまの課題</h4>
+                    <p>サーバーレスでやりたいとは思うが、メリット・デメリットがまだ見えていない。</p>
+                     <p class="client-request-text"><strong>基本から教えてほしい</strong></p>
+                  </div>        
+                  <div class="service-card-help">
+                    <h4>お手伝いできること</h4>
+                    <p>お客さまの現状を把握し、サーバーレス移行へのメリット・デメリットについてご説明のうえ<strong>移行支援をおこないます。</strong></p>
+                  </div>
+                </div>
+
               </v-col>
-              <v-col cols="12" md="4">
-                カード
+              <v-col cols="11" md="4">
+                <div class="serivice-card">
+                  <div class="serivice-card-header">
+                    <h4>お客さまの課題</h4>
+                    <p>AWSを使ったことはあるが、サーバーレスでの開発や運用経験がない。</p>
+                     <p class="client-request-text"><strong>開発・運用を手伝ってほしい</strong></p>
+                  </div>        
+                  <div class="service-card-help">
+                    <h4>お手伝いできること</h4>
+                    <p>開発チームのスキルセットに合わせてサーバーレスの導入・移行支援をおこない、<strong>自走できる開発チームへのアップデートをお手伝いします。</strong></p>
+                  </div>
+                </div>
               </v-col>
-              <v-col cols="12" md="4">
-                カード
+              <v-col cols="11" md="4">
+                <div class="serivice-card">
+                  <div class="serivice-card-header">
+                    <h4>お客さまの課題</h4>
+                    <p>AWSを使ったことがなくサーバーレスの導入方法もわからない。</p>
+                     <p class="client-request-text"><strong>全面的に支援してほしい</strong></p>
+                  </div>        
+                  <div class="service-card-help">
+                    <h4>お手伝いできること</h4>
+                    <p>お客さまのチームに入り、全面的にサポートします。お客さまが自走できるよう、<strong>エンジニアのスキルアップやチームづくりに関する支援</strong>をおこないます。</p>
+                  </div>
+                </div>
               </v-col>
             </v-row>
           </v-container>
@@ -222,6 +254,11 @@ background: no-repeat url('../../assets/images/company-main-pattern.svg'),
 
 .page-section-container {
   padding: 80px 0 160px 0;
+  background-image: url('../../assets/images/top-news-contact-bk.svg');
+  background-position: top 420px;
+  background-size: 100%;
+  background-color: rgba($light-gray-2, 0.7);
+  background-blend-mode: lighten;
   h3 {
     color: $secondary;
     font-family: $font-jp-bold;
@@ -237,6 +274,84 @@ background: no-repeat url('../../assets/images/company-main-pattern.svg'),
     font-family: $font-jp-regular;
     line-height: 32px;
     text-align: justify;
+  }
+}
+
+.serivice-card {
+  background: #FFFFFF;
+  box-shadow: 8px 24px 50px rgba(207, 214, 226, 0.6);
+  border-radius: 3px;
+  color: $secondary;
+  .serivice-card-header {
+    padding: 40px 40px 24px 40px;
+    h4 {
+      font-size: 12px;
+      text-align: center;
+      margin-bottom: 32px;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 40px;
+        height: 1px;
+        left: calc(50% - 20px);
+        bottom: -8px;
+        background: $secondary;
+      }
+    }
+    p {
+      color: $secondary;
+      font-family: $font-jp-bold;
+      line-height: 24px;
+    }
+    .client-request-text {
+      border-top: 1px solid $light-gray-1;
+      padding-top: 24px;
+      text-align: center;
+      font-size: 18px;
+      font-family: $font-jp-bold;
+    }
+  }
+  .service-card-help {
+    background: $light-gray-2;
+    padding: 40px;
+    h4 {
+      font-size: 12px;
+      text-align: center;
+      margin: 0 auto 24px;
+      color: $secondary;
+      display: block;
+      width: 90%;
+      position: relative;
+      &::before {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 30px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url(../../assets/images/bg/card-title-before-texture.svg) no-repeat;
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 30px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: url(../../assets/images/bg/card-title-after-texture.svg) no-repeat;
+      }
+    }
+    p {
+      line-height: 24px;
+      color: $secondary;
+      strong {
+        font-family: $font-jp-bold;
+      }
+    }
   }
 }
 </style>
