@@ -26,7 +26,6 @@
             <!-- 粒子 -->
             <img src="@/assets/images/about-so-main-particle-sp.svg"
                 class="page-header-main-particle d-md-none" alt="Serverless Operationsとは メインイメージ">
-
           </div>
 
           <v-container class="page-header-text-container">
@@ -35,14 +34,14 @@
                 <h1 class="page-header-title text-anim">
                   <span class="text-anim">SERVICES</span> 
                   <span class="page-header-title-jp text-anim">
-                    サーバーレスオペレーションズのサービスと強み
+                    サーバーレスオペレーションズの<br class="d-md-block" />サービスと強み
                   </span>
-                  <span class="text-anim-bg"></span>
+                  <span class="page-title-anim-bg"></span>
                 </h1>
-                <h2 class="page-header-copy">
-                  お客さまと１つのチームとなり<br>支援していきます。
+                <h2 class="page-header-copy page-header-text-anim">
+                  お客さまと１つのチームとなり<br class="d-md-block" />支援していきます。
                 </h2>
-                <p class="page-header-text">
+                <p class="page-header-text page-header-text-anim">
                   AWSによるサーバーレスアーキテクチャを技術的なバックボーンとして共に課題解決や提案を行い、お客様のアプリケーション設計・開発・運用までを支援します。
                 </p>
               </v-col>
@@ -50,6 +49,43 @@
           </v-container>
 
         </div><!-- p-services-header -->
+
+        <section class="page-section-container">
+
+          <div class="container services-support-title-container">
+            <div class="row">
+              <h2 class="content-section-title text-center">
+                Support
+                <span>お手伝いできること</span>
+                <hr class="title-bottom-line">
+              </h2>
+            </div>
+          </div>
+
+          <v-container class="services-support-content-container">
+            <v-row justify="center">
+              <v-col cols="11" md="7" lg="7">
+                <p>サーバーレスについてお困りではありませんか？</p>
+                <h3>
+                  お客さまのチームに入り、<br class="d-md-block" />
+                  現状を把握しながら課題を共に解決します。
+                </h3>
+              </v-col>
+            </v-row>
+            <v-row justify="center">
+              <v-col cols="12" md="4">
+                カード
+              </v-col>
+              <v-col cols="12" md="4">
+                カード
+              </v-col>
+              <v-col cols="12" md="4">
+                カード
+              </v-col>
+            </v-row>
+          </v-container>
+
+        </section>
 
       </div>
     </div>
@@ -72,11 +108,12 @@ export default {
     store.commit('resetModal')
   },
   mounted() {
+    this.titleAnimation(),
     this.PageTextAnimation()
   },
   methods: {
     PageTextAnimation() {
-      gsap.fromTo('.text-anim-bg', {
+      gsap.fromTo('.page-title-anim-bg', {
         opacity: 1,
         scaleX: 0,
         transformOrigin: '0 0',
@@ -108,28 +145,62 @@ export default {
           amount: 0.4 // 0.8秒おきに
         }
       })
-      gsap.fromTo('.page-header-copy', {
+      gsap.fromTo('.page-header-text-anim', {
         opacity: 0,
         y: 0,
       }, {
-        delay: 1.6,
+        delay: 1.4,
         ease: 'Expo.easeInOut',
-        transformOrigin: '0 0',
-        y: -6,
+        transformOrigin: '0 1',
+        y: -16,
         duration: 1,
         opacity: 1,
         stagger: {
           from: 'start', //左側から
           axis: 'x',
-          amount: 0.4 // 0.8秒おきに
+          amount: 0.2 // 0.8秒おきに
         }
       })
-    }
+    },
+    titleAnimation() {
+      let object = {
+        el: '.services-support-title-container h2',
+        duration: 1.2
+      }
+      gsap
+        .timeline({
+          defaults: { ease: 'Expo.easeInOut', duration: 1.2 }, // timelineのプロパティ
+          scrollTrigger: {
+            // markers: true, // マーカーを表示するか（開発用）
+            trigger: '.services-support-title-container', // この要素と交差するとイベントが発火
+            start: 'top 98%', // ウィンドウのどの位置を発火の基準点にするか
+            end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
+            toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
+          },
+        })
+        .fromTo( object.el, {
+          opacity: 0,
+          y: 0,
+          scale: 0.98,
+        }, {
+          opacity: 1,
+          scale: 1,
+          y: -20,
+        })
+        .fromTo('.title-bottom-line', {
+          width: 0,
+        }, {
+          width: 80,
+        },'<')
+      }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.v-content__wrap {
+  background-image: url('../../assets/images/bg/noise.png');
+}
 .l-bg-gray {
   background: $light-gray-2;
 }
@@ -141,153 +212,31 @@ export default {
 .l-services-strength {
   position: relative;
 }
-// ページの見出し
 .page-header-container {
-  background: no-repeat url('../../assets/images/company-main-pattern.svg'),
-    linear-gradient(205.01deg, #2c48ff -0.06%, #02007c 100.25%);
-  overflow: hidden;
-  max-height: 840px;
-  position: relative;
-  @include media-breakpoint-up(md) {
-    max-height: 640px;
-  }
-  @include media-breakpoint-up(lg) {
-    max-height: 840px;
-  }
-  // メインイメージ部分のコンテナ
-  .page-header-container {
-    z-index: 3;
-    position: relative;
-  }
-  // メインイメージ部分
-  .page-header-img-container {
-    position: absolute;
-    max-height: 840px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    @include media-breakpoint-up(md) {
-      max-height: 840px;
-      height: 100%;
-      width: 100%;
-    }
-  }
-  // メインイメージ、ロゴ
-  .page-header-logo {
-    position: absolute;
-    display: block;
-    right: 0;
-    width: 100%;
-    height: auto;
-    @include media-breakpoint-up(md) {
-      width: auto;
-      height: 100%;
-    }
-  }
-  // メインイメージ、背景
-  .page-header-main-bg {
-    position: absolute;
-    right: 0;
-    display: block;
-    mix-blend-mode: overlay;
-    width: 100%;
-    height: auto;
-    @include media-breakpoint-up(md) {
-      width: auto;
-      height: 100%;
-    }
-  }
-  // メインイメージ、粒子
-  .page-header-main-particle {
-    position: absolute;
-    right: 0;
-    display: block;
-    width: 100%;
-    height: auto;
-    @include media-breakpoint-up(md) {
-      width: auto;
-      height: 100%;
-    }
-  }
-  // スマホ時のロゴ
-  .page-header-logo-sp {
-    width: 100%;
-    max-height: 812px;
-    display: block;
-    // margin-top: 48px;
-    @include media-breakpoint-up(md) {
-      max-height: 640px;
-      // height: 50vh;
-      right: 0;
-      width: auto;
-      margin-top: 0;
-    }
-    @include media-breakpoint-up(lg) {
-      // height: 80vh;
-      max-height: 840px;
-    }
-  }
-  // ページタイトル
-  .page-header-title {
-    font-family: $font-en-normal;
-    line-height: 0.8;
-    font-size: 3rem;
-    margin-top: 160px;
-    margin-bottom: 40;
-    position: relative;
-    padding: 16px 0;
-    @include media-breakpoint-up(lg) {
-      font-size: 6rem;
-      margin-top: 180px;
-      margin-bottom: 64px;
-    }
-  }
-  // 日本語のタイトル
-  .page-header-title-jp {
-    display: block;
-    font-family: $font-jp-bold;
-    font-size: 16px;
-    margin-top: 8px;
-    opacity: 0.7;
-    margin-left: 8px;
-    @include media-breakpoint-up(lg) {
-      margin-top: 16px;
-    }
-  }
+background: no-repeat url('../../assets/images/company-main-pattern.svg'),
+      linear-gradient(205.01deg, #2c48ff -0.06%, #02007c 100.25%);
+}
+@include PageHeader;
 
-  // タイトル下文章の見出し
-  .page-header-copy {
-    font-family: $font-jp-regular;
-    font-size: 1.5rem;
-    line-height: 1.3;
-    margin-bottom: 40px;
-    @include media-breakpoint-up(lg) {
-      font-size: 2.1rem;
+@include SectionTitle;
+
+.page-section-container {
+  padding: 80px 0 160px 0;
+  h3 {
+    color: $secondary;
+    font-family: $font-jp-bold;
+    font-size: 32px;
+    margin-bottom: 48px;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 24px;
+      font-size: 20px;
     }
   }
-  // タイトル下文章
-  .page-header-text {
+  p {
+    color: $text-black;
     font-family: $font-jp-regular;
     line-height: 32px;
-    margin-bottom: 212px;
-    @include media-breakpoint-up(lg) {
-      margin-bottom: 204px;
-    }
+    text-align: justify;
   }
 }
-
-.text-anim-bg {
-  width: 100%;
-  height: 100%;
-  opacity: 0.8;
-  display: block;
-  background-color: #fff;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
 </style>

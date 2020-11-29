@@ -73,7 +73,7 @@
               </g-link>
             </li>
             <li class="c-footer-list__item">
-              <g-link to="/news-archives/" class="c-footer-list__link">
+              <g-link to="/privacy-policy/" class="c-footer-list__link">
                 プライバシーポリシー
               </g-link>
             </li>
