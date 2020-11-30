@@ -16,8 +16,8 @@
 
         <v-row justify="center">
           <v-col cols="11" md="7" lg="7">
-            <p>サーバーレスについてお困りではありませんか？</p>
-            <h3>
+            <p class="support-text-anim">サーバーレスについてお困りではありませんか？</p>
+            <h3 class="support-text-anim">
               お客さまのチームに入り、<br class="d-md-block" />
               現状を把握しながら課題を共に解決します。
             </h3>
@@ -89,7 +89,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   mounted() {
     this.titleAnimation(),
-    this.CardAnimation()
+    this.SupportAnimation()
   },
   methods: {
     titleAnimation() {
@@ -123,7 +123,7 @@ export default {
           width: 80,
         },'<')
     },
-    CardAnimation() {
+    SupportAnimation() {
       gsap.timeline({
         scrollTrigger: {
           // markers: true, // マーカーを表示するか（開発用）
@@ -133,6 +133,22 @@ export default {
           end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
           toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
         },
+      })
+      .fromTo( '.support-text-anim', {
+        opacity: 0,
+        y: 0,
+      }, {
+        delay: 0.3,
+        ease: 'Expo.easeInOut',
+        transformOrigin: '0 1',
+        y: -16,
+        duration: 1,
+        opacity: 1,
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.2 // 0.8秒おきに
+        }
       })
       .fromTo( '.serivice-card', {
         opacity: 0,

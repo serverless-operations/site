@@ -51,6 +51,8 @@
         </div><!-- p-services-header -->
         
         <ServicesSupport />
+
+        <ServicesMerit />
        
       </div>
     </div>
@@ -59,13 +61,15 @@
 
 <script>
 import ServicesSupport from '~/components/ServicesSupport'
+import ServicesMerit from '~/components/ServicesMerit'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
   components: {
-    ServicesSupport
+    ServicesSupport,
+    ServicesMerit
   },
   metaInfo () {
     return {
