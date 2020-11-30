@@ -14,7 +14,7 @@
             </div>
           </v-col>
         </v-row>
-        
+
       </v-container>
 
     </section>
@@ -34,8 +34,6 @@ export default {
 <style lang="scss" scoped>
 .page-section-container {
   background: linear-gradient(45deg, #00007D 11.76%, #2C48FF 88.21%);
+  color: #fff;
 }
-  p {
-    color: #fff;
-  }
 </style>
