@@ -115,7 +115,7 @@ export default {
             amount: 0.2 // 0.8秒おきに
           }
         })
-      }
+    }
   }
 }
 </script>
