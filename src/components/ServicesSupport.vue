@@ -32,7 +32,7 @@
               <div class="serivice-card-header">
                 <h4>お客さまの課題</h4>
                 <p>サーバーレスでやりたいとは思うが、メリット・デメリットがまだ見えていない。</p>
-                  <p class="client-request-text"><strong>基本から教えてほしい</strong></p>
+                <p class="client-request-text"><strong>基本から教えてほしい</strong></p>
               </div>        
               <div class="service-card-help">
                 <h4>お手伝いできること</h4>
@@ -48,7 +48,7 @@
               <div class="serivice-card-header">
                 <h4>お客さまの課題</h4>
                 <p>AWSを使ったことはあるが、サーバーレスでの開発や運用経験がない。</p>
-                  <p class="client-request-text"><strong>開発・運用を手伝ってほしい</strong></p>
+                <p class="client-request-text"><strong>開発・運用を手伝ってほしい</strong></p>
               </div>        
               <div class="service-card-help">
                 <h4>お手伝いできること</h4>
@@ -64,7 +64,7 @@
               <div class="serivice-card-header">
                 <h4>お客さまの課題</h4>
                 <p>AWSを使ったことがなくサーバーレスの導入方法もわからない。</p>
-                  <p class="client-request-text"><strong>全面的に支援してほしい</strong></p>
+                <p class="client-request-text"><strong>全面的に支援してほしい</strong></p>
               </div>        
               <div class="service-card-help">
                 <h4>お手伝いできること</h4>
@@ -168,7 +168,7 @@ export default {
           axis: 'x',
           amount: 0.3 // 0.8秒おきに
         }
-      })
+      },'<')
     }
   }
 }
@@ -249,6 +249,7 @@ export default {
       text-align: center;
       font-size: 18px;
       font-family: $font-jp-bold;
+      margin-top: auto;
       margin-bottom: 40px;
       position: relative;
       &::before {
