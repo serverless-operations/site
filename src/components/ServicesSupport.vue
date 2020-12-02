@@ -28,8 +28,8 @@
 
           <v-col cols="11" md="4">
 
-            <div class="serivice-card">
-              <div class="serivice-card-header">
+            <div class="service-card">
+              <div class="service-card-header">
                 <h4>お客さまの課題</h4>
                 <p>サーバーレスでやりたいとは思うが、メリット・デメリットがまだ見えていない。</p>
                 <p class="client-request-text"><strong>基本から教えてほしい</strong></p>
@@ -44,8 +44,8 @@
 
           <v-col cols="11" md="4">
 
-            <div class="serivice-card">
-              <div class="serivice-card-header">
+            <div class="service-card">
+              <div class="service-card-header">
                 <h4>お客さまの課題</h4>
                 <p>AWSを使ったことはあるが、サーバーレスでの開発や運用経験がない。</p>
                 <p class="client-request-text"><strong>開発・運用を手伝ってほしい</strong></p>
@@ -60,8 +60,8 @@
 
           <v-col cols="11" md="4">
 
-            <div class="serivice-card">
-              <div class="serivice-card-header">
+            <div class="service-card">
+              <div class="service-card-header">
                 <h4>お客さまの課題</h4>
                 <p>AWSを使ったことがなくサーバーレスの導入方法もわからない。</p>
                 <p class="client-request-text"><strong>全面的に支援してほしい</strong></p>
@@ -150,7 +150,7 @@ export default {
           amount: 0.2 // 0.8秒おきに
         }
       })
-      .fromTo( '.serivice-card', {
+      .fromTo( '.service-card', {
         opacity: 0,
         y: 0,
         scale: 0.98,
@@ -202,7 +202,7 @@ export default {
   }
 }
 
-.serivice-card {
+.service-card {
   background: #FFFFFF;
   box-shadow: 8px 24px 50px rgba(207, 214, 226, 0.6);
   border-radius: 3px;
@@ -210,7 +210,7 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
-  .serivice-card-header {
+  .service-card-header {
     padding: 40px 40px 0px 40px;
     display: flex;
     flex-direction: column;
