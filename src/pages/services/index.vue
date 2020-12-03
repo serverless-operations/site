@@ -39,7 +39,7 @@
                   <span class="page-title-anim-bg"></span>
                 </h1>
                 <h2 class="page-header-copy page-header-text-anim">
-                  お客さまと１つのチームとなり<br class="d-md-block" />支援していきます。
+                  お客さまと１つのチームとなり<br class="d-md-block d-none" />支援していきます。
                 </h2>
                 <p class="page-header-text page-header-text-anim">
                   AWSによるサーバーレスアーキテクチャを技術的なバックボーンとして共に課題解決や提案を行い、お客様のアプリケーション設計・開発・運用までを支援します。
