@@ -178,7 +178,7 @@ export default {
 @include SectionTitle;
 
 .page-section-container {
-  padding: 80px 0 160px 0;
+  padding: 160px 0;
   background-image: url('../assets/images/top-news-contact-bk.svg');
   background-position: top 420px;
   background-size: 100%;

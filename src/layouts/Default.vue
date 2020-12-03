@@ -52,6 +52,11 @@ body {
   z-index: 1;
 }
 
+#main-wrapper {
+  font-family: $font-jp-regular;
+}
+
+
 .fade-enter-active {
   transition: all 0.6s cubic-bezier(.93,0,.1,1);
   opacity: 1;
