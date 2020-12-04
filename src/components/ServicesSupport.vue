@@ -48,7 +48,9 @@
               <div class="service-card-header">
                 <h4>お客さまの課題</h4>
                 <p>AWSを使ったことはあるが、サーバーレスでの開発や運用経験がない。</p>
-                <p class="client-request-text"><strong>開発・運用を手伝ってほしい</strong></p>
+                <p class="client-request-text">
+                  <strong>開発・運用を手伝ってほしい</strong>
+                </p>
               </div>        
               <div class="service-card-help">
                 <h4>お手伝いできること</h4>
@@ -212,8 +214,6 @@ export default {
   flex-direction: column;
   .service-card-header {
     padding: 40px 40px 0px 40px;
-    display: flex;
-    flex-direction: column;
     @include media-breakpoint-down(md) {
       padding: 20px 20px 0px 20px;
     }
@@ -249,17 +249,14 @@ export default {
       text-align: center;
       font-size: 18px;
       font-family: $font-jp-bold;
-      margin-top: auto;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
       position: relative;
+      display: block;
       &::before {
         content: '';
         position: absolute;
         top: 0;
-        left: calc(50% - 8px);
-        // width: 16px;
-        // height: 16px;
-        // background: red;
+        left: calc(50% - 16px);
         border-top: 16px solid $light-gray-1;
         border-right: 16px solid transparent;
         border-left: 16px solid transparent;
@@ -268,10 +265,7 @@ export default {
         content: '';
         position: absolute;
         top: -1px;
-        left: calc(50% - 8px);
-        // width: 16px;
-        // height: 16px;
-        // background: red;
+        left: calc(50% - 16px);
         border-top: 16px solid #fff;
         border-right: 16px solid transparent;
         border-left: 16px solid transparent;
