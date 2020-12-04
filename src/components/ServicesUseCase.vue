@@ -293,6 +293,8 @@ export default {
       min-height: 100px;
       @include media-breakpoint-down(md) {
         font-size: 24px;
+        min-height: auto;
+        margin: 0 0 16px 0;
       }
     }
     .service-card-header-image {
