@@ -4,37 +4,37 @@
 
       <div class="l-company-page">
 
-        <div class="p-company-header">
-          <div class="p-company-header__main-img">
+        <div class="page-header-container">
+          <div class="page-header-img-container">
 
             <!--背景 -->
             <img src="../assets/images/company-main-bg.svg"
-                class="p-company-header__main-bg d-none d-md-block" alt="Serverless Operations 会社案内 メインイメージ">
+                class="page-header-main-bg d-none d-md-block" alt="Serverless Operations 会社案内 メインイメージ">
             <!-- 粒子 -->
             <img src="../assets/images/company-main-particle.svg"
-                class="p-company-header__main-particle d-none d-md-block" alt="Serverless Operations 会社案内 メインイメージ">
+                class="page-header-main-particle d-none d-md-block" alt="Serverless Operations 会社案内 メインイメージ">
             <!-- ロゴ -->
             <img src="../assets/images/company-main-logo.svg"
                 class="p-company-header__main-logo d-none d-md-block" alt="Serverless Operations 会社案内 メインイメージ ロゴ">
             <!-- スマホ時の画像 -->
             <img src="../assets/images/company-main-logo-sp.svg"
-                class="p-company-header__logo-sp d-md-none" alt="Serverless Operations 会社案内 メインイメージ">
+                class="page-header-logo-sp d-md-none" alt="Serverless Operations 会社案内 メインイメージ">
           </div>
-          <v-container class="p-company-header__container">
+
+          <v-container class="page-header-text-container">
             <v-row>
               <v-col cols="12" md="6">
-                <h1 class="p-company-header__title">
-                  About
-                  <span class="p-company-header__title-jp">会社案内</span>
+                <h1 class="page-header-title text-anim">
+                  <span class="text-anim">ABOUT</span>
+                  <span class="page-header-title-jp text-anim">
+                    会社案内
+                  </span>
+                  <span class="page-title-anim-bg"></span>
                 </h1>
-                <p class="p-company-header__text-header">
+                <h2 class="page-header-copy page-header-text-anim">
                   クラウドの価値を<br class="d-md-none" />最大限引き出し<br>顧客のビジネスを加速させる。
-                </p>
-                <p class="p-company-header__text">われわれのミッションは、サーバーレスでの開発を通しクラウドの価値そのものを最大限引き出し、顧客のビジネスを大きく加速させることにあります。</p>
-                <!-- <div class="d-md-none p-company-header__scroll-block">
-                  <span class="p-company-header__scroll">Scroll</span>
-                  <div class="p-company-header__scroll-line"></div>
-                </div> -->
+                </h2>
+                <p class="page-header-text page-header-text-anim">われわれのミッションは、サーバーレスでの開発を通しクラウドの価値そのものを最大限引き出し、顧客のビジネスを大きく加速させることにあります。</p>
               </v-col>
             </v-row>
           </v-container>
@@ -213,8 +213,58 @@ export default {
   mounted() {
     this.titleAnimation(),
     this.titleAnimation2()
+    this.PageTextAnimation()
   },
   methods: {
+    PageTextAnimation() {
+      gsap.fromTo('.page-title-anim-bg', {
+        opacity: 1,
+        scaleX: 0,
+        transformOrigin: '0 0',
+      }, {
+        ease: 'Expo.easeInOut',
+        transformOrigin: '1 0',
+        scaleX: 1,
+        duration: 1.6,
+        opacity: 0,
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.4 // 0.8秒おきに
+        }
+      })
+      gsap.fromTo('.text-anim', {
+        opacity: 0,
+        x: -32,
+      }, {
+        delay: 0.2,
+        ease: 'Expo.easeInOut',
+        transformOrigin: '1 0',
+        x: 0,
+        duration: 1.8,
+        opacity: 1,
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.4 // 0.8秒おきに
+        }
+      })
+      gsap.fromTo('.page-header-text-anim', {
+        opacity: 0,
+        y: 0,
+      }, {
+        delay: 1.4,
+        ease: 'Expo.easeInOut',
+        y: -16,
+        duration: 1,
+        opacity: 1,
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.2 // 0.8秒おきに
+        }
+      })
+    },
     titleAnimation() {
       let object = {
         el: '.about-title-container h2',
@@ -307,162 +357,18 @@ export default {
   position: relative;
   overflow: hidden;
 }
-// ページの見出し
-.p-company-header {
-  // background-image: ;
-  background: no-repeat url('../assets/images/company-main-pattern.svg'),
-    linear-gradient(205.01deg, #2c48ff -0.06%, #02007c 100.25%);
-  background-size: cover;
-  overflow: hidden;
-  // height: 80vh;
-  max-height: 840px;
-  position: relative;
-  @include media-breakpoint-up(md) {
-    max-height: 640px;
-  }
-  @include media-breakpoint-up(lg) {
-    max-height: 840px;
-  }
-  &__tryangle {
-    height: 150px;
-    width: 150px;
-    background: $white;
-    position: absolute;
-    bottom: -91px;
-    left: -91px;
-    transform: rotate(45deg);
-    z-index: 3;
-    @include media-breakpoint-up(lg) {
-      height: 180px;
-      width: 180px;
-    }
-  }
-  // メインイメージ部分のコンテナ
-  &__container {
-    z-index: 3;
-    position: relative;
-  }
-  // メインイメージ部分
-  &__main-img {
-    position: absolute;
-    max-height: 840px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-  }
-  // メインイメージ、ロゴ
-  &__main-logo {
-    position: absolute;
-    display: block;
-    width: auto;
-    height: 100%;
-    right: 0;
-  }
-  // メインイメージ、背景
-  &__main-bg {
-    position: absolute;
-    right: 0;
-    display: block;
-    mix-blend-mode: soft-light;
-    width: auto;
-    height: 100%;
-  }
-  // メインイメージ、粒子
-  &__main-particle {
-    position: absolute;
-    right: 0;
-    display: block;
-    width: auto;
-    height: 100%;
-  }
-  // スマホ時のロゴ
-  &__logo-sp {
-    width: 100%;
-    max-height: 812px;
-    display: block;
-    // margin-top: 48px;
-    @include media-breakpoint-up(md) {
-      max-height: 640px;
-      // height: 50vh;
-      right: 0;
-      width: auto;
-      margin-top: 0;
-    }
-    @include media-breakpoint-up(lg) {
-      // height: 80vh;
-      max-height: 840px;
-    }
-  }
-  // ページタイトル
-  &__title {
-    font-family: $font-en-normal;
-    line-height: 0.8;
-    font-size: 4.5rem;
-    margin-top: 160px;
-    margin-bottom: 65px;
-    @include media-breakpoint-up(lg) {
-      font-size: 6.25rem;
-      margin-top: 215px;
-      margin-bottom: 80px;
-    }
-  }
-  // 日本語のタイトル
-  &__title-jp {
-    display: block;
-    font-family: $font-jp-regular;
-    font-size: 1.5rem;
-    margin-top: 8px;
-    @include media-breakpoint-up(lg) {
-      margin-top: 16px;
-    }
-  }
-  // タイトル下文章の見出し
-  &__text-header {
-    font-family: $font-jp-bold;
-    font-size: 1.5rem;
-    @include media-breakpoint-up(lg) {
-      font-size: 2.1rem;
-    }
-  }
-  // タイトル下文章
-  &__text {
-    font-family: $font-jp-regular;
-    line-height: 32px;
-    margin-bottom: 212px;
-    @include media-breakpoint-up(lg) {
-      margin-bottom: 204px;
-    }
-  }
-  &__scroll-block {
-    position: absolute;
-    bottom: 140px;
-    right: 0;
-  }
-  &__scroll {
-    writing-mode: vertical-lr;
-  }
-  &__scroll-line {
-    position: absolute;
-    bottom: -94px;
-    right: 12px;
-    height: 88px;
-    width: 2px;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 1)
-    );
-  }
+.page-header-container {
+background: no-repeat url('../assets/images/company-main-pattern.svg'),
+      linear-gradient(205.01deg, #2c48ff -0.06%, #02007c 100.25%);
 }
+
+@include PageHeader;
 
 @include SectionTitle;
 
 // 会社情報部分
 .company-info {
   padding: 80px 0 160px 0;
-
   
   .comapny-info-table-container {
     display: flex;

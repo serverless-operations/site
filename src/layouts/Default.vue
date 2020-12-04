@@ -15,6 +15,7 @@
 </template>
 
 <script>
+// import Noise from "~/components/Noise.vue";
 import HeaderComponent from '~/components/Header.vue'
 import CallToAction from '~/components/CallToAction.vue'
 import FooterComponent from '~/components/Footer.vue'
@@ -22,6 +23,7 @@ import { gsap } from 'gsap'
 
 export default {
   components: {
+    // Noise,
     HeaderComponent,
     CallToAction,
     FooterComponent
@@ -49,6 +51,11 @@ body {
   position: relative;
   z-index: 1;
 }
+
+#main-wrapper {
+  font-family: $font-jp-regular;
+}
+
 
 .fade-enter-active {
   transition: all 0.6s cubic-bezier(.93,0,.1,1);
