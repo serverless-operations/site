@@ -10,7 +10,7 @@
       margin-bottom: 1rem;
       @include media-breakpoint-down(sm) {
         font-size: 0.8rem;
-        margin-bottom: 1rem;
+        margin-bottom: 8px;
       }
       &:before {
         position: absolute;
@@ -50,6 +50,7 @@
       transition: $soease;
       display: block;
       font-family: $font-jp-regular;
+      padding-right: 24px;
       &:hover {
         color: $mid-gray-2;
         margin-left: 4px;
