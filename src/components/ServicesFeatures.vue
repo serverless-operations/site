@@ -12,7 +12,7 @@
         </div>
       </div>
 
-      <v-container class="services-support-content-container">
+      <v-container class="services-features-content-container">
 
         <v-row justify="center">
           <v-col cols="11" md="8" lg="8">
@@ -27,7 +27,7 @@
             <h4 class="features-text-anim">
               “共創”とは、お客さまと“共につくる”こと。
             </h4>
-            <p>私たちはこれまで、Serverless Frameworkを中心としたOSSコミュニティで、OSS開発やコントリビューションを続けてまいりました。グローバルの第一線で培ってきたサーバーレスアプリケーション開発に関する知見をお客さまに共有しながら、お客さまの現状やスケジュール、予算など、ご要望に合わせた支援・サポートを行います。</p>
+            <p class="features-text-anim">私たちはこれまで、Serverless Frameworkを中心としたOSSコミュニティで、OSS開発やコントリビューションを続けてまいりました。グローバルの第一線で培ってきたサーバーレスアプリケーション開発に関する知見をお客さまに共有しながら、お客さまの現状やスケジュール、予算など、ご要望に合わせた支援・サポートを行います。</p>
           </v-col>
         </v-row>
 
@@ -55,11 +55,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   mounted() {
-    this.titleAnimation(),
+    this.FeaturesTitleAnimation(),
     this.FeaturesAnimation()
   },
   methods: {
-    titleAnimation() {
+    FeaturesTitleAnimation() {
       let object = {
         el: '.services-features-title-container h2',
         duration: 1.2
@@ -95,7 +95,7 @@ export default {
         scrollTrigger: {
           // markers: true, // マーカーを表示するか（開発用）
           // scrub: 1,
-          trigger: '.services-support-content-container', // この要素と交差するとイベントが発火
+          trigger: '.services-features-content-container', // この要素と交差するとイベントが発火
           start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
           end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
           toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
@@ -162,7 +162,7 @@ export default {
   }
 }
 
-.services-support-content-container {
+.services-features-content-container {
   position: relative;
   .features-illust-01 {
     position: absolute;

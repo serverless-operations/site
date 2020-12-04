@@ -26,7 +26,7 @@
 
           <v-col cols="11" md="4">
 
-            <div class="service-card service-card-anim">
+            <div class="service-usecase-card">
               <div class="service-card-header">
                 <h3>
                   Web & Mobile App<br>
@@ -51,7 +51,7 @@
 
           <v-col cols="11" md="4">
 
-            <div class="service-card service-card-anim">
+            <div class="service-usecase-card">
               <div class="service-card-header">
                 <h3>
                   Web Frontend
@@ -74,7 +74,7 @@
 
           <v-col cols="11" md="4">
 
-            <div class="service-card service-card-anim">
+            <div class="service-usecase-card">
               <div class="service-card-header">
                 <h3>
                   IoT Backend
@@ -97,7 +97,7 @@
 
           <v-col cols="11" md="4">
 
-            <div class="service-card service-card-anim">
+            <div class="service-usecase-card">
               <div class="service-card-header">
                 <h3>
                   Dataprocessing
@@ -120,7 +120,7 @@
 
           <v-col cols="11" md="4">
 
-            <div class="service-card service-card-anim">
+            <div class="service-usecase-card">
               <div class="service-card-header">
                 <h3>
                   Chatbot
@@ -155,11 +155,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   mounted() {
-    this.titleAnimation(),
+    this.UseCaseTitleAnimation(),
     this.UseCaseAnimation()
   },
   methods: {
-    titleAnimation() {
+    UseCaseTitleAnimation() {
       let object = {
         el: '.services-usecase-title-container h2',
         duration: 1.2
@@ -217,7 +217,7 @@ export default {
           amount: 0.2 // 0.8秒おきに
         }
       })
-      .fromTo( '.service-card-anim', {
+      .fromTo( '.service-usecase-card', {
         opacity: 0,
         y: 0,
         scale: 0.98,
@@ -259,7 +259,7 @@ export default {
   }
 }
 
-.service-card {
+.service-usecase-card {
   background: #FFFFFF;
   box-shadow: 8px 24px 50px rgba(207, 214, 226, 0.6);
   border-radius: 3px;
