@@ -55,6 +55,8 @@
         <ServicesMerit />
 
         <ServicesFeatures />
+
+        <ServicesUseCase />
        
       </div>
     </div>
@@ -65,6 +67,7 @@
 import ServicesSupport from '~/components/ServicesSupport'
 import ServicesMerit from '~/components/ServicesMerit'
 import ServicesFeatures from '~/components/ServicesFeatures'
+import ServicesUseCase from '~/components/ServicesUseCase'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -73,7 +76,8 @@ export default {
   components: {
     ServicesSupport,
     ServicesMerit,
-    ServicesFeatures
+    ServicesFeatures,
+    ServicesUseCase
   },
   metaInfo () {
     return {
