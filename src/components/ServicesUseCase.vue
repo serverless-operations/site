@@ -32,7 +32,7 @@
                   Web & Mobile App<br>
                   Backend
                 </h3>
-                <p>
+                <p class="service-card-header-image">
                   <img
                     src="@/assets/images/services/icon-features-web-mobile-app-backend-illust.svg"
                     class="usecase-illust-01"
@@ -56,7 +56,7 @@
                 <h3>
                   Web Frontend
                 </h3>
-                <p>
+                <p class="service-card-header-image">
                   <img
                     src="@/assets/images/services/icon-features-web-frontend-illust.svg"
                     class="usecase-illust-02"
@@ -79,7 +79,7 @@
                 <h3>
                   IoT Backend
                 </h3>
-                <p>
+                <p class="service-card-header-image">
                   <img
                     src="@/assets/images/services/icon-features-iot-backend-illust.svg"
                     class="usecase-illust-03"
@@ -102,7 +102,7 @@
                 <h3>
                   Dataprocessing
                 </h3>
-                <p>
+                <p class="service-card-header-image">
                   <img
                     src="@/assets/images/services/icon-features-dataprocessing-illust.svg"
                     class="usecase-illust"
@@ -125,7 +125,7 @@
                 <h3>
                   Chatbot
                 </h3>
-                <p>
+                <p class="service-card-header-image">
                   <img
                     src="@/assets/images/services/icon-features-chatbot-illust.svg"
                     class="usecase-illust-05"
@@ -284,12 +284,35 @@ export default {
     h3 {
       font-size: 32px;
       text-align: center;
-      margin-bottom: 32px;
       position: relative;
       font-family: $font-en-normal;
+      line-height: 1.2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100px;
+      @include media-breakpoint-down(md) {
+        font-size: 24px;
+      }
     }
-    p {
+    .service-card-header-image {
+      display: flex;
+      justify-content: center;
       text-align: center;
+      min-height: 200px;
+      @include media-breakpoint-down(sm) {
+        min-height: auto;
+      }
+      img {
+        align-items: center;
+        @include media-breakpoint-down(md) {
+          width: 90%;
+        }
+        @include media-breakpoint-down(sm) {
+          width: auto;
+          height: 100px;
+        }
+      }
     }
   }
   .service-card-help {
@@ -345,6 +368,9 @@ export default {
       color: $secondary;
       strong {
         font-family: $font-jp-bold;
+      }
+      @include media-breakpoint-down(md) {
+        font-size: 14px;
       }
     }
   }
