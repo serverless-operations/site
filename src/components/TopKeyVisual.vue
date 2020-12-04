@@ -153,12 +153,14 @@ export default {
   width: 100vw;
   height: 100vh;
   max-height: 1024px;
-  background: url('../assets/images/top-main-pattern-top.svg'),
+  background:
+    url('../assets/images/bg/so-blue-texture.png'),
+    url('../assets/images/top-main-pattern-top.svg'),
     url('../assets/images/top-main-pattern-bottom.svg'),
     linear-gradient(45deg, $secondary 11.76%, $tertiary 88.21%);
-  background-position: top right, bottom left, center;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: contain, contain, auto;
+  background-position: center, top right, bottom left, center;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 70% 70%, contain, contain, auto;
   overflow: hidden;
   position: relative;
   @include media-breakpoint-up(md) {
