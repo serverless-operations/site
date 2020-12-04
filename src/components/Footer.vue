@@ -4,7 +4,7 @@
     <v-container>
       <v-row>
 
-        <v-col cols="12" sm="6" md="3">     
+        <v-col cols="12" sm="6" md="3" class="footer-list-anim">     
           <g-link to="/our-products" class="c-footer-list__link">
             <div class="c-footer-menu__title">Works</div>
             <div class="c-footer-menu__subtitle">導入事例</div>
@@ -14,9 +14,7 @@
           </ul>
         </v-col>
 
-        <v-col cols="12"
-               sm="6"
-               md="3">
+        <v-col cols="12" sm="6" md="3" class="footer-list-anim"> 
           <div class>
             <g-link to="/services"
                        class="c-footer-list__link">
@@ -45,7 +43,7 @@
           </ul>
         </v-col>
 
-        <v-col cols="12" sm="6" md="3">     
+        <v-col cols="12" sm="6" md="3" class="footer-list-anim">     
           <g-link to="/blog-archives" class="c-footer-list__link">
             <div class="c-footer-menu__title">Blog</div>
             <div class="c-footer-menu__subtitle">開発ブログ</div>
@@ -55,7 +53,7 @@
           </ul>
         </v-col>
        
-        <v-col cols="12" sm="6" md="3">
+        <v-col cols="12" sm="6" md="3" class="footer-list-anim"> 
           <g-link to="/about" class="c-footer-list__link">
             <div class="c-footer-menu__title">About</div>
             <div class="c-footer-menu__subtitle">会社案内</div>
@@ -135,11 +133,48 @@
 import FooterBlog from '~/components/FooterBlog.vue'
 import FooterWorks from '~/components/FooterWorks.vue'
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   components: {
     FooterBlog,
     FooterWorks
   },
+  mounted() {
+    this.FooterListAnimation()
+  },
+  methods: {
+    FooterListAnimation() {
+      gsap.timeline({
+        scrollTrigger: {
+          // markers: true, // マーカーを表示するか（開発用）
+          // scrub: 1,
+          trigger: '.footer', // この要素と交差するとイベントが発火
+          start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
+          end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
+          toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
+        },
+      })
+      .fromTo( '.footer-list-anim', {
+        opacity: 0,
+        x: -24,
+      }, {
+        delay: 0.3,
+        opacity: 1,
+        x: 0,
+        ease: 'Expo.easeOut',
+        duration: 2.4,
+        // 複数要素を扱うプロパティ
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.6 // 0.8秒おきに
+        }
+      },'<')
+    }
+  }
 }
 
 if (process.client) {
@@ -177,6 +212,10 @@ if (process.client) {
     url('../assets/images/bg/so-blue-texture.png'),
     linear-gradient(50.89deg, #00007D 8%, #2C48FF 148.73%);
     background-size: contain, 70% 70%, auto;
+    @include media-breakpoint-down(sm) {
+      background-size: 120%, 70% 70%, auto;
+      background-repeat: repeat, repeat, no-repeat;
+    }
 }
 
 // フッターのメニュー
