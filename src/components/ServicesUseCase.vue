@@ -36,7 +36,7 @@
                   <img
                     src="@/assets/images/services/icon-features-web-mobile-app-backend-illust.svg"
                     class="usecase-illust-01"
-                    alt=""
+                    alt="Web & Mobile App Backend"
                   >
                 </p>
               </div>        
@@ -60,7 +60,7 @@
                   <img
                     src="@/assets/images/services/icon-features-web-frontend-illust.svg"
                     class="usecase-illust-02"
-                    alt=""
+                    alt="Web Frontend"
                   >
                 </p>
               </div>        
@@ -83,7 +83,7 @@
                   <img
                     src="@/assets/images/services/icon-features-iot-backend-illust.svg"
                     class="usecase-illust-03"
-                    alt=""
+                    alt="IoT Backend"
                   >
                 </p>
               </div>        
@@ -106,7 +106,7 @@
                   <img
                     src="@/assets/images/services/icon-features-dataprocessing-illust.svg"
                     class="usecase-illust"
-                    alt=""
+                    alt="Dataprocessing"
                   >
                 </p>
               </div>        
@@ -129,7 +129,7 @@
                   <img
                     src="@/assets/images/services/icon-features-chatbot-illust.svg"
                     class="usecase-illust-05"
-                    alt=""
+                    alt="Chatbot"
                   >
                 </p>
               </div>        
@@ -365,7 +365,7 @@ export default {
     }
     p {
       line-height: 24px;
-      color: $secondary;
+      color: $text-black;
       strong {
         font-family: $font-jp-bold;
       }

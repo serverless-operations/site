@@ -20,7 +20,7 @@
           <div class>
             <g-link to="/services"
                        class="c-footer-list__link">
-              <div class="c-footer-menu__title">Service</div>
+              <div class="c-footer-menu__title">Services</div>
               <div class="c-footer-menu__subtitle">サービス紹介</div>
             </g-link>
           </div>
@@ -172,41 +172,12 @@ if (process.client) {
 
 .footer {
   padding-top: 48px;
-  background-image: url(../assets/images/footer/footer-particle.svg),
-                    linear-gradient(50.89deg, #00007D 8%, #2C48FF 148.73%);
+  background:
+    url('../assets/images/footer/footer-particle.svg'),
+    url('../assets/images/bg/so-blue-texture.png'),
+    linear-gradient(50.89deg, #00007D 8%, #2C48FF 148.73%);
+    background-size: contain, 70% 70%, auto;
 }
-
-// パンくず
-.c-footer-breadcrumb {
-  font-size: 0.87rem;
-  line-height: 2;
-  padding: 0px 0 20px;
-  border-bottom: 1px solid rgba(170, 170, 170, 0.1);
-  @media screen and (max-width: 600px) {
-    padding: 16px 0;
-  }
-
-  // トップページ
-  &__home {
-    color: $white;
-    text-decoration: none;
-    &:hover {
-      color: $mid-gray-2;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-  }
-
-  // 現在のページ
-  &__current {
-    color: $mid-gray-2;
-  }
-
-  // 区切り線
-  &__separater {
-    margin: 0 16px;
-  }
-} // c-footer-breadcrumb
 
 // フッターのメニュー
 .c-footer-menu {

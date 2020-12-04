@@ -3,8 +3,6 @@
     <div class="column justify-center align-center">
 
       <top-key-visual />
-      <top-concept />
-      <top-services-clients />
       <top-works />
       <top-blog />
       <top-news-contact />
@@ -45,15 +43,12 @@ query Home ($page: Int) {
 <script>
 import { Pager } from 'gridsome' 
 import TopKeyVisual from '~/components/TopKeyVisual.vue'
-import TopConcept from '~/components/TopConcept.vue'
 import TopBlog from '~/components/TopBlog.vue'
 import BlogCard from '~/components/BlogCard.vue'
 import TopWorks from '~/components/TopWorks.vue'
 import WorksCard from '~/components/WorksCard.vue'
-import TopServicesClients from '~/components/TopServicesClients.vue'
 import TopNewsContact from '~/components/TopNewsContact.vue'
 import Post from '~/components/Post.vue'
-import ContactForm from '~/components/ContactForm.vue'
 import TopPartners from '~/components/TopPartners.vue'
 import TopClients from '~/components/TopClients.vue'
 
@@ -62,15 +57,12 @@ export default {
     Pager,
     Post,
     TopKeyVisual,
-    TopConcept,
     TopBlog,
     BlogCard,
     TopWorks,
     WorksCard,
-    TopServicesClients,
     TopNewsContact,
     TopPartners,
-    ContactForm,
     TopClients
   },
   metaInfo :{
