@@ -33,27 +33,6 @@
 
       </div><!-- container -->
 
-      <div class="p-news-bg"></div>
-       
-      <div class="container top-contact-form-container">
-        <v-row>
-
-          <v-col cols="12" md="4" lg="4">
-            <h2 class="p-top-contact--title">
-            Contact<span>お問い合わせ</span>
-            </h2>
-            <p class="p-top-contact--paragraph">
-              AWS<small>（アマゾンウェブサービス）</small>などを利用したサーバーレスアプリケーションの設計・開発・保守運用等について<br>お困りの方は、こちらのフォームから気軽にお問い合わせください。2〜3営業日以内にメールで返信いたします。
-            </p>
-          </v-col>
-
-          <v-col cols="12" md="8" lg="8">
-            <top-contact-form />
-          </v-col>
-
-        </v-row>
-      </div>
-
     </div><!-- v-content__wrap -->
   </div><!-- v-content -->
 </template>
@@ -93,22 +72,18 @@ query ($page: Int) {
 
 <script>
 import Post from '~/components/Post.vue'
-import TopContactForm from '~/components/TopContactForm.vue'
 
 export default {
   components: {
     Post,
-    TopContactForm
   },
   props: ['news'],
-  
 }
 </script>
 
 <style lang="scss" scoped>
 .v-content {
   width: 100vw;
-  background-image: url('../assets/images/top-news-contact-bk.svg');
   background-position: center 420px;
   background-size: 300%;
   background-color: $light-gray-2;

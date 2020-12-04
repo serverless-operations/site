@@ -162,8 +162,10 @@ export default {
   position: relative;
 }
 .page-header-container {
-background: no-repeat url('../../assets/images/company-main-pattern.svg'),
-      linear-gradient(205.01deg, #2c48ff -0.06%, #02007c 100.25%);
+background:
+  url('../../assets/images/bg/so-blue-texture.png'),
+  url('../../assets/images/company-main-pattern.svg'),
+  linear-gradient(45deg, $secondary 11.76%, $tertiary 88.21%);
 }
 @include PageHeader;
 
