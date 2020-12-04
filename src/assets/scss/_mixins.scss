@@ -28,7 +28,6 @@
       }
       &:hover::before {
         transform: scaleX(1);
-        transform-origin: right center;
       }
       &:after {
         position: absolute;
@@ -53,7 +52,7 @@
       font-family: $font-jp-regular;
       &:hover {
         color: $mid-gray-2;
-        margin-left: 2px;
+        margin-left: 4px;
       }
     }
   } // c-footer-list
@@ -102,7 +101,10 @@
 @mixin PostDetails {
 
   .v-content {
-    background: linear-gradient(272.99deg, #2C48FF -0.06%, #02007C 100.25%);
+    background:
+    url('../assets/images/bg/so-blue-texture.png'),
+      linear-gradient(272.99deg, #2C48FF -0.06%, #02007C 100.25%);
+      background-size: 70%, auto;
     position: relative;
   }
 
@@ -125,7 +127,8 @@
     line-height: 1;
     margin-bottom: 8px;
     padding: 0;
-    background: linear-gradient(180deg, #02007C 0%, rgba(2, 0, 124, 0) 100%);
+    background:
+      linear-gradient(180deg, #02007C 0%, rgba(2, 0, 124, 0) 100%);
     background-clip: text; //テキストでくり抜く
     -webkit-text-fill-color: transparent; //くり抜いた部分は背景を表示
     @include media-breakpoint-down(md) {
@@ -192,6 +195,7 @@
     border-radius: 6px;
     padding: 72px 120px;
     margin-bottom: 64px;
+    box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
     @include media-breakpoint-down(md) {
       padding: 36px 64px;
       margin-bottom: 120px;
