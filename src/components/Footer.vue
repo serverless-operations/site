@@ -5,7 +5,7 @@
       <v-row>
 
         <v-col cols="12" sm="6" md="3" class="footer-list-anim">     
-          <g-link to="/our-products" class="c-footer-list__link">
+          <g-link to="/works-archives" class="c-footer-list__link">
             <div class="c-footer-menu__title">Works</div>
             <div class="c-footer-menu__subtitle">導入事例</div>
           </g-link>

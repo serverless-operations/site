@@ -200,6 +200,7 @@ export default {
     a {
       color: #fff;
       text-decoration: none;
+      font-family: $font-jp-bold;
       &:hover {
         text-decoration: underline;
       }
