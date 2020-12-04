@@ -31,7 +31,6 @@ export default {
   mounted() {
     if (globalThis.FONTPLUS) {
       globalThis.FONTPLUS.start();
-      
     }
   }
 }
@@ -54,6 +53,7 @@ body {
 
 #main-wrapper {
   font-family: $font-jp-regular;
+  overflow: hidden;
 }
 
 

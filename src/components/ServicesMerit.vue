@@ -324,6 +324,9 @@ export default {
         margin: 0 0 8px 0;
         font-family: $font-jp-bold;
         line-height: 1.4;
+        @include media-breakpoint-down(md) {
+          font-size: 18px;
+        }
       }
       .merit-card-text-desc {
         line-height: 1.8;

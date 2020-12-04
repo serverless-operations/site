@@ -149,6 +149,7 @@ export default {
 <style lang="scss" scoped>
 .v-content__wrap {
   background-image: url('../../assets/images/bg/noise.png');
+  overflow: hidden;
 }
 .l-bg-gray {
   background: $light-gray-2;
