@@ -89,12 +89,12 @@ export default {
       })
       gsap.fromTo('.text-anim', {
         opacity: 0,
-        x: 0,
+        x: -40,
       }, {
         delay: 0.2,
         ease: 'Expo.easeInOut',
         transformOrigin: '1 0',
-        x: 40,
+        x: 0,
         duration: 1.8,
         opacity: 1,
         stagger: {
@@ -105,12 +105,12 @@ export default {
       })
       gsap.fromTo('.brandslogan-en', {
         opacity: 0,
-        x: 0,
+        x: -24,
       }, {
         delay: 1,
         ease: 'Expo.easeInOut',
         transformOrigin: '1 0',
-        x: 24,
+        x: 0,
         duration: 3,
         opacity: 1,
       })
@@ -221,14 +221,11 @@ export default {
       }
 
       @include media-breakpoint-down(sm) {
-        font-size: 1.8rem;
-        line-height: 1.6;
-        margin-bottom: 0;
-      }
-
-      @include media-breakpoint-down(xs) {
         padding-top: 40px;
-        font-size: 18px;
+        font-size: 1rem;
+        line-height: 2.2;
+        margin-bottom: 0;
+        letter-spacing: 0;
       }
 
       @include media-breakpoint-up(md) {
