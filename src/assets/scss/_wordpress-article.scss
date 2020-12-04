@@ -190,6 +190,9 @@
     list-style: none;
     margin-bottom: 32px;
     padding: 16px 24px;
+    @include media-breakpoint-down(md) {
+      padding: 8px 12px;
+    }
     li {
       position: relative;
       line-height: 1.6;
@@ -218,6 +221,9 @@
   /deep/ ol {
     margin-bottom: 32px;
     padding: 16px 24px;
+    @include media-breakpoint-down(md) {
+      padding: 8px 12px;
+    }
     li {
       position: relative;
       line-height: 1.6;
@@ -225,14 +231,14 @@
       margin-bottom: 8px;
       &::marker {
         display: block;
-        // content: '・';
-        // margin-left: -1rem;
         position: absolute;
         left: 0;
-        // top: -8px;
         color: $mid-gray-1;
         font-size: 24px;
         font-family: $font-en-bold;
+        @include media-breakpoint-down(md) {
+          font-size: 12px;
+        }
       }
       // リストの項目内容
       p {
