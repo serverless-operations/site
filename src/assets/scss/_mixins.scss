@@ -161,6 +161,7 @@
     }
     .post-tag-container {
       display: flex;
+      flex-wrap: wrap;
       .post-date {
         font-size: 12px;
         opacity: 0.7;
@@ -173,7 +174,7 @@
           display: block;
           padding: 4px 12px 4px 20px;
           background: $tertiary;
-          margin-right: 8px;
+          margin: 0 8px 8px ;
           border-radius: 200px;
           font-size: 12px;
           position: relative;
