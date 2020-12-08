@@ -36,8 +36,6 @@
     letter-spacing: 1px;
     margin-bottom: 18px;
     font-family: $font-jp-regular;
-    text-align: justify;
-    letter-spacing: -0.005em;
   }
 
   // 太字
@@ -109,7 +107,7 @@
     font-family: $font-jp-bold;
     font-size: 32px;
     line-height: 42px;
-    margin: 128px 0 64px 0;
+    margin: 88px 0 48px 0;
     word-break: break-all;
     @include media-breakpoint-down(md) {
       margin: 64px 0 32px 0;
@@ -316,6 +314,9 @@
     color: $tertiary;
     font-family: $font-jp-bold;
     padding: 0 6px;
+    @include media-breakpoint-down(md) {
+      padding: 0 2px;
+    }
     &:hover {
       text-decoration: none;
       opacity: 0.7;
