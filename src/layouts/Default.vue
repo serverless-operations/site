@@ -56,6 +56,10 @@ body {
   overflow: hidden;
 }
 
+.v-application--wrap {
+  overflow: hidden;
+}
+
 
 .fade-enter-active {
   transition: all 0.6s cubic-bezier(.93,0,.1,1);
