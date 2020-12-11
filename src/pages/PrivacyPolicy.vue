@@ -2,18 +2,31 @@
   <Layout>
     <div class="v-content__wrap">  
 
-      <div class="p-privacy-policy-header">
-        <h1 class="p-privacy-policy-header__page-title">
-          Privacy Policy
-          <span class="p-privacy-policy-header__page-title-ja">プライバシーポリシー</span>
-        </h1>
+      <div class="page-header-container">
+
+        <v-container class="page-header-text-container">
+          <v-row>
+            <v-col cols="12">
+              <h1 class="page-header-title text-anim">
+                <span class="text-anim">PRIVACY<br>POLICY</span> 
+                <span class="page-header-title-jp text-anim">
+                  プライバシーポリシー
+                </span>
+                <span class="page-title-anim-bg"></span>
+              </h1>
+            </v-col>
+          </v-row>
+        </v-container>
+
       </div>
+
+
 
       <!-- p-privacy-policy-header -->
       <div class="p-privacy-policy-contents">
         <div class="container">
           <div class="row justify-center">
-            <div class="col-md-10 col-lg-8 col-12">
+            <div class="col-md-7 col-lg-6 col-11">
               <div class="p-privacy-policy-contents__block">
                 <h2 class="p-privacy-policy-contents__contents-header">1.個人情報について</h2>
                 <p class="p-privacy-policy-contents__contents-paragraph">合同会社Serverless Operationsは、以下のとおり個人情報保護方針を定め、個人情報保護の仕組みを構築し、全従業員に個人情報保護の重要性の認識と取組みを徹底させることにより、個人情報の保護を推進致します。</p>
@@ -64,7 +77,9 @@
 </template>
 
 <script>
-// import Meta from '~/assets/mixins/meta'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 export default {
   metaInfo () {
     return {
@@ -74,82 +89,89 @@ export default {
   },
   fetch({ store }) {
     store.commit('resetModal')
+  },
+  mounted() {
+    this.PageTextAnimation()
+  },
+  methods: {
+    PageTextAnimation() {
+      gsap.fromTo('.page-title-anim-bg', {
+        opacity: 1,
+        scaleX: 0,
+        transformOrigin: '0 0',
+      }, {
+        ease: 'Expo.easeInOut',
+        transformOrigin: '1 0',
+        scaleX: 1,
+        duration: 1.6,
+        opacity: 0,
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.4 // 0.8秒おきに
+        }
+      })
+      gsap.fromTo('.text-anim', {
+        opacity: 0,
+        x: -32,
+      }, {
+        delay: 0.2,
+        ease: 'Expo.easeInOut',
+        transformOrigin: '1 0',
+        x: 0,
+        duration: 1.8,
+        opacity: 1,
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.4 // 0.8秒おきに
+        }
+      })
+      gsap.fromTo('.page-header-text-anim', {
+        opacity: 0,
+        y: 0,
+      }, {
+        delay: 1.4,
+        ease: 'Expo.easeInOut',
+        transformOrigin: '0 1',
+        y: -16,
+        duration: 1,
+        opacity: 1,
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.2 // 0.8秒おきに
+        }
+      })
+    },
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.p-privacy-policy-header {
-  background: url('../assets/images/privacy-policy-header-bg-img.svg') no-repeat,
-    linear-gradient(206.56deg, $tertiary -0.06%, $secondary 100.25%);
-  background-size: cover;
-  font-family: $font-en-normal;
-  height: auto;
-  position: relative;
-  overflow: hidden;
-  @include media-breakpoint-up(lg) {
-    height: auto;
-    background: url('../assets/images/privacy-policy-header-bg-img.svg') no-repeat,
-      linear-gradient(206.56deg, $tertiary -0.06%, $secondary 100.25%);
-    background-size: cover;
-  }
-  &:before {
-    content: '';
-    display: block;
-    height: 78px;
-    width: 78px;
-    background: $white;
-    transform: rotate(45deg);
-    position: absolute;
-    bottom: -39px;
-    left: -39px;
-    @include media-breakpoint-up(md) {
-      height: 132px;
-      width: 132px;
-      bottom: -66px;
-      left: -66px;
-    }
-  }
-  // ページタイトル
-  &__page-title {
-    font-size: 2rem;
-    color: $white;
-    font-family: $font-en-normal;
-    padding: 56px 16px 56px 16px;
-    @include media-breakpoint-up(md) {
-      font-size: 4rem;
-      padding: 132px 100px 130px 310px;
-    }
-    @include media-breakpoint-up(lg) {
-      font-size: 6.25rem;
-      padding: 132px 80px 130px 310px;
-    }
-  }
-  &__page-title-ja {
-    display: block;
-    font-size: 1rem;
-    line-height: 42px;
-    margin-bottom: 0;
-    @include media-breakpoint-up(md) {
-      font-size: 1.5rem;
-    }
+@include PageHeader;
+
+.page-header-container {
+background:
+  url('../assets/images/bg/so-blue-texture.png'),
+  url('../assets/images/company-main-pattern.svg'),
+  linear-gradient(45deg, $secondary 11.76%, $tertiary 88.21%),
+  url('../assets/images/bg/noise.png');
+  .page-header-title {
+    display: inline-block;
+    margin: 64px 0;
+    line-height: 0.9;
   }
 }
 
 // プライバシーポリシーのコンテンツ部分
 .p-privacy-policy-contents {
-  background: $white;
-  color: $black;
-  font-family: $font-jp-regular;
-  padding: 48px 0 80px;
-  background: url('../assets/images/privacy-policy-bg-img.svg') no-repeat center
-      top 70%,
-    $white;
-  background-size: cover 80%;
-  @include media-breakpoint-up(lg) {
-    padding: 78px 0 185px;
-    background-size: cover 100%;
-  }
+  padding: 80px 0 160px 0;
+  background-image: url('../assets/images/top-news-contact-bk.svg');
+  background-position: center center;
+  background-size: 100%;
+  background-color: rgba($light-gray-2, 0.7);
+  background-blend-mode: lighten;
   // 内容のブロック
   &__block {
     margin-bottom: 32px;
@@ -159,40 +181,25 @@ export default {
   }
   // 内容の見出し
   &__contents-header {
-    color: $primary;
+    color: $secondary;
     font-family: $font-jp-bold;
-    padding-bottom: 4px;
-    padding-left: 48px;
+    padding-bottom: 16px;
     position: relative;
     @include media-breakpoint-up(lg) {
       font-size: 1.5rem;
-      padding-left: 93px;
-    }
-    &:before {
-      content: '';
-      height: 1px;
-      width: 40px;
-      background: $primary;
-      display: block;
-      position: absolute;
-      top: 16px;
-      left: 0;
-      @include media-breakpoint-up(lg) {
-        width: 80px;
-        top: 20px;
-        left: 0;
-      }
     }
   }
   // 内容の文章
   &__contents-paragraph {
     font-family: $font-jp-regular;
     line-height: 2;
-    color: $black;
+    color: $text-black;
   }
   &__contents-list {
     list-style: none;
     padding-left: 0;
+    color: $text-black;
+    font-family: $font-jp-regular;
   }
   &__contents-li {
     &::before {
@@ -203,6 +210,7 @@ export default {
   &__contents-address {
     font-family: $font-jp-regular;
     font-style: normal;
+    color: $text-black;
   }
 }
 </style>

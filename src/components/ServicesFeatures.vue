@@ -150,6 +150,7 @@ export default {
     font-size: 24px;
     font-family: $font-jp-bold;
     letter-spacing: -1px;
+    margin-bottom: 16px;
     @include media-breakpoint-down(md) {
       font-size: 20px;
     }
