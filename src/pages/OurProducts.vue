@@ -2,153 +2,154 @@
   <Layout>
     <div class="v-content__wrap">
 
-  <div class="l-company-page">
-    <!-- ページヘッダー -->
-    <div class="p-company-header">
-      <div class="p-company-header__tryangle"></div>
-      <div class="p-company-header__main-img">
+      <div class="l-company-page">
+        <!-- ページヘッダー -->
+        <div class="p-company-header">
+         
+          <div class="p-company-header__main-img">
 
-        <img src="@/assets/images/company-main-bg.svg"
-             class="p-company-header__main-bg d-none d-md-block" alt="メインイメージ背景イラスト">
-        
-        <img src="@/assets/images/company-main-particle.svg"
-             class="p-company-header__main-particle d-none d-md-block" alt="Serverless Operations メインイメージパーティクル">
-       
-        <img src="@/assets/images/our-products/oss-main-icon.svg" class="p-company-header__main-logo d-block" alt="Serverless Operations Our Productsイラスト">
+            <img src="@/assets/images/company-main-bg.svg"
+                class="p-company-header__main-bg d-none d-md-block" alt="メインイメージ背景イラスト">
+            
+            <img src="@/assets/images/company-main-particle.svg"
+                class="p-company-header__main-particle d-none d-md-block" alt="Serverless Operations メインイメージパーティクル">
+          
+            <img src="@/assets/images/our-products/oss-main-icon.svg" class="p-company-header__main-logo d-block" alt="Serverless Operations Our Productsイラスト">
 
-      </div>
-      <v-container class="p-company-header__container">
-        <v-row>
-          <v-col cols="12"
-                 md="6">
-            <h1 class="p-company-header__title">
-              Our<br>
-              Products
-              <span class="p-company-header__title-jp">私たちが開発したプロダクト</span>
-            </h1> 
-            <p class="p-company-header__text">サーバーレスアプリケーションの開発をより簡単に・容易にするために、私たちが独自に開発したプロダクトをご紹介します。</p>
-          </v-col>
-        </v-row>
-      </v-container>
-    </div>
-
-  <!-- 会社案内のテーブルのセクション -->
-    <section class="p-our-products">
-      <v-container>
-
-        <div class="cards">
-          <div class="cards-container">
+          </div>
+          <v-container class="p-company-header__container">
             <v-row>
-              <v-col class="d-flex" cols="12" md="6">
-                <img class="cards-img" src="@/assets/images/our-products/jeffy-logo.svg" alt="Jeffy ロゴマーク">
-              </v-col>
-              <v-col cols="12" md="6">
-                <h3 class="cards-title jeffy-title">Jeffy</h3>
-                <div class="github-buttons">
-                  <gh-btns-star slug="serverless-operations/jeffy" show-count></gh-btns-star>
-                </div>
-                <p class="cards-text">
-                  AWS LambdaのPython向けのサーバーレスアプリケーションフレームワーク。Lambdaをよりシンプルに実装するためのツールセットを提供しています。
-                </p>
-                <a class="github-repository-link primary-button" href="https://github.com/serverless-operations/jeffy" v-ripple>
-                  <span>Github</span>
-                </a>
+              <v-col cols="12"
+                    md="6">
+                <h1 class="p-company-header__title">
+                  Our<br>
+                  Products
+                  <span class="p-company-header__title-jp">私たちが開発したプロダクト</span>
+                </h1> 
+                <p class="p-company-header__text">サーバーレスアプリケーションの開発をより簡単に・容易にするために、私たちが独自に開発したプロダクトをご紹介します。</p>
               </v-col>
             </v-row>
-          </div>
-          <div class="blue-drop-shadow"></div>
+          </v-container>
         </div>
 
-        <v-row>
-          <v-col class="d-flex" cols="12" md="6">
-            <div class="cards d-flex">
+
+      <!-- 会社案内のテーブルのセクション -->
+        <section class="p-our-products">
+          <v-container>
+
+            <div class="cards">
               <div class="cards-container">
-                <h3 class="cards-title title-min-height">
-                  <span>Serverless</span><br>
-                  Step Functions
-                </h3>
-                <div class="github-buttons">
-                  <gh-btns-star slug="serverless-operations/serverless-step-functions" show-count></gh-btns-star>
-                </div>
-                <p class="cards-text">
-                  AWS Step Functionsの構成を管理してデプロイするためのServerless Frameworkプラグイン
-                </p>
-                <a class="github-repository-link primary-button" href="https://github.com/serverless-operations/serverless-step-functions">
-                  <span>Github</span>
-                </a>
+                <v-row>
+                  <v-col class="d-flex" cols="12" md="6">
+                    <img class="cards-img" src="@/assets/images/our-products/jeffy-logo.svg" alt="Jeffy ロゴマーク">
+                  </v-col>
+                  <v-col cols="12" md="6">
+                    <h3 class="cards-title jeffy-title">Jeffy</h3>
+                    <div class="github-buttons">
+                      <gh-btns-star slug="serverless-operations/jeffy" show-count></gh-btns-star>
+                    </div>
+                    <p class="cards-text">
+                      AWS LambdaのPython向けのサーバーレスアプリケーションフレームワーク。Lambdaをよりシンプルに実装するためのツールセットを提供しています。
+                    </p>
+                    <a class="github-repository-link primary-button" href="https://github.com/serverless-operations/jeffy" v-ripple>
+                      <span>Github</span>
+                    </a>
+                  </v-col>
+                </v-row>
               </div>
               <div class="blue-drop-shadow"></div>
             </div>
-          </v-col>
 
-          <v-col class="d-flex" cols="12" md="6">
-            <div class="cards d-flex">
-              <div class="cards-container">
-                <h3 class="cards-title">
-                  <span>Serverless</span><br>
-                  API Gateway Service Proxy
-                </h3>
-                <div class="github-buttons">
-                  <gh-btns-star slug="serverless-operations/serverless-apigateway-service-proxy" show-count></gh-btns-star>
+            <v-row>
+              <v-col class="d-flex" cols="12" md="6">
+                <div class="cards d-flex">
+                  <div class="cards-container">
+                    <h3 class="cards-title title-min-height">
+                      <span>Serverless</span><br>
+                      Step Functions
+                    </h3>
+                    <div class="github-buttons">
+                      <gh-btns-star slug="serverless-operations/serverless-step-functions" show-count></gh-btns-star>
+                    </div>
+                    <p class="cards-text">
+                      AWS Step Functionsの構成を管理してデプロイするためのServerless Frameworkプラグイン
+                    </p>
+                    <a class="github-repository-link primary-button" href="https://github.com/serverless-operations/serverless-step-functions">
+                      <span>Github</span>
+                    </a>
+                  </div>
+                  <div class="blue-drop-shadow"></div>
                 </div>
-                <p class="cards-text">
-                  API Gatewayと他のAWSサービスをLambda無しで直接インテグレーションを行うAWS Service Proxyの機能を簡単に構成管理するためのServerless Frameworkプラグイン
-                </p>
-                <a class="github-repository-link primary-button" href="https://github.com/serverless-operations/serverless-apigateway-service-proxy">
-                  <span>Github</span>  
-                </a>
-              </div>
-              <div class="blue-drop-shadow"></div>
-            </div>
-          </v-col>
+              </v-col>
 
-          <v-col class="d-flex" cols="12" md="6">
-            <div class="cards d-flex">
-              <div class="cards-container">
-                <h3 class="cards-title">
-                  <span>Serverless</span><br>
-                  Dashboard for Atom
-                </h3>
-                <div class="github-buttons">
-                  <gh-btns-star slug="serverless-operations/serverless-dashboard-for-atom" show-count></gh-btns-star>
+              <v-col class="d-flex" cols="12" md="6">
+                <div class="cards d-flex">
+                  <div class="cards-container">
+                    <h3 class="cards-title">
+                      <span>Serverless</span><br>
+                      API Gateway Service Proxy
+                    </h3>
+                    <div class="github-buttons">
+                      <gh-btns-star slug="serverless-operations/serverless-apigateway-service-proxy" show-count></gh-btns-star>
+                    </div>
+                    <p class="cards-text">
+                      API Gatewayと他のAWSサービスをLambda無しで直接インテグレーションを行うAWS Service Proxyの機能を簡単に構成管理するためのServerless Frameworkプラグイン
+                    </p>
+                    <a class="github-repository-link primary-button" href="https://github.com/serverless-operations/serverless-apigateway-service-proxy">
+                      <span>Github</span>  
+                    </a>
+                  </div>
+                  <div class="blue-drop-shadow"></div>
                 </div>
-                <p class="cards-text">
-                   GUIからServerless Frameworkを使いクラウド環境へ構成をデプロイ、可視化するためのAtomエディターアドオン
-                </p>
-                <a class="github-repository-link primary-button" href="https://github.com/serverless-operations/serverless-dashboard-for-atom">
-                  <span>Github</span>  
-                </a>
-              </div>
-              <div class="blue-drop-shadow"></div>
-            </div>
-          </v-col>
+              </v-col>
 
-          <v-col class="d-flex" cols="12" md="6">
-            <div class="cards d-flex">
-              <div class="cards-container">
-                <h3 class="cards-title">
-                  <span>Serverless</span><br>
-                  Delete Loggroups
-                </h3>
-                <div class="github-buttons">
-                  <gh-btns-star slug="serverless-operations/serverless-delete-loggroups" show-count></gh-btns-star>
+              <v-col class="d-flex" cols="12" md="6">
+                <div class="cards d-flex">
+                  <div class="cards-container">
+                    <h3 class="cards-title">
+                      <span>Serverless</span><br>
+                      Dashboard for Atom
+                    </h3>
+                    <div class="github-buttons">
+                      <gh-btns-star slug="serverless-operations/serverless-dashboard-for-atom" show-count></gh-btns-star>
+                    </div>
+                    <p class="cards-text">
+                      GUIからServerless Frameworkを使いクラウド環境へ構成をデプロイ、可視化するためのAtomエディターアドオン
+                    </p>
+                    <a class="github-repository-link primary-button" href="https://github.com/serverless-operations/serverless-dashboard-for-atom">
+                      <span>Github</span>  
+                    </a>
+                  </div>
+                  <div class="blue-drop-shadow"></div>
                 </div>
-                <p class="cards-text">
-                  Serverless Frameworkのv1.6で発生したLog Groupの変更に対応するためのプラグイン
-                </p>
-                <a class="github-repository-link primary-button" href="https://github.com/serverless-operations/serverless-delete-loggroups">
-                  <span>Github</span>
-                </a>
-              </div>
-              <div class="blue-drop-shadow"></div>
-            </div>
-          </v-col>
+              </v-col>
 
-        </v-row>
-      </v-container>   
-    </section><!-- p-company-vmv -->
+              <v-col class="d-flex" cols="12" md="6">
+                <div class="cards d-flex">
+                  <div class="cards-container">
+                    <h3 class="cards-title">
+                      <span>Serverless</span><br>
+                      Delete Loggroups
+                    </h3>
+                    <div class="github-buttons">
+                      <gh-btns-star slug="serverless-operations/serverless-delete-loggroups" show-count></gh-btns-star>
+                    </div>
+                    <p class="cards-text">
+                      Serverless Frameworkのv1.6で発生したLog Groupの変更に対応するためのプラグイン
+                    </p>
+                    <a class="github-repository-link primary-button" href="https://github.com/serverless-operations/serverless-delete-loggroups">
+                      <span>Github</span>
+                    </a>
+                  </div>
+                  <div class="blue-drop-shadow"></div>
+                </div>
+              </v-col>
 
-  </div>
+            </v-row>
+          </v-container>   
+        </section><!-- p-company-vmv -->
+
+      </div>
 
 
     </div>
