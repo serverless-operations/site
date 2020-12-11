@@ -428,7 +428,7 @@ background:
 .about-message {
   padding: 80px 0 160px 0;
   background-image: url('../assets/images/top-news-contact-bk.svg');
-  background-position: top 420px;
+  background-position: center center;
   background-size: 100%;
   background-color: rgba($light-gray-2, 0.7);
   background-blend-mode: lighten;

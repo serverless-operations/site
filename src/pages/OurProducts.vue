@@ -1,37 +1,53 @@
 <template>
   <Layout>
     <div class="v-content__wrap">
-
       <div class="l-company-page">
-        <!-- ページヘッダー -->
-        <div class="p-company-header">
-         
-          <div class="p-company-header__main-img">
+        
+        <div class="page-header-container">
+        
+          <div class="page-header-img-container">
+            <!--背景 -->
+            <img src="@/assets/images/about-so-main-bg.svg"
+                class="page-header-main-bg d-none d-md-block"  alt="Serverless Operationsとは メインイメージ">
+            <!-- ロゴ -->
+            <img src="@/assets/images/our-products/oss-main-icon.svg"
+                class="page-header-logo d-none d-md-block" alt="Serverless Operationsとは メインイメージ ロゴ">
+            <!-- 粒子 -->
+            <img src="@/assets/images/about-so-main-square.svg"
+                class="page-header-main-particle d-none d-md-block" alt="Serverless Operationsとは メインイメージ">
 
-            <img src="@/assets/images/company-main-bg.svg"
-                class="p-company-header__main-bg d-none d-md-block" alt="メインイメージ背景イラスト">
-            
-            <img src="@/assets/images/company-main-particle.svg"
-                class="p-company-header__main-particle d-none d-md-block" alt="Serverless Operations メインイメージパーティクル">
-          
-            <img src="@/assets/images/our-products/oss-main-icon.svg" class="p-company-header__main-logo d-block" alt="Serverless Operations Our Productsイラスト">
-
+            <!--背景 -->
+            <img src="@/assets/images/about-so-main-bg-sp.svg"
+                class="page-header-main-bg d-md-none" alt="Serverless Operationsとは メインイメージ">
+            <!-- ロゴ -->
+            <img src="@/assets/images/our-products/oss-main-icon.svg"
+                class="page-header-logo-sp d-md-none" alt="Serverless Operationsとは メインイメージ ロゴ">
+            <!-- 粒子 -->
+            <img src="@/assets/images/about-so-main-particle-sp.svg"
+                class="page-header-main-particle d-md-none" alt="Serverless Operationsとは メインイメージ">
           </div>
-          <v-container class="p-company-header__container">
+
+          <v-container class="page-header-text-container">
             <v-row>
-              <v-col cols="12"
-                    md="6">
-                <h1 class="p-company-header__title">
-                  Our<br>
-                  Products
-                  <span class="p-company-header__title-jp">私たちが開発したプロダクト</span>
-                </h1> 
-                <p class="p-company-header__text">サーバーレスアプリケーションの開発をより簡単に・容易にするために、私たちが独自に開発したプロダクトをご紹介します。</p>
+              <v-col cols="12" md="6">
+                <h1 class="page-header-title text-anim">
+                  <span class="text-anim">PRODUCTS</span> 
+                  <span class="page-header-title-jp text-anim">
+                    私たちが開発したプロダクト
+                  </span>
+                  <span class="page-title-anim-bg"></span>
+                </h1>
+                <h2 class="page-header-copy page-header-text-anim">
+                  独自に開発した<br class="d-md-block d-none" />プロダクトをご紹介します。
+                </h2>
+                <p class="page-header-text page-header-text-anim">
+                  サーバーレスアプリケーションの開発をより簡単に・容易にするために、<br class="d-md-block d-none" />私たちが独自に開発したフレームワークやツールセットなどのプロダクトをご紹介します。
+                </p>
               </v-col>
             </v-row>
           </v-container>
-        </div>
 
+        </div><!-- p-services-header -->
 
       <!-- 会社案内のテーブルのセクション -->
         <section class="p-our-products">
@@ -157,13 +173,11 @@
 </template>
 
 <script>
-
-//import Meta from '~/assets/mixins/meta'
 import Vue from 'vue';
 import VueGitHubButtons from 'vue-github-buttons';
-
-// Stylesheet
-// import 'vue-github-buttons/dist/vue-github-buttons.css';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 Vue.use(VueGitHubButtons);
 // Or if your don't want to use cache
@@ -183,167 +197,95 @@ export default {
   fetch({ store }) {
     store.commit('resetModal')
   },
-  scrollToTop: true
+  scrollToTop: true,
+  mounted() {
+    this.PageTextAnimation()
+  },
+  methods: {
+    PageTextAnimation() {
+      gsap.fromTo('.page-title-anim-bg', {
+        opacity: 1,
+        scaleX: 0,
+        transformOrigin: '0 0',
+      }, {
+        ease: 'Expo.easeInOut',
+        transformOrigin: '1 0',
+        scaleX: 1,
+        duration: 1.6,
+        opacity: 0,
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.4 // 0.8秒おきに
+        }
+      })
+      gsap.fromTo('.text-anim', {
+        opacity: 0,
+        x: -32,
+      }, {
+        delay: 0.2,
+        ease: 'Expo.easeInOut',
+        transformOrigin: '1 0',
+        x: 0,
+        duration: 1.8,
+        opacity: 1,
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.4 // 0.8秒おきに
+        }
+      })
+      gsap.fromTo('.page-header-text-anim', {
+        opacity: 0,
+        y: 0,
+      }, {
+        delay: 1.4,
+        ease: 'Expo.easeInOut',
+        transformOrigin: '0 1',
+        y: -16,
+        duration: 1,
+        opacity: 1,
+        stagger: {
+          from: 'start', //左側から
+          axis: 'x',
+          amount: 0.2 // 0.8秒おきに
+        }
+      })
+    },
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+.v-content__wrap {
+  background-image: url('../assets/images/bg/noise.png');
+  overflow: hidden;
+}
+@include PageHeader;
+
+.page-header-container {
+background:
+  url('../assets/images/bg/so-blue-texture.png'),
+  url('../assets/images/company-main-pattern.svg'),
+  linear-gradient(45deg, $secondary 11.76%, $tertiary 88.21%);
+  .page-header-logo {
+    width: 44%;
+    right: 10%;
+  }
+  .page-header-logo-sp {
+    width: 60%;
+    max-height: 812px;
+    display: block;
+    opacity: 0.8;
+  }
+}
+
 .l-company-page {
   background: $white;
   position: relative;
   overflow: hidden;
 }
-// ページの見出し
-.p-company-header {
-  background: no-repeat url('../assets/images/company-main-pattern.svg'),
-    linear-gradient(205.01deg, #2c48ff -0.06%, #02007c 100.25%);
-  background-size: cover;
-  overflow: hidden;
-  max-height: 840px;
-  position: relative;
-  @include media-breakpoint-up(md) {
-    max-height: 640px;
-  }
-  @include media-breakpoint-up(lg) {
-    max-height: 840px;
-  }
-  &__tryangle {
-    height: 150px;
-    width: 150px;
-    background: $white;
-    position: absolute;
-    bottom: -91px;
-    left: -91px;
-    transform: rotate(45deg);
-    z-index: 3;
-    @include media-breakpoint-up(lg) {
-      height: 180px;
-      width: 180px;
-    }
-  }
-  // メインイメージ部分のコンテナ
-  &__container {
-    z-index: 3;
-    position: relative;
-  }
-  // メインイメージ部分
-  &__main-img {
-    position: absolute;
-    max-height: 840px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-  }
-  // メインイメージ、ロゴ
-  &__main-logo {
-    position: absolute;
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-    top: 10%;
-    height: 80%;
-    right: 0;
-    opacity: 0.5;
-    @include media-breakpoint-up(md) {
-      opacity: 1;
-      width: auto;
-    }
-  }
-  // メインイメージ、背景
-  &__main-bg {
-    position: absolute;
-    right: 0;
-    display: block;
-    mix-blend-mode: soft-light;
-    width: auto;
-    height: 100%;
-  }
-  // メインイメージ、粒子
-  &__main-particle {
-    position: absolute;
-    right: 0;
-    display: block;
-    width: auto;
-    height: 100%;
-  }
-  // スマホ時のロゴ
-  &__logo-sp {
-    width: 100%;
-    max-height: 812px;
-    display: block;
-    // margin-top: 48px;
-    @include media-breakpoint-up(md) {
-      max-height: 640px;
-      // height: 50vh;
-      right: 0;
-      width: auto;
-      margin-top: 0;
-    }
-    @include media-breakpoint-up(lg) {
-      // height: 80vh;
-      max-height: 840px;
-    }
-  }
-  // ページタイトル
-  &__title {
-    font-family: $font-en-normal;
-    line-height: 0.8;
-    font-size: 4.5rem;
-    margin-top: 160px;
-    margin-bottom: 32px;
-    @include media-breakpoint-up(lg) {
-      font-size: 6.25rem;
-      margin-top: 215px;
-      margin-bottom: 40px;
-    }
-  }
-  // 日本語のタイトル
-  &__title-jp {
-    display: block;
-    font-family: $font-jp-regular;
-    font-size: 1.5rem;
-    margin-top: 8px;
-    @include media-breakpoint-up(lg) {
-      margin-top: 16px;
-    }
-  }
-  // タイトル下文章の見出し
-  &__text-header {
-    font-family: $font-jp-bold;
-    font-size: 1.5rem;
-    @include media-breakpoint-up(lg) {
-      font-size: 2.1rem;
-    }
-  }
-  // タイトル下文章
-  &__text {
-    font-family: $font-jp-regular;
-    line-height: 32px;
-    margin-bottom: 204px;
-  }
-  &__scroll-block {
-    position: absolute;
-    bottom: 140px;
-    right: 0;
-  }
-  &__scroll {
-    writing-mode: vertical-lr;
-  }
-  &__scroll-line {
-    position: absolute;
-    bottom: -94px;
-    right: 12px;
-    height: 88px;
-    width: 2px;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 1)
-    );
-  }
-}
+
 
 .p-our-products {
   padding: 120px 0;
@@ -561,5 +503,7 @@ export default {
   background: linear-gradient(49.74deg, #00007d 11.76%, #2c48ff 88.21%);
   box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
 }
+
+
 
 </style>
