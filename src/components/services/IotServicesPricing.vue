@@ -12,34 +12,128 @@
         </div>
       </div>
 
-      <v-container class="services-usecase-content-container">
+      <v-container class="services-pricing-content-container">
 
         <v-row justify="center">
-          <v-col cols="11" md="8">
+          <v-col cols="11" md="9">
             <v-row justify="center">
 
               <v-col cols="12" md="6">
 
-                <div class="service-card">
+                <div class="service-pricing-card">
                   <div class="service-card-header">
+                    <span class="plan-number">Plan 01</span>
                     <h3>
                       Chat & Mail
-                      <span>チャットやメールでのコンサルティングサポート</span>
+                      <span>チャットやメールでの<br>コンサルティングサポート</span>
                     </h3>
-                    <p>
+                    <p class="pricing-desc">
                       AWSクラウド側の技術的なサポートをチャットやメールのみで⾏います。設計や実装でつまづいた時、⽅針のお悩みごとをサポートします。
                     </p>
-                    <p class="client-request-text">
-                      400,000 円/⽉
+                    <p class="price-text">
+                      400,000 <span>円/⽉</span> 
                     </p>
-                    <a href="">
+                    <a class="pricing-button" href="">
                       オンライン無料相談を予約する
                     </a>
                   </div>        
-                  <div class="service-card-help">
+                  <div class="service-pricing-list">
                     <ul>
                       <li>チャット・メール対応</li>
                       <li>AWSでの設計や実装方針の相談</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </v-col>
+
+              <v-col cols="12" md="6">
+
+                <div class="service-pricing-card">
+                  <div class="service-card-header">
+                    <span class="plan-number">Plan 02</span>
+                    <h3>
+                      Architecture
+                      <span>アーキテクチャ設計</span>
+                    </h3>
+                    <p class="pricing-desc">
+                      AWSクラウド側の実装をする上で必要な設計をサーバーレスオペレーションズで⾏います。お客さまの開発チームでも実装ができるような体制を整えます。
+                    </p>
+                    <p class="price-text">
+                      1,000,000 <span>円/⽉</span> 
+                    </p>
+                    <a class="pricing-button" href="">
+                      オンライン無料相談を予約する
+                    </a>
+                  </div>        
+                  <div class="service-pricing-list">
+                    <ul>
+                      <li>アーキテクチャ設計</li>
+                      <li>データ設計</li>
+                      <li>プログラミング設計</li>
+                      <li>CI/CD設計</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </v-col>
+
+              <v-col cols="12" md="6">
+
+                <div class="service-pricing-card">
+                  <div class="service-card-header">
+                    <span class="plan-number">Plan 03</span>
+                    <h3>
+                      Proof of Concept
+                      <span>PoC実装</span>
+                    </h3>
+                    <p class="pricing-desc">
+                      PoCの計画から実装までを行います。必要な成果に対しての計画づくりや、製品やシステムの簡易版プロトタイプを作成し、目的の効果が得られるか検証します。
+                    </p>
+                    <p class="price-text">
+                      1,200,000 <span>円/⽉</span> 
+                    </p>
+                    <a class="pricing-button" href="">
+                      オンライン無料相談を予約する
+                    </a>
+                  </div>        
+                  <div class="service-pricing-list">
+                    <ul>
+                      <li>概念実証</li>
+                      <li>製品やシステムの簡易版作成</li>
+                      <li>実装</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </v-col>
+
+              <v-col cols="12" md="6">
+
+                <div class="service-pricing-card">
+                  <div class="service-card-header">
+                    <span class="plan-number">Plan 04</span>
+                    <h3>
+                      Production
+                      <span>プロダクション実装</span>
+                    </h3>
+                    <p class="pricing-desc">
+                      プロダクション（本番環境）にリリースするための実装を⾏います。お客さまの開発チームの⼀員としてチームを主導し、製品のリリースを⾏います。
+                    </p>
+                    <p class="price-text">
+                      1,600,000 <span>円/⽉</span> 
+                    </p>
+                    <a class="pricing-button" href="">
+                      オンライン無料相談を予約する
+                    </a>
+                  </div>        
+                  <div class="service-pricing-list">
+                    <ul>
+                      <li>課題ヒアリング</li>
+                      <li>プロジェクトサマリー</li>
+                      <li>開発ガイドライン</li>
+                      <li>プロダクション実装</li>
+                      <li>プロダクトリリース</li>
                     </ul>
                   </div>
                 </div>
@@ -166,7 +260,7 @@ export default {
   }
 }
 
-.service-card {
+.service-pricing-card {
   background: #FFFFFF;
   box-shadow: 8px 24px 50px rgba(207, 214, 226, 0.6);
   border-radius: 3px;
@@ -182,38 +276,59 @@ export default {
     @include media-breakpoint-down(sm) {
       padding: 8% 8% 0px 8%;
     }
-    
-    h4 {
-      font-size: 12px;
+
+    .plan-number {
+      color: $mid-gray-2;
+      font-family: $font-en-normal;
+      margin: 0 0 32px 0;
+      position: relative;
+      display: block;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 40px;
+        height: 1px;
+        background: $mid-gray-2;
+        left: 80px;
+        bottom: 12px;
+      }
+    }
+    // タイトル
+    h3 {
+      font-size: 40px;
       text-align: center;
       margin-bottom: 32px;
       position: relative;
-      &::after {
-        content: '';
-        position: absolute;
+      font-family: $font-en-normal;
+      span {
         display: block;
-        width: 40px;
-        height: 1px;
-        left: calc(50% - 20px);
-        bottom: -8px;
-        background: $secondary;
+        font-size: 14px;
+        font-family: $font-jp-bold;
+        line-height: 1.4;
       }
     }
-    p {
-      color: $secondary;
-      font-family: $font-jp-bold;
+    .pricing-desc {
+      color: $text-black;
+      font-family: $font-jp-regular;
       line-height: 24px;
       letter-spacing: -1px;
     }
-    .client-request-text {
+
+    // 金額
+    .price-text {
       border-top: 1px solid $light-gray-1;
       padding-top: 24px;
       text-align: center;
-      font-size: 18px;
+      font-size: 32px;
       font-family: $font-jp-bold;
       margin-bottom: 32px;
       position: relative;
       display: block;
+      color: $secondary;
+      span {
+        font-size: 14px;
+      }
       &::before {
         content: '';
         position: absolute;
@@ -234,7 +349,22 @@ export default {
       }
     }
   }
-  .service-card-help {
+
+  // 無料相談へのリンク
+  .pricing-button {
+    background: $tertiary;
+    color: #fff;
+    display: block;
+    margin: 16px;
+    padding: 12px 16px;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    font-family: $font-jp-bold;
+    text-decoration: none;
+  }
+
+  .service-pricing-list {
     height: 100%;
     background: $light-gray-2;
     padding: 40px;
@@ -246,47 +376,11 @@ export default {
     @include media-breakpoint-down(sm) {
       padding: 8%;
     }
-    h4 {
-      font-size: 12px;
-      text-align: center;
-      margin: 0 auto 24px;
-      color: $secondary;
-      display: block;
-      width: 90%;
-      position: relative;
-      @include media-breakpoint-down(md) {
-        width: 100%;
-      }
-      @include media-breakpoint-down(sm) {
-        width: 80%;
-        max-width: 300px;
-      }
-      &::before {
-        content: '';
-        display: block;
-        width: 50px;
-        height: 30px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: url('../../assets/images/bg/card-title-before-texture.svg') no-repeat;
-      }
-      &::after {
-        content: '';
-        display: block;
-        width: 50px;
-        height: 30px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        background: url('../../assets/images/bg/card-title-after-texture.svg') no-repeat;
-      }
-    }
-    p {
-      line-height: 24px;
-      color: $secondary;
-      strong {
-        font-family: $font-jp-bold;
+    ul {
+      li {
+        list-style-image: url('../../assets/images/services/iot/icon-price-list-check.svg');
+        font-family: $font-jp-regular;
+        margin-bottom: 4px;
       }
     }
   }
