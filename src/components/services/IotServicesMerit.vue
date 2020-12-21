@@ -13,13 +13,12 @@
               <v-col cols="12" sm="10" md="8" lg="7">
                 <div class="services-merit-title-container">
                   <p class="services-merit-header-text merit-text-anim">
-                    サーバーレスオペレーションズが提供できるメリット
+                    サーバーレス/コンテナを採⽤することのメリット
                   </p>
                   <h2 class="services-merit-header-title merit-text-anim">
-                    一時的な開発支援だけでなく、<br class="d-md-block d-none" />
-                    中・長期的な業務改善へと導きます。</h2>
-                  <p class="services-merit-desc merit-text-anim">サーバーレスオペレーションズがお客さまのチームに加わることでお客さまの現状をしっかりと把握し、経験不足や技術力不足を全面的にサポートします。<br class="d-md-block d-none" />
-                  プロジェクトの進行から技術面のアドバイスまで一貫しておこなえるため、目の前の一時的な開発・運用だけでなく、今後の組織・チームづくりや採用、マネジメント等にも活かすことができます。</p>
+                    トラフィックの変化に柔軟に対応<br class="d-md-block d-none" />
+                    運用コストも削減
+                  </h2>
                 </div>
               </v-col>
             </v-row>
@@ -28,55 +27,37 @@
 
               <div class="merit-card">
                 <div class="merit-card-icon">
-                  <p class="merit-header-text">Optimisation</p>
+                  <p class="merit-header-text">Scalability</p>
                   <p class="merit-header-img">
                     <img
-                      src="@/assets/images/services/icon-merit-1.svg"
+                      src="@/assets/images/services/iot/iot-merit-1.svg"
                       class=""
-                      alt="質・スピード・コストの最適化 アイコン"
+                      alt="トラフィックの変化に柔軟に対応できる アイコン"
                     >
                   </p>
                 </div>
                 <div class="merit-card-text">
                   <p class="merit-card-text-header">Merit 01</p>
-                  <h3 class="merit-card-title">質・スピード・コストの最適化</h3>
-                  <p class="merit-card-text-desc">サーバーレスのメリット・デメリットを理解して自社の開発にスムーズに導入し、サービスの質や開発スピード、開発コストの最適化を実現できます。</p>
+                  <h3 class="merit-card-title">トラフィックの変化に柔軟に対応できる</h3>
+                  <p class="merit-card-text-desc">IoTはトラフィックのボリュームが増減しやすく、サーバーサイドのキャパシティ予測が困難となるケースが多いです。そこで、AWS Lambdaを中⼼としたマイクロサービスでバックエンドを構築することで、トラフィックの変化に柔軟に対応できるシステムを構築できます。</p>
                 </div>
               </div>
 
               <div class="merit-card">
                 <div class="merit-card-icon">
-                  <p class="merit-header-text">Self-propelled</p>
+                  <p class="merit-header-text">Cost Down</p>
                   <p class="merit-header-img">
                     <img
-                      src="@/assets/images/services/icon-merit-2.svg"
+                      src="@/assets/images/services/iot/iot-merit-2.svg"
                       class=""
-                      alt="質・スピード・コストの最適化 アイコン"
+                      alt="運用工数や人的コストを削減 アイコン"
                     >
                   </p>
                 </div>
                 <div class="merit-card-text">
                   <p class="merit-card-text-header">Merit 02</p>
-                  <h3 class="merit-card-title">自走できるチームへ</h3>
-                  <p class="merit-card-text-desc">共に手を動かすことで専門的な知識や技術が身につき、次回からはサーバーレスアプリケーションの設計や開発が自走できるようになります。</p>
-                </div>
-              </div>
-
-              <div class="merit-card">
-                <div class="merit-card-icon">
-                  <p class="merit-header-text">Team Building</p>
-                  <p class="merit-header-img">
-                    <img
-                      src="@/assets/images/services/icon-merit-3.svg"
-                      class=""
-                      alt="質・スピード・コストの最適化 アイコン"
-                    >
-                  </p>
-                </div>
-                <div class="merit-card-text">
-                  <p class="merit-card-text-header">Merit 03</p>
-                  <h3 class="merit-card-title">今後のプロジェクトに活かせる</h3>
-                  <p class="merit-card-text-desc">お客さまが今後新しいプロジェクトを進行する際に、スケジュール調整やスタッフのアサイン等がスムーズに進みます。さらに、今後のチームづくりや採用、エンジニア育成に役立つ知識が得られます。</p>
+                  <h3 class="merit-card-title">運用工数や人的コストを削減</h3>
+                  <p class="merit-card-text-desc">インフラの運⽤⼯数も最⼩限にすることができるため、⼈的コストも削減して運⽤することが可能になります。</p>
                 </div>
               </div>
 

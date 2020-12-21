@@ -6,7 +6,7 @@
         <div class="row">
           <h2 class="content-section-title text-center">
             Use Case
-            <span>ユースケース</span>
+            <span>実装例</span>
             <hr class="title-bottom-line">
           </h2>
         </div>
@@ -15,133 +15,43 @@
       <v-container class="services-usecase-content-container">
 
         <v-row justify="center">
-          <v-col cols="11" md="7" lg="7">
-            <p class="usecase-text-anim">
-              Serverless Operationsでは、AWSを中心とした以下のようなサーバーレスアプリケーションの開発支援が可能です。
+          <v-col cols="11" md="8">
+            <h3>
+              スマートプロダクトにおけるデータ制御実装例
+            </h3>
+            <p>
+              AWS IoTコアを使用してスマートプロダクトからのデータを収集し、クラウド上に蓄積します。そのデータをAWS Lambda及びAPI Gatewayを通して可視化し、管理デバイスからの操作を可能にします。管理デバイスからのリクエストは、デバイス制御用のAWS IoTコアを通して、各スマートデバイスの操作を可能にします。 
             </p>
           </v-col>
         </v-row>
 
         <v-row justify="center">
-
-          <v-col cols="11" md="4">
-
-            <div class="service-usecase-card">
-              <div class="service-card-header">
-                <h3>
-                  Web & Mobile App<br>
-                  Backend
-                </h3>
-                <p class="service-card-header-image">
-                  <img
-                    src="@/assets/images/services/icon-features-web-mobile-app-backend-illust.svg"
-                    class="usecase-illust-01"
-                    alt="Web & Mobile App Backend"
-                  >
-                </p>
-              </div>        
-              <div class="service-card-help">
-                <h4>ウェブ&モバイルアプリバックエンド</h4>
-                <p>API GatewayやAppSyncといったサービスを使用すると、 Webアプリケーションやモバイルアプリケーションのバックエンドとしての機能が提供できます。<br>
-                これらのサービスはアクセス数に応じで自動でスケールアウトする仕組みになっており、秒間数千数万のトランザクションを捌くことができます。また、コストはトラフィック量に比例するため、トラフィックの少ない間は大幅にコストが削減されます。</p>
-              </div>
-            </div>
-
+          <v-col cols="11" md="10">
+            <p>
+              <g-image src="@/assets/images/services/iot/iot-usecase-1.svg" alt="スマートプロダクトにおけるデータ制御実装例のアーキテクチャ図" />
+            </p>
           </v-col>
-
-          <v-col cols="11" md="4">
-
-            <div class="service-usecase-card">
-              <div class="service-card-header">
-                <h3>
-                  Web Frontend
-                </h3>
-                <p class="service-card-header-image">
-                  <img
-                    src="@/assets/images/services/icon-features-web-frontend-illust.svg"
-                    class="usecase-illust-02"
-                    alt="Web Frontend"
-                  >
-                </p>
-              </div>        
-              <div class="service-card-help">
-                <h4>ウェブフロントエンド</h4>
-                <p>VueやReactを使用した、Webフロントエンド開発を行います。業務用のシステム管理画面やサービスのウェブアプリケーションまで対応できます。</p>
-              </div>
-            </div>
-
-          </v-col>
-
-          <v-col cols="11" md="4">
-
-            <div class="service-usecase-card">
-              <div class="service-card-header">
-                <h3>
-                  IoT Backend
-                </h3>
-                <p class="service-card-header-image">
-                  <img
-                    src="@/assets/images/services/icon-features-iot-backend-illust.svg"
-                    class="usecase-illust-03"
-                    alt="IoT Backend"
-                  >
-                </p>
-              </div>        
-              <div class="service-card-help">
-                <h4>IoTバックエンド</h4>
-                <p>AWSでは、様々はIoTに関するプロダクトをリリースしており、その中心を担っているのがAWS IoTです。AWS IoTはMQTT、WebSocket、またはHTTPを使用してIoTデバイスをバックエンドサービスに接続できます。IoTは、自動車・交通機関・物流・医療・農業といった様々な分野で活用が広がっています。<br>AWS IoTやLambda, Kinesisといったサービスを使えば、IoTの開発チームはインフラの管理に大きな時間を割かれることなく機能の開発に集中できます。</p>
-              </div>
-            </div>
-
-          </v-col>
-
-          <v-col cols="11" md="4">
-
-            <div class="service-usecase-card">
-              <div class="service-card-header">
-                <h3>
-                  Dataprocessing
-                </h3>
-                <p class="service-card-header-image">
-                  <img
-                    src="@/assets/images/services/icon-features-dataprocessing-illust.svg"
-                    class="usecase-illust"
-                    alt="Dataprocessing"
-                  >
-                </p>
-              </div>        
-              <div class="service-card-help">
-                <h4>データプロセッシング</h4>
-                <p>アプリケーションやIoTのバックエンドを作るだけなく、それらのユーザの行動を分析するためのデータ分析基盤、機械学習・業務システムなどにおけるETLパイプラインを作ることも可能です。<br>AWS Lambda、Kinesis、S3、Athena、Step Functionsなどのサーバーレステクノロジを使用すると、膨大な数のカスタムデータを取得および分析するパイプラインを簡単に構築できます。</p>
-              </div>
-            </div>
-
-          </v-col>
-
-          <v-col cols="11" md="4">
-
-            <div class="service-usecase-card">
-              <div class="service-card-header">
-                <h3>
-                  Chatbot
-                </h3>
-                <p class="service-card-header-image">
-                  <img
-                    src="@/assets/images/services/icon-features-chatbot-illust.svg"
-                    class="usecase-illust-05"
-                    alt="Chatbot"
-                  >
-                </p>
-              </div>        
-              <div class="service-card-help">
-                <h4>チャットボット</h4>
-                <p>AWSではAmazon Recognitionといった画像分析のサービスをはじめ、たくさんの学習モデルをAPIとして提供するサービスがあります。<br>それらとAPI Gateway、Lambdaを組み合わせることで容易にチャットボットのサービスを作ることができます。</p>
-              </div>
-            </div>
-
-          </v-col>
-
         </v-row>
+
+        <v-row justify="center">
+          <v-col cols="11" md="8">
+            <h3>
+              製造業におけるデータ可視化・分析
+            </h3>
+            <p>
+              AWS IoT Greengrassをゲートウェイデバイスとして、工場内や各所に点在するIoTデバイスからのデータをクラウド側で収集します。収集されたデータはAWS IoT Analytics上でクレンジング及びフィルターされ、データストアに保存されます。それらのデータはAmazon QuickSightを通して可視化され、分析が可能となります。
+            </p>
+          </v-col>
+        </v-row>
+
+        <v-row justify="center">
+          <v-col cols="11" md="10">
+            <p>
+              <g-image src="@/assets/images/services/iot/iot-usecase-2.svg" alt="製造業におけるデータ可視化・分析のアーキテクチャ図" />
+            </p>
+          </v-col>
+        </v-row>
+
       </v-container>
 
     </section>
@@ -249,132 +159,54 @@ export default {
   background-image: url('../../assets/images/top-news-contact-bk.svg');
   background-position: top 420px;
   background-size: 100%;
-  background-color: rgba($light-gray-2, 0.7);
+  background-color: rgba($light-gray-1, 0.7);
   background-blend-mode: lighten;
+  color: $secondary;
   p {
-    color: $text-black;
     font-family: $font-jp-regular;
     line-height: 32px;
     text-align: justify;
   }
 }
 
-.service-usecase-card {
-  background: #FFFFFF;
-  box-shadow: 8px 24px 50px rgba(207, 214, 226, 0.6);
-  border-radius: 3px;
-  color: $secondary;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-  .service-card-header {
-    padding: 40px 24px 0px 24px;
-    display: flex;
-    flex: 1 0 auto;
-    flex-direction: column-reverse;
-    justify-content: center;
+.services-usecase-content-container {
+  h3 {
+    font-size: 24px;
+    margin: 64px 0 16px 0;
+    padding-left: 40px;
+    position: relative;
+    line-height: 1.3;
     @include media-breakpoint-down(md) {
-      padding: 20px 20px 0px 20px;
+      padding-left: 24px;
+      font-size: 18px;
+      line-height: 24px;
+      line-height: 1.4;
     }
-    @include media-breakpoint-down(sm) {
-      padding: 8% 8% 0px 8%;
-    }
-    
-    h3 {
-      font-size: 32px;
-      text-align: center;
-      position: relative;
-      font-family: $font-en-normal;
-      line-height: 1.2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100px;
+    &:after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: $primary;
+      position: absolute;
+      top: 50%;
+      left: 0px;
+      z-index: 1;
       @include media-breakpoint-down(md) {
-        font-size: 24px;
-        min-height: auto;
-        margin: 0 0 16px 0;
+        width: 16px;
       }
     }
-    .service-card-header-image {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      min-height: 200px;
-      @include media-breakpoint-down(sm) {
-        min-height: auto;
-      }
-      img {
-        align-items: center;
-        @include media-breakpoint-down(md) {
-          width: 90%;
-        }
-        @include media-breakpoint-down(sm) {
-          width: auto;
-          height: 100px;
-        }
-      }
+    @include media-breakpoint-up(md) {
+      margin-top: 56px;
     }
   }
-  .service-card-help {
-    height: 100%;
-    background: $light-gray-2;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    @include media-breakpoint-down(md) {
-      padding: 20px;
-    }
-    @include media-breakpoint-down(sm) {
-      padding: 8%;
-    }
-    h4 {
-      font-size: 12px;
-      text-align: center;
-      margin: 0 auto 24px;
-      color: $secondary;
-      display: block;
-      width: 90%;
-      position: relative;
-      @include media-breakpoint-down(md) {
-        width: 100%;
-      }
-      @include media-breakpoint-down(sm) {
-        width: 80%;
-        max-width: 300px;
-      }
-      &::before {
-        content: '';
-        display: block;
-        width: 50px;
-        height: 30px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: url('../../assets/images/bg/card-title-before-texture.svg') no-repeat;
-      }
-      &::after {
-        content: '';
-        display: block;
-        width: 50px;
-        height: 30px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        background: url('../../assets/images/bg/card-title-after-texture.svg') no-repeat;
-      }
-    }
-    p {
-      line-height: 24px;
-      color: $text-black;
-      strong {
-        font-family: $font-jp-bold;
-      }
-      @include media-breakpoint-down(md) {
-        font-size: 14px;
-      }
+  p {
+    img {
+      width: 100%;
     }
   }
 }
+
+
+
 </style>

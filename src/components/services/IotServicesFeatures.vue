@@ -17,7 +17,8 @@
         <v-row justify="center">
           <v-col cols="11" md="8" lg="8">
             <h3 class="features-text-anim">
-              第一線で培った豊富な知見やノウハウを共有し、<br class="d-sm-block d-none" />お客さまと “共に” 課題を解決へと導きます。
+              開発のスペシャリストチームが<br class="d-sm-block d-none" />
+              プラン策定から開発支援までを一貫して行います。
             </h3>
           </v-col>
         </v-row>
@@ -25,9 +26,9 @@
         <v-row justify="center">
           <v-col cols="11" offset-sm="3" sm="8" offset-md="3" md="6" offset-lg="5" lg="5">
             <h4 class="features-text-anim">
-              “共創”とは、お客さまと“共につくる”こと。
+              お客さまの“内製化”を目指して
             </h4>
-            <p class="features-text-anim">私たちはこれまで、Serverless Frameworkを中心としたOSSコミュニティで、OSS開発やコントリビューションを続けてまいりました。グローバルの第一線で培ってきたサーバーレスアプリケーション開発に関する知見をお客さまに共有しながら、お客さまの現状やスケジュール、予算など、ご要望に合わせた支援・サポートを行います。</p>
+            <p class="features-text-anim">弊社は以下のような事例を元にAWSのサーバーレス・コンテナを使った開発のスペシャリストチームです。特にお客さまの内製化を⽀援していくことをポリシーとしており、そのためのプラン策定から開発⽀援までを⼀貫して⾏うことができます。</p>
           </v-col>
         </v-row>
 

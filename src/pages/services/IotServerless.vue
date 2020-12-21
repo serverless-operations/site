@@ -52,12 +52,16 @@
         
         <IotServicesSupport />
 
+        <IotServicesUseCase />
+
         <IotServicesMerit />
+
+        <IotServicesFlow />
+
+        <IotServicesPricing />
 
         <IotServicesFeatures />
 
-        <IotServicesUseCase />
-       
       </div>
     </div>
   </Layout>
@@ -65,9 +69,11 @@
 
 <script>
 import IotServicesSupport from '~/components/services/IotServicesSupport'
-import IotServicesMerit from '~/components/services/IotServicesMerit'
-import IotServicesFeatures from '~/components/services/IotServicesFeatures'
 import IotServicesUseCase from '~/components/services/IotServicesUseCase'
+import IotServicesMerit from '~/components/services/IotServicesMerit'
+import IotServicesFlow from '~/components/services/IotServicesFlow'
+import IotServicesPricing from '~/components/services/IotServicesPricing'
+import IotServicesFeatures from '~/components/services/IotServicesFeatures'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -75,9 +81,11 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   components: {
     IotServicesSupport,
+    IotServicesUseCase,
     IotServicesMerit,
-    IotServicesFeatures,
-    IotServicesUseCase
+    IotServicesFlow,
+    IotServicesPricing,
+    IotServicesFeatures
   },
   metaInfo () {
     return {

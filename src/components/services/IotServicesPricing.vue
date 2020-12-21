@@ -2,124 +2,52 @@
   <div>
     <section class="page-section-container">
 
-      <div class="container services-support-title-container">
+      <div class="container services-usecase-title-container">
         <div class="row">
           <h2 class="content-section-title text-center">
-            Support
-            <span>お手伝いできること</span>
+            Pricing
+            <span>４つのプランと料金</span>
             <hr class="title-bottom-line">
           </h2>
         </div>
       </div>
 
-      <v-container class="services-support-content-container">
+      <v-container class="services-usecase-content-container">
 
         <v-row justify="center">
-          <v-col cols="11" md="8" lg="8">
-            <p class="support-text-anim">
-              IoTデバイスから送られてきたAWSクラウド側のデータ処理について開発サポートを行います。<br class="d-md-block" />
-              クラウドに蓄積したデータを可視化するためのフロントエンドの開発サポートも可能です。
-            </p>
+          <v-col cols="11" md="8">
+            <v-row justify="center">
+
+              <v-col cols="12" md="6">
+
+                <div class="service-card">
+                  <div class="service-card-header">
+                    <h3>
+                      Chat & Mail
+                      <span>チャットやメールでのコンサルティングサポート</span>
+                    </h3>
+                    <p>
+                      AWSクラウド側の技術的なサポートをチャットやメールのみで⾏います。設計や実装でつまづいた時、⽅針のお悩みごとをサポートします。
+                    </p>
+                    <p class="client-request-text">
+                      400,000 円/⽉
+                    </p>
+                    <a href="">
+                      オンライン無料相談を予約する
+                    </a>
+                  </div>        
+                  <div class="service-card-help">
+                    <ul>
+                      <li>チャット・メール対応</li>
+                      <li>AWSでの設計や実装方針の相談</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </v-col>
+
+            </v-row>
           </v-col>
-        </v-row>
-
-        <v-row justify="center">
-
-          <v-col cols="11" md="4">
-
-            <div class="service-card">
-              <div class="service-card-header">
-                <h4>
-                  ウェブ・モバイルアプリ<br>
-                  設計開発
-                </h4>
-              </div>        
-              <div class="service-card-help">
-                <p>IoTデバイスと連動するウェブアプリケーションのユーザー認証、デバイスセットアップや設定のバックアップなどを行います。</p>
-              </div>
-            </div>
-
-          </v-col>
-
-          <v-col cols="11" md="4">
-
-            <div class="service-card">
-              <div class="service-card-header">
-                <h4>
-                  スマートデバイスとの<br>
-                  連携
-                </h4>
-              </div>        
-              <div class="service-card-help">
-                <p>AlexaやGoogle HomeなどのスマートスピーカーなどのデバイスやサービスとIoTデバイスとの連携を行います。</p>
-              </div>
-            </div>
-
-          </v-col>
-
-          <v-col cols="11" md="4">
-
-            <div class="service-card">
-              <div class="service-card-header">
-                <h4>
-                  IoTデバイスデータの<br>
-                  収集・可視化・分析
-                </h4>
-              </div>        
-              <div class="service-card-help">
-                <p>コネクテッドカーやモビリティにおける⾞両データの取集、処理、分析、および利⽤を行います。</p>
-              </div>
-            </div>
-
-          </v-col>
-
-          <v-col cols="11" md="4">
-
-            <div class="service-card">
-              <div class="service-card-header">
-                <h4>
-                  ⼤量なデータを<br>
-                  収集・可視化・分析
-                </h4>
-              </div>        
-              <div class="service-card-help">
-                <p>センサーやログなど⼤量なデータをクラウド上へ収集、可視化、分析を行います。</p>
-              </div>
-            </div>
-
-          </v-col>
-
-          <v-col cols="11" md="4">
-
-            <div class="service-card">
-              <div class="service-card-header">
-                <h4>
-                  Web API 設計開発
-                </h4>
-              </div>        
-              <div class="service-card-help">
-                <p>外部サービスや他デバイスとIoTデバイスを連携するWeb APIの設計開発を行います。</p>
-              </div>
-            </div>
-
-          </v-col>
-
-          <v-col cols="11" md="4">
-
-            <div class="service-card">
-              <div class="service-card-header">
-                <h4>
-                  IoTプロトタイプ<br>
-                  開発サポート
-                </h4>
-              </div>        
-              <div class="service-card-help">
-                <p>IoTの概念実証や製品及びシステムの簡易版の開発を通してPoCの支援を行います。</p>
-              </div>
-            </div>
-
-          </v-col>
-
         </v-row>
       </v-container>
 
@@ -134,13 +62,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   mounted() {
-    this.titleAnimation(),
-    this.SupportAnimation()
+    this.UseCaseTitleAnimation(),
+    this.UseCaseAnimation()
   },
   methods: {
-    titleAnimation() {
+    UseCaseTitleAnimation() {
       let object = {
-        el: '.services-support-title-container h2',
+        el: '.services-usecase-title-container h2',
         duration: 1.2
       }
       gsap
@@ -148,7 +76,7 @@ export default {
           defaults: { ease: 'Expo.easeInOut', duration: 1.2 }, // timelineのプロパティ
           scrollTrigger: {
             // markers: true, // マーカーを表示するか（開発用）
-            trigger: '.services-support-title-container', // この要素と交差するとイベントが発火
+            trigger: '.services-usecase-title-container', // この要素と交差するとイベントが発火
             start: 'top 98%', // ウィンドウのどの位置を発火の基準点にするか
             end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
             toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
@@ -169,18 +97,18 @@ export default {
           width: 80,
         },'<')
     },
-    SupportAnimation() {
+    UseCaseAnimation() {
       gsap.timeline({
         scrollTrigger: {
           // markers: true, // マーカーを表示するか（開発用）
           // scrub: 1,
-          trigger: '.services-support-content-container', // この要素と交差するとイベントが発火
+          trigger: '.services-usecase-content-container', // この要素と交差するとイベントが発火
           start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
           end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
           toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
         },
       })
-      .fromTo( '.support-text-anim', {
+      .fromTo( '.usecase-text-anim', {
         opacity: 0,
         y: 0,
       }, {
@@ -196,7 +124,7 @@ export default {
           amount: 0.2 // 0.8秒おきに
         }
       })
-      .fromTo( '.service-card', {
+      .fromTo( '.service-usecase-card', {
         opacity: 0,
         y: 0,
         scale: 0.98,
@@ -226,20 +154,10 @@ export default {
 .page-section-container {
   padding: 160px 0;
   background-image: url('../../assets/images/top-news-contact-bk.svg');
-  background-position: top 420px;
+  background-position: center center;
   background-size: 100%;
   background-color: rgba($light-gray-2, 0.7);
   background-blend-mode: lighten;
-  h3 {
-    color: $secondary;
-    font-family: $font-jp-bold;
-    font-size: 32px;
-    margin-bottom: 48px;
-    @include media-breakpoint-down(md) {
-      margin-bottom: 24px;
-      font-size: 20px;
-    }
-  }
   p {
     color: $text-black;
     font-family: $font-jp-regular;
@@ -257,59 +175,28 @@ export default {
   display: flex;
   flex-direction: column;
   .service-card-header {
-    padding: 40px;
+    padding: 40px 40px 0px 40px;
     @include media-breakpoint-down(md) {
-      padding: 20px;
+      padding: 20px 20px 0px 20px;
     }
     @include media-breakpoint-down(sm) {
-      padding: 8%;
+      padding: 8% 8% 0px 8%;
     }
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 1px solid $light-gray-1;
     
     h4 {
-      font-size: 18px;
-      line-height: 1.3;
+      font-size: 12px;
       text-align: center;
-      color: $secondary;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+      margin-bottom: 32px;
       position: relative;
-      // width: 90%;
-      min-height: 46px;
-      position: relative;
-      font-family: $font-jp-bold;
-      @include media-breakpoint-down(md) {
-        width: 90%;
-      }
-      @include media-breakpoint-down(sm) {
-        width: 100%;
-        max-width: 300px;
-      }
-      &::before {
-        content: '';
-        display: block;
-        width: 50px;
-        height: 30px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: url('../../assets/images/bg/card-title-before-texture.svg') no-repeat;
-      }
       &::after {
         content: '';
-        display: block;
-        width: 50px;
-        height: 30px;
         position: absolute;
-        right: 0;
-        top: 0;
-        background: url('../../assets/images/bg/card-title-after-texture.svg') no-repeat;
+        display: block;
+        width: 40px;
+        height: 1px;
+        left: calc(50% - 20px);
+        bottom: -8px;
+        background: $secondary;
       }
     }
     p {
@@ -404,4 +291,5 @@ export default {
     }
   }
 }
+
 </style>
