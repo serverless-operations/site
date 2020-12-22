@@ -187,7 +187,10 @@ export default {
   background-size: 70% 70%, 70% 70%, 100% 100%;
   background-repeat:  repeat, repeat, no-repeat;
   color: #fff;
-  padding: 160px 0
+  padding: 160px 0;
+  @include media-breakpoint-down(md) {
+    padding: 120px 0;
+  }
 }
 
 .services-merit-content-container {

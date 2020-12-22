@@ -133,6 +133,9 @@ export default {
   background-size: 200%;
   background-repeat: repeat-y;
   background-color: $light-gray-2;
+  @include media-breakpoint-down(md) {
+    padding: 120px 0;
+  }
   @include media-breakpoint-down(sm) {
     background-size: 180%;
   }

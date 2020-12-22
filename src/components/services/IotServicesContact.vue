@@ -260,6 +260,9 @@ export default {
   padding: 160px 0;
   background-color: $light-gray-2;
   color: $secondary;
+  @include media-breakpoint-down(md) {
+    padding: 120px 0;
+  }
   p {
     font-family: $font-jp-regular;
     line-height: 32px;
