@@ -510,3 +510,161 @@
     top: 0;
   }
 }
+
+// Contact Form 
+@mixin ContactForm {
+  .contact-desc-text {
+    color: $text-black;
+  }
+  .p-top-contact {
+    &--container {
+      padding-bottom: 160px;
+    }
+    
+    &--form {
+      .v-text-field {
+        &:not(.v-textarea) {
+          .v-input__slot {
+            
+            background-color: $light-gray-1 !important;
+            border-width: 1px !important;
+            & > .v-text-field__slot {
+             
+            }
+            & > fieldset {
+             
+            }
+          }
+        }
+        &:not(.v-input--is-focused, .primary--text, .error--text) {
+          .v-input__slot {
+            border: none !important;
+            border-radius: 3px;
+            &::after {
+              display: none;
+            }
+            & > fieldset {
+              // border: solid 1px $light-gray-1 !important;
+            }
+          }
+        }
+      }
+      .v-textarea {
+        .v-input__slot {
+          background-color: $light-gray-1 !important;
+          border-radius: 3px;
+          & > fieldset {
+            border-width: 1px !important;
+          }
+          & > .v-text-field__slot textarea {
+            color: $text-black;
+            padding: 24px 16px;
+            border-radius: 3px;
+            border: 1px $light-gray-1 solid;
+            transition: $soease;
+            &:focus {
+              border: 1px $tertiary solid;
+            }
+          }
+        }
+      }
+
+      .v-input.v-text-field input[type='text'] {
+        padding: 24px 16px;
+        color: $text-black;
+        border-radius: 3px;
+        transition: $soease;
+        border: 1px $light-gray-1 solid;
+        &:focus {
+          border: 1px $tertiary solid;
+        }
+      }
+    }
+    &--check {
+      .v-icon {
+        color: rgba($mid-gray-3, 0.4);
+      }
+    }
+
+    &--check-label {
+      font-family: $font-jp-regular;
+      color: $secondary;
+      display: block;
+      // margin: 16px 0;
+    }
+
+    &--note {
+      padding-top: 28px;
+      border-top: 1px solid $light-gray-1;
+      color: $secondary;
+      font-family: $font-jp-regular;
+      font-size: 1rem;
+      a {
+        text-decoration: none;
+        color: $tertiary;
+        font-family: $font-jp-bold;
+      }
+    }
+  }
+  .v-form label.v-label {
+    color: $secondary !important;
+  }
+  .v-form {
+    background-color: $white;
+    padding: 36px 40px;
+    border-radius: 6px;
+    box-shadow: 8px 24px 50px rgba(207, 214, 226, 0.6);
+    
+    @include media-breakpoint-up(md) {
+      padding: 48px 56px;
+    }
+    @include media-breakpoint-up(lg) {
+      padding: 72px 80px;
+    }
+  }
+  .v-input__slot {
+    border-radius: 6px;
+    background-color: $light-gray-1;
+  }
+  .v-input__slot:before {
+    display: none;
+  }
+
+  // 項目名
+  .v-subheader {
+    color: $secondary !important;
+    font-size: 1rem;
+    font-family: $font-jp-bold;
+    align-items: baseline;
+    padding-left: 0;
+    padding-top: 16px;
+    height: 100%;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    small {
+      font-size: 14px;
+      font-family: $font-jp-regular;
+    }
+    .asterisk {
+      color: $tertiary;
+      display: inline;
+      margin-left: 3px;
+    }
+  }
+
+  .error-text-red {
+    color: red;
+  }
+
+  .v-btn {
+    font-family: $font-jp-bold;
+    background-color: $tertiary;
+    border-radius: 3px;
+    padding: 16px 40px;
+    height: auto;
+    font-size: 14px;
+  }
+  .v-text-field__details {
+    display: none !important;
+  }
+}

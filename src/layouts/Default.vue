@@ -99,56 +99,6 @@ body {
   }
 }
 
-.p-top-contact {
-  &--form {
-    .v-text-field {
-      &:not(.v-textarea) {
-        .v-input__slot {
-          height: 40px;
-          min-height: 40px !important;
-          background-color: $light-gray-1 !important;
-          border-width: 1px !important;
-          & > .v-text-field__slot {
-            height: 40px;
-            min-height: 40px;
-          }
-          & > fieldset {
-            height: 44px;
-            border-width: 1px !important;
-          }
-        }
-      }
-      &:not(.v-input--is-focused, .primary--text, .error--text) {
-        .v-input__slot {
-          border: none !important;
-          & > fieldset {
-            border: solid 1px $light-gray-1 !important;
-          }
-        }
-      }
-    }
-    .v-textarea {
-      .v-input__slot {
-        background-color: $light-gray-1 !important;
-        & > fieldset {
-          border-width: 1px !important;
-        }
-        & > .v-text-field__slot textarea {
-          color: $black;
-        }
-      }
-    }
-
-    .v-input.v-text-field input[type='text'] {
-      margin: 0;
-      color: $black;
-    }
-  }
-  &--check {
-    .v-icon {
-      color: rgba($mid-gray-3, 0.4);
-    }
-  }
-}
+@include ContactForm;
 
 </style>
