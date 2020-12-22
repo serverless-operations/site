@@ -186,6 +186,9 @@ export default {
   background-size: 100%;
   background-color: rgba($light-gray-2, 0.7);
   background-blend-mode: lighten;
+  @include media-breakpoint-down(md) {
+    padding: 120px 0;
+  }
   h3 {
     color: $secondary;
     font-family: $font-jp-bold;

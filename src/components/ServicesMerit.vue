@@ -187,7 +187,10 @@ export default {
   background-size: 70% 70%, 70% 70%, 100% 100%;
   background-repeat:  repeat, repeat, no-repeat;
   color: #fff;
-  padding: 160px 0
+  padding: 160px 0;
+  @include media-breakpoint-down(md) {
+    padding: 120px 0;
+  }
 }
 
 .services-merit-content-container {
@@ -269,7 +272,7 @@ export default {
         font-size: 32px;
         font-family: $font-en-normal;
         color: $secondary;
-        opacity: 10%;
+        opacity: 0.1;
         margin: 0 24px 0 0;
         @include media-breakpoint-down(md) {
           flex-direction: column;

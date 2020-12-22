@@ -162,6 +162,9 @@ export default {
   background-color: rgba($light-gray-1, 0.7);
   background-blend-mode: lighten;
   color: $secondary;
+  @include media-breakpoint-down(md) {
+    padding: 120px 0;
+  }
   p {
     font-family: $font-jp-regular;
     line-height: 32px;

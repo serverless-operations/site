@@ -168,7 +168,10 @@ export default {
   background-size: 70% 70%, 70% 70%, 100% 100%;
   background-repeat:  repeat, repeat, no-repeat;
   color: #fff;
-  padding: 160px 0
+  padding: 160px 0;
+  @include media-breakpoint-down(md) {
+    padding: 120px 0;
+  }
 }
 
 .services-merit-content-container {
@@ -187,14 +190,16 @@ export default {
     background-clip: text; //テキストでくり抜く
     -webkit-text-fill-color: transparent; //くり抜いた部分は背景を表示
     @include media-breakpoint-down(md) {
-      font-size: 140px;
+      font-size: 160px;
       padding: 0;
       top: -32px;
+      left: 0;
     }
     @include media-breakpoint-down(sm) {
-      font-size: 96px;
+      font-size: 120px;
       padding: 0;
       top: -56px;
+      left: 0;
     }
   }
   .services-merit-title-container {
@@ -203,6 +208,9 @@ export default {
     .services-merit-header-text {
       font-family: $font-jp-bold;
       margin-bottom: 24px;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 12px;
+      }
     }
     .services-merit-header-title {
       font-family: $font-jp-bold;
@@ -210,7 +218,7 @@ export default {
       line-height: 1.4;
       margin-bottom: 24px;
       @include media-breakpoint-down(md) {
-        font-size: 20px;
+        font-size: 24px;
       }
     }
     .services-merit-desc {
@@ -250,7 +258,7 @@ export default {
         font-size: 32px;
         font-family: $font-en-normal;
         color: $secondary;
-        opacity: 10%;
+        opacity: 0.1;
         margin: 0 24px 0 0;
         @include media-breakpoint-down(md) {
           flex-direction: column;

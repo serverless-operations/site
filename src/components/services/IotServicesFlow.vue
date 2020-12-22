@@ -31,7 +31,7 @@
                 <h3>要件のヒアリング</h3>
               </v-col>
               <v-col cols="12" md="7" class="flow-desc-container">
-                <p class="flow-text-anim">
+                <p>
                   本質的に解決したい課題や事業・プロダクトの⽅向性からヒアリングを⾏い、どういったものをどのように作ればよいのか方針を決定していきます。
                 </p>
               </v-col>
@@ -204,6 +204,9 @@ export default {
   padding: 160px 0;
   background-color: $light-gray-2;
   color: $secondary;
+  @include media-breakpoint-down(md) {
+    padding: 120px 0 60px 0;
+  }
   p {
     font-family: $font-jp-regular;
     line-height: 32px;
@@ -253,6 +256,9 @@ export default {
     .flow-desc-container {
       padding: 36px 48px;
       background: $light-gray-2;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
       p {
         color: $text-black;
         margin: 0;
@@ -264,6 +270,9 @@ export default {
 
 .flow-cta-container {
   margin-top: 120px;
+  @include media-breakpoint-down(md) {
+    margin-top: 80px;
+  }
 }
 
 

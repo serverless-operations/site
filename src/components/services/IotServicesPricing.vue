@@ -252,6 +252,9 @@ export default {
   background-size: 100%;
   background-color: rgba($light-gray-2, 0.7);
   background-blend-mode: lighten;
+  @include media-breakpoint-down(md) {
+    padding: 120px 0;
+  }
   p {
     color: $text-black;
     font-family: $font-jp-regular;
@@ -272,6 +275,7 @@ export default {
     padding: 40px 40px 24px 40px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     @include media-breakpoint-down(md) {
       padding: 20px 20px 12px 20px;
     }
@@ -298,7 +302,7 @@ export default {
     }
     // タイトル
     h3 {
-      font-size: 36px;
+      font-size: 40px;
       text-align: center;
       margin-bottom: 32px;
       line-height: 1.2;
@@ -330,10 +334,12 @@ export default {
       margin-bottom: 0;
       position: relative;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       color: $secondary;
       span {
         font-size: 14px;
+        line-height: 3;
+        margin-left: 10px;
       }
       &::before {
         content: '';
