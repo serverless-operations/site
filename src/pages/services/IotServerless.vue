@@ -62,6 +62,8 @@
 
         <IotServicesFeatures />
 
+        <IotServicesContact />
+
       </div>
     </div>
   </Layout>
@@ -74,6 +76,7 @@ import IotServicesMerit from '~/components/services/IotServicesMerit'
 import IotServicesFlow from '~/components/services/IotServicesFlow'
 import IotServicesPricing from '~/components/services/IotServicesPricing'
 import IotServicesFeatures from '~/components/services/IotServicesFeatures'
+import IotServicesContact from '~/components/services/IotServicesContact'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -85,7 +88,8 @@ export default {
     IotServicesMerit,
     IotServicesFlow,
     IotServicesPricing,
-    IotServicesFeatures
+    IotServicesFeatures,
+    IotServicesContact
   },
   metaInfo () {
     return {
