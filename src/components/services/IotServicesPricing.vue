@@ -2,7 +2,7 @@
   <div>
     <section class="page-section-container">
 
-      <div class="container services-usecase-title-container">
+      <div class="container services-pricing-title-container">
         <div class="row">
           <h2 class="content-section-title text-center">
             Pricing
@@ -33,7 +33,7 @@
                     <p class="price-text">
                       400,000 <span>円/⽉</span> 
                     </p>
-                    <a class="pricing-button" href="">
+                    <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
                       オンライン無料相談を予約する
                     </a>
                   </div>        
@@ -62,7 +62,7 @@
                     <p class="price-text">
                       1,000,000 <span>円/⽉</span> 
                     </p>
-                    <a class="pricing-button" href="">
+                    <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
                       オンライン無料相談を予約する
                     </a>
                   </div>        
@@ -93,7 +93,7 @@
                     <p class="price-text">
                       1,200,000 <span>円/⽉</span> 
                     </p>
-                    <a class="pricing-button" href="">
+                    <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
                       オンライン無料相談を予約する
                     </a>
                   </div>        
@@ -123,7 +123,7 @@
                     <p class="price-text">
                       1,600,000 <span>円/⽉</span> 
                     </p>
-                    <a class="pricing-button" href="">
+                    <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
                       オンライン無料相談を予約する
                     </a>
                   </div>        
@@ -162,7 +162,7 @@ export default {
   methods: {
     UseCaseTitleAnimation() {
       let object = {
-        el: '.services-usecase-title-container h2',
+        el: '.services-pricing-title-container h2',
         duration: 1.2
       }
       gsap
@@ -170,7 +170,7 @@ export default {
           defaults: { ease: 'Expo.easeInOut', duration: 1.2 }, // timelineのプロパティ
           scrollTrigger: {
             // markers: true, // マーカーを表示するか（開発用）
-            trigger: '.services-usecase-title-container', // この要素と交差するとイベントが発火
+            trigger: '.services-pricing-title-container', // この要素と交差するとイベントが発火
             start: 'top 98%', // ウィンドウのどの位置を発火の基準点にするか
             end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
             toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
@@ -196,17 +196,17 @@ export default {
         scrollTrigger: {
           // markers: true, // マーカーを表示するか（開発用）
           // scrub: 1,
-          trigger: '.services-usecase-content-container', // この要素と交差するとイベントが発火
-          start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
+          trigger: '.services-pricing-content-container', // この要素と交差するとイベントが発火
+          start: 'top 100%', // ウィンドウのどの位置を発火の基準点にするか
           end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
           toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
         },
       })
-      .fromTo( '.usecase-text-anim', {
+      .fromTo( '.pricing-text-anim', {
         opacity: 0,
         y: 0,
       }, {
-        delay: 0.3,
+        delay: 0.2,
         ease: 'Expo.easeInOut',
         transformOrigin: '0 1',
         y: -16,
@@ -218,12 +218,12 @@ export default {
           amount: 0.2 // 0.8秒おきに
         }
       })
-      .fromTo( '.service-usecase-card', {
+      .fromTo( '.service-pricing-card', {
         opacity: 0,
         y: 0,
         scale: 0.98,
       }, {
-        delay: 0.3,
+        delay: 0.2,
         y: -10, // 少し上に移動させる
         opacity: 1,
         x: 0,
@@ -269,18 +269,18 @@ export default {
   display: flex;
   flex-direction: column;
   .service-card-header {
-    padding: 40px 40px 0px 40px;
+    padding: 40px 40px 24px 40px;
     @include media-breakpoint-down(md) {
-      padding: 20px 20px 0px 20px;
+      padding: 20px 20px 12px 20px;
     }
     @include media-breakpoint-down(sm) {
-      padding: 8% 8% 0px 8%;
+      padding: 8% 8% 4% 8%;
     }
 
     .plan-number {
       color: $mid-gray-2;
       font-family: $font-en-normal;
-      margin: 0 0 32px 0;
+      margin: 0 0 16px 0;
       position: relative;
       display: block;
       &::after {
@@ -301,11 +301,13 @@ export default {
       margin-bottom: 32px;
       position: relative;
       font-family: $font-en-normal;
+      display: flex;
+      flex-direction: column;
       span {
         display: block;
         font-size: 14px;
         font-family: $font-jp-bold;
-        line-height: 1.4;
+        line-height: 1.3;
       }
     }
     .pricing-desc {
@@ -322,7 +324,7 @@ export default {
       text-align: center;
       font-size: 32px;
       font-family: $font-jp-bold;
-      margin-bottom: 32px;
+      margin-bottom: 0;
       position: relative;
       display: block;
       color: $secondary;

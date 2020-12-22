@@ -528,12 +528,12 @@
             
             background-color: $light-gray-1 !important;
             border-width: 1px !important;
-            & > .v-text-field__slot {
+            // & > .v-text-field__slot {
              
-            }
-            & > fieldset {
+            // }
+            // & > fieldset {
              
-            }
+            // }
           }
         }
         &:not(.v-input--is-focused, .primary--text, .error--text) {
@@ -543,9 +543,9 @@
             &::after {
               display: none;
             }
-            & > fieldset {
+            // & > fieldset {
               // border: solid 1px $light-gray-1 !important;
-            }
+            // }
           }
         }
       }

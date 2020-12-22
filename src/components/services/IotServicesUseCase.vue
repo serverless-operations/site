@@ -14,7 +14,7 @@
 
       <v-container class="services-usecase-content-container">
 
-        <v-row justify="center">
+        <v-row justify="center" class="usecase-text-anim">
           <v-col cols="11" md="8">
             <h3>
               スマートプロダクトにおけるデータ制御実装例
@@ -25,7 +25,7 @@
           </v-col>
         </v-row>
 
-        <v-row justify="center">
+        <v-row justify="center" class="usecase-text-anim">
           <v-col cols="11" md="10">
             <p>
               <g-image src="@/assets/images/services/iot/iot-usecase-1.svg" alt="スマートプロダクトにおけるデータ制御実装例のアーキテクチャ図" />
@@ -33,7 +33,7 @@
           </v-col>
         </v-row>
 
-        <v-row justify="center">
+        <v-row justify="center" class="usecase-text-anim">
           <v-col cols="11" md="8">
             <h3>
               製造業におけるデータ可視化・分析
@@ -44,7 +44,7 @@
           </v-col>
         </v-row>
 
-        <v-row justify="center">
+        <v-row justify="center" class="usecase-text-anim">
           <v-col cols="11" md="10">
             <p>
               <g-image src="@/assets/images/services/iot/iot-usecase-2.svg" alt="製造業におけるデータ可視化・分析のアーキテクチャ図" />
@@ -115,7 +115,7 @@ export default {
         opacity: 0,
         y: 0,
       }, {
-        delay: 0.3,
+        delay: 0.2,
         ease: 'Expo.easeInOut',
         transformOrigin: '0 1',
         y: -16,
@@ -132,7 +132,7 @@ export default {
         y: 0,
         scale: 0.98,
       }, {
-        delay: 0.3,
+        delay: 0.2,
         y: -10, // 少し上に移動させる
         opacity: 1,
         x: 0,

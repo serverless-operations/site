@@ -16,7 +16,7 @@
 
         <v-row justify="center">
           <v-col cols="11" md="8" lg="6">
-            <p class="support-text-anim">
+            <p class="flow-text-anim">
               サーバーレスオペレーションズでは、以下のような流れで支援を行います。
             </p>
           </v-col>
@@ -31,7 +31,7 @@
                 <h3>要件のヒアリング</h3>
               </v-col>
               <v-col cols="12" md="7" class="flow-desc-container">
-                <p>
+                <p class="flow-text-anim">
                   本質的に解決したい課題や事業・プロダクトの⽅向性からヒアリングを⾏い、どういったものをどのように作ればよいのか方針を決定していきます。
                 </p>
               </v-col>
@@ -111,11 +111,11 @@ export default {
     PostCTA
   },
   mounted() {
-    this.UseCaseTitleAnimation(),
-    this.UseCaseAnimation()
+    this.FlowTitleAnimation(),
+    this.FlowAnimation()
   },
   methods: {
-    UseCaseTitleAnimation() {
+    FlowTitleAnimation() {
       let object = {
         el: '.services-flow-title-container h2',
         duration: 1.2
@@ -146,7 +146,7 @@ export default {
           width: 80,
         },'<')
     },
-    UseCaseAnimation() {
+    FlowAnimation() {
       gsap.timeline({
         scrollTrigger: {
           // markers: true, // マーカーを表示するか（開発用）
@@ -157,11 +157,11 @@ export default {
           toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
         },
       })
-      .fromTo( '.usecase-text-anim', {
+      .fromTo( '.flow-text-anim', {
         opacity: 0,
         y: 0,
       }, {
-        delay: 0.3,
+        delay: 0.2,
         ease: 'Expo.easeInOut',
         transformOrigin: '0 1',
         y: -16,
@@ -178,7 +178,7 @@ export default {
         y: 0,
         scale: 0.98,
       }, {
-        delay: 0.3,
+        delay: 0.2,
         y: -10, // 少し上に移動させる
         opacity: 1,
         x: 0,

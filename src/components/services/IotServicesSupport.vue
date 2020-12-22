@@ -149,7 +149,7 @@ export default {
           scrollTrigger: {
             // markers: true, // マーカーを表示するか（開発用）
             trigger: '.services-support-title-container', // この要素と交差するとイベントが発火
-            start: 'top 98%', // ウィンドウのどの位置を発火の基準点にするか
+            start: 'top 100%', // ウィンドウのどの位置を発火の基準点にするか
             end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
             toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
           },
@@ -175,7 +175,7 @@ export default {
           // markers: true, // マーカーを表示するか（開発用）
           // scrub: 1,
           trigger: '.services-support-content-container', // この要素と交差するとイベントが発火
-          start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
+          start: 'top 100%', // ウィンドウのどの位置を発火の基準点にするか
           end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
           toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
         },
@@ -184,7 +184,7 @@ export default {
         opacity: 0,
         y: 0,
       }, {
-        delay: 0.3,
+        delay: 0.2,
         ease: 'Expo.easeInOut',
         transformOrigin: '0 1',
         y: -16,
@@ -201,7 +201,7 @@ export default {
         y: 0,
         scale: 0.98,
       }, {
-        delay: 0.3,
+        delay: 0.2,
         y: -10, // 少し上に移動させる
         opacity: 1,
         x: 0,

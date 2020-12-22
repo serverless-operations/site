@@ -89,7 +89,7 @@ export default {
           // markers: true, // マーカーを表示するか（開発用）
           // scrub: 1,
           trigger: '.services-merit-content-container', // この要素と交差するとイベントが発火
-          start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
+          start: 'top 100%', // ウィンドウのどの位置を発火の基準点にするか
           end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
           toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
         },
@@ -131,7 +131,7 @@ export default {
           // markers: true, // マーカーを表示するか（開発用）
           // scrub: 1,
           trigger: '.service-merit-card-container', // この要素と交差するとイベントが発火
-          start: 'top 95%', // ウィンドウのどの位置を発火の基準点にするか
+          start: 'top 100%', // ウィンドウのどの位置を発火の基準点にするか
           end: 'bottom 10%', // ウィンドウのどの位置をイベントの終了点にするか
           toggleActions: 'play none none none', // スクロールイベントで発火するアニメーションの種
         },
@@ -182,7 +182,7 @@ export default {
     z-index: 0;
     line-height: 1;
     margin-bottom: 8px;
-    padding: 48px 0;
+    padding: 0;
     background: linear-gradient(180deg, #02007C 0%, rgba(2, 0, 124, 0) 100%);
     background-clip: text; //テキストでくり抜く
     -webkit-text-fill-color: transparent; //くり抜いた部分は背景を表示
@@ -194,7 +194,7 @@ export default {
     @include media-breakpoint-down(sm) {
       font-size: 96px;
       padding: 0;
-      top: -32px;
+      top: -56px;
     }
   }
   .services-merit-title-container {
