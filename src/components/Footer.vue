@@ -28,6 +28,12 @@
                          class="c-footer-list__link">サーバーレスオペレーションズの<br>サービスと強み</g-link>
             </li>
             <li class="c-footer-list__item">
+              <g-link to="/services/iot-serverless"
+                      class="c-footer-list__link">
+                IoT × サーバーレス / コンテナ開発<br>導⼊サポート
+              </g-link>
+            </li>
+            <li class="c-footer-list__item">
               <g-link to="/services/serverless-consulting"
                          class="c-footer-list__link">サーバーレスコンサルティング</g-link>
             </li>
