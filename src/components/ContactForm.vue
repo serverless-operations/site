@@ -176,6 +176,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@include SectionTitle;
+
+.page-section-container {
+  padding: 160px 0;
+  background-color: $light-gray-2;
+  color: $secondary;
+  p {
+    font-family: $font-jp-regular;
+    line-height: 32px;
+    text-align: justify;
+  }
+}
+
 .p-top-contact {
   &--container {
     padding-bottom: 160px;
