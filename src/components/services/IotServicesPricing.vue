@@ -296,9 +296,10 @@ export default {
     }
     // タイトル
     h3 {
-      font-size: 40px;
+      font-size: 36px;
       text-align: center;
       margin-bottom: 32px;
+      line-height: 1.2;
       position: relative;
       font-family: $font-en-normal;
       display: flex;
