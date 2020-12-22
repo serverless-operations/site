@@ -270,6 +270,8 @@ export default {
   flex-direction: column;
   .service-card-header {
     padding: 40px 40px 24px 40px;
+    display: flex;
+    flex-direction: column;
     @include media-breakpoint-down(md) {
       padding: 20px 20px 12px 20px;
     }
@@ -327,7 +329,8 @@ export default {
       font-family: $font-jp-bold;
       margin-bottom: 0;
       position: relative;
-      display: block;
+      display: flex;
+      flex-direction: column;
       color: $secondary;
       span {
         font-size: 14px;
@@ -367,10 +370,11 @@ export default {
     text-decoration: none;
   }
 
+  // 対応内容リスト
   .service-pricing-list {
     height: 100%;
     background: $light-gray-2;
-    padding: 40px;
+    padding: 24px 40px;
     display: flex;
     flex-direction: column;
     @include media-breakpoint-down(md) {

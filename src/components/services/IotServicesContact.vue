@@ -24,7 +24,7 @@
         </v-row>
 
         <v-row class="contact-text-anim" align="center" justify="center">
-          <v-col cols="12" md="8" class="p-top-contact--form">
+          <v-col cols="11" md="8" class="p-top-contact--form">
 
             <form action="https://getform.io/f/c49d25a9-26c7-4da4-a475-38ff6c466543" 
               method="POST" 
