@@ -298,7 +298,7 @@ export default {
     }
     // タイトル
     h3 {
-      font-size: 36px;
+      font-size: 40px;
       text-align: center;
       margin-bottom: 32px;
       line-height: 1.2;

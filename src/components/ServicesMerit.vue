@@ -269,7 +269,7 @@ export default {
         font-size: 32px;
         font-family: $font-en-normal;
         color: $secondary;
-        opacity: 10%;
+        opacity: 0.1;
         margin: 0 24px 0 0;
         @include media-breakpoint-down(md) {
           flex-direction: column;
