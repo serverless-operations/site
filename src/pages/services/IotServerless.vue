@@ -116,9 +116,19 @@ export default {
           content: 'https://serverless.co.jp/services/iot-serverless',
         },
         {
-          key: `og:site_name`,
-          property: `og:site_name`,
-          content: this.$static.metadata.siteName,
+          key: `og:title`,
+          property: `og:title`,
+          content: 'IoT × サーバーレス / コンテナ開発導⼊サポート | Serverless Operations',
+        },
+        {
+          key: `og:title`,
+          property: `og:title`,
+          content: 'IoT × サーバーレス / コンテナ開発導⼊サポート | Serverless Operations',
+        },
+        {
+          key: `og:description`,
+          property: `og:description`,
+          content: 'サーバーレスやコンテナなどのクラウドネイティブな技術を使⽤することで、システム運⽤のリソースやコスト最適化などが実現できます。サーバーレス/コンテナのノウハウをプロジェクトを通してお伝えし、開発の内製化までをサポートします。',
         },
         {
           key: `og:image`,
