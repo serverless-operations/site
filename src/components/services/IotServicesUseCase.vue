@@ -26,7 +26,7 @@
         </v-row>
 
         <v-row justify="center" class="usecase-text-anim">
-          <v-col cols="11" md="10">
+          <v-col cols="12" md="10">
             <p>
               <g-image src="@/assets/images/services/iot/iot-usecase-1.svg" alt="スマートプロダクトにおけるデータ制御実装例のアーキテクチャ図" />
             </p>
@@ -45,7 +45,7 @@
         </v-row>
 
         <v-row justify="center" class="usecase-text-anim">
-          <v-col cols="11" md="10">
+          <v-col cols="12" md="10">
             <p>
               <g-image src="@/assets/images/services/iot/iot-usecase-2.svg" alt="製造業におけるデータ可視化・分析のアーキテクチャ図" />
             </p>

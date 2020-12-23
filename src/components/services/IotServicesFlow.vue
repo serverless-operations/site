@@ -222,7 +222,7 @@ export default {
     box-shadow: 4px 4px 40px rgba(207, 214, 226, 0.5);
     .flow-title-container {
       background: #fff;
-      padding: 36px 48px;
+      padding: 32px 48px;
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -230,12 +230,16 @@ export default {
       @include media-breakpoint-down(sm) {
         border-right: 0;
         border-bottom: 1px solid $light-gray-1;
+        padding: 16px 24px;
       }
       span {
         color: $primary;
         font-family: $font-en-normal;
         margin: 0 0 4px 0;
         position: relative;
+        @include media-breakpoint-down(sm) {
+          margin: 0;
+        }
         &::after {
           content: '';
           display: block;
@@ -254,11 +258,14 @@ export default {
       }
     }
     .flow-desc-container {
-      padding: 36px 48px;
+      padding: 32px 48px;
       background: $light-gray-2;
       display: flex;
       justify-content: flex-start;
       align-items: center;
+      @include media-breakpoint-down(sm) {
+        padding: 16px 24px;
+      }
       p {
         color: $text-black;
         margin: 0;

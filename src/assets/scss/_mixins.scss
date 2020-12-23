@@ -586,29 +586,33 @@
         }
       }
     }
-    &--check {
-      .v-icon {
-        color: rgba($mid-gray-3, 0.4);
-      }
+  }
+  .p-top-contact--check {
+    .v-icon {
+      color: rgba($mid-gray-3, 0.4);
     }
+  }
 
-    &--check-label {
-      font-family: $font-jp-regular;
-      color: $secondary;
-      display: block;
-      // margin: 16px 0;
-    }
+  .p-top-contact--check-label {
+    font-family: $font-jp-regular;
+    color: $secondary;
+    display: block;
+    // margin: 16px 0;
+  }
 
-    &--note {
-      padding-top: 28px;
-      border-top: 1px solid $light-gray-1;
-      color: $secondary;
-      font-family: $font-jp-regular;
-      font-size: 1rem;
-      a {
-        text-decoration: none;
-        color: $tertiary;
-        font-family: $font-jp-bold;
+  .p-top-contact--note {
+    padding-top: 28px;
+    border-top: 1px solid $light-gray-1;
+    color: $secondary;
+    font-family: $font-jp-regular;
+    font-size: 1rem;
+    line-height: 1.6 !important;
+    a {
+      text-decoration: none;
+      color: $tertiary;
+      font-family: $font-jp-bold;
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
