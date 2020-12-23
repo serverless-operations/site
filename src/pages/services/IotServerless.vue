@@ -234,9 +234,26 @@ background:
     right: 5%;
   }
   .page-header-logo-sp {
-    width: 80%;
-    // bottom: 0;
-    // position: absolute;
+    width: 60%;
+    opacity: 0.8;
+    @include media-breakpoint-down(sm) {
+       width: 60%;
+    }
+  }
+  .page-header-title {
+    @include media-breakpoint-down(sm) {
+      margin-top: 60px;
+    }
+  }
+  .page-header-copy {
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 200px;
+    }
+  }
+  .page-header-text {
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 60px;
+    }
   }
 }
 
