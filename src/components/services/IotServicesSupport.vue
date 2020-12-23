@@ -25,7 +25,7 @@
 
         <v-row justify="center">
 
-          <v-col cols="11" md="4">
+          <v-col cols="11" sm="6" md="4">
 
             <div class="service-card">
               <div class="service-card-header">
@@ -41,7 +41,7 @@
 
           </v-col>
 
-          <v-col cols="11" md="4">
+          <v-col cols="11" sm="6" md="4">
 
             <div class="service-card">
               <div class="service-card-header">
@@ -57,7 +57,7 @@
 
           </v-col>
 
-          <v-col cols="11" md="4">
+          <v-col cols="11" sm="6" md="4">
 
             <div class="service-card">
               <div class="service-card-header">
@@ -73,7 +73,7 @@
 
           </v-col>
 
-          <v-col cols="11" md="4">
+          <v-col cols="11" sm="6" md="4">
 
             <div class="service-card">
               <div class="service-card-header">
@@ -89,7 +89,7 @@
 
           </v-col>
 
-          <v-col cols="11" md="4">
+          <v-col cols="11" sm="6" md="4">
 
             <div class="service-card">
               <div class="service-card-header">
@@ -104,7 +104,7 @@
 
           </v-col>
 
-          <v-col cols="11" md="4">
+          <v-col cols="11" sm="6" md="4">
 
             <div class="service-card">
               <div class="service-card-header">
@@ -287,13 +287,6 @@ export default {
       min-height: 46px;
       position: relative;
       font-family: $font-jp-bold;
-      @include media-breakpoint-down(md) {
-        width: 90%;
-      }
-      @include media-breakpoint-down(sm) {
-        width: 100%;
-        max-width: 300px;
-      }
       &::before {
         content: '';
         display: block;

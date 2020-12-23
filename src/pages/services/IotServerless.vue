@@ -10,8 +10,8 @@
             <!--背景 -->
             <img src="@/assets/images/about-so-main-bg.svg"
                 class="page-header-main-bg d-none d-md-block"  alt="Serverless Operationsとは メインイメージ">
-            <!-- ロゴ -->
-            <img src="@/assets/images/about-so-main-logo.svg"
+            <!-- メインイメージイラスト -->
+            <img src="@/assets/images/services/iot/iot-main-illust.svg"
                 class="page-header-logo d-none d-md-block" alt="Serverless Operationsとは メインイメージ ロゴ">
             <!-- 粒子 -->
             <img src="@/assets/images/about-so-main-square.svg"
@@ -21,7 +21,7 @@
             <img src="@/assets/images/about-so-main-bg-sp.svg"
                 class="page-header-main-bg d-md-none" alt="Serverless Operationsとは メインイメージ">
             <!-- ロゴ -->
-            <img src="@/assets/images/about-so-main-logo-sp.svg"
+            <img src="@/assets/images/services/iot/iot-main-illust.svg"
                 class="page-header-logo-sp d-md-none" alt="Serverless Operationsとは メインイメージ ロゴ">
             <!-- 粒子 -->
             <img src="@/assets/images/about-so-main-particle-sp.svg"
@@ -69,6 +69,16 @@
   </Layout>
 </template>
 
+<static-query>
+query {
+  metadata {
+    siteName
+    siteDescription
+    siteUrl
+  }
+}
+</static-query>
+
 <script>
 import IotServicesSupport from '~/components/services/IotServicesSupport'
 import IotServicesUseCase from '~/components/services/IotServicesUseCase'
@@ -94,7 +104,35 @@ export default {
   metaInfo () {
     return {
       title: 'IoT × サーバーレス / コンテナ開発導⼊サポート',
-      description: 'サーバーレスやコンテナなどのクラウドネイティブな技術を使⽤することで、システム運⽤のリソースやコスト最適化などが実現できます。サーバーレス/コンテナのノウハウをプロジェクトを通してお伝えし、開発の内製化までをサポートします。'
+      meta: [
+        {
+          description: 'サーバーレスやコンテナなどのクラウドネイティブな技術を使⽤することで、システム運⽤のリソースやコスト最適化などが実現できます。サーバーレス/コンテナのノウハウをプロジェクトを通してお伝えし、開発の内製化までをサポートします。'
+        },
+        { key: `og:locale`, property: `og:locale`, content: `ja_JP` },
+        { key: `og:type`, property: `og:type`, content: `website` },
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: 'https://serverless.co.jp/services/iot-serverless',
+        },
+        {
+          key: `og:site_name`,
+          property: `og:site_name`,
+          content: this.$static.metadata.siteName,
+        },
+        {
+          key: `og:image`,
+          property: `og:image`,
+          content:  `https://serverless.co.jp/iot-serverless-ogp.png`,
+        },
+        { name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        {
+          name: 'twitter:image',
+          content: `https://serverless.co.jp/iot-serverless-ogp.png`,
+        }
+      ],
     }
   },
   fetch({ store }) {
@@ -174,12 +212,23 @@ export default {
 .l-services-strength {
   position: relative;
 }
+@include PageHeader;
+
 .page-header-container {
 background:
   url('../../assets/images/bg/so-blue-texture.png'),
   url('../../assets/images/company-main-pattern.svg'),
   linear-gradient(45deg, $secondary 11.76%, $tertiary 88.21%);
+  .page-header-logo {
+    width: 50%;
+    right: 5%;
+  }
+  .page-header-logo-sp {
+    width: 80%;
+    // bottom: 0;
+    // position: absolute;
+  }
 }
-@include PageHeader;
+
 
 </style>

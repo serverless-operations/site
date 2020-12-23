@@ -15,7 +15,7 @@
       <v-container class="services-pricing-content-container">
 
         <v-row justify="center">
-          <v-col cols="11" md="9">
+          <v-col cols="11" sm="9" md="12" lg="9">
             <v-row justify="center">
 
               <v-col cols="12" md="6">
@@ -25,7 +25,7 @@
                     <span class="plan-number">Plan 01</span>
                     <h3>
                       Chat & Mail
-                      <span>チャットやメールでの<br>コンサルティングサポート</span>
+                      <span>チャットやメールでのコンサルティングサポート</span>
                     </h3>
                     <p class="pricing-desc">
                       AWSクラウド側の技術的なサポートをチャットやメールのみで⾏います。設計や実装でつまづいた時、⽅針のお悩みごとをサポートします。
@@ -57,7 +57,7 @@
                       <span>アーキテクチャ設計</span>
                     </h3>
                     <p class="pricing-desc">
-                      AWSクラウド側の実装をする上で必要な設計をサーバーレスオペレーションズで⾏います。お客さまの開発チームでも実装ができるような体制を整えます。
+                      AWSクラウド側の実装をする上で必要な設計を⾏います。お客さまの開発チームでも実装ができるような体制を整えます。
                     </p>
                     <p class="price-text">
                       1,000,000 <span>円/⽉</span> 
@@ -88,7 +88,7 @@
                       <span>PoC実装</span>
                     </h3>
                     <p class="pricing-desc">
-                      PoCの計画から実装までを行います。必要な成果に対しての計画づくりや、製品やシステムの簡易版プロトタイプを作成し、目的の効果が得られるか検証します。
+                      PoCの計画から実装までを行います。成果に対しての計画づくり、製品やシステムの簡易版プロトタイプを作成し、目的の効果が得られるか検証します。
                     </p>
                     <p class="price-text">
                       1,200,000 <span>円/⽉</span> 
@@ -271,11 +271,13 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   .service-card-header {
     padding: 40px 40px 24px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-shrink: 0;
     @include media-breakpoint-down(md) {
       padding: 20px 20px 12px 20px;
     }
