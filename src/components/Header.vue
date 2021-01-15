@@ -17,7 +17,7 @@
         <li><g-link to="/blog-archives">Blog</g-link></li>
         <li><g-link to="/services">Service</g-link></li>
         <li><g-link to="/about">About</g-link></li>
-        <li><g-link to="/news-archives">Event & News</g-link></li>
+        <li><g-link to="/news-archives">News</g-link></li>
         <li><g-link to="/contact">Contact</g-link></li>
       </ul>
     </nav>
@@ -85,8 +85,10 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  mix-blend-mode: difference;
 
   .header-nav__logo-block {
+    
     padding: 16px;
     .header-nav__logo-link {
       display: flex;
@@ -119,7 +121,9 @@ export default {
           font-family: $font-en-normal;
           transition: $soease;
           position: relative;
-          filter: invert(100%) grayscale(100%) contrast(100);
+          opacity: 0.9;
+          letter-spacing: 0.03rem;
+          
           @include media-breakpoint-down(sm) {
             font-size: 14px;
           }
@@ -136,9 +140,12 @@ export default {
             transition: $soease;
             transform: scaleX(0);
             transform-origin: left center;
+            opacity: 0.8;
           }
           &:hover {
+            opacity: 1;
             &::after {
+              opacity: 1;
               transform: scaleX(1);
             }
           }
