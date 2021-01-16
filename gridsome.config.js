@@ -24,7 +24,18 @@ module.exports = {
 
   templates: {
     WordPressCategory: '/category/:slug', // adds a route for the "category" post type (Optional)
-    WordPressPost: '/news/:id', // adds a route for the "post" post type (Optional)
+    WordPressPost: [ // adds a route for the "post" post type (Optional)
+      {
+        name: 'news',
+        path: '/news/:id',
+        component: './src/templates/WordPressPost.vue'
+      },
+      {
+        name: 'events',
+        path: '/events/:id',
+        component: './src/templates/WordPressPost.vue'
+      }
+    ],
     WordPressPostTag: '/tag/:slug', // adds a route for the "post_tag" post type (Optional)
     WordPressBlog: '/blog/:id',
     WordPressWorks: '/works/:id',
