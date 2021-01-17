@@ -2,35 +2,28 @@
   <div class="v-content">
     <div class="v-content__wrap">
 
-      <div class="container">
+      <h2>Works</h2>
 
-        <div class="row align-center justify-space-between">
-          
-          <div class="col-md-6 col-12">
-            <h2 class="d-flex flex-column justify-center align-center align-md-start p-top-news--title">Works<span>導入事例</span></h2>
-          </div>
+      <div class="p-works-contents row">
 
-          <div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
-            <g-link to="/works-archives">More Details</g-link>
-          </div>
+        <client-only>
+          <swiper class="swiper" :options="swiperOption" ref="swiper">
+            <swiper-slide v-for="{ node } in $static.works.edges" :key="node.id">
+              <div class="r-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-12">
+                <WorksCard :post="node" />
+              </div> 
+            </swiper-slide>
+            <div class="swiper-pagination"  slot="pagination"></div>
+            <div class="swiper-button-prev" slot="button-prev"></div>
+            <div class="swiper-button-next" slot="button-next"></div>
+          </swiper>
+        </client-only>
 
-        </div><!-- row -->
-      
-        <div class="p-works-contents row">
+      </div>
 
-          <client-only>
-            <swiper class="swiper" :options="swiperOption">
-              <swiper-slide v-for="{ node } in $static.works.edges" :key="node.id">
-                <div class="r-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-12">
-                  <WorksCard :post="node" />
-                </div> 
-              </swiper-slide>
-            </swiper>
-          </client-only>
-
-        </div>
-
-      </div><!-- container -->
+      <!--div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
+        <g-link to="/works-archives">More Details</g-link>
+      </div -->
 
     </div><!-- v-content__wrap -->
   </div><!-- v-content -->
@@ -38,7 +31,7 @@
 
 <static-query>
 query ($page: Int) {
-  works: allWordPressWorks (page: $page, perPage: 6, sortBy: "date", order: DESC) @paginate {
+  works: allWordPressWorks (page: $page, perPage: 6, sortBy: "date", order: ASC) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -91,18 +84,17 @@ export default {
   data() {
     return {
       swiperOption: {
-        spaceBetween: 1, //各スライドの余白
+        spaceBetween: 40, //各スライドの余白
         centeredSlides: true, //スライダーを真ん中に
         loop: false, //無限ループ
-        slidesPerView: 1,
+        slidesPerView: 1.1,
         freeMode: false,
         breakpoints: {
-          768: {
-            slidesPerView: 1,
-            centeredSlides: true, //スライダーを真ん中に
-            spaceBetween: 1,
-            freeMode: true,
-            centeredSlides: true
+          768: { // 768以上の時
+            slidesPerView: 1.7, // 横幅にたいして表示するスライドの数
+            spaceBetween: 60,
+            freeMode: false,
+            centeredSlides: false
           }
         }
       }
@@ -115,158 +107,48 @@ export default {
 
 <style lang="scss" scoped>
 .v-content {
+  padding: 120px 0 120px 0;
   width: 100vw;
-  background-image: url('../assets/images/top-news-contact-bk.svg');
-  background-position: top 420px;
-  background-size: 300%;
-  background-color: $light-gray-2;
   position: relative;
   z-index: 1;
-  @include media-breakpoint-up(md) {
-    background-position: center 420px;
-    background-size: 100%;
-  }
-  @include media-breakpoint-up(lg) {
-    background-position: center 350px;
-  }
   .p-works-contents {
-    padding-bottom: 120px;
+    padding: 120px;
     overflow: hidden;
     @include media-breakpoint-up(md) {
-      padding-bottom: 60px;
+      padding: 60px;
       overflow: scroll;
     }
   }
   h2 {
-    margin-top: 24px;
-    font-size: 4rem;
-    font-family: $font-en-normal;
-    font-weight: normal;
-    line-height: 1.25;
-    @include media-breakpoint-up(md) {
-      margin-top: 88px;
-    }
-    span {
-      display: block;
-      font-size: 1rem;
-      margin-top: 8px;
-      font-weight: normal;
-      font-family: $font-jp-regular;
-    }
-  }
-  .p-top-news {
-    &--title {
-      color: $primary;
-    }
-    &--more {
-      text-align: right;
-      z-index: 3;
-      position: relative;
-      a {
-        color: $primary;
-        font-family: $font-en-normal;
-        font-size: 1rem;
-        text-decoration: none;
-        display: inline-block;
-        position: relative;
-        &::before {
-          content: '';
-          background-image: url('../assets/images/top-news-more-object.svg');
-          display: inline-block;
-          height: 16px;
-          width: 16px;
-          position: absolute;
-          top: 4px;
-          left: -24px;
-        }
-      }
-    }
-  }
-}
-.p-blog-header {
-  background: url('../assets/images/privacy-policy-header-bg-img.svg') no-repeat,
-    linear-gradient(206.56deg, $tertiary -0.06%, $secondary 100.25%);
-  background-size: cover;
-  font-family: $font-en-normal;
-  height: auto;
-  position: relative;
-  overflow: hidden;
-  @include media-breakpoint-up(lg) {
-    height: auto;
-    background: url('../assets/images/privacy-policy-header-bg-img.svg') no-repeat,
-      linear-gradient(206.56deg, $tertiary -0.06%, $secondary 100.25%);
-    background-size: cover;
-  }
-  &:before {
-    content: '';
-    display: block;
-    height: 78px;
-    width: 78px;
-    background: $white;
-    transform: rotate(45deg);
-    position: absolute;
-    bottom: -39px;
-    left: -39px;
-    @include media-breakpoint-up(md) {
-      height: 132px;
-      width: 132px;
-      bottom: -66px;
-      left: -66px;
-    }
-  }
-  // ページタイトル
-  &__page-title {
-    font-size: 2rem;
+    font-size: 200px;
     color: $white;
     font-family: $font-en-normal;
-    padding: 56px 16px 48px 64px;
-    @include media-breakpoint-up(md) {
-      font-size: 4rem;
-      padding: 96px 100px 88px 150px;
-    }
-    @include media-breakpoint-up(lg) {
-      font-size: 5rem;
-      padding: 128px 80px 132px 310px;
-    }
-  }
-  &__page-title-ja {
-    display: block;
-    font-size: 1rem;
-    line-height: 42px;
-    margin-bottom: 0;
-    @include media-breakpoint-up(md) {
-      font-size: 1.5rem;
+    z-index: 0;
+    line-height: 0.8;
+    text-align: center;
+    padding: 0;
+    background:
+      linear-gradient(180deg, #02007C 0%, rgba(2, 0, 124, 0) 100%);
+    background-clip: text; //テキストでくり抜く
+    -webkit-text-fill-color: transparent; //くり抜いた部分は背景を表示
+    @include media-breakpoint-down(md) {
+      font-size: 96px;
     }
   }
-} // p-news-header
-
-.p-blog-contents {
-  padding: 0 0 180px 0;
 }
 
-.serverless-bg {
-  display: block;
-  background-color: #fff;
-  width: 100vw;
-  background-image: url(/assets/img/top-service-clients-bk.svg);
-  background-size: contain;
-  background-position: bottom 32px center;
-  height: 800px;
-  position: absolute;
-  bottom: 0;
-  z-index: 0;
-  opacity: 0;
-}
 
 /deep/ .swiper-wrapper {
   display: flex;
   .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: top;
     @include media-breakpoint-up(md) {
       width: 100%;
       max-width: 1200px;
     }
   }
 }
-
 
 </style>
