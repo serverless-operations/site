@@ -1,5 +1,6 @@
 <template>
   <header class="header-nav">
+
     <div class="header-nav__logo-block">
       <g-link to="/" class="header-nav__logo-link">
         <img
@@ -9,7 +10,19 @@
         />
       </g-link>
     </div>
-    <div id="app" class="header-nav__toggler-block">
+
+    <nav>
+      <ul>
+        <li><g-link to="/works-archives">Works</g-link></li>
+        <li><g-link to="/blog-archives">Blog</g-link></li>
+        <li><g-link to="/services">Service</g-link></li>
+        <li><g-link to="/about">About</g-link></li>
+        <li><g-link to="/news-archives">News</g-link></li>
+        <li><g-link to="/contact">Contact</g-link></li>
+      </ul>
+    </nav>
+
+    <div id="app" class="header-nav__toggler-block d-block d-md-none">
       <button
         id="btn"
         class="header-nav__toggler-button btn"
@@ -65,41 +78,80 @@ export default {
 .header-nav {
   z-index: 8;
   position: fixed;
-  left: 0;
   top: 0;
   width: 100%;
-  height: 56px;
+  max-width: 1920px;
   background-color: transparent;
   display: flex;
-  flex-direction: row;
-  @media screen and (max-width: 600px) {
-    height: 48px;
-  }
+  justify-content: space-between;
+  align-items: center;
+  mix-blend-mode: exclusion;
 
-  //ロゴ
-  &__logo-block {
-    margin-left: 32px;
-    // display: flex;
-    @media screen and (max-width: 600px) {
-      margin-left: 12px;
-      // max-height: 24px;
-      // width: auto;
+  .header-nav__logo-block {
+    
+    padding: 16px;
+    .header-nav__logo-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0.8;
     }
   }
-  //ロゴのリンク部分
-  &__logo-link {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    width: auto;
-  }
-  &__logo {
-    max-height: 24px;
-    width: auto;
-    @include media-breakpoint-up(md) {
-      margin-top: 12px;
-      max-height: 40px;
-      width: auto;
+
+  // 
+  nav {
+    margin-right: 24px;
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+    // display: flex;
+    ul {
+      display: flex;
+      li {
+        list-style: none;
+        margin-right: 32px;
+        @include media-breakpoint-down(md) {
+          margin-right: 24px;
+        }
+        @include media-breakpoint-down(sm) {
+          margin-right: 16px;
+        }
+        a {
+          color: #fff300;
+          text-decoration: none;
+          font-family: $font-en-normal;
+          transition: $soease;
+          position: relative;
+          opacity: 0.9;
+          letter-spacing: 0.03rem;
+          
+          @include media-breakpoint-down(sm) {
+            font-size: 14px;
+          }
+          &::after {
+            display: block;
+            width: 100%;
+            height: 1px;
+            content: '';
+            color: #fff300;
+            background-color: #fff300;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: $soease;
+            transform: scaleX(0);
+            transform-origin: left center;
+            opacity: 0.8;
+          }
+          &:hover {
+            opacity: 1;
+            &::after {
+              opacity: 1;
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
     }
   }
 
@@ -152,19 +204,6 @@ export default {
       width: 4px;
       height: 1.5px;
     }
-    // &:before {
-    //   content: '';
-    //   position: absolute;
-    //   background: #ffe;
-    //   transform: skew(40deg);
-    //   height: 2px;
-    //   width: 4px;
-    //   left: 5px;
-    //   @media screen and (max-width: 600px) {
-    //     left: 3px;
-    //     height: 1.5px;
-    //   }
-    // }
   }
   &__toggler-middle {
     transition: all 0.2s ease;
@@ -179,19 +218,6 @@ export default {
       height: 1.5px;
       width: 12px;
     }
-    // &:before {
-    //   content: '';
-    //   position: absolute;
-    //   background: #ffe;
-    //   transform: skew(40deg);
-    //   height: 2px;
-    //   width: 4px;
-    //   left: 16px;
-    //   @media screen and (max-width: 600px) {
-    //     left: 11px;
-    //     height: 1.5px;
-    //   }
-    // }
   }
   &__toggler-bottom {
     transition: all 0.2s ease;
@@ -206,19 +232,6 @@ export default {
       height: 1.5px;
       width: 22px;
     }
-    // &:before {
-    //   content: '';
-    //   position: absolute;
-    //   background: #ffe;
-    //   transform: skew(40deg);
-    //   height: 2px;
-    //   width: 4px;
-    //   left: 28px;
-    //   @media screen and (max-width: 600px) {
-    //     left: 20px;
-    //     height: 1.5px;
-    //   }
-    // }
   }
 }
 
@@ -257,15 +270,7 @@ button {
   font-size: inherit;
 }
 
-// .btn {
-//   // all: initial;
-//   margin: 1em;
-//   display: inline-block;
-// }
-
 .btn__content {
-  // background: orange;
-  // padding: 1em;
   cursor: pointer;
   display: inline-block;
 }
@@ -281,15 +286,6 @@ button {
     width: 24px;
   }
 }
-
-/* All the states on the inner element */
-// .btn:hover > .btn__content {
-//   background: salmon;
-// }
-
-// .btn:active > .btn__content {
-//   background: darkorange;
-// }
 
 .btn:focus > .btn__content {
   box-shadow: 0 0 2px 2px #5e9ed6;
