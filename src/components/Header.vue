@@ -85,7 +85,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  mix-blend-mode: difference;
+  mix-blend-mode: exclusion;
 
   .header-nav__logo-block {
     
@@ -94,6 +94,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+      opacity: 0.8;
     }
   }
 
@@ -116,7 +117,7 @@ export default {
           margin-right: 16px;
         }
         a {
-          color: #fff;
+          color: #fff300;
           text-decoration: none;
           font-family: $font-en-normal;
           transition: $soease;
@@ -132,8 +133,8 @@ export default {
             width: 100%;
             height: 1px;
             content: '';
-            color: #fff;
-            background-color: #fff;
+            color: #fff300;
+            background-color: #fff300;
             position: absolute;
             left: 0;
             bottom: -8px;
