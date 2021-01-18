@@ -52,7 +52,7 @@ export default {
     // メインイメージ
     .works-image {
       width: 100%;
-      height: 240px;
+      height: 320px;
       object-fit: cover;
       border-radius: 8px;
       // background: linear-gradient(180deg, rgba(33, 33, 33, 0) 0%, #54585A 100%);

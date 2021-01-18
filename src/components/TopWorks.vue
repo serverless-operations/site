@@ -4,16 +4,14 @@
 
       <h2>Works</h2>
 
-      <div class="p-works-contents row">
+      <div class="column justify-center align-center container">
 
         <client-only>
-          <swiper class="swiper" :options="swiperOption" ref="swiper">
+          <swiper class="swiper" :options="swiperOption" ref="mySwiper">
             <swiper-slide v-for="{ node } in $static.works.edges" :key="node.id">
-              <div class="r-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-12">
-                <WorksCard :post="node" />
-              </div> 
+              <WorksCard :post="node" />
             </swiper-slide>
-            <div class="swiper-pagination"  slot="pagination"></div>
+            <div class="swiper-pagination" slot="pagination"></div>
             <div class="swiper-button-prev" slot="button-prev"></div>
             <div class="swiper-button-next" slot="button-next"></div>
           </swiper>
@@ -75,6 +73,7 @@ query ($page: Int) {
 <script>
 import WorksCard from '~/components/WorksCard.vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
 
 export default {
   components: {
@@ -84,21 +83,38 @@ export default {
   data() {
     return {
       swiperOption: {
-        spaceBetween: 40, //各スライドの余白
-        centeredSlides: true, //スライダーを真ん中に
-        loop: false, //無限ループ
-        slidesPerView: 1.1,
+        spaceBetween: 0, //各スライドの余白
+        centeredSlides: false, //スライダーを真ん中に
+        loop: true, //無限ループ
+        slidesPerView: 1.2,
         freeMode: false,
-        breakpoints: {
-          768: { // 768以上の時
-            slidesPerView: 1.7, // 横幅にたいして表示するスライドの数
-            spaceBetween: 60,
-            freeMode: false,
-            centeredSlides: false
-          }
-        }
+        autoplay: {
+          delay: 1000,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        // breakpoints: {
+        //   768: { // 768以下の時
+        //     slidesPerView: 1.1, // 横幅にたいして表示するスライドの数
+        //     spaceBetween: 10,
+        //     freeMode: false,
+        //     loop: true, //無限ループ
+        //     centeredSlides: true
+        //   }
+        // }
       }
     }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.$swiper
+    }
+  },
+  mounted() {
+    console.log('Current Swiper instance object', this.swiper)
+    this.swiper.slideTo(1, 1000, false)
   }
   // props: ['blog']
 }
@@ -108,22 +124,15 @@ export default {
 <style lang="scss" scoped>
 .v-content {
   padding: 120px 0 120px 0;
-  width: 100vw;
+  width: 100%;
   position: relative;
   z-index: 1;
-  .p-works-contents {
-    padding: 120px;
-    overflow: hidden;
-    @include media-breakpoint-up(md) {
-      padding: 60px;
-      overflow: scroll;
-    }
-  }
+  
   h2 {
     font-size: 200px;
     color: $white;
     font-family: $font-en-normal;
-    z-index: 0;
+    z-index: 5;
     line-height: 0.8;
     text-align: center;
     padding: 0;
@@ -137,7 +146,9 @@ export default {
   }
 }
 
-
+/deep/ .swiper-container {
+  padding: 120px 0;
+}
 /deep/ .swiper-wrapper {
   display: flex;
   .swiper-slide {
