@@ -72,13 +72,17 @@ query ($page: Int) {
 
 <script>
 import WorksCard from '~/components/WorksCard.vue'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'
 
 export default {
   components: {
     WorksCard,
-    VueAwesomeSwiper
+    Swiper,
+    SwiperSlide
+  },
+  directives: {
+    swiper: directive
   },
   data() {
     return {
