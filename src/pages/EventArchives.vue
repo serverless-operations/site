@@ -5,8 +5,8 @@
   
       <div class="p-news-header">
         <h1 class="p-news-header__page-title">
-          News
-          <span class="p-news-header__page-title-ja">お知らせ</span>
+          Event & Seminar
+          <span class="p-news-header__page-title-ja">イベント・セミナー情報</span>
         </h1>
       </div>
 
@@ -14,7 +14,7 @@
   
         <div class="p-news-contents row">
           <div v-for="{ node } in $page.allWordPressPost.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-3 col-6">
-            <PostNewsArchives :post="node" v-if="node.categories.find(c => c.slug === 'news')" />
+            <PostEventArchives :post="node" v-if="node.categories.find(c => c.slug === 'events')" />
           </div>
         </div>
 
@@ -40,7 +40,7 @@ query ($page: Int) {
         id
         title
         date (format: "YYYY.MM.DD")
-        path (to: "news")
+        path (to:"events")
         excerpt
         featuredMedia {
           sourceUrl
@@ -66,18 +66,18 @@ query ($page: Int) {
 
 <script>
 import { Pager } from 'gridsome'
-import PostNewsArchives from '~/components/PostNewsArchives.vue'
+import PostEventArchives from '~/components/PostEventArchives.vue'
 
 export default {
   components: {
     Pager,
-    PostNewsArchives
+    PostEventArchives
   },
   metaInfo () {
     return {
-      title: `News ${this.$page.allWordPressPost.pageInfo.currentPage} / ${this.$page.allWordPressPost.pageInfo.totalPages}`
+      title: `Event & Seminar ${this.$page.allWordPressPost.pageInfo.currentPage} / ${this.$page.allWordPressPost.pageInfo.totalPages}`
     }
-  }
+  },
 }
 </script>
 
