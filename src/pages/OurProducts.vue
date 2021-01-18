@@ -57,18 +57,15 @@
               <div class="cards-container">
                 <v-row>
                   <v-col class="d-flex" cols="12" md="6">
-                    <img class="cards-img" src="@/assets/images/our-products/jeffy-logo.svg" alt="Jeffy ロゴマーク">
+                    <img class="cards-img" src="@/assets/images/our-products/costless-logo.svg" alt="Costless ロゴマーク">
                   </v-col>
                   <v-col cols="12" md="6">
-                    <h3 class="cards-title jeffy-title">Jeffy</h3>
-                    <div class="github-buttons">
-                      <gh-btns-star slug="serverless-operations/jeffy" show-count></gh-btns-star>
-                    </div>
+                    <h3 class="cards-title costless-title">Costless</h3>
                     <p class="cards-text">
-                      AWS LambdaのPython向けのサーバーレスアプリケーションフレームワーク。Lambdaをよりシンプルに実装するためのツールセットを提供しています。
+                      サーバーレスのコストをもっと分かりやすくするSaaS。AWSのサーバーレスにおけるコストの詳細を可視化し、継続的なコスト最適化・削減を支援するためのサービスです。
                     </p>
-                    <a class="github-repository-link primary-button" href="https://github.com/serverless-operations/jeffy" v-ripple>
-                      <span>Github</span>
+                    <a class="primary-button" href="https://costless.io/ja" v-ripple>
+                      Costless Website
                     </a>
                   </v-col>
                 </v-row>
@@ -77,6 +74,23 @@
             </div>
 
             <v-row>
+              <v-col class="d-flex" cols="12" md="6">
+                <div class="cards d-flex">
+                  <div class="cards-container">
+                    <h3 class="cards-title title-min-height"><br>Jeffy </h3>
+                    <div class="github-buttons">
+                      <gh-btns-star slug="serverless-operations/jeffy" show-count></gh-btns-star>
+                    </div>
+                    <p class="cards-text">
+                      AWS LambdaのPython向けのサーバーレスアプリケーションフレームワーク。Lambdaをよりシンプルに実装するためのツールセットを提供しています。
+                    </p>
+                    <a class="github-repository-link primary-button" href="https://github.com/serverless-operations/jeffy">
+                      <span>Github</span>
+                    </a>
+                  </div>
+                  <div class="blue-drop-shadow"></div>
+                </div>
+              </v-col>
               <v-col class="d-flex" cols="12" md="6">
                 <div class="cards d-flex">
                   <div class="cards-container">
@@ -320,6 +334,9 @@ background:
       @include media-breakpoint-up(md) {
         min-height: 120px;
         &.jeffy-title {
+          min-height: auto;
+        }
+        &.costless-title {
           min-height: auto;
         }
       }
