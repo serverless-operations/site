@@ -7,7 +7,7 @@
       <div class="column justify-center align-center container">
 
         <client-only>
-          <swiper class="swiper" :options="swiperOption" ref="mySwiper">
+          <swiper class="swiper" :options="swiperOptions" ref="mySwiper">
             <swiper-slide v-for="{ node } in $static.works.edges" :key="node.id">
               <WorksCard :post="node" />
             </swiper-slide>
@@ -86,7 +86,7 @@ export default {
   },
   data() {
     return {
-      swiperOption: {
+      swiperOptions: {
         spaceBetween: 0, //各スライドの余白
         centeredSlides: false, //スライダーを真ん中に
         loop: true, //無限ループ
@@ -118,7 +118,7 @@ export default {
   },
   mounted() {
     console.log('Current Swiper instance object', this.swiper)
-    this.swiper.slideTo(1, 1000, false)
+    this.swiper.slideTo(3, 1000, false)
   }
   // props: ['blog']
 }
