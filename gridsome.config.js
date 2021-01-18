@@ -94,7 +94,7 @@ module.exports = {
   ],
 
   css: [
-    'swiper/swiper-bundle.css'
+    // 'swiper/swiper-bundle.css'
   ],
   
   build: {
