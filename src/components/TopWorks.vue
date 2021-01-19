@@ -131,6 +131,10 @@ export default {
   // props: ['blog']
 }
 
+if (process.client) {
+  require('swiper/swiper-bundle.css');
+}
+
 </script>
 
 <style lang="scss" scoped>
