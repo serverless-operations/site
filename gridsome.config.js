@@ -7,6 +7,8 @@ function addStyleResource (rule) {
       patterns: [
         path.resolve(__dirname, './src/assets/scss/style.scss'),
         path.resolve(__dirname, './src/assets/scss/*.scss'),
+        path.resolve(__dirname, './src/assets/css/*.css'),
+        path.resolve(__dirname, 'swiper/swiper-bundle.css'),
       ],
     })
 }
