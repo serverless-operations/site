@@ -11,9 +11,9 @@
             <swiper-slide v-for="{ node } in $static.works.edges" :key="node.id">
               <WorksCard :post="node" />
             </swiper-slide>
-            <div class="swiper-pagination" slot="pagination"></div>
+            <!--div class="swiper-pagination" slot="pagination"></div>
             <div class="swiper-button-prev" slot="button-prev"></div>
-            <div class="swiper-button-next" slot="button-next"></div>
+            <div class="swiper-button-next" slot="button-next"></div -->
           </swiper>
         </client-only>
 
@@ -72,7 +72,7 @@ query ($page: Int) {
 
 <script>
 import WorksCard from '~/components/WorksCard.vue'
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import { Swiper, SwiperSlide, directive, Navigation, Pagination, Autoplay } from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'
 
 export default {
@@ -87,9 +87,9 @@ export default {
   data() {
     return {
       swiperOptions: {
-        spaceBetween: 0, //各スライドの余白
+        spaceBetween: 20, //各スライドの余白
         centeredSlides: false, //スライダーを真ん中に
-        loop: true, //無限ループ
+        loop: false, //無限ループ
         slidesPerView: 1.2,
         freeMode: false,
         autoplay: {
@@ -97,7 +97,15 @@ export default {
         },
         pagination: {
           el: '.swiper-pagination',
-          clickable: true
+          // clickable: true
+        },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
         // breakpoints: {
         //   768: { // 768以下の時
@@ -164,7 +172,7 @@ export default {
     align-items: top;
     @include media-breakpoint-up(md) {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1024px;
     }
   }
 }

@@ -88,7 +88,7 @@ module.exports = {
     }, // sitemap
     { 
       use: 'vue-awesome-swiper',
-      ssr: false,
+      // ssr: false,
       mode: 'client'
     }
   ],
