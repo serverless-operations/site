@@ -86,6 +86,7 @@ module.exports = {
         }
       }
     }, // sitemap
+    // Vue Awesome Swiper
     { 
       use: 'vue-awesome-swiper',
       ssr: false,
