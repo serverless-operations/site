@@ -10,7 +10,7 @@ import '~/assets/css/prism-okaidia.css'
 import '~/assets/js/chatplus.js'
 import Vuelidate from 'vuelidate'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import 'swiper/swiper-bundle.css'
+import 'swiper/swiper-bundle.min.css'
 
 import DefaultLayout from '~/layouts/Default.vue'
 
