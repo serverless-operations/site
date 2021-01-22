@@ -71,8 +71,8 @@ export default {
       top: -32px;
       border-radius: 8px;
       padding: 16px;
-      width: 160px;
-      height: 160px;
+      width: 128px;
+      height: 128px;
       z-index: 2;
       display: flex;
       justify-content: center;
