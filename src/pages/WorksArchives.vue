@@ -10,16 +10,10 @@
         </h1>
       </div>
 
-      <div class="container">
-  
-        <div class="p-works-contents row">
-          <div v-for="{ node } in $page.allWordPressWorks.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-12">
-            <WorksCard :post="node" />
-          </div>
+      <div class="column justify-center align-center container">
+        <div v-for="{ node } in $page.allWordPressWorks.edges" :key="node.id" class="justify-center align-center container column">
+          <WorksCard :post="node" />
         </div>
-
-        <Pager :info="$page.allWordPressWorks.pageInfo" />
-
       </div><!-- container -->
 
       <div class="serverless-bg"></div>

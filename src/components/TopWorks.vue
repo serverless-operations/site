@@ -87,7 +87,7 @@ export default {
   data() {
     return {
       swiperOptions: {
-        spaceBetween: 20, //各スライドの余白
+        spaceBetween: 24, //各スライドの余白
         centeredSlides: false, //スライダーを真ん中に
         loop: false, //無限ループ
         slidesPerView: 1.2,
@@ -135,7 +135,7 @@ export default {
 
 <style lang="scss" scoped>
 .v-content {
-  padding: 120px 0 120px 0;
+  padding: 56px 0 120px 0;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -162,7 +162,7 @@ export default {
 }
 
 /deep/ .swiper-container {
-  padding: 120px 0;
+  padding: 60px 0;
 }
 /deep/ .swiper-wrapper {
   display: flex;
@@ -170,6 +170,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: top;
+    margin-left: 32px;
     @include media-breakpoint-up(md) {
       width: 100%;
       max-width: 1024px;
