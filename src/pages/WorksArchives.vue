@@ -12,11 +12,9 @@
 
       <div class="column justify-center align-center container">
         <div v-for="{ node } in $page.allWordPressWorks.edges" :key="node.id" class="justify-center align-center container column">
-          <WorksCard :post="node" />
+          <WorksArchivesCard :post="node" />
         </div>
       </div><!-- container -->
-
-      <div class="serverless-bg"></div>
 
     </div><!-- v-content__wrap -->
 
@@ -72,12 +70,12 @@ query ($page: Int) {
 
 <script>
 import { Pager } from 'gridsome'
-import WorksCard from '~/components/WorksCard.vue'
+import WorksArchivesCard from '~/components/WorksArchivesCard.vue'
 
 export default {
   components: {
     Pager,
-    WorksCard
+    WorksArchivesCard
   },
   metaInfo () {
     return {
