@@ -1,5 +1,8 @@
 <template>
-  <header class="header-nav">
+  <header 
+    class="header-nav"
+    v-bind:class="{'is-active': isActive}"
+  >
 
     <div class="header-nav__logo-block">
       <g-link to="/" class="header-nav__logo-link">
@@ -86,6 +89,10 @@ export default {
   justify-content: space-between;
   align-items: center;
   mix-blend-mode: exclusion;
+
+  &.is-active {
+    mix-blend-mode: initial;
+  }
 
   .header-nav__logo-block {
     

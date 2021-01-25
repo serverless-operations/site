@@ -10,6 +10,8 @@ import '~/assets/css/prism-okaidia.css'
 import '~/assets/js/chatplus.js'
 import Vuelidate from 'vuelidate'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import '~/assets/css/swiper-bundle.min.css'
+// import 'swiper/swiper-bundle.min.css'
 
 import DefaultLayout from '~/layouts/Default.vue'
 
@@ -30,6 +32,8 @@ export default function (Vue, { router, head, isClient, appOptions }) {
     rel: 'stylesheet',
     href: 'https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css',
   })
+
+  head.htmlAttrs = { lang: 'ja' }
 
   //const opts = { ... } //opts includes, vuetify themes, icons, etc.
   Vue.use(Vuetify)

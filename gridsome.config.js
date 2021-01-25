@@ -86,6 +86,7 @@ module.exports = {
         }
       }
     }, // sitemap
+    // Vue Awesome Swiper
     { 
       use: 'vue-awesome-swiper',
       ssr: false,
@@ -94,7 +95,7 @@ module.exports = {
   ],
 
   css: [
-    'swiper/swiper.scss'
+    'swiper/swiper-bundle.css'
   ],
   
   build: {

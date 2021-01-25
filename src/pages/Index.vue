@@ -2,8 +2,11 @@
   <Layout >
     <div class="column justify-center align-center">
 
-      <top-key-visual />
-      <top-works />
+      <div class="top-blue-bg-container">
+        <top-key-visual />
+        <top-works />
+      </div>
+
       <top-blog />
       <top-news-contact />
       <top-partners />
@@ -76,3 +79,16 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.top-blue-bg-container {
+  background: 
+  url('../assets/images/bg/so-blue-texture.png'),
+  linear-gradient(45deg, $secondary 11.76%, $tertiary 88.21%);
+  background-position: center, center;
+  background-repeat: repeat, no-repeat;
+  background-size: 70% 70%, auto;
+  overflow: hidden;
+}
+
+</style>
