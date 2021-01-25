@@ -43,8 +43,12 @@ export default {
 <style lang="scss" scoped>
 .works-card {
   position: relative;
-  margin: 64px auto;
-  width: 70%;
+  margin: 32px 2% 32px 0;
+  width: 96%;
+  @include media-breakpoint-up(md) {
+    width: 70%;
+    margin: 64px auto;
+  }
   .works-content-link {
     width: 100%;
     max-width: 848px;
