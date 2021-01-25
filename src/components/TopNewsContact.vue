@@ -18,8 +18,8 @@
 
         <div class="p-news-contents row">
         
-            <div v-for="{ node } in $page.allWordPressPost.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-3 col-6">
-              <Post :post="node" />
+            <div v-for="{ node } in $static.allWordPressPost.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-3 col-6">
+              <Post :post="node" v-if="node.categories.find(c => c.slug === 'news')" />
             </div>
           <!-- Pager :info="$page.allWordPressPost.pageInfo"/ -->
 
@@ -50,7 +50,7 @@ query ($page: Int) {
         id
         title
         date (format: "YYYY.MM.DD")
-        path
+        path (to: "news")
         excerpt
         featuredMedia {
           sourceUrl
@@ -63,6 +63,7 @@ query ($page: Int) {
           id
           title
           path
+          slug
         }
       }
     }
