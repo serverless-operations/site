@@ -29,7 +29,7 @@
 
 <static-query>
 query ($page: Int) {
-  works: allWordPressWorks (page: $page, perPage: 6, sortBy: "date", order: ASC) @paginate {
+  works: allWordPressWorks (page: $page, perPage: 6, sortBy: "date", order: DESC) @paginate {
     pageInfo {
       totalPages
       currentPage
