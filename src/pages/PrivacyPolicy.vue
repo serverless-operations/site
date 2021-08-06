@@ -29,7 +29,7 @@
             <div class="col-md-7 col-lg-6 col-11">
               <div class="p-privacy-policy-contents__block">
                 <h2 class="p-privacy-policy-contents__contents-header">1.個人情報について</h2>
-                <p class="p-privacy-policy-contents__contents-paragraph">合同会社Serverless Operationsは、以下のとおり個人情報保護方針を定め、個人情報保護の仕組みを構築し、全従業員に個人情報保護の重要性の認識と取組みを徹底させることにより、個人情報の保護を推進致します。</p>
+                <p class="p-privacy-policy-contents__contents-paragraph">株式会社Serverless Operationsは、以下のとおり個人情報保護方針を定め、個人情報保護の仕組みを構築し、全従業員に個人情報保護の重要性の認識と取組みを徹底させることにより、個人情報の保護を推進致します。</p>
               </div>
               <div class="p-privacy-policy-contents__block">
                 <h2 class="p-privacy-policy-contents__contents-header">2.個人情報の定義</h2>
@@ -64,7 +64,7 @@
                 <h2 class="p-privacy-policy-contents__contents-header">8.お問い合わせ</h2>
                 <p class="p-privacy-policy-contents__contents-paragraph mb-7">当社の個人情報の取扱に関するお問い合せは下記までご連絡ください。</p>
                 <address class="p-privacy-policy-contents__contents-address">
-                  合同会社Serverless Operations<br>mail：info@serverless.co.jp
+                  株式会社Serverless Operations<br>mail：info@serverless.co.jp
                 </address>
               </div>
             </div>
