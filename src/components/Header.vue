@@ -19,6 +19,7 @@
         <li><g-link to="/works-archives">Works</g-link></li>
         <li><g-link to="/blog-archives">Blog</g-link></li>
         <li><g-link to="/services">Service</g-link></li>
+        <li><g-link to="/our-products">Products</g-link></li>
         <li><g-link to="/about">About</g-link></li>
         <li><g-link to="/news-archives">News</g-link></li>
         <li><g-link to="/contact">Contact</g-link></li>
