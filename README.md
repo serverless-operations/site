@@ -35,5 +35,4 @@ module.exports = {
 See all [options](https://gridsome.org/plugins/@gridsome/source-wordpress).
 
 ## Included templates
-
 This starter includes basic templates for categories, tags and posts.
