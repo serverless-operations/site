@@ -1,9 +1,8 @@
 <template>
   <div class="works-card">
-
     <g-link :to="post.path" class="works-content-link">
-
-      <g-image class="works-image object-cover h-64 w-full c-card-border"
+      <g-image
+        class="works-image object-cover h-64 w-full c-card-border"
         v-if="post.featuredMedia"
         :src="post.featuredMedia.sourceUrl"
         :width="`${post.featuredMedia.mediaDetails.width}`"
@@ -11,23 +10,24 @@
       />
 
       <div class="company-logo-container">
-        <g-image :src="post.acf.companyLogo.sourceUrl" :alt="post.acf.companyLogo.altText" class="company-logo"/>
+        <g-image
+          :src="post.acf.companyLogo.sourceUrl"
+          :alt="post.acf.companyLogo.altText"
+          class="company-logo"
+        />
       </div>
 
       <div class="works-card-text-contaier">
-        <div class="works-date" :datetime="post.date">{{post.date}}</div>
+        <div class="works-date" :datetime="post.date">{{ post.date }}</div>
         <div class="works-tags-container">
-          <div class="works-tags" v-for="tags in post.tags" :key="tags.id" >
+          <div class="works-tags" v-for="tags in post.tags" :key="tags.id">
             <span>{{ tags.title }}</span>
           </div>
         </div>
         <h3 v-html="post.title" class="works-card-title" />
       </div>
-
     </g-link>
-
   </div>
-
 </template>
 
 <script>
@@ -35,15 +35,16 @@ export default {
   props: {
     post: {
       type: Object,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .works-card {
   position: relative;
+  padding-left: 8px;
   .works-content-link {
     width: 100%;
     max-width: 848px;
@@ -53,11 +54,15 @@ export default {
     z-index: 0;
 
     &::after {
-      content:'';
+      content: '';
       width: 100%;
       height: 100%;
       display: block;
-      background: linear-gradient(180deg, rgba(33, 33, 33, 0) 47.96%, #54585A 100%);
+      background: linear-gradient(
+        180deg,
+        rgba(33, 33, 33, 0) 47.96%,
+        #54585a 100%
+      );
       mix-blend-mode: multiply;
       position: absolute;
       z-index: 2;
@@ -73,7 +78,7 @@ export default {
       object-fit: cover;
       border-radius: 8px;
       position: relative;
-      
+
       @include media-breakpoint-up(md) {
         width: 100%;
         height: 480px;
@@ -127,7 +132,7 @@ export default {
         font-size: 10px;
         font-family: $font-en-normal;
         @include media-breakpoint-up(md) {
-          font-size: 12px;  
+          font-size: 12px;
         }
       }
       .works-tags-container {
@@ -145,7 +150,7 @@ export default {
           display: block;
           padding: 4px 12px 4px 20px;
           background: rgba($tertiary, 0.7);
-          margin: 0 4px 4px ;
+          margin: 0 4px 4px;
           border-radius: 200px;
           font-size: 10px;
           position: relative;
@@ -154,7 +159,7 @@ export default {
           @include media-breakpoint-up(md) {
             padding: 4px 12px 4px 20px;
             margin: 0 8px 8px;
-            font-size: 12px
+            font-size: 12px;
           }
           &::before {
             content: '#';
@@ -167,9 +172,9 @@ export default {
       }
       .works-card-title {
         font-size: 14px;
-         @include media-breakpoint-up(md) {
-           font-size: 1.17em;
-         }
+        @include media-breakpoint-up(md) {
+          font-size: 1.17em;
+        }
       }
     }
   }

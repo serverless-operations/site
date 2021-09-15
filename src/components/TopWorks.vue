@@ -1,14 +1,15 @@
 <template>
   <div class="v-content">
     <div class="v-content__wrap">
-
       <h2>Works</h2>
 
       <div class="column justify-center align-center container">
-
         <client-only>
           <swiper class="swiper" :options="swiperOptions" ref="mySwiper">
-            <swiper-slide v-for="{ node } in $static.works.edges" :key="node.id">
+            <swiper-slide
+              v-for="{ node } in $static.works.edges"
+              :key="node.id"
+            >
               <WorksCard :post="node" />
             </swiper-slide>
             <!--div class="swiper-pagination" slot="pagination"></div>
@@ -16,15 +17,15 @@
             <div class="swiper-button-next" slot="button-next"></div -->
           </swiper>
         </client-only>
-
       </div>
 
       <!--div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
         <g-link to="/works-archives">More Details</g-link>
       </div -->
-
-    </div><!-- v-content__wrap -->
-  </div><!-- v-content -->
+    </div>
+    <!-- v-content__wrap -->
+  </div>
+  <!-- v-content -->
 </template>
 
 <static-query>
@@ -71,66 +72,83 @@ query ($page: Int) {
 </static-query>
 
 <script>
-import WorksCard from '~/components/WorksCard.vue'
-import { Swiper, SwiperSlide, directive, Navigation, Pagination, Autoplay } from 'vue-awesome-swiper'
-// import 'swiper/swiper-bundle.css'
+import WorksCard from '~/components/WorksCard.vue';
+import { Swiper as SwiperClass, Autoplay } from 'swiper/core';
+import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter';
 
+// Swiper modules
+SwiperClass.use([Autoplay]);
+const { Swiper, SwiperSlide } = getAwesomeSwiper(SwiperClass);
 export default {
   components: {
     WorksCard,
     Swiper,
-    SwiperSlide
+    SwiperSlide,
   },
-  directives: {
-    swiper: directive
-  },
+  // directives: {
+  //   swiper: directive,
+  // },
   data() {
     return {
       swiperOptions: {
-        spaceBetween: 24, //各スライドの余白
-        centeredSlides: false, //スライダーを真ん中に
-        loop: false, //無限ループ
-        slidesPerView: 1.2,
+        spaceBetween: 48, //各スライドの余白
+        centeredSlides: true, //スライダーを真ん中に
+        loop: true, //無限ループ
+        slidesPerView: 1.1,
         freeMode: false,
-        autoplay: {
-          delay: 1000,
-        },
         pagination: {
           el: '.swiper-pagination',
           // clickable: true
         },
         autoplay: {
-          delay: 3000,
+          delay: 5000,
           disableOnInteraction: false,
         },
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
-        // breakpoints: {
-        //   768: { // 768以下の時
-        //     slidesPerView: 1.1, // 横幅にたいして表示するスライドの数
-        //     spaceBetween: 10,
-        //     freeMode: false,
-        //     loop: true, //無限ループ
-        //     centeredSlides: true
-        //   }
-        // }
-      }
-    }
+        breakpoints: {
+          1888: {
+            spaceBetween: 42, //各スライドの余白
+            centeredSlides: true,
+            slidesPerView: 2,
+          },
+          1600: {
+            spaceBetween: 42, //各スライドの余白
+            centeredSlides: true,
+            slidesPerView: 1.7,
+          },
+          1264: {
+            spaceBetween: 42, //各スライドの余白
+            centeredSlides: true,
+            slidesPerView: 1.4,
+          },
+          960: {
+            spaceBetween: 80, //各スライドの余白
+            centeredSlides: true, //スライダーを真ん中に
+            slidesPerView: 1.5,
+          },
+          600: {
+            spaceBetween: 48, //各スライドの余白
+            centeredSlides: true, //スライダーを真ん中に
+            slidesPerView: 1.5,
+          },
+        },
+      },
+    };
   },
   computed: {
     swiper() {
       // return this.$refs.mySwiper.$swiper
-    }
+    },
   },
   mounted() {
-    console.log('Current Swiper instance object', this.swiper)
+    console.log('Current Swiper instance object', this.swiper);
     // this.swiper.slideTo(3, 1000, false)
-  }
+  },
   // props: ['blog']
-}
-
+};
 </script>
 
 <style lang="scss" scoped>
@@ -139,7 +157,7 @@ export default {
   width: 100%;
   position: relative;
   z-index: 1;
-  
+
   h2 {
     font-size: 200px;
     color: $white;
@@ -148,8 +166,7 @@ export default {
     line-height: 0.8;
     text-align: center;
     padding: 0;
-    background:
-      linear-gradient(180deg, #02007C 0%, rgba(2, 0, 124, 0) 100%);
+    background: linear-gradient(180deg, #02007c 0%, rgba(2, 0, 124, 0) 100%);
     background-clip: text; //テキストでくり抜く
     -webkit-text-fill-color: transparent; //くり抜いた部分は背景を表示
     @include media-breakpoint-down(md) {
@@ -157,14 +174,17 @@ export default {
     }
   }
   .container {
-    max-width: 1800px;
+    max-width: none;
+    width: 100vw;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
 /deep/ .swiper-container {
   padding: 60px 0;
 }
-/deep/ .swiper-wrapper {
+/* /deep/ .swiper-wrapper {
   display: flex;
   .swiper-slide {
     display: flex;
@@ -176,6 +196,5 @@ export default {
       max-width: 1024px;
     }
   }
-}
-
+} */
 </style>
