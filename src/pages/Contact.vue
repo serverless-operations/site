@@ -1,25 +1,32 @@
 <template>
   <Layout>
     <div class="v-content__wrap">
-  
       <div class="l-contact-page">
         <!-- ページヘッダー -->
         <div class="p-contact-header">
           <div class="p-contact-header__tryangle"></div>
           <div class="p-contact-header__main-img">
             <!--背景 -->
-            <img src="@/assets/images/company-main-bg.svg"
-                class="p-contact-header__main-bg d-none d-md-block">
+            <img
+              src="@/assets/images/company-main-bg.svg"
+              class="p-contact-header__main-bg d-none d-md-block"
+            />
             <!-- 粒子 -->
-            <img src="@/assets/images/company-main-particle.svg"
-                class="p-contact-header__main-particle d-none d-md-block">
+            <img
+              src="@/assets/images/company-main-particle.svg"
+              class="p-contact-header__main-particle d-none d-md-block"
+            />
 
             <!-- ロゴ -->
-            <img src="@/assets/images/company-main-logo.svg"
-                class="p-contact-header__main-logo d-none d-md-block">
+            <img
+              src="@/assets/images/company-main-logo.svg"
+              class="p-contact-header__main-logo d-none d-md-block"
+            />
             <!-- スマホ時の画像 -->
-            <img src="@/assets/images/company-main-logo-sp.svg"
-                class="p-contact-header__logo-sp d-md-none" />
+            <img
+              src="@/assets/images/company-main-logo-sp.svg"
+              class="p-contact-header__logo-sp d-md-none"
+            />
           </div>
 
           <v-container class="p-contact-header__container">
@@ -29,7 +36,9 @@
                   Contact
                   <span class="p-contact-header__title-jp">お問い合わせ</span>
                 </h2>
-                <p class="p-contact-header__text">サーバーレスアプリケーションの設計・開発・保守運用等についてお困りの方は、こちらのフォームから気軽にお問い合わせください。2〜3営業日以内にメールで返信いたします。</p>
+                <p class="p-contact-header__text">
+                  サーバーレスアプリケーションの設計・開発・保守運用等についてお困りの方は、こちらのフォームから気軽にお問い合わせください。2〜3営業日以内にメールで返信いたします。
+                </p>
                 <!-- <div class="d-md-none p-contact-header__scroll-block">
                   <span class="p-contact-header__scroll">Scroll</span>
                   <div class="p-contact-header__scroll-line"></div>
@@ -37,32 +46,28 @@
               </v-col>
             </v-row>
           </v-container>
-
         </div>
 
         <contact-form />
-
       </div>
-
-    </div><!-- l-contact-page -->
+    </div>
+    <!-- l-contact-page -->
   </Layout>
 </template>
 
 <script>
-
-import ContactForm from '~/components/ContactForm.vue'
+import ContactForm from "~/components/ContactForm.vue";
 
 export default {
   components: {
-    ContactForm
+    ContactForm,
   },
-  metaInfo () {
+  metaInfo() {
     return {
-      title: 'お問い合わせ'
-    }
+      title: "お問い合わせ",
+    };
   },
-}
-
+};
 </script>
 
 <style lang="scss" scoped>
@@ -73,7 +78,7 @@ export default {
 // ページの見出し
 .p-contact-header {
   // background-image: ;
-  background: no-repeat url('../assets/images/company-main-pattern.svg'),
+  background: no-repeat url("../assets/images/company-main-pattern.svg"),
     linear-gradient(205.01deg, #2c48ff -0.06%, #02007c 100.25%);
   overflow: hidden;
   // height: 80vh;
@@ -217,13 +222,4 @@ export default {
     );
   }
 }
-
 </style>
-
-
-
-
-
-
-
-
