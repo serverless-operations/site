@@ -368,7 +368,7 @@ export default {
 
 .document-content-header {
   color: $black;
-  padding: 52px 0;
+  padding: 104px 0;
   .desc-text-top {
     color: $secondary;
     font-family: $font-jp-bold;
@@ -383,7 +383,7 @@ export default {
     }
   }
   @include media-breakpoint-down(md) {
-    padding: 104px 0;
+    padding: 52px 0;
   }
   .desc-text-bottom {
     line-height: 2;
@@ -401,10 +401,16 @@ export default {
     h4 {
       color: $secondary;
       font-size: 16px;
+      @include media-breakpoint-down(md) {
+        font-size: 14px;
+      }
     }
     span {
       color: $mid-gray-1;
       font-size: 14px;
+      @include media-breakpoint-down(md) {
+        font-size: 12px;
+      }
     }
   }
 }
@@ -414,11 +420,23 @@ export default {
   justify-content: space-between;
   ul {
     li {
-      line-height: 2;
+      line-height: 1.6;
+      margin-bottom: 12px;
+      @include media-breakpoint-down(md) {
+      }
     }
   }
   @include media-breakpoint-down(md) {
     flex-direction: column;
+  }
+}
+
+.download-form-title-container {
+  .support-text-anim {
+    color: $black;
+    @include media-breakpoint-down(md) {
+      font-size: 14px;
+    }
   }
 }
 </style>
