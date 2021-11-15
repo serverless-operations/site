@@ -352,6 +352,8 @@ export default {
   background-blend-mode: lighten;
   @include media-breakpoint-down(md) {
     padding: 40px 0;
+    background-size: 300%;
+    background-position: top 30% center;
   }
   .document-image {
     width: 100%;
@@ -383,7 +385,7 @@ export default {
     }
   }
   @include media-breakpoint-down(md) {
-    padding: 52px 0;
+    padding: 64px 0;
   }
   .desc-text-bottom {
     line-height: 2;
