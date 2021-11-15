@@ -50,24 +50,71 @@
         </div>
 
         <section class="document">
-          <div class="container about-title-container">
+          <div class="container download-title-container">
             <div class="row">
               <h2 class="content-section-title text-center">
                 Document
                 <span>資料について</span>
                 <hr class="title-bottom-line" />
               </h2>
-              <img
-                src="../assets/images/download/download-form-image.jpg"
-                class="text-center document-image"
-                alt="Serverless Operations 会社資料イメージ画像"
-              />
+              <p>
+                <img
+                  src="../assets/images/download/download-form-image.jpg"
+                  class="text-center document-image"
+                  alt="Serverless Operations 会社資料イメージ画像"
+                />
+              </p>
+
+              <v-row justify="center">
+                <v-col cols="11" md="8">
+                  <section class="document-content-header">
+                    <p class="desc-text-top">
+                      事業の方針や開発の方向性を決定する際に、ぜひご活用ください
+                    </p>
+                    <h3>
+                      サーバーレスオペレーションズの<br />
+                      具体的なサービスや実績をご紹介しています
+                    </h3>
+                    <p class="desc-text-bottom">
+                      企業がサーバーレスを採用することにより得られる競争優位性やコスト面でのメリットなどを、事例を交えて詳しく紹介しています。
+                    </p>
+                  </section>
+                  <section class="document-content-list">
+                    <div class="document-title">
+                      <h4>資料の内容</h4>
+                      <span>[ PDF形式 / 全47ページ / 11MB / A4横]</span>
+                    </div>
+                    <div class="document-list-container">
+                      <ul>
+                        <li>
+                          資料概要とサーバーレスアーキテクチャの背景 Serverless
+                        </li>
+                        <li>
+                          Operations, Inc について
+                          サーバーレスアーキテクチャとは
+                        </li>
+                        <li>サーバーレスアーキテクチャを採用するメリット</li>
+                        <li>課題例とお手伝いできること</li>
+                        <li>強みと特徴</li>
+                        <li>内製化支援とその他のサービス</li>
+                      </ul>
+                      <ul>
+                        <li>自社開発プロダクト</li>
+                        <li>実績とお客さまインタビュー</li>
+                        <li>ご契約の流れ メンバー紹介</li>
+                        <li>認定パートナー</li>
+                        <li>会社概要</li>
+                      </ul>
+                    </div>
+                  </section>
+                </v-col>
+              </v-row>
             </div>
           </div>
         </section>
 
         <section class="download-form">
-          <div class="container about-title-container">
+          <div class="container download-form-title-container">
             <div class="row">
               <h2 class="content-section-title text-center">
                 Download Form
@@ -183,7 +230,7 @@ export default {
     },
     titleAnimation() {
       let object = {
-        el: ".about-title-container h2",
+        el: ".download-title-container h2",
         duration: 1.2,
       };
       gsap
@@ -191,7 +238,7 @@ export default {
           defaults: { ease: "Expo.easeInOut", duration: 1.2 }, // timelineのプロパティ
           scrollTrigger: {
             // markers: true, // マーカーを表示するか（開発用）
-            trigger: ".about-title-container", // この要素と交差するとイベントが発火
+            trigger: ".download-title-container", // この要素と交差するとイベントが発火
             start: "top 98%", // ウィンドウのどの位置を発火の基準点にするか
             end: "bottom 10%", // ウィンドウのどの位置をイベントの終了点にするか
             toggleActions: "play none none none", // スクロールイベントで発火するアニメーションの種
@@ -219,26 +266,11 @@ export default {
             width: 80,
           },
           "<"
-        )
-        .fromTo(
-          ".comapny-info-table-container",
-          {
-            opacity: 0,
-            y: 0,
-            scale: 0.98,
-          },
-          {
-            delay: 0.2,
-            opacity: 1,
-            scale: 1,
-            y: -20,
-          },
-          "<"
         );
     },
     titleAnimation2() {
       let object = {
-        el: ".about-message-title-container h2",
+        el: ".download-form-title-container h2",
         duration: 1.2,
       };
       gsap
@@ -246,7 +278,7 @@ export default {
           defaults: { ease: "Expo.easeInOut", duration: 1.2 }, // timelineのプロパティ
           scrollTrigger: {
             // markers: true, // マーカーを表示するか（開発用）
-            trigger: ".about-message-title-container", // この要素と交差するとイベントが発火
+            trigger: ".download-form-title-container", // この要素と交差するとイベントが発火
             start: "top 98%", // ウィンドウのどの位置を発火の基準点にするか
             end: "bottom 10%", // ウィンドウのどの位置をイベントの終了点にするか
             toggleActions: "play none none none", // スクロールイベントで発火するアニメーションの種
@@ -331,6 +363,62 @@ export default {
   padding: 80px 0 160px 0;
   @include media-breakpoint-down(md) {
     padding: 40px 0;
+  }
+}
+
+.document-content-header {
+  color: $black;
+  padding: 52px 0;
+  .desc-text-top {
+    color: $secondary;
+    font-family: $font-jp-bold;
+  }
+  h3 {
+    color: $secondary;
+    font-size: 32px;
+    line-height: 1.4;
+    margin-bottom: 32px;
+    @include media-breakpoint-down(md) {
+      font-size: 24px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    padding: 104px 0;
+  }
+  .desc-text-bottom {
+    line-height: 2;
+  }
+}
+
+.document-content-list {
+  color: $black;
+  .document-title {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $mid-gray-3;
+    margin-bottom: 40px;
+    padding-bottom: 8px;
+    h4 {
+      color: $secondary;
+      font-size: 16px;
+    }
+    span {
+      color: $mid-gray-1;
+      font-size: 14px;
+    }
+  }
+}
+
+.document-list-container {
+  display: flex;
+  justify-content: space-between;
+  ul {
+    li {
+      line-height: 2;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
   }
 }
 </style>
