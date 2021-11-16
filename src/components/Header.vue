@@ -90,9 +90,6 @@ export default {
       gsap
         .timeline({
           scrollTrigger: {
-            // markers: true, // マーカーを表示するか（開発用）
-            // scrub: 1,
-            markers: true,
             trigger: ".v-content", // この要素と交差するとイベントが発火
             start: "top 0", //
             end: "bottom 1%", // ウィンドウのどの位置をイベントの終了点にするか
