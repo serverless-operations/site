@@ -60,6 +60,11 @@
 import { mapMutations } from "vuex";
 import Modal from "~/components/Modal.vue";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   computed: {
     showModal() {
@@ -74,9 +79,37 @@ export default {
       isActive: false,
     };
   },
+  mounted() {
+    this.headerAnimation();
+  },
   methods: {
     toggleModal() {
       $store.commit("toggleModal");
+    },
+    headerAnimation() {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            // markers: true, // マーカーを表示するか（開発用）
+            // scrub: 1,
+            markers: true,
+            trigger: ".v-content", // この要素と交差するとイベントが発火
+            start: "top 0", //
+            end: "bottom 1%", // ウィンドウのどの位置をイベントの終了点にするか
+            toggleActions: "play none none none", // スクロールイベントで発火するアニメーションの種
+            scrub: true,
+          },
+        })
+        .fromTo(
+          ".header-nav",
+          {
+            opacity: 1,
+            ease: "power3.out",
+          },
+          {
+            opacity: 0,
+          }
+        );
     },
   },
   watch: {
@@ -98,7 +131,6 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  mix-blend-mode: difference;
 
   &.is-active {
     mix-blend-mode: initial;
@@ -110,7 +142,6 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      opacity: 0.8;
       img {
         @include media-breakpoint-down(sm) {
           width: 80%;
@@ -138,7 +169,7 @@ export default {
           margin-right: 16px;
         }
         a {
-          color: #fff900;
+          color: #fff;
           text-decoration: none;
           font-family: $font-jp-bold;
           transition: $soease;
@@ -153,8 +184,8 @@ export default {
             width: 100%;
             height: 1px;
             content: "";
-            color: #fff900;
-            background-color: #fff900;
+            color: #fff;
+            background-color: #fff;
             position: absolute;
             left: 0;
             bottom: -8px;
