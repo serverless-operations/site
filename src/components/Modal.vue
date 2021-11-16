@@ -9,7 +9,7 @@
           <v-row>
             <v-col cols="3" offset="1" offset-md="0" class="pt-0 pb-0">
               <div class="c-modal__logo-link">
-                <g-link @click.native="$emit('close');" to="/" class>
+                <g-link @click.native="$emit('close')" to="/" class>
                   <img
                     src="../assets/images/header-modal-logo.svg"
                     alt="Severless Operations ロゴ"
@@ -22,131 +22,136 @@
 
           <!-- メニュー部分 -->
           <v-row class="c-modal__menu">
-            <!-- サービス -->
-            <v-col cols="12" md="3" class="c-modal__menu-column">
-              <g-link @click.native="$emit('close');" to="/services" class="c-modal__link pl-md-0">
-                <span class="c-modal__link--menu">Services</span> 
+            <v-col
+              offset="1"
+              cols="11"
+              class="c-modal__menu-column mt-2 mt-md-0"
+            >
+              <g-link
+                @click.native="$emit('close')"
+                to="/about"
+                class="c-modal__link"
+              >
+                <span class="c-modal__link--ja">私たちについて</span>
+              </g-link>
+            </v-col>
+
+            <v-col
+              offset="1"
+              cols="11"
+              class="c-modal__menu-column mt-2 mt-md-0"
+            >
+              <g-link
+                @click.native="$emit('close')"
+                to="/services"
+                class="c-modal__link"
+              >
                 <span class="c-modal__link--ja">サービス</span>
               </g-link>
-            </v-col><!-- c-modal__menu-column -->
-
-            <!-- ConsultingとDevelopment(タブレット、スマホ) -->
-            <v-col cols="12" md="3" class="d-block d-md-none c-modal__menu-column">
-              <div class="c-modal__services-block">
-
-                <g-link to="/services/serverless-consulting" class="c-modal__services-link pt-1" @click.native="$emit('close');">
-                  <div class="c-modal__services-menu">
-                    <span class="c-modal__services-menu-serverless">Serverless</span>
-                      Consulting
-                    <span class="c-modal__services-menu-ja">サーバーレスコンサルティング</span>
-                  </div>
-                </g-link><!-- c-modal__services-link -->
-
-                <g-link to="/services/serverless-development" class="c-modal__services-link" @click.native="$emit('close');">
-                  <div class="c-modal__services-menu">
-                    <span class="c-modal__services-menu-serverless">Serverless</span>Development
-                    <span class="c-modal__services-menu-ja">サーバーレスディべロプメント</span>
-                  </div>
-                </g-link><!-- c-modal__services-link -->
-
-                <g-link to="/services/serverless-development" class="c-modal__services-link" @click.native="$emit('close');">
-                  <div class="c-modal__services-menu">
-                    <span class="c-modal__services-menu-serverless">Serverless</span>Products
-                    <span class="c-modal__services-menu-ja">私たちが開発したプロダクト</span>
-                  </div>
-                </g-link><!-- c-modal__services-link -->
-
-              </div><!-- c-modal__services-block -->
             </v-col>
 
-            <v-col cols="6" md="3" offset-md="0" class="c-modal__menu-column mt-3 mt-md-0">
-              <g-link @click.native="$emit('close');" to="/about" class="c-modal__link">
-                <span class="c-modal__link--menu">Company</span> 
-                <span class="c-modal__link--ja">会社案内</span>
+            <v-col
+              offset="1"
+              cols="11"
+              class="c-modal__menu-column mt-2 mt-md-0"
+            >
+              <g-link
+                @click.native="$emit('close')"
+                to="/our-products"
+                class="c-modal__link"
+              >
+                <span class="c-modal__link--ja">自社開発プロダクト</span>
               </g-link>
             </v-col>
 
-            <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-3 mt-md-0">
-              <g-link @click.native="$emit('close');" to="/works-archives" class="c-modal__link">
-                <span class="c-modal__link--menu">Works</span>
-                <span class="c-modal__link--ja">導入事例</span>
+            <v-col
+              offset="1"
+              cols="11"
+              class="c-modal__menu-column mt-2 mt-md-0"
+            >
+              <g-link
+                @click.native="$emit('close')"
+                to="/works-archives"
+                class="c-modal__link"
+              >
+                <span class="c-modal__link--ja">実績紹介</span>
+              </g-link>
+            </v-col>
+            <v-col
+              offset="1"
+              cols="11"
+              class="c-modal__menu-column mt-2 mt-md-0"
+            >
+              <g-link
+                @click.native="$emit('close')"
+                to="/blog-archives"
+                class="c-modal__link"
+              >
+                <span class="c-modal__link--ja">ブログ</span>
               </g-link>
             </v-col>
 
-            <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-3 mt-md-0">
-              <g-link @click.native="$emit('close');" to="/blog-archives" class="c-modal__link">
-                <span class="c-modal__link--menu">Blog</span>
-                <span class="c-modal__link--ja">開発ブログ</span>
+            <v-col
+              offset="1"
+              cols="11"
+              class="c-modal__menu-column mt-2 mt-md-0"
+            >
+              <g-link
+                @click.native="$emit('close')"
+                to="/news-archives"
+                class="c-modal__link"
+              >
+                <span class="c-modal__link--ja">お知らせ</span>
               </g-link>
             </v-col>
 
-            <v-col cols="6" md="2" offset-md="0" class="c-modal__menu-column mt-3 mt-md-0">
-              <g-link @click.native="$emit('close');" to="/news-archives" class="c-modal__link">
-                <span class="c-modal__link--menu">News</span>
-                <span class="c-modal__link--ja">おしらせ</span>
+            <v-col
+              offset="1"
+              cols="11"
+              class="c-modal__menu-column mt-2 mt-md-0"
+            >
+              <g-link
+                @click.native="$emit('close')"
+                to="/download"
+                class="c-modal__link"
+              >
+                <span class="c-modal__link--ja">会社資料ダウンロード</span>
+              </g-link>
+            </v-col>
+
+            <v-col
+              offset="1"
+              cols="11"
+              class="c-modal__menu-column mt-2 mt-md-0"
+            >
+              <g-link
+                @click.native="$emit('close')"
+                to="/news-archives"
+                class="c-modal__link"
+              >
+                <span class="c-modal__link--ja">お問い合わせ</span>
               </g-link>
             </v-col>
             <!-- c-modal__menu-column -->
-
-          </v-row>
-
-          <!-- ConsultingとDdevelopment(PC) -->
-          <v-row>
-            <v-col cols="6" md="5" class="d-none d-md-block">
-              <div class="c-modal__services-block">
-
-                <g-link to="/services/serverless-consulting" class="c-modal__services-link" @click.native="$emit('close');">
-                  <div class="c-modal__services-menu">
-                    <span class="c-modal__services-menu-serverless">Serverless</span>
-                    <span class="c-modal__services-name">Consulting</span>
-                    <span class="c-modal__services-menu-ja">サーバーレスコンサルティング</span>
-                  </div>
-                </g-link>
-
-                <g-link @click.native="$emit('close');" to="/services/serverless-development" class="c-modal__services-link">
-                  <div class="c-modal__services-menu">
-                    <span class="c-modal__services-menu-serverless">Serverless</span>
-                    <span class="c-modal__services-name">Development</span>
-                    <span class="c-modal__services-menu-ja">サーバーレスディべロプメント</span>
-                  </div>
-                </g-link>
-
-                <g-link @click.native="$emit('close');" to="/our-products" class="c-modal__services-link">
-                  <div class="c-modal__services-menu">
-                    <span class="c-modal__services-menu-serverless">Serverless</span>
-                    <span class="c-modal__services-name">Products</span>
-                    <span class="c-modal__services-menu-ja">私たちが開発したプロダクト</span>
-                  </div>
-                </g-link>
-
-              </div>
-            </v-col>
-
-            <v-col cols="12" md="4" lg="4" xl="3" offset-md="2" offset-lg="0">
-              <div class="c-modal__contact-button-wrapper">
-                <g-link
-                  to="/contact"
-                  class="c-modal__contact-button"
-                  @click.native="$emit('close');">
-                  <span class="c-modal__contact">Contact</span>
-                  <span class="c-modal__contact-ja">お問い合わせ</span>
-                </g-link>
-              </div><!-- c-modal__contact-button-wrapper -->
-            </v-col>
-
           </v-row>
         </v-container>
 
-        <span class="c-modal__copyright d-none d-md-block">© 2019 Serverless Operations</span>
-
-        <span class="c-modal__copyright">© 2019 Serverless Operations</span>
+        <span class="c-modal__copyright">© Serverless Operations, inc</span>
         <transition class="fade-in" appear>
           <div class="c-modal__sns-block">
             <div class="c-modal__sns-link">
-              <a href="https://www.facebook.com/horike.takahiro" target="_blank" class="c-modal__facebook">
-                <v-icon>mdi-facebook-box</v-icon>
+              <a
+                href="https://github.com/serverless-operations/"
+                target="_blank"
+                class="c-modal__facebook"
+              >
+                <v-icon>mdi-github</v-icon>
               </a>
-              <a href="https://twitter.com/horike37/" class="c-modal__twitter" target="_blank">
+              <a
+                href="https://twitter.com/horike37/"
+                class="c-modal__twitter"
+                target="_blank"
+              >
                 <v-icon>mdi-twitter</v-icon>
               </a>
             </div>
@@ -154,8 +159,7 @@
         </transition>
       </div>
       <!-- modal__panel -->
-
-      </div>
+    </div>
     <!--/div-->
   </transition>
 </template>
@@ -169,9 +173,9 @@
     width: 100vw;
     height: 100vh;
     background-color: $secondary;
-    background-image: url('../assets/images/header-modal-bg-top.svg'),
-      url('../assets/images/header-modal-bg-bottom.svg'),
-      url('../assets/images/header-so-bg-img.svg');
+    background-image: url("../assets/images/header-modal-bg-top.svg"),
+      url("../assets/images/header-modal-bg-bottom.svg"),
+      url("../assets/images/header-so-bg-img.svg");
     background-size: 95%, 95%, 100%;
     background-position: top right, bottom left, bottom 10px center;
     position: fixed;
@@ -185,10 +189,10 @@
     justify-content: center;
     //スマホの時
     @include media-breakpoint-down(sm) {
-      background-image: url('../assets/images/header-modal-bg-top-sp.svg'),
-        url('../assets/images/header-modal-bg-bottom-sp.svg'), none;
+      background-image: url("../assets/images/header-modal-bg-top-sp.svg"),
+        url("../assets/images/header-modal-bg-bottom-sp.svg"), none;
       flex-direction: column;
-      background-size: 100%, 100%;
+      background-size: 130%, 130%;
       background-position: top right, bottom left;
     }
     @include media-breakpoint-up(md) {
@@ -219,9 +223,9 @@
     position: relative;
     height: 100%;
     width: 100%;
-    align-items: center;
+    padding-top: 30%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     @include media-breakpoint-up(md) {
       position: initial;
     }
@@ -306,7 +310,7 @@
       }
     }
     &:after {
-      content: '';
+      content: "";
       width: 100%;
       height: 1px;
       display: block;
@@ -347,76 +351,25 @@
 
     // 下の日本語のメニュー
     &--ja {
-      font-size: 0.62rem;
+      font-size: 1rem;
+      font-family: $font-jp-bold;
       display: block;
       color: white;
       transition: all 0.825s cubic-bezier(0.76, 0, 0.3, 1);
-      @include media-breakpoint-up(md) {
-        font-size: 0.75rem;
-        line-height: 1;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 12px;
+        left: -14px;
+        width: 4px;
+        height: 4px;
+        background: #fff;
+        opacity: 0.3;
       }
     } // &--ja
   } // &__link
-
-  // サービスのブロック
-  &__services-block {
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 8px;
-    @include media-breakpoint-up(md) {
-      padding-top: 18px;
-      // margin-bottom: 30px;
-    }
-  } // &__services-block
-
-  // サービスの各メニュー
-  &__services-menu {
-    position: relative;
-    margin-left: 10px;
-    font-size: 1.5rem;
-    font-family: $font-en-normal;
-    width: fit-content;
-    @include media-breakpoint-up(md) {
-      margin-left: 18px;
-      font-size: 2rem;
-      line-height: 0.9;
-    }
-
-    // ホバーしたときに右方向へ白線が伸びる
-    &:hover {
-      .c-modal__services-menu-serverless,
-      .c-modal__services-name,
-      .c-modal__services-menu-ja {
-        opacity: 0.7;
-      }
-      &:after {
-        transform: scaleX(1);
-        transform-origin: right center;
-        opacity: 0.6;
-      }
-    }
-
-    &:after {
-      content: '';
-      width: 100%;
-      height: 1px;
-      display: block;
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0.8),
-        rgba(255, 255, 255, 0.5)
-      );
-      background-position: 0 -80px;
-      background-size: 100% 200%;
-      position: absolute;
-      bottom: -10px;
-      right: 0px;
-      z-index: 0;
-      transform: scaleX(0);
-      transform-origin: left center;
-      transition-duration: 0.55s;
-      transition-timing-function: cubic-bezier(0.76, 0, 0.3, 1);
-    } // &:after
-  } // &__services-menu
 
   // Servicessの各メニュー(ConsultingとDdevelopment)
   &__services-name {
@@ -512,7 +465,7 @@
 
     // ボタンアニメーションを設定 背景色白で左から右に広がる
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       bottom: 0;

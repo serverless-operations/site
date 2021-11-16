@@ -1,9 +1,5 @@
 <template>
-  <header 
-    class="header-nav"
-    v-bind:class="{'is-active': isActive}"
-  >
-
+  <header class="header-nav" v-bind:class="{ 'is-active': isActive }">
     <div class="header-nav__logo-block">
       <g-link to="/" class="header-nav__logo-link">
         <img
@@ -16,13 +12,13 @@
 
     <nav>
       <ul>
-        <li><g-link to="/works-archives">Works</g-link></li>
-        <li><g-link to="/blog-archives">Blog</g-link></li>
-        <li><g-link to="/services">Service</g-link></li>
-        <li><g-link to="/our-products">Products</g-link></li>
-        <li><g-link to="/about">About</g-link></li>
-        <li><g-link to="/news-archives">News</g-link></li>
-        <li><g-link to="/contact">Contact</g-link></li>
+        <li><g-link to="/about">私たちについて</g-link></li>
+        <li><g-link to="/services">サービス</g-link></li>
+        <li><g-link to="/works-archives">実績紹介</g-link></li>
+        <li><g-link to="/blog-archives">ブログ</g-link></li>
+        <li><g-link to="/news-archives">お知らせ</g-link></li>
+        <li><g-link to="/download">会社資料ダウンロード</g-link></li>
+        <li><g-link to="/contact">お問い合わせ</g-link></li>
       </ul>
     </nav>
 
@@ -31,16 +27,29 @@
         id="btn"
         class="header-nav__toggler-button btn"
         type="button"
-        @click="$store.commit('toggleModal'); isActive = !isActive"
+        @click="
+          $store.commit('toggleModal');
+          isActive = !isActive;
+        "
       >
-        <div class="btn__content" v-bind:class="{'is-active': isActive}" tabindex="-1">
+        <div
+          class="btn__content"
+          v-bind:class="{ 'is-active': isActive }"
+          tabindex="-1"
+        >
           <span class="header-nav__toggler-top"></span>
           <span class="header-nav__toggler-middle"></span>
           <span class="header-nav__toggler-bottom"></span>
         </div>
       </button>
     </div>
-    <modal v-if="showModal" @close="$store.commit('toggleModal'); isActive = false"></modal>
+    <modal
+      v-if="showModal"
+      @close="
+        $store.commit('toggleModal');
+        isActive = false;
+      "
+    ></modal>
 
     <!-- header-nav__toggler-block -->
   </header>
@@ -48,34 +57,64 @@
 
 <script>
 // モーダルの読み込み
-import { mapMutations } from 'vuex'
-import Modal from '~/components/Modal.vue'
+import { mapMutations } from "vuex";
+import Modal from "~/components/Modal.vue";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   computed: {
     showModal() {
-      return this.$store.state.showModal
-    }
+      return this.$store.state.showModal;
+    },
   },
   components: {
-    Modal
+    Modal,
   },
   data() {
     return {
-      isActive: false
-    }
+      isActive: false,
+    };
+  },
+  mounted() {
+    this.headerAnimation();
   },
   methods: {
     toggleModal() {
-      $store.commit('toggleModal')
-    }
+      $store.commit("toggleModal");
+    },
+    headerAnimation() {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".v-content", // この要素と交差するとイベントが発火
+            start: "top 0", //
+            end: "bottom 1%", // ウィンドウのどの位置をイベントの終了点にするか
+            toggleActions: "play none none none", // スクロールイベントで発火するアニメーションの種
+            scrub: true,
+          },
+        })
+        .fromTo(
+          ".header-nav",
+          {
+            opacity: 1,
+            ease: "power3.out",
+          },
+          {
+            opacity: 0,
+          }
+        );
+    },
   },
   watch: {
     $route() {
-      this.isActive = false
-    }
-  }
-}
+      this.isActive = false;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -89,24 +128,26 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  mix-blend-mode: exclusion;
 
   &.is-active {
     mix-blend-mode: initial;
   }
 
   .header-nav__logo-block {
-    
     padding: 16px;
     .header-nav__logo-link {
       display: flex;
       justify-content: center;
       align-items: center;
-      opacity: 0.8;
+      img {
+        @include media-breakpoint-down(sm) {
+          width: 80%;
+        }
+      }
     }
   }
 
-  // 
+  //
   nav {
     margin-right: 24px;
     @include media-breakpoint-down(sm) {
@@ -117,7 +158,7 @@ export default {
       display: flex;
       li {
         list-style: none;
-        margin-right: 32px;
+        margin-right: 28px;
         @include media-breakpoint-down(md) {
           margin-right: 24px;
         }
@@ -125,14 +166,13 @@ export default {
           margin-right: 16px;
         }
         a {
-          color: #fff300;
+          color: #fff;
           text-decoration: none;
-          font-family: $font-en-normal;
+          font-family: $font-jp-bold;
           transition: $soease;
           position: relative;
-          opacity: 0.9;
           letter-spacing: 0.03rem;
-          
+
           @include media-breakpoint-down(sm) {
             font-size: 14px;
           }
@@ -140,9 +180,9 @@ export default {
             display: block;
             width: 100%;
             height: 1px;
-            content: '';
-            color: #fff300;
-            background-color: #fff300;
+            content: "";
+            color: #fff;
+            background-color: #fff;
             position: absolute;
             left: 0;
             bottom: -8px;
@@ -165,24 +205,14 @@ export default {
 
   //メニューボタンのブロック
   &__toggler-block {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    margin-right: 8px;
-    @include media-breakpoint-up(md) {
-      margin-right: 24px;
-    }
   }
   &__toggler-button {
     z-index: 10;
-    position: relative;
-    height: 32px;
-    width: 32px;
-    @media screen and (max-width: 600px) {
-      height: 24px;
-      width: 24px;
-      // margin-right: 16px;
-    }
+    right: 24px;
+    top: 20px;
+    position: absolute;
+    height: 40px;
+    width: 40px;
 
     &:focus {
       outline: none;
@@ -197,7 +227,7 @@ export default {
   // メニューボタン
   &__toggler {
     position: relative;
-    left: -16px;
+    left: 0px;
   }
   &__toggler-top {
     transition: all 0.2s ease;
@@ -209,7 +239,7 @@ export default {
     background: $white;
     @media screen and (max-width: 600px) {
       top: 0px;
-      width: 4px;
+      width: 16px;
       height: 1.5px;
     }
   }
@@ -224,7 +254,7 @@ export default {
     @media screen and (max-width: 600px) {
       top: 8px;
       height: 1.5px;
-      width: 12px;
+      width: 24px;
     }
   }
   &__toggler-bottom {
@@ -238,35 +268,24 @@ export default {
     @media screen and (max-width: 600px) {
       top: 18px;
       height: 1.5px;
-      width: 22px;
+      width: 32px;
     }
   }
 }
 
 .is-active > .header-nav__toggler-top {
-  width: 24px;
+  width: 40px;
   transform: rotate(45deg);
-  top: 12px;
-  @include media-breakpoint-up(md) {
-    top: 13px;
-    left: -2px;
-    width: 32px;
-  }
+  top: 16px;
 }
 .is-active > .header-nav__toggler-middle {
-  width: 32px;
   width: 0px;
   opacity: 0;
 }
 .is-active > .header-nav__toggler-bottom {
-  width: 24px;
+  width: 40px;
   transform: rotate(135deg);
-  top: 12px;
-  @include media-breakpoint-up(md) {
-    top: 13px;
-    left: -2px;
-    width: 32px;
-  }
+  top: 16px;
 }
 
 button {
@@ -287,11 +306,11 @@ button {
 .btn__content {
   position: relative;
   display: block;
-  height: 32px;
-  width: 32px;
+  height: 40px;
+  width: 40px;
   @media screen and (max-width: 600px) {
-    height: 24px;
-    width: 24px;
+    height: 40px;
+    width: 40px;
   }
 }
 

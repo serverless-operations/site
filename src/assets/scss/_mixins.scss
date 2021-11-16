@@ -3,10 +3,10 @@
     list-style: none;
     padding-left: 14px;
     margin-bottom: 24px;
-  
+
     &__item {
       position: relative;
-      font-size: 12px;
+      font-size: 14px;
       line-height: 18px;
       margin-bottom: 1rem;
       @include media-breakpoint-down(sm) {
@@ -17,7 +17,7 @@
         position: absolute;
         top: 50%;
         left: -20px;
-        content: '';
+        content: "";
         display: block;
         color: #fff;
         width: 10px;
@@ -34,7 +34,7 @@
         position: absolute;
         top: 50%;
         left: -20px;
-        content: '';
+        content: "";
         display: block;
         color: #fff;
         width: 10px;
@@ -44,7 +44,7 @@
         opacity: 0.5;
       }
     } //&__list-item
-  
+
     &__link {
       text-decoration: none;
       color: $white;
@@ -101,22 +101,22 @@
 
 // 記事詳細ページの共通設定
 @mixin PostDetails {
-
   .v-content {
-    background:
-    url('../assets/images/bg/so-blue-texture.png'),
-      linear-gradient(272.99deg, #2C48FF -0.06%, #02007C 100.25%);
-      background-size: 70%, auto;
+    background: url("../assets/images/bg/so-blue-texture.png"),
+      linear-gradient(272.99deg, #2c48ff -0.06%, #02007c 100.25%);
+    background-size: 70%, auto;
     position: relative;
     overflow: hidden;
   }
 
   .v-content__wrap {
     padding-top: 120px;
-    background: url('../assets/images/privacy-policy-header-bg-img.svg') no-repeat;
+    background: url("../assets/images/privacy-policy-header-bg-img.svg")
+      no-repeat;
     @include media-breakpoint-down(md) {
       padding-top: 60px;
-      background: url('../assets/images/privacy-policy-header-bg-img.svg') no-repeat;
+      background: url("../assets/images/privacy-policy-header-bg-img.svg")
+        no-repeat;
     }
   }
 
@@ -130,8 +130,7 @@
     line-height: 1;
     margin-bottom: 8px;
     padding: 0;
-    background:
-      linear-gradient(180deg, #02007C 0%, rgba(2, 0, 124, 0) 100%);
+    background: linear-gradient(180deg, #02007c 0%, rgba(2, 0, 124, 0) 100%);
     background-clip: text; //テキストでくり抜く
     -webkit-text-fill-color: transparent; //くり抜いた部分は背景を表示
     @include media-breakpoint-down(md) {
@@ -175,14 +174,14 @@
           display: block;
           padding: 4px 12px 4px 20px;
           background: $tertiary;
-          margin: 0 8px 8px ;
+          margin: 0 8px 8px;
           border-radius: 200px;
           font-size: 12px;
           position: relative;
           letter-spacing: 1px;
           font-family: $font-en-normal, $font-jp-regular;
           &::before {
-            content: '#';
+            content: "#";
             position: absolute;
             opacity: 0.5;
             left: 8px;
@@ -321,10 +320,10 @@
             color: #000;
           }
           &.facebook i {
-            color:#1877F2;
+            color: #1877f2;
           }
           &.twitter i {
-            color: #1DA1F2;
+            color: #1da1f2;
           }
           :hover {
             margin-top: -2px;
@@ -514,7 +513,7 @@
   }
 }
 
-// Contact Form 
+// Contact Form
 @mixin ContactForm {
   .contact-desc-text {
     color: $text-black;
@@ -523,7 +522,7 @@
     &--container {
       padding-bottom: 160px;
     }
-    
+
     &--form {
       .v-text-field {
         padding-top: 0px;
@@ -534,14 +533,13 @@
         }
         &:not(.v-textarea) {
           .v-input__slot {
-            
             background-color: $light-gray-1 !important;
             border-width: 1px !important;
             // & > .v-text-field__slot {
-             
+
             // }
             // & > fieldset {
-             
+
             // }
           }
         }
@@ -553,7 +551,7 @@
               display: none;
             }
             // & > fieldset {
-              // border: solid 1px $light-gray-1 !important;
+            // border: solid 1px $light-gray-1 !important;
             // }
           }
         }
@@ -578,7 +576,7 @@
         }
       }
 
-      .v-input.v-text-field input[type='text'] {
+      .v-input.v-text-field input[type="text"] {
         padding: 24px 16px;
         color: $text-black;
         border-radius: 3px;
@@ -627,7 +625,7 @@
     padding: 36px 24px;
     border-radius: 6px;
     box-shadow: 8px 24px 50px rgba(207, 214, 226, 0.6);
-    
+
     @include media-breakpoint-up(md) {
       padding: 48px 40px;
     }
