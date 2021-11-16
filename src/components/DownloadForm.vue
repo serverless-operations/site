@@ -6,7 +6,7 @@
 
         <form
           accept-charset="UTF-8"
-          action="https://getform.io/f/1949b87a-aa9e-43f5-8717-8a476a636d4b"
+          action="https://getform.io/f/634af40f-f69b-493e-8cd4-29e086b3c5c6"
           method="POST"
           class="v-form"
           enctype="multipart/form-data"
@@ -236,7 +236,7 @@ export default {
 
   &--check-label {
     font-family: $font-jp-regular;
-    color: $primary;
+    color: $tertiary;
     display: block;
     margin: 16px 0;
   }

@@ -424,7 +424,17 @@ export default {
     li {
       line-height: 1.6;
       margin-bottom: 12px;
-      @include media-breakpoint-down(md) {
+      list-style: none;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: -14px;
+        width: 4px;
+        height: 4px;
+        background: $tertiary;
       }
     }
   }
