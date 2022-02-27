@@ -84,14 +84,14 @@
                 プライバシーポリシー
               </g-link>
             </li>
-            <li class="c-footer-list__item">
+            <!-- <li class="c-footer-list__item">
               <a
                 href="https://calendly.com/slsops/office-hours"
                 class="c-footer-list__link"
               >
                 オンライン無料相談
               </a>
-            </li>
+            </li> -->
             <li class="c-footer-list__item">
               <g-link to="/download" class="c-footer-list__link">
                 会社資料ダウンロード

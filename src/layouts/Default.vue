@@ -7,7 +7,7 @@
             <slot/>
           </main>
         <!--footer-our-partners /-->
-        <call-to-action />
+        <!-- <call-to-action /> -->
         <footer-component />
       </div>
     </transition>
