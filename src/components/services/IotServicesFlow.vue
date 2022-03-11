@@ -88,11 +88,11 @@
           </v-col>
         </v-row>
 
-        <v-row justify="center" class="flow-cta-container">
+        <!-- <v-row justify="center" class="flow-cta-container">
           <v-col cols="11" md="10" lg="9">
             <PostCTA />
           </v-col>
-        </v-row>
+        </v-row> -->
 
       </v-container>
 

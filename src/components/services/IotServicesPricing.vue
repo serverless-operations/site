@@ -33,9 +33,9 @@
                     <p class="price-text">
                       400,000 <span>円/⽉</span> 
                     </p>
-                    <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
+                    <!-- <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
                       オンライン無料相談を予約する
-                    </a>
+                    </a> -->
                   </div>        
                   <div class="service-pricing-list">
                     <ul>
@@ -62,10 +62,10 @@
                     <p class="price-text">
                       1,000,000 <span>円/⽉</span> 
                     </p>
-                    <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
+                    <!-- <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
                       オンライン無料相談を予約する
-                    </a>
-                  </div>        
+                    </a> -->
+                  </div>
                   <div class="service-pricing-list">
                     <ul>
                       <li>アーキテクチャ設計</li>
@@ -93,10 +93,10 @@
                     <p class="price-text">
                       1,200,000 <span>円/⽉</span> 
                     </p>
-                    <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
+                    <!-- <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
                       オンライン無料相談を予約する
-                    </a>
-                  </div>        
+                    </a> -->
+                  </div>
                   <div class="service-pricing-list">
                     <ul>
                       <li>概念実証</li>
@@ -123,10 +123,10 @@
                     <p class="price-text">
                       1,600,000 <span>円/⽉</span> 
                     </p>
-                    <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
+                    <!-- <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
                       オンライン無料相談を予約する
-                    </a>
-                  </div>        
+                    </a> -->
+                  </div>
                   <div class="service-pricing-list">
                     <ul>
                       <li>課題ヒアリング</li>

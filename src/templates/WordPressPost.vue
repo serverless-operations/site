@@ -54,7 +54,7 @@
                 
                 <share-buttons :title="$page.wordPressPost.title" />
 
-                <PostCTA />
+                <!-- <PostCTA /> -->
                 
               </v-col>
             </v-row>
