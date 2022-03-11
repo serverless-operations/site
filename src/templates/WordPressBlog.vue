@@ -48,7 +48,7 @@
 
                 <share-buttons :title="$page.wordPressBlog.title" />
 
-                <PostCTA />
+                <!-- <PostCTA /> -->
 
                 <div class="post-author-container">
                   <h5 class="post-author-title">Written by</h5>

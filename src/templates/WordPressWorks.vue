@@ -69,7 +69,7 @@
 
                 <share-buttons :title="$page.wordPressWorks.title" />
 
-                <PostCTA />
+                <!-- <PostCTA /> -->
 
               </v-col>
             </v-row>
