@@ -238,6 +238,8 @@ export default {
     .p-mainvisual__english-sloagan {
       transform: rotate(90deg);
       transform-origin: bottom left;
+      background-blend-mode: lighten;
+      opacity: .8;
 
       @include media-breakpoint-down(sm) {
         height: 96px;
