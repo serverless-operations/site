@@ -1,88 +1,92 @@
 <template>
-<div class="wrapper">
-  <div class="v-content">
-    <div class="v-content__wrap">
-      <h2>Works</h2>
-      <div class="column justify-center align-center container">
-        <client-only>
-          <swiper class="swiper" :options="swiperOptions" ref="mySwiper">
-            <swiper-slide
-                v-for="{ node } in $static.works.edges"
-                :key="node.id"
+  <div class="wrapper">
+    <div class="v-content">
+      <div class="v-content__wrap">
+        <h2>Works</h2>
+        <div class="column justify-center align-center container">
+          <client-only>
+            <swiper
+                class="swiper"
+                :options="swiperOptions"
+                ref="mySwiper"
             >
-              <WorksCard :post="node" />
-            </swiper-slide>
-            <!--div class="swiper-pagination" slot="pagination"></div>
-            <div class="swiper-button-prev" slot="button-prev"></div>
-            <div class="swiper-button-next" slot="button-next"></div -->
-          </swiper>
-        </client-only>
+              <swiper-slide
+                  v-for="{ node } in $static.works.edges"
+                  :key="node.id"
+              >
+                <WorksCard :post="node"/>
+              </swiper-slide>
+              <div class="swiper-pagination" slot="pagination"></div>
+              <!-- <div class="swiper-button-prev" slot="button-prev"></div>
+              <div class="swiper-button-next" slot="button-next"></div> -->
+            </swiper>
+          </client-only>
+        </div>
+        <!-- <div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
+          <g-link to="/works-archives">More Details</g-link>
+        </div> -->
       </div>
-
-      <!--div justify="end" class="d-none d-md-block p-top-news--more col col-5 align-self-end">
-        <g-link to="/works-archives">More Details</g-link>
-      </div -->
+      <!-- v-content__wrap -->
     </div>
-    <!-- v-content__wrap -->
+    <div class="button-area">
+      <a href="/works-archives" class="c-link-button">実績紹介</a>
+    </div>
   </div>
-  <div>
-    <a href="/works-archives" class="c-link-button">実績紹介</a>
-  </div>
-</div>
-    <!-- v-content -->
+  <!-- v-content -->
 </template>
 
 <static-query>
 query ($page: Int) {
-  works: allWordPressWorks (page: $page, perPage: 6, sortBy: "date", order: DESC) @paginate {
-    pageInfo {
-      totalPages
-      currentPage
-    }
-    edges {
-      node {
-        id
-        title
-        date (format: "YYYY.MM.DD")
-        path
-        featuredMedia {
-          sourceUrl
-          altText
-          mediaDetails {
-            width
-          }
-        }
-        categories {
-          id
-          title
-          path
-        }
-        tags {
-          id
-          title
-          path
-        }
-        acf {
-          companyProfile,
-          companyLogo {
-            sourceUrl,
-            altText
-          }
-        }
-      }
-    }
-  }
+works: allWordPressWorks (page: $page, perPage: 6, sortBy: "date", order: DESC) @paginate {
+pageInfo {
+totalPages
+currentPage
+}
+edges {
+node {
+id
+title
+date (format: "YYYY.MM.DD")
+path
+featuredMedia {
+sourceUrl
+altText
+mediaDetails {
+width
+}
+}
+categories {
+id
+title
+path
+}
+tags {
+id
+title
+path
+}
+acf {
+companyProfile,
+companyLogo {
+sourceUrl,
+altText
+}
+}
+}
+}
+}
 }
 </static-query>
 
 <script>
 import WorksCard from '~/components/WorksCard.vue';
-import { Swiper as SwiperClass, Autoplay } from 'swiper/core';
+import { Swiper as SwiperClass, Pagination, Mousewheel, Autoplay } from 'swiper/core'
+// import {Autoplay, Swiper as SwiperClass} from 'swiper/core';
 import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter';
 
 // Swiper modules
-SwiperClass.use([Autoplay]);
-const { Swiper, SwiperSlide } = getAwesomeSwiper(SwiperClass);
+SwiperClass.use([Autoplay, Pagination]);
+const {Swiper, SwiperSlide} = getAwesomeSwiper(SwiperClass);
 export default {
   components: {
     WorksCard,
@@ -102,15 +106,12 @@ export default {
         freeMode: false,
         pagination: {
           el: '.swiper-pagination',
-          // clickable: true
+          type: 'progressbar',
+          //clickable: true
         },
         autoplay: {
           delay: 5000,
           disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
         },
         breakpoints: {
           1888: {
@@ -154,16 +155,22 @@ export default {
   // props: ['blog']
 };
 </script>
-
+<style lang="scss">
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: #ffffff;
+}
+</style>
 <style lang="scss" scoped>
 @include LinkButton;
 .wrapper {
   padding: 56px 0 120px 0;
   width: 100%;
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
+
 .v-content {
   position: relative;
   z-index: 1;
@@ -183,17 +190,35 @@ display: flex;
       font-size: 96px;
     }
   }
+
   .container {
     max-width: none;
     width: 100vw;
     padding-right: 0;
     padding-left: 0;
+    margin-top: -85px;
   }
 }
 
 /deep/ .swiper-container {
   padding: 60px 0;
 }
+
+.swiper-pagination-progressbar {
+  background: rgba(255,255,255,0.3);
+  height: 1px;
+  bottom: 0;
+  top: auto;
+  width: 80%;
+  max-width: 1136px;
+  position: relative;
+  margin: 70px auto auto auto;
+}
+
+.button-area {
+  margin-top: 34px;
+}
+
 /* /deep/ .swiper-wrapper {
   display: flex;
   .swiper-slide {
