@@ -40,7 +40,7 @@
           <p class="brandslogan-en">
             <img class="p-mainvisual__english-sloagan"
                 src="@/assets/images/top-main-copy.svg"
-                alt="Maximize the cloud value with serverless">
+                alt="Maximize your cloud value with serverless">
           </p>
 
         </div>
