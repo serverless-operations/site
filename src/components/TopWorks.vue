@@ -1,14 +1,14 @@
 <template>
+<div class="wrapper">
   <div class="v-content">
     <div class="v-content__wrap">
       <h2>Works</h2>
-
       <div class="column justify-center align-center container">
         <client-only>
           <swiper class="swiper" :options="swiperOptions" ref="mySwiper">
             <swiper-slide
-              v-for="{ node } in $static.works.edges"
-              :key="node.id"
+                v-for="{ node } in $static.works.edges"
+                :key="node.id"
             >
               <WorksCard :post="node" />
             </swiper-slide>
@@ -25,7 +25,11 @@
     </div>
     <!-- v-content__wrap -->
   </div>
-  <!-- v-content -->
+  <div>
+    <a href="/works-archives" class="c-link-button">実績紹介</a>
+  </div>
+</div>
+    <!-- v-content -->
 </template>
 
 <static-query>
@@ -152,9 +156,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.v-content {
+@include LinkButton;
+.wrapper {
   padding: 56px 0 120px 0;
   width: 100%;
+display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.v-content {
   position: relative;
   z-index: 1;
 
