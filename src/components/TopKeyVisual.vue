@@ -37,6 +37,8 @@
             </span>
           </h2>
 
+          <a href="/services" class="c-link-button text-anim">サービスと無料相談について</a>
+
           <p class="brandslogan-en">
             <img class="p-mainvisual__english-sloagan"
                 src="@/assets/images/top-main-copy.svg"
@@ -149,6 +151,8 @@ export default {
 
 
 <style lang="scss" scoped>
+@include LinkButton;
+
 .p-mainvisual-content {
   width: 100vw;
   height: 100vh;
@@ -231,7 +235,7 @@ export default {
       @include media-breakpoint-up(md) {
         font-size: 1.8rem;
         line-height: 2;
-        margin-bottom: 48px;
+        margin-bottom: 41px;
       }
     }
     // Maximize the cloud value with serverless
@@ -255,6 +259,7 @@ export default {
         transform: initial;
         width: 100%;
         height: auto;
+        margin-top: 120px;
       }
     }
   } // l-mainvisual-copytext
