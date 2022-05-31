@@ -4,6 +4,7 @@
 
       <div class="top-blue-bg-container">
         <top-key-visual />
+        <top-features />
         <top-works />
       </div>
 
@@ -48,6 +49,7 @@ import { Pager } from 'gridsome'
 import TopKeyVisual from '~/components/TopKeyVisual.vue'
 import TopBlog from '~/components/TopBlog.vue'
 import BlogCard from '~/components/BlogCard.vue'
+import TopFeatures from '~/components/TopFeatures.vue'
 import TopWorks from '~/components/TopWorks.vue'
 import WorksCard from '~/components/WorksCard.vue'
 import TopNewsContact from '~/components/TopNewsContact.vue'
@@ -62,6 +64,7 @@ export default {
     TopKeyVisual,
     TopBlog,
     BlogCard,
+    TopFeatures,
     TopWorks,
     WorksCard,
     TopNewsContact,
