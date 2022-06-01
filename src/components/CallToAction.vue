@@ -28,9 +28,9 @@
           <v-col cols="12" md="6">
             <p class="cta-header-text">
               サーバーレスオペレーションズの担当者がオンラインで皆さんのサーバーレスに関するご相談やお問い合わせに無料でお答えいたします。
-                <a href="https://calendly.com/slsops/office-hours">カレンダー
-                  <small>(Calendly)</small>
-                </a>
+              <a href="https://calendly.com/slsops/office-hours">カレンダー
+                <small>(Calendly)</small>
+              </a>
               からお好きな日程をブッキングしていたくだけで、お申込みいただけます。
             </p>
           </v-col>
@@ -51,7 +51,7 @@
                 <li>新卒エンジニアだがサーバーレスの勉強を<br>どうしたらいいのかわからない</li>
               </ul>
             </div>
-            
+
           </v-col>
 
           <v-col class="cta-task-overview" align="start" justify="center" cols="12" sm="5" md="3">
@@ -60,7 +60,7 @@
               <li class="hour">平日 10:00 – 19:00</li>
               <li class="min">1社 or 1人 / 60分</li>
               <li class="calendar">
-                <a href="https://calendly.com/slsops/office-hours"> 
+                <a href="https://calendly.com/slsops/office-hours">
                   カレンダーから簡単予約
                 </a>
               </li>
@@ -75,10 +75,11 @@
 
     <div class="cta-button-container">
       <a class="cta-button" href="https://calendly.com/slsops/office-hours">
+        <span class="cta-en">Office Hours</span>
         オンライン無料相談を<br class="d-md-none" />カレンダーから予約する
       </a>
     </div>
-   
+
 
   </div>
 
@@ -151,7 +152,7 @@ export default {
       width: 90vw;
     }
   }
-  
+
   h2 {
     margin-top: 120px;
     font-size: 48px;
@@ -351,8 +352,7 @@ export default {
     font-size: 24px;
     padding-top: 90px;
   }
-  &::before {
-    content: 'Office Hours';
+  .cta-en {
     filter: blur(2px);
     position: absolute;
     display: block;
@@ -375,7 +375,7 @@ export default {
       filter: blur(1px);
     }
   }
-  &:hover::before {
+  &:hover .cta-en {
     opacity: 0.2;
     left: 8px;
     filter: blur(0);
@@ -435,3 +435,4 @@ export default {
   z-index: 0;
 }
 </style>
+
