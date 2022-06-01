@@ -54,51 +54,12 @@ export default {
     font-family: $font-jp-regular;
     z-index: 1;
     position: relative;
-    // hoverしたとき、画像部分に左から右へprimaryをかける
-    &__image-cover {
-      &:after {
-        position: absolute;
-        content: '';
-        display: block;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform: scaleX(0);
-        transform-origin: left;
-        will-change: transform;
-        transition: all 0.4s cubic-bezier(0.76, 0, 0.3, 1);
-        background-color: rgba($primary, 0.4);
-      }
-    } // &__image-cover
+
     // アイキャッチ部分
     &__image {
       position: relative;
       overflow: hidden;
       background: $primary;
-
-      // アイキャッチ、左下と右上の装飾
-      &::before,
-      &::after {
-        z-index: 2;
-        content: '';
-        display: block;
-        width: 33.6%;
-        height: 33.6%;
-        background-color: $white;
-        transform: rotate(-45deg);
-        position: absolute;
-      }
-      &::before {
-        top: -17.8%;
-        right: -17.8%;
-      }
-      &::after {
-        bottom: -17.8%;
-        left: -17.8%;
-      }
-
       // アイキャッチ画像
       img {
         object-fit: cover;
@@ -198,7 +159,7 @@ export default {
       transition: transform 0.4s cubic-bezier(0.76, 0, 0.3, 1);
       transform: scaleX(0);
       transform-origin: right center;
-      bottom: 0px;
+      bottom: 0;
       height: 1px;
       left: 0;
       width: 100%;
