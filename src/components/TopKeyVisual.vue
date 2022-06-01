@@ -37,7 +37,7 @@
             </span>
           </h2>
 
-          <a href="/services" class="c-link-button text-anim">サービスと無料相談について</a>
+          <a href="/services" class="c-link-button text-anim">サービスについて</a>
 
           <p class="brandslogan-en">
             <img class="p-mainvisual__english-sloagan"

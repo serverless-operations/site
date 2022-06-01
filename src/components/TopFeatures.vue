@@ -155,6 +155,11 @@
       font-family: $font-jp-regular;
       font-size: 16px;
       line-height: 200%;
+      text-align: justify;
+      @include media-breakpoint-down(sm) {
+        font-size: 14px;
+        line-height: 170%;
+      }
 
       &-lead {
         font-family: $font-jp-bold;
