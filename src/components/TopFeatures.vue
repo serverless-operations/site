@@ -234,7 +234,7 @@
       &-title {
         font-family: $font-jp-bold;
         font-weight: 700;
-        font-size: clamp(24px, 1.9vw, 32px);
+        font-size: clamp(22px, 1.9vw, 32px);
         line-height: 140%;
         margin-bottom: 24px;
       }
@@ -245,6 +245,9 @@
         line-height: 144%;
         text-align: justify;
         padding-top: 24px;
+        @include media-breakpoint-down(sm) {
+          font-size: 16px;
+        }
       }
     }
 
@@ -281,18 +284,27 @@
         border-top: 1px solid rgba(255,255,255,0.3);
         border-bottom: 1px solid rgba(255,255,255,0.3);
         padding: 68px 0 60px 0;
+        @include media-breakpoint-down(sm) {
+          padding: 48px 0 40px 0;
+        }
       }
       &-image {
         width: 100%;
         max-width: 260px;
         margin: auto;
         display: block;
+        @include media-breakpoint-down(sm) {
+          max-width: 200px;
+        }
       }
       &-box {
         width: fit-content;
         margin: auto;
         @include media-breakpoint-down(md) {
           margin-top: 24px;
+        }
+        @include media-breakpoint-down(sm) {
+          margin-top: 12px;
         }
       }
 
@@ -305,6 +317,7 @@
           text-align:  center;
         }
         @include media-breakpoint-down(sm) {
+          font-size: 16px;
           text-align:  left;
         }
       }
@@ -317,6 +330,7 @@
           text-align:  center;
         }
         @include media-breakpoint-down(sm) {
+          font-size: 14px;
           text-align:  left;
         }
       }
