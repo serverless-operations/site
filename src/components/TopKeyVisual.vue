@@ -209,7 +209,9 @@ export default {
     .p-mainvisual__japanese-sloagan {
       font-family: $font-jp-bold;
       letter-spacing: 0.16em;
-      font-size: 1.4rem;
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+
       span {
         display: inline-block;
         position: relative;
@@ -223,19 +225,15 @@ export default {
         left: 0;
         top: 0;
       }
-
+      @include media-breakpoint-down(md) {
+        font-size: 1.4rem;
+        line-height: 2;
+      }
       @include media-breakpoint-down(sm) {
         padding-top: 40px;
         font-size: 1rem;
         line-height: 2.2;
-        margin-bottom: 0;
         letter-spacing: 0;
-      }
-
-      @include media-breakpoint-up(md) {
-        font-size: 1.8rem;
-        line-height: 2;
-        margin-bottom: 41px;
       }
     }
     // Maximize the cloud value with serverless
@@ -248,7 +246,7 @@ export default {
       @include media-breakpoint-down(sm) {
         height: 96px;
         position: absolute;
-        bottom: -24px;
+        bottom: -44px;
       }
 
       @include media-breakpoint-down(xs) {

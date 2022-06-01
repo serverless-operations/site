@@ -360,7 +360,7 @@
     font-family: $font-jp-bold;
     font-size: 1rem;
     line-height: 1;
-    min-width: 300px;
+    width: 300px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -372,6 +372,9 @@
     @media (any-hover: hover) {
       &:hover{
         background: rgba(255, 255, 255, 0.08);
+        &::after {
+          right: -36px;
+        }
       }
     }
     &::after {
@@ -383,6 +386,11 @@
       width: 48px;
       height: 1px;
       background-color: #FFF;
+      transition: all 0.3s cubic-bezier(0.76, 0, 0.3, 1);
+    }
+    @include media-breakpoint-down(xs) {
+      width: calc(100% - 36px);
+      max-width: 300px;
     }
   }
 }

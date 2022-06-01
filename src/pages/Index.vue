@@ -87,7 +87,7 @@ export default {
 .top-blue-bg-container {
   background: 
   url('../assets/images/bg/so-blue-texture.png'),
-  linear-gradient(45deg, $secondary 11.76%, $tertiary 88.21%);
+  linear-gradient(10.14deg, #00007D 61.19%, #2C48FF 100.81%);
   background-position: center, center;
   background-repeat: repeat, no-repeat;
   background-size: 70% 70%, auto;

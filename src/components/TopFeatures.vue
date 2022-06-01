@@ -23,7 +23,7 @@
     <div class="p-top-features--cards">
       <div class="container">
         <v-row>
-          <v-col sm="12" md="5" lg="5">
+          <v-col cols="12" sm="12" md="5" lg="5">
             <div class="p-top-features--card">
               <img class="p-top-features--card-image"
                   src="../assets/images/top-features-1.svg"
@@ -68,11 +68,11 @@
             </div>
           </v-col>
           <v-col cols="12" sm="12" md="5" lg="5" offset-md="1" class="p-top-features--service">
-            <div>
+
               <p>お客さまのチームに入り、<br>
                 現状を把握しながら課題を共に解決します。</p>
               <a href="/services" class="c-link-button">サービスについて</a>
-            </div>
+
           </v-col>
         </v-row>
       </div><!-- container -->
@@ -124,6 +124,9 @@
     @include media-breakpoint-down(md) {
       font-size: 96px;
     }
+    @include media-breakpoint-down(sm) {
+      font-size: clamp(30px,20vw,96px);
+    }
   }
 
   h3 {
@@ -134,6 +137,9 @@
     font-weight: 700;
     @include media-breakpoint-down(md) {
       font-size: 32px;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 24px;
     }
   }
 
@@ -155,6 +161,9 @@
         font-size: 24px;
         line-height: 140%;
         font-weight: 700;
+        @include media-breakpoint-down(md) {
+          font-size: 20px;
+        }
       }
     }
 
@@ -187,11 +196,15 @@
       position: relative;
       display: flex;
       flex-direction: column;
+      margin-top: 1em;
+      @include media-breakpoint-down(sm) {
+        margin-top: 32px;
+      }
 
       &::before {
         content: "";
         width: 100%;
-        padding-top: 61%;
+        padding-top: 65%;
       }
 
       &-image {
@@ -218,12 +231,15 @@
         font-weight: 700;
         font-size: clamp(24px, 1.9vw, 32px);
         line-height: 140%;
+        margin-bottom: 24px;
       }
 
       &-content {
+        border-top: 1px solid rgba(255,255,255,.3);
         font-size: 18px;
         line-height: 144%;
         text-align: justify;
+        padding-top: 24px;
       }
     }
 
@@ -233,6 +249,9 @@
       justify-content: center;
       @include media-breakpoint-down(md) {
         margin-top:  80px;
+      }
+      @include media-breakpoint-down(sm) {
+        align-items: center;
       }
 
       p {
@@ -259,6 +278,7 @@
         padding: 68px 0 60px 0;
       }
       &-image {
+        width: 100%;
         max-width: 260px;
         margin: auto;
         display: block;
@@ -266,6 +286,9 @@
       &-box {
         width: fit-content;
         margin: auto;
+        @include media-breakpoint-down(md) {
+          margin-top: 24px;
+        }
       }
 
       &-title {

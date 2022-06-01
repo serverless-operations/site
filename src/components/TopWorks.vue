@@ -217,6 +217,10 @@ export default {
 
 .button-area {
   margin-top: 34px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* /deep/ .swiper-wrapper {
