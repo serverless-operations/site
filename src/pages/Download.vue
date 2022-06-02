@@ -59,7 +59,7 @@
               </h2>
               <p>
                 <img
-                  src="../assets/images/download/download-form-image.jpg"
+                  src="../assets/images/download/download-form-image.png"
                   class="text-center document-image"
                   alt="Serverless Operations 会社資料イメージ画像"
                 />
