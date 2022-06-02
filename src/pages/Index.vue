@@ -8,10 +8,10 @@
         <top-works />
       </div>
 
-      <top-blog />
+      <!-- <top-blog /> -->
       <top-news-contact />
-      <top-partners />
       <top-clients />
+      <top-partners />
 
     </div>
 

@@ -135,13 +135,17 @@ export default {
 
 <style lang="scss" scoped>
   .v-content {
-    padding: 80px 0 160px 0;
-    background: $light-gray-2;
+    padding: 150px 0 230px 0;
     display: block;
     flex: initial;
     overflow: hidden;
+    background-image: url('../assets/images/top-news-contact-bk.svg');
+    background-position: top 36px left 0;
+    background-size: 100%;
+    background-color:rgba(255, 255, 255, 0.7);
+    background-blend-mode:lighten;
     @include media-breakpoint-down(md) {
-      padding: 40px 0;
+      padding: 70px 0;
     }
   }
 
