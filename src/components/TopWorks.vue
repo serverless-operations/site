@@ -197,6 +197,9 @@ export default {
     padding-right: 0;
     padding-left: 0;
     margin-top: -85px;
+    @include media-breakpoint-down(md) {
+      margin-top: -65px;
+    }
   }
 }
 
