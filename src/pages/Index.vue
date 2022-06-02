@@ -4,13 +4,14 @@
 
       <div class="top-blue-bg-container">
         <top-key-visual />
+        <top-features />
         <top-works />
       </div>
 
-      <top-blog />
+      <!-- <top-blog /> -->
       <top-news-contact />
-      <top-partners />
       <top-clients />
+      <top-partners />
 
     </div>
 
@@ -48,6 +49,7 @@ import { Pager } from 'gridsome'
 import TopKeyVisual from '~/components/TopKeyVisual.vue'
 import TopBlog from '~/components/TopBlog.vue'
 import BlogCard from '~/components/BlogCard.vue'
+import TopFeatures from '~/components/TopFeatures.vue'
 import TopWorks from '~/components/TopWorks.vue'
 import WorksCard from '~/components/WorksCard.vue'
 import TopNewsContact from '~/components/TopNewsContact.vue'
@@ -62,6 +64,7 @@ export default {
     TopKeyVisual,
     TopBlog,
     BlogCard,
+    TopFeatures,
     TopWorks,
     WorksCard,
     TopNewsContact,
@@ -84,7 +87,7 @@ export default {
 .top-blue-bg-container {
   background: 
   url('../assets/images/bg/so-blue-texture.png'),
-  linear-gradient(45deg, $secondary 11.76%, $tertiary 88.21%);
+  linear-gradient(10.14deg, #00007D 61.19%, #2C48FF 100.81%);
   background-position: center, center;
   background-repeat: repeat, no-repeat;
   background-size: 70% 70%, auto;

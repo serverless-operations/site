@@ -37,10 +37,12 @@
             </span>
           </h2>
 
+          <a href="/services" class="c-link-button text-anim">サービスについて</a>
+
           <p class="brandslogan-en">
             <img class="p-mainvisual__english-sloagan"
                 src="@/assets/images/top-main-copy.svg"
-                alt="Maximize the cloud value with serverless">
+                alt="Maximize your cloud value with serverless">
           </p>
 
         </div>
@@ -149,6 +151,8 @@ export default {
 
 
 <style lang="scss" scoped>
+@include LinkButton;
+
 .p-mainvisual-content {
   width: 100vw;
   height: 100vh;
@@ -205,7 +209,9 @@ export default {
     .p-mainvisual__japanese-sloagan {
       font-family: $font-jp-bold;
       letter-spacing: 0.16em;
-      font-size: 1.4rem;
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+
       span {
         display: inline-block;
         position: relative;
@@ -219,30 +225,28 @@ export default {
         left: 0;
         top: 0;
       }
-
+      @include media-breakpoint-down(md) {
+        font-size: 1.4rem;
+        line-height: 2;
+      }
       @include media-breakpoint-down(sm) {
         padding-top: 40px;
         font-size: 1rem;
         line-height: 2.2;
-        margin-bottom: 0;
         letter-spacing: 0;
-      }
-
-      @include media-breakpoint-up(md) {
-        font-size: 1.8rem;
-        line-height: 2;
-        margin-bottom: 48px;
       }
     }
     // Maximize the cloud value with serverless
     .p-mainvisual__english-sloagan {
       transform: rotate(90deg);
       transform-origin: bottom left;
+      background-blend-mode: lighten;
+      opacity: .8;
 
       @include media-breakpoint-down(sm) {
         height: 96px;
         position: absolute;
-        bottom: -24px;
+        bottom: -44px;
       }
 
       @include media-breakpoint-down(xs) {
@@ -253,6 +257,7 @@ export default {
         transform: initial;
         width: 100%;
         height: auto;
+        margin-top: 120px;
       }
     }
   } // l-mainvisual-copytext
