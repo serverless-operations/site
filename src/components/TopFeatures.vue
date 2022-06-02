@@ -1,5 +1,5 @@
 <template>
-  <div class="v-content">
+  <div class="">
     <h2>Features</h2>
 
     <div class="container">
@@ -155,7 +155,6 @@
       font-family: $font-jp-regular;
       font-size: 16px;
       line-height: 200%;
-      text-align: justify;
       @include media-breakpoint-down(sm) {
         font-size: 14px;
         line-height: 170%;
@@ -169,6 +168,12 @@
         @include media-breakpoint-down(md) {
           font-size: 20px;
         }
+      }
+      &-content {
+        @include media-breakpoint-up(sm) {
+          text-align: justify;
+        }
+
       }
     }
 
@@ -268,6 +273,9 @@
         font-size: clamp(18px, 1.3vw, 24px);
         line-height: 140%;
         text-align: justify;
+        @include media-breakpoint-down(xs) {
+          padding-inline: 1em;
+        }
       }
 
       a {
