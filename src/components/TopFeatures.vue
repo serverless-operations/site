@@ -285,8 +285,8 @@
 
     &--amazon {
       margin: 140px 0;
-      @include media-breakpoint-up(md) {
-        margin: 135px 0;
+      @include media-breakpoint-down(md) {
+        margin: 100px 0;
       }
       .container {
         border-top: 1px solid rgba(255,255,255,0.3);
