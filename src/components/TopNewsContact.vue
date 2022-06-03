@@ -27,7 +27,7 @@
 
         <div class="row mb-md-12 align-center justify-end">
           <div class="d-block d-md-none p-top-news--more col col-5 align-self-end">
-            <g-link to="/news/">More Details</g-link>
+            <g-link to="/news-archives">More Details</g-link>
           </div>
         </div><!-- row -->
 
