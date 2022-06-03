@@ -6,7 +6,6 @@
 
         <form
           accept-charset="UTF-8"
-          action="https://getform.io/f/9c63f873-9e0b-459d-bd81-df41e30ab35c"
           method="POST"
           class="v-form"
           enctype="multipart/form-data"
@@ -122,6 +121,9 @@
                 <g-link to="/privacy-policy">個人情報保護方針</g-link
                 >をご覧いただき、内容に同意いただけましたら、下記の送信ボタンを押してください。
               </p>
+              <p class="p-top-contact--recaptcha">This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
             </v-col>
           </v-row>
 
@@ -143,10 +145,14 @@
 
 <script>
 import { required, email } from "vuelidate/lib/validators";
+import Vue from "vue";
+import axios from "axios";
+import { VueReCaptcha } from "vue-recaptcha-v3";
+Vue.use(VueReCaptcha, { siteKey: "6LciESwgAAAAAGyjFHbx3EDyy_lkrMrajAHvo3dz" }); // テスト用
+
 export default {
   data: () => ({
     form: {
-      captchaToken: "",
       name1: "",
       name2: "",
       email: "",
@@ -174,23 +180,45 @@ export default {
       },
     },
   },
-  mounted() {
-    window.onload = ()=>{
-      grecaptcha.ready(function() {
-        grecaptcha.execute('6LciESwgAAAAAGyjFHbx3EDyy_lkrMrajAHvo3dz', {action: 'submit'})
-            .then(function(token) {
-              document.getElementById('captchaResponse').value = token;
-            });
-      });
-    }
-  },
   methods: {
     submit: function(event) {
+
       this.$v.$touch();
       if (this.$v.$invalid) {
         if (event) event.preventDefault();
         return false;
       }
+
+      const formData = new FormData();
+      formData.append("name1", this.name1);
+      formData.append("name2", this.name2);
+      formData.append("email", this.email);
+      formData.append("companyname", this.companyname);
+      formData.append("phonenumber", this.phonenumber);
+
+      this.$recaptcha("login").then((token) => {
+        formData.append("g-recaptcha-response", token);
+
+        axios
+            .post(
+                "https://getform.io/f/9c63f873-9e0b-459d-bd81-df41e30ab35c", // テスト用
+                formData,
+                {
+                  headers: {
+                    Accept: "application/json",
+                  },
+                }
+            )
+            .then(
+                (response) => {
+                  this.isSuccess = response.data.success ? true : false;
+                },
+                (response) => {
+                  // Error
+                }
+            );
+      });
+
     },
   },
 };
@@ -262,6 +290,15 @@ export default {
       text-decoration: none;
       color: $tertiary;
       font-weight: bold;
+    }
+  }
+  &--recaptcha {
+    width: 100%;
+    color: $mid-gray-1;
+    font-family: $font-jp-regular;
+    font-size: .7rem;
+    a {
+      color: $mid-gray-1;
     }
   }
 }

@@ -153,9 +153,6 @@ export default {
       title: "資料ダウンロード",
       description:
         "私たちが提供するサーバーレスアーキテクチャを使用したサービスについて、詳しい内容を記載したPDF資料をご用意いたしました。ぜひダウンロードしてご活用ください。",
-      script: [{
-        src: 'https://www.google.com/recaptcha/api.js?render=6LciESwgAAAAAGyjFHbx3EDyy_lkrMrajAHvo3dz'
-      }]
     };
   },
   components: {
