@@ -140,10 +140,15 @@
 <script>
 import {email, minLength, required} from 'vuelidate/lib/validators'
 import Vue from "vue";
-import axios from "axios";
 import {VueReCaptcha} from "vue-recaptcha-v3";
-// Vue.use(VueReCaptcha, { siteKey: "6LdkCD4gAAAAAPvGC6eRsNW8ScaCD5wcCOfqbMIU" }); // 本番用
-Vue.use(VueReCaptcha, {siteKey: "6LciESwgAAAAAGyjFHbx3EDyy_lkrMrajAHvo3dz"}); // テスト用
+
+const siteKey = "6LdkCD4gAAAAAPvGC6eRsNW8ScaCD5wcCOfqbMIU" // 本番用
+// const siteKey = "6LciESwgAAAAAGyjFHbx3EDyy_lkrMrajAHvo3dz" // テスト用
+
+const endPoint = "https://getform.io/f/c49d25a9-26c7-4da4-a475-38ff6c466543" // 本番用
+// const endPoint = "https://getform.io/f/2f5656ea-5be5-4f92-8e19-e06514111271" // テスト用
+
+Vue.use(VueReCaptcha, {siteKey: siteKey});
 
 export default {
   data: () => ({
@@ -218,9 +223,7 @@ export default {
           form.submit()
         }
 
-        // 本番用： "https://getform.io/f/c49d25a9-26c7-4da4-a475-38ff6c466543"
-        // テスト用："https://getform.io/f/2f5656ea-5be5-4f92-8e19-e06514111271"
-        submit("https://getform.io/f/2f5656ea-5be5-4f92-8e19-e06514111271", "POST", formData)
+        submit(endPoint, "POST", formData)
 
       });
     },
