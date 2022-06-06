@@ -202,28 +202,26 @@ export default {
       formData.append("content", this.form.content);
       // console.log(...formData.entries());
 
-      // "https://getform.io/f/c49d25a9-26c7-4da4-a475-38ff6c466543", // 本番用
       this.$recaptcha("login").then((token) => {
         formData.append("g-recaptcha-response", token);
-        axios
-            .post(
-                "https://getform.io/f/2f5656ea-5be5-4f92-8e19-e06514111271",
-                formData,
-                {
-                  headers: {
-                    Accept: "application/json",
-                  },
-                }
-            )
-            .then(
-                (response) => {
-                  // this.isSuccess = response.data.success ? true : false;
-                  // console.log(response);
-                },
-                (response) => {
-                  // Error
-                }
-            );
+
+        const submit = (url, method, fd) => {
+          const form = document.createElement("form")
+          form.action = url
+          form.method = method
+          form.addEventListener("formdata", eve => {
+            for(const [name, value] of fd.entries()) {
+              eve.formData.append(name, value)
+            }
+          })
+          document.body.append(form)
+          form.submit()
+        }
+
+        // 本番用： "https://getform.io/f/c49d25a9-26c7-4da4-a475-38ff6c466543"
+        // テスト用："https://getform.io/f/2f5656ea-5be5-4f92-8e19-e06514111271"
+        submit("https://getform.io/f/2f5656ea-5be5-4f92-8e19-e06514111271", "POST", formData)
+
       });
     },
   }

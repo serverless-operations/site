@@ -200,31 +200,25 @@ export default {
       formData.append("role", this.form.role);
       // console.log(...formData.entries());
 
-      // 本番用： https://getform.io/f/634af40f-f69b-493e-8cd4-29e086b3c5c6
-      // テスト用： https://getform.io/f/a783f6b8-1a3a-42fc-a1d9-f88ffa75882d
       this.$recaptcha("login").then((token) => {
         formData.append("g-recaptcha-response", token);
 
-        axios
-            .post(
-                "https://getform.io/f/a783f6b8-1a3a-42fc-a1d9-f88ffa75882d",
-                formData,
-                {
-                  headers: {
-                    Accept: "application/json",
-                  },
-                }
-            )
-            .then(
-                (response) => {
-                  // this.isSuccess = response.data.success ? true : false;
-                  // console.log(response);
-                },
-                (response) => {
-                  // Error
-                }
-            );
+        const submit = (url, method, fd) => {
+          const form = document.createElement("form")
+          form.action = url
+          form.method = method
+          form.addEventListener("formdata", eve => {
+            for(const [name, value] of fd.entries()) {
+              eve.formData.append(name, value)
+            }
+          })
+          document.body.append(form)
+          form.submit()
+        }
 
+        // 本番用： https://getform.io/f/634af40f-f69b-493e-8cd4-29e086b3c5c6
+        // テスト用： https://getform.io/f/a783f6b8-1a3a-42fc-a1d9-f88ffa75882d
+        submit("https://getform.io/f/a783f6b8-1a3a-42fc-a1d9-f88ffa75882d", "POST", formData)
 
       });
     },
