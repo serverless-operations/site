@@ -99,6 +99,10 @@ body {
   }
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 @include ContactForm;
 
 </style>
