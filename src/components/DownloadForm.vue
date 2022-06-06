@@ -9,9 +9,8 @@
           method="POST"
           class="v-form"
           enctype="multipart/form-data"
-          @submit="submit"
+            v-on:submit.prevent="submit()"
         >
-          <input type="hidden" id="captchaResponse" name="g-recaptcha-response">
           <v-row no-gutters>
             <v-col cols="12" sm="4" md="5" lg="4">
               <v-subheader>お名前<small>（漢字）</small>*</v-subheader>
@@ -183,6 +182,7 @@ export default {
   },
   methods: {
     submit: function(event) {
+      console.log('1');
 
       this.$v.$touch();
       if (this.$v.$invalid) {
@@ -196,14 +196,17 @@ export default {
       formData.append("email", this.email);
       formData.append("companyname", this.companyname);
       formData.append("phonenumber", this.phonenumber);
+      console.log('2');
 
+      // 本番用： https://getform.io/f/634af40f-f69b-493e-8cd4-29e086b3c5c6
+      // テスト用： https://getform.io/f/9c63f873-9e0b-459d-bd81-df41e30ab35c
       this.$recaptcha("login").then((token) => {
+        console.log('3');
         formData.append("g-recaptcha-response", token);
 
         axios
             .post(
-                // "https://getform.io/f/634af40f-f69b-493e-8cd4-29e086b3c5c6", // 本番用
-                "https://getform.io/f/9c63f873-9e0b-459d-bd81-df41e30ab35c", // テスト用
+                "https://getform.io/f/9c63f873-9e0b-459d-bd81-df41e30ab35c",
                 formData,
                 {
                   headers: {
@@ -214,9 +217,11 @@ export default {
             .then(
                 (response) => {
                   this.isSuccess = response.data.success ? true : false;
+                  console.log('4');
                 },
                 (response) => {
                   // Error
+                  console.log('5');
                 }
             );
       });

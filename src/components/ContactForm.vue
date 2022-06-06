@@ -4,11 +4,12 @@
       <v-col cols="12" md="10" lg="8" class="p-top-contact--form">
         <div class="p-top-contact--form-shadow" />
 
-          <form action=""
+          <form
+            accept-charset="UTF-8"
             method="POST" 
             class="v-form"
             enctype="multipart/form-data"
-            @submit="submit"
+              v-on:submit.prevent="submit()"
           >
 
             <v-row no-gutters>
@@ -184,13 +185,13 @@ export default {
       formData.append("email", this.email);
       formData.append("content", this.content);
 
+      // "https://getform.io/f/c49d25a9-26c7-4da4-a475-38ff6c466543", // 本番用
       this.$recaptcha("login").then((token) => {
         formData.append("g-recaptcha-response", token);
 
         axios
             .post(
-                // "https://getform.io/f/c49d25a9-26c7-4da4-a475-38ff6c466543", // 本番用
-                "https://getform.io/f/9c63f873-9e0b-459d-bd81-df41e30ab35c", // テスト用
+                "https://getform.io/f/9c63f873-9e0b-459d-bd81-df41e30ab35c",
                 formData,
                 {
                   headers: {
