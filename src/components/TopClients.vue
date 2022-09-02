@@ -58,6 +58,11 @@
         alt="ServerlessOperations Clients ALIS"
         class="clients-image"
       />
+      <img
+        src="../assets/images/clients/clients-toda.svg"
+        alt="ServerlessOperations Clients TODA CORPORATION"
+        class="clients-image"
+      />
 
     </div>
   </div>
