@@ -128,19 +128,19 @@ export default {
         {
           key: `og:description`,
           property: `og:description`,
-          content: 'サーバーレスやコンテナなどのクラウドネイティブな技術を使⽤することで、システム運⽤のリソースやコスト最適化などが実現できます。サーバーレス/コンテナのノウハウをプロジェクトを通してお伝えし、開発の内製化までをサポートします。',
+          content: '「AWSサービスデリバリープログラム」認定に基づき、AWSサーバーレス開発の主要なサービスであるAWS Lambda（コンピューティング）、Amazon API Gateway（API管理）、Amazon DynamoDB（データ格納）を使った開発をサポートします。',
         },
         {
           key: `og:image`,
           property: `og:image`,
-          content:  `https://serverless.co.jp/iot-serverless-ogp.png`,
+          content:  `https://serverless.co.jp/aws-serverless-ogp.png`,
         },
         { name: 'twitter:card',
           content: 'summary_large_image',
         },
         {
           name: 'twitter:image',
-          content: `https://serverless.co.jp/iot-serverless-ogp.png`,
+          content: `https://serverless.co.jp/aws-serverless-ogp.png`,
         }
       ],
     }
