@@ -30,7 +30,7 @@
                   <p class="merit-header-text">Scalability</p>
                   <p class="merit-header-img">
                     <img
-                      src="@/assets/images/services/iot/iot-merit-1.svg"
+                      src="@/assets/images/services/aws/aws-merit-1.svg"
                       class=""
                       alt="トラフィックの変化に柔軟に対応できる アイコン"
                     >
@@ -48,7 +48,7 @@
                   <p class="merit-header-text">Cost Down</p>
                   <p class="merit-header-img">
                     <img
-                      src="@/assets/images/services/iot/iot-merit-2.svg"
+                      src="@/assets/images/services/aws/aws-merit-2.svg"
                       class=""
                       alt="運用工数や人的コストを削減 アイコン"
                     >
@@ -63,12 +63,12 @@
 
               <div class="merit-card">
                 <div class="merit-card-icon">
-                  <p class="merit-header-text">AAAAAAAA</p>
+                  <p class="merit-header-text">Small Start</p>
                   <p class="merit-header-img">
                     <img
-                      src="@/assets/images/services/iot/iot-merit-2.svg"
+                      src="@/assets/images/services/aws/aws-merit-3.svg"
                       class=""
-                      alt="運用工数や人的コストを削減 アイコン"
+                      alt="⼩さくはじめて、ビジネスの成⻑に伴いスケールしやすい アイコン"
                     >
                   </p>
                 </div>
