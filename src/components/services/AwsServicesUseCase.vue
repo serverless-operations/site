@@ -26,7 +26,7 @@
         <v-row justify="center" class="usecase-text-anim">
           <v-col cols="12" md="10">
             <p>
-              <g-image src="@/assets/images/services/iot/iot-usecase-1.svg" alt="スマートプロダクトにおけるデータ制御実装例のアーキテクチャ図" />
+              <g-image src="@/assets/images/services/aws/aws-usecase-1.svg" alt="エンタープライズ規模の社内向けニュースサイトWebAPIの実装例のアーキテクチャ図" />
             </p>
           </v-col>
         </v-row>
@@ -43,7 +43,7 @@
         <v-row justify="center" class="usecase-text-anim">
           <v-col cols="12" md="10">
             <p>
-              <g-image src="@/assets/images/services/iot/iot-usecase-2.svg" alt="製造業におけるデータ可視化・分析のアーキテクチャ図" />
+              <g-image src="@/assets/images/services/aws/aws-usecase-2.svg" alt="E-Commerce のリアルタイムな在庫管理実装例のアーキテクチャ図" />
             </p>
           </v-col>
         </v-row>
