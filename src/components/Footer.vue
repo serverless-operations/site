@@ -31,6 +31,11 @@
               </g-link>
             </li>
             <li class="c-footer-list__item">
+              <g-link to="/services/aws-serverless" class="c-footer-list__link">
+                AWSコアサーバーレスサービスの開発導⼊サポート
+              </g-link>
+            </li>
+            <li class="c-footer-list__item">
               <g-link
                 to="/services/serverless-consulting"
                 class="c-footer-list__link"
