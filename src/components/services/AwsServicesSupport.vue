@@ -17,7 +17,7 @@
         <v-row justify="center">
           <v-col cols="11" md="8" lg="8">
             <p class="support-text-anim">
-              AWSのコアサーバーレスサービス（AWS Lambda, Amazon API Gateway）及びAmazon DynamoDBを使った開発サポートを⾏います。<br class="d-md-block" />サーバーレスオペレーションズは、この三つのサービスの「AWSサービスデリバリープログラム・SDP(<a href="https://aws.amazon.com/jp/partners/programs/service-delivery/" target="_blank">https://aws.amazon.com/jp/partners/programs/service-delivery/</a>)」認定を受けており、開発⽀援を提供する上での深い技術的知識、経験、及び成功事例を兼ね揃えています。<br class="d-md-block" />三つのサービスをすべて組み合わせるパターンのみならず、⼀部のサービスのみを利⽤したパターンにも対応できます。サーバーレスの良さを最⼤限に活かせるよう、様々なユースケースにおいてAWSのベストプラクティスに沿った形でサポートを⾏います。
+              AWSのコアサーバーレスサービス（AWS Lambda, Amazon API Gateway）及びAmazon DynamoDBを使った開発サポートを⾏います。<br class="d-md-block" />サーバーレスオペレーションズは、この三つのサービスの「<a href="https://aws.amazon.com/jp/partners/programs/service-delivery/" target="_blank">AWSサービスデリバリープログラム・SDP</a>」認定を受けており、開発⽀援を提供する上での深い技術的知識、経験、及び成功事例を兼ね揃えています。<br class="d-md-block" />三つのサービスをすべて組み合わせるパターンのみならず、⼀部のサービスのみを利⽤したパターンにも対応できます。サーバーレスの良さを最⼤限に活かせるよう、様々なユースケースにおいてAWSのベストプラクティスに沿った形でサポートを⾏います。
             </p>
           </v-col>
         </v-row>
