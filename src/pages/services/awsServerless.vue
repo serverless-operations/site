@@ -39,7 +39,8 @@
                   <span class="page-title-anim-bg"></span>
                 </h1>
                 <h2 class="page-header-copy page-header-text-anim">
-                  AWSコアサーバーレスサービス<br class="d-md-block d-none" />（AWS Lambda, Amazon API Gateway）<br class="d-md-block d-none" />及び Amazon DynamoDBを使った<br class="d-md-block d-none" />開発導⼊サポート
+                  AWSコアサーバーレスサービス*及び <br class="d-md-block d-none" />Amazon DynamoDBを使った<br class="d-md-block d-none" />開発導⼊サポート
+                  <small class="copy-notes">*AWS Lambda, Amazon API Gateway</small>
                 </h2>
                 <p class="page-header-text page-header-text-anim">
                   「AWSサービスデリバリープログラム」認定に基づき、<br class="d-md-block d-none" />AWSサーバーレス開発の主要なサービスであるAWS Lambda（コンピューティング）、<br class="d-md-block d-none" />Amazon API Gateway（API管理）、Amazon DynamoDB（データ格納）を使った開発をサポートします。
@@ -260,7 +261,12 @@ background:
       margin-bottom: 200px;
     }
   }
-  .page-header-text {
+    .copy-notes {
+      display: block;
+      font-size: 0.8rem;
+      margin-top: 1em;
+    }
+    .page-header-text {
     @include media-breakpoint-down(sm) {
       margin-bottom: 60px;
     }
