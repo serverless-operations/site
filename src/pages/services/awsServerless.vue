@@ -106,7 +106,8 @@ export default {
       title: 'AWSコアサーバーレスサービスの開発導⼊サポート',
       meta: [
         {
-          description: '「AWSサービスデリバリープログラム」認定に基づき、AWSサーバーレス開発の主要なサービスであるAWS Lambda（コンピューティング）、Amazon API Gateway（API管理）、Amazon DynamoDB（データ格納）を使った開発をサポートします。'
+          name: 'description',
+          content: '「AWSサービスデリバリープログラム」認定に基づき、AWSサーバーレス開発の主要なサービスであるAWS Lambda（コンピューティング）、Amazon API Gateway（API管理）、Amazon DynamoDB（データ格納）を使った開発をサポートします。'
         },
         { key: `og:locale`, property: `og:locale`, content: `ja_JP` },
         { key: `og:type`, property: `og:type`, content: `website` },
@@ -142,6 +143,13 @@ export default {
           name: 'twitter:image',
           content: `https://serverless.co.jp/aws-serverless-ogp.png`,
         }
+      ],
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: `https://serverless.co.jp/services/aws-serverless`,
+        },
       ],
     }
   },
