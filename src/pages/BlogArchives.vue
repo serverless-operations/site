@@ -15,7 +15,7 @@
           </div>
         </div>
 
-        <Pager :info="$page.allWordPressBlog.pageInfo" />
+        <Pager :info="$page.allWordPressBlog.pageInfo" class="pager-container" linkClass="pager-container__link" activeLinkClass="pager-container__active"/>
 
       </div><!-- container -->
 
@@ -169,5 +169,9 @@ export default {
   bottom: 0;
   z-index: 0;
   opacity: 0.5;
+  pointer-events: none;
 }
+
+@include Pager;
+
 </style>

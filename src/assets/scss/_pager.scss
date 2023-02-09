@@ -1,0 +1,16 @@
+@mixin pager_style {
+   .pager-container {
+    display: inline-block;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    color: black;
+
+    &__link {
+      text-align: center;
+      padding: 0.6rem 1.2rem;
+      // color: white;
+      text-decoration: none;
+    }
+  }
+}

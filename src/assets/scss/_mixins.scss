@@ -721,3 +721,36 @@
     display: none !important;
   }
 }
+
+@mixin Pager {
+  .pager-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 0 4em;
+    gap: 0.5em;
+
+    &__link {
+      font-size: 1rem;
+      text-align: center;
+      text-decoration: none;
+      padding: 0.5em 0.75em;
+      color: #001A4D;
+      opacity: 0.4;
+      transition: opacity 0.3s cubic-bezier(0.76, 0, 0.3, 1);
+      font-weight: bold;
+      border-bottom-style: solid;
+      border-bottom-width: 2px;
+      border-bottom-color: transparent;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    &__active {
+      color: #2c48ff;
+      opacity: 1;
+      border-bottom-color: #2c48ff;
+    }
+  }
+}

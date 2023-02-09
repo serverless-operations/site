@@ -2,7 +2,7 @@
   <Layout>
 
     <div class="v-content__wrap">
-  
+
       <div class="p-news-header">
         <h1 class="p-news-header__page-title">
           Event & Seminar
@@ -11,14 +11,14 @@
       </div>
 
       <div class="container">
-  
+
         <div class="p-news-contents row">
           <div v-for="{ node } in $page.allWordPressPost.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-3 col-6">
             <PostEventArchives :post="node" v-if="node.categories.find(c => c.slug === 'events')" />
           </div>
         </div>
 
-        <Pager :info="$page.allWordPressPost.pageInfo" />
+        <Pager :info="$page.allWordPressPost.pageInfo" class="pager-container" linkClass="pager-container__link" activeLinkClass="pager-container__active"/>
 
       </div><!-- container -->
 
@@ -306,4 +306,7 @@ export default {
     transition: transform 0.55s cubic-bezier(0.76, 0, 0.3, 1);
   }
 } // .p-card-border
+
+@include Pager;
+
 </style>
