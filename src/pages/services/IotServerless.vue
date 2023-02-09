@@ -1,11 +1,8 @@
 <template>
   <Layout>
     <div class="v-content__wrap">
-
       <div class="l-about-page">
-
         <div class="page-header-container">
-        
           <div class="page-header-img-container">
             <!--背景 -->
             <img src="@/assets/images/about-so-main-bg.svg"
@@ -63,7 +60,6 @@
         <IotServicesFeatures />
 
         <IotServicesContact />
-
       </div>
     </div>
   </Layout>
@@ -103,47 +99,51 @@ export default {
   },
   metaInfo () {
     return {
-      title: 'IoT × サーバーレス / コンテナ開発導⼊サポート',
+      title: "IoT × サーバーレス / コンテナ開発導⼊サポート",
       meta: [
         {
-          description: 'サーバーレスやコンテナなどのクラウドネイティブな技術を使⽤することで、システム運⽤のリソースやコスト最適化などが実現できます。サーバーレス/コンテナのノウハウをプロジェクトを通してお伝えし、開発の内製化までをサポートします。'
+          name: `description`,
+          content:
+            "サーバーレスやコンテナなどのクラウドネイティブな技術を使⽤することで、システム運⽤のリソースやコスト最適化などが実現できます。サーバーレス/コンテナのノウハウをプロジェクトを通してお伝えし、開発の内製化までをサポートします。",
         },
         { key: `og:locale`, property: `og:locale`, content: `ja_JP` },
         { key: `og:type`, property: `og:type`, content: `website` },
         {
-          key: `og:url`,
-          property: `og:url`,
-          content: 'https://serverless.co.jp/services/iot-serverless',
-        },
-        {
           key: `og:title`,
           property: `og:title`,
-          content: 'IoT × サーバーレス / コンテナ開発導⼊サポート | Serverless Operations',
-        },
-        {
-          key: `og:title`,
-          property: `og:title`,
-          content: 'IoT × サーバーレス / コンテナ開発導⼊サポート | Serverless Operations',
+          content:
+            "IoT × サーバーレス / コンテナ開発導⼊サポート | Serverless Operations",
         },
         {
           key: `og:description`,
           property: `og:description`,
-          content: 'サーバーレスやコンテナなどのクラウドネイティブな技術を使⽤することで、システム運⽤のリソースやコスト最適化などが実現できます。サーバーレス/コンテナのノウハウをプロジェクトを通してお伝えし、開発の内製化までをサポートします。',
+          content:
+            "サーバーレスやコンテナなどのクラウドネイティブな技術を使⽤することで、システム運⽤のリソースやコスト最適化などが実現できます。サーバーレス/コンテナのノウハウをプロジェクトを通してお伝えし、開発の内製化までをサポートします。",
         },
         {
           key: `og:image`,
           property: `og:image`,
-          content:  `https://serverless.co.jp/iot-serverless-ogp.png`,
+          content: `https://serverless.co.jp/iot-serverless-ogp.png`,
         },
-        { name: 'twitter:card',
-          content: 'summary_large_image',
+        { name: "twitter:card", content: "summary_large_image" },
+        {
+          name: "twitter:image",
+          content: `https://serverless.co.jp/iot-serverless-ogp.png`,
         },
         {
-          name: 'twitter:image',
-          content: `https://serverless.co.jp/iot-serverless-ogp.png`,
-        }
+          key: `og:url`,
+          property: `og:url`,
+          content: `https://serverless.co.jp/services/iot-serverless`,
+        },
       ],
-    }
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: `https://serverless.co.jp/services/iot-serverless`,
+        },
+      ],
+    };
   },
   fetch({ store }) {
     store.commit('resetModal')
@@ -256,6 +256,4 @@ background:
     }
   }
 }
-
-
 </style>

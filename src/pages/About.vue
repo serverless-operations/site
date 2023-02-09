@@ -228,10 +228,28 @@ export default {
   metaInfo() {
     return {
       title: "会社案内",
-      description:
-        "われわれのミッションは、サーバーレスでの開発を通しクラウドの価値そのものを最大限引き出し、顧客のビジネスを大きく加速させることにあります。",
+      meta: [
+        {
+          name: `description`,
+          content:
+            "われわれのミッションは、サーバーレスでの開発を通しクラウドの価値そのものを最大限引き出し、顧客のビジネスを大きく加速させることにあります。",
+        },
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: `https://serverless.co.jp/about`,
+        },
+      ],
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: `https://serverless.co.jp/about`,
+        },
+      ],
     };
   },
+
   components: {},
   fetch({ store }) {
     store.commit("resetModal");
