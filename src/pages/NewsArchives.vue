@@ -1,8 +1,6 @@
 <template>
   <Layout>
-
     <div class="v-content__wrap">
-  
       <div class="p-news-header">
         <h1 class="p-news-header__page-title">
           News
@@ -11,7 +9,6 @@
       </div>
 
       <div class="container">
-  
         <div class="p-news-contents row">
           <div v-for="{ node } in $page.allWordPressPost.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-3 col-6">
             <PostNewsArchives :post="node" v-if="node.categories.find(c => c.slug === 'news')" />
@@ -26,7 +23,6 @@
 
   </Layout>
 </template>
-
 
 <page-query>
 query ($page: Int) {
@@ -61,9 +57,6 @@ query ($page: Int) {
 }
 </page-query>
 
-
-
-
 <script>
 import { Pager } from 'gridsome'
 import PostNewsArchives from '~/components/PostNewsArchives.vue'
@@ -73,12 +66,28 @@ export default {
     Pager,
     PostNewsArchives
   },
-  metaInfo () {
+  metaInfo() {
     return {
-      title: `News ${this.$page.allWordPressPost.pageInfo.currentPage} / ${this.$page.allWordPressPost.pageInfo.totalPages}`
-    }
-  }
-}
+      title: `News ${this.$page.allWordPressPost.pageInfo.currentPage} / ${
+        this.$page.allWordPressPost.pageInfo.totalPages
+      }`,
+      meta: [
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: `https://serverless.co.jp/news-archives`,
+        },
+      ],
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: `https://serverless.co.jp/news-archives`,
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>

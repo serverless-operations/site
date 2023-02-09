@@ -1,11 +1,8 @@
 <template>
   <Layout>
     <div class="v-content__wrap">
-
       <div class="l-about-page">
-
         <div class="page-header-container">
-        
           <div class="page-header-img-container">
             <!--背景 -->
             <img src="@/assets/images/about-so-main-bg.svg"
@@ -57,7 +54,6 @@
         <ServicesFeatures />
 
         <ServicesUseCase />
-       
       </div>
     </div>
   </Layout>
@@ -81,9 +77,27 @@ export default {
   },
   metaInfo () {
     return {
-      title: 'サーバーレスオペレーションズのサービスと強み',
-      description: 'サーバーレスとは、付加価値を産まない重労働をクラウドへアウトソースし、開発者がビジネスのコアバリューに集中するための クラウドの利用方法であり開発のための手段です。'
-    }
+      title: "サーバーレスオペレーションズのサービスと強み",
+      meta: [
+        {
+          name: `description`,
+          content:
+            "サーバーレスとは、付加価値を産まない重労働をクラウドへアウトソースし、開発者がビジネスのコアバリューに集中するための クラウドの利用方法であり開発のための手段です。",
+        },
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: `https://serverless.co.jp/services`,
+        },
+      ],
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: `https://serverless.co.jp/services`,
+        },
+      ],
+    };
   },
   fetch({ store }) {
     store.commit('resetModal')
@@ -169,5 +183,4 @@ background:
   linear-gradient(45deg, $secondary 11.76%, $tertiary 88.21%);
 }
 @include PageHeader;
-
 </style>

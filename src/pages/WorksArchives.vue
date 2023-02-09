@@ -1,8 +1,6 @@
 <template>
   <Layout>
-
     <div class="v-content__wrap">
-  
       <div class="p-blog-header">
         <h1 class="p-blog-header__page-title">
           Works
@@ -20,7 +18,6 @@
 
   </Layout>
 </template>
-
 
 <page-query>
 query ($page: Int) {
@@ -65,9 +62,6 @@ query ($page: Int) {
 }
 </page-query>
 
-
-
-
 <script>
 import { Pager } from 'gridsome'
 import WorksArchivesCard from '~/components/WorksArchivesCard.vue'
@@ -77,12 +71,28 @@ export default {
     Pager,
     WorksArchivesCard
   },
-  metaInfo () {
+  metaInfo() {
     return {
-      title: `Works ${this.$page.allWordPressWorks.pageInfo.currentPage} / ${this.$page.allWordPressWorks.pageInfo.totalPages}`
-    }
-  }
-}
+      title: `Works ${this.$page.allWordPressWorks.pageInfo.currentPage} / ${
+        this.$page.allWordPressWorks.pageInfo.totalPages
+      }`,
+      meta: [
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: `https://serverless.co.jp/works-archives`,
+        },
+      ],
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: `https://serverless.co.jp/works-archives`,
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -163,6 +173,4 @@ export default {
   z-index: 0;
   opacity: 0.5;
 }
-
-
 </style>

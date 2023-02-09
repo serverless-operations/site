@@ -65,6 +65,20 @@ export default {
   metaInfo() {
     return {
       title: "お問い合わせ",
+      meta: [
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: `https://serverless.co.jp/contact`,
+        },
+      ],
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: `https://serverless.co.jp/contact`,
+        },
+      ],
     };
   },
 };

@@ -2,9 +2,7 @@
   <Layout>
     <div class="v-content__wrap">
       <div class="l-company-page">
-        
         <div class="page-header-container">
-        
           <div class="page-header-img-container">
             <!--背景 -->
             <img src="@/assets/images/about-so-main-bg.svg"
@@ -52,7 +50,6 @@
       <!-- 会社案内のテーブルのセクション -->
         <section class="p-our-products">
           <v-container>
-
             <div class="cards">
               <div class="cards-container">
                 <v-row>
@@ -174,14 +171,11 @@
                   <div class="blue-drop-shadow"></div>
                 </div>
               </v-col>
-
             </v-row>
           </v-container>   
         </section><!-- p-company-vmv -->
 
       </div>
-
-
     </div>
   </Layout>
 </template>
@@ -199,11 +193,29 @@ Vue.use(VueGitHubButtons, { useCache: false });
 
 export default {
   // mixins: [Meta],
-  metaInfo () {
+  metaInfo() {
     return {
-      title: '私達が開発したプロダクト',
-      description: 'サーバーレスアプリケーションの開発をより簡単に・容易にするために、私たちが独自に開発したプロダクトをご紹介します。'
-    }
+      title: "私達が開発したプロダクト",
+      meta: [
+        {
+          name: `description`,
+          content:
+            "サーバーレスアプリケーションの開発をより簡単に・容易にするために、私たちが独自に開発したプロダクトをご紹介します。",
+        },
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: `https://serverless.co.jp/our-products`,
+        },
+      ],
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: `https://serverless.co.jp/our-products`,
+        },
+      ],
+    };
   },
   components: {
     VueGitHubButtons
@@ -299,7 +311,6 @@ background:
   position: relative;
   overflow: hidden;
 }
-
 
 .p-our-products {
   padding: 120px 0;
@@ -520,7 +531,4 @@ background:
   background: linear-gradient(49.74deg, #00007d 11.76%, #2c48ff 88.21%);
   box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
 }
-
-
-
 </style>

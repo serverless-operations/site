@@ -17,10 +17,7 @@
             </v-col>
           </v-row>
         </v-container>
-
       </div>
-
-
 
       <!-- p-privacy-policy-header -->
       <div class="p-privacy-policy-contents">
@@ -71,7 +68,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </Layout>
 </template>
@@ -81,11 +77,28 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export default {
-  metaInfo () {
+  metaInfo() {
     return {
-      title: 'プライバシーポリシー',
-      description: '個人情報保護方針'
-    }
+      title: "プライバシーポリシー",
+      meta: [
+        {
+          name: `description`,
+          content: "個人情報保護方針",
+        },
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: `https://serverless.co.jp/privacy-policy`,
+        },
+      ],
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: `https://serverless.co.jp/privacy-policy`,
+        },
+      ],
+    };
   },
   fetch({ store }) {
     store.commit('resetModal')
