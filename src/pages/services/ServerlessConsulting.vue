@@ -274,9 +274,27 @@
 export default {
   metaInfo () {
     return {
-      title: 'サーバーレスコンサルティング',
-      description: 'お客さまが開発・運用するサーバーレスアプリケーションのコンサルティングをいたします。'
-    }
+      title: "サーバーレスコンサルティング",
+      meta: [
+        {
+          name: `description`,
+          content:
+            "お客さまが開発・運用するサーバーレスアプリケーションのコンサルティングをいたします。",
+        },
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: `https://serverless.co.jp/services/serverless-consulting`,
+        },
+      ],
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: `https://serverless.co.jp/services/serverless-consulting`,
+        },
+      ],
+    };
   },
   fetch({ store }) {
     store.commit('resetModal')

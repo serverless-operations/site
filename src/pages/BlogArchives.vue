@@ -1,8 +1,6 @@
 <template>
   <Layout>
-
     <div class="v-content__wrap">
-  
       <div class="p-blog-header">
         <h1 class="p-blog-header__page-title">
           Blog
@@ -11,7 +9,6 @@
       </div>
 
       <div class="container">
-  
         <div class="p-blog-contents row">
           <div v-for="{ node } in $page.allWordPressBlog.edges" :key="node.id" class="pr-1 pr-lg-4 pl-1 pl-lg-4 pb-1 pb-lg-4 col-md-6">
             <BlogCard :post="node" />
@@ -28,7 +25,6 @@
 
   </Layout>
 </template>
-
 
 <page-query>
 query ($page: Int) {
@@ -66,9 +62,6 @@ query ($page: Int) {
 }
 </page-query>
 
-
-
-
 <script>
 import { Pager } from 'gridsome'
 import BlogCard from '~/components/BlogCard.vue'
@@ -80,10 +73,26 @@ export default {
   },
   metaInfo () {
     return {
-      title: `Blog ${this.$page.allWordPressBlog.pageInfo.currentPage} / ${this.$page.allWordPressBlog.pageInfo.totalPages}`
-    }
-  }
-}
+      title: `Blog ${this.$page.allWordPressBlog.pageInfo.currentPage} / ${
+        this.$page.allWordPressBlog.pageInfo.totalPages
+      }`,
+      meta: [
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: `https://serverless.co.jp/blog-archives`,
+        },
+      ],
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: `https://serverless.co.jp/blog-archives`,
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -161,6 +170,4 @@ export default {
   z-index: 0;
   opacity: 0.5;
 }
-
-
 </style>

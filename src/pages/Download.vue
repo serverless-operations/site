@@ -151,8 +151,25 @@ export default {
   metaInfo() {
     return {
       title: "資料ダウンロード",
-      description:
-        "私たちが提供するサーバーレスアーキテクチャを使用したサービスについて、詳しい内容を記載したPDF資料をご用意いたしました。ぜひダウンロードしてご活用ください。",
+      meta: [
+        {
+          name: `description`,
+          content:
+            "私たちが提供するサーバーレスアーキテクチャを使用したサービスについて、詳しい内容を記載したPDF資料をご用意いたしました。ぜひダウンロードしてご活用ください。",
+        },
+        {
+          key: `og:url`,
+          property: `og:url`,
+          content: `https://serverless.co.jp/download`,
+        },
+      ],
+      link: [
+        {
+          key: `canonical`,
+          rel: `canonical`,
+          href: `https://serverless.co.jp/download`,
+        },
+      ],
     };
   },
   components: {
