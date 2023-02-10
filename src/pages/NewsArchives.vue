@@ -15,7 +15,7 @@
           </div>
         </div>
 
-        <Pager :info="$page.allWordPressPost.pageInfo" />
+        <Pager :info="$page.allWordPressPost.pageInfo" class="pager-container" linkClass="pager-container__link" activeLinkClass="pager-container__active"/>
 
       </div><!-- container -->
 
@@ -315,4 +315,7 @@ export default {
     transition: transform 0.55s cubic-bezier(0.76, 0, 0.3, 1);
   }
 } // .p-card-border
+
+@include Pager;
+
 </style>
