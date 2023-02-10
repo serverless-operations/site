@@ -253,7 +253,13 @@ background:
     line-height: 1;
     margin-block: 120px 30px;
     @include media-breakpoint-down(sm) {
-      margin-top: 60px;
+      margin-block: 40px 16px;
+    }
+  }
+    .page-header-title-jp {
+    margin-bottom: 0px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 24px;
     }
   }
   .page-header-copy {
