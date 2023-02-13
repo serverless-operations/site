@@ -31,12 +31,12 @@
                       AWSクラウド側の技術的なサポートをチャットやメールのみで⾏います。設計や実装でつまづいた時、⽅針のお悩みごとをサポートします。
                     </p>
                     <p class="price-text">
-                      400,000 <span>円/⽉</span> 
+                      800,000 <span>円/⽉</span>
                     </p>
                     <!-- <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
                       オンライン無料相談を予約する
                     </a> -->
-                  </div>        
+                  </div>
                   <div class="service-pricing-list">
                     <ul>
                       <li>チャット・メール対応</li>
@@ -60,7 +60,7 @@
                       AWSクラウド側の実装をする上で必要な設計を⾏います。お客さまの開発チームでも実装ができるような体制を整えます。
                     </p>
                     <p class="price-text">
-                      1,000,000 <span>円/⽉</span> 
+                      1,200,000 <span>円/⽉</span>
                     </p>
                     <!-- <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
                       オンライン無料相談を予約する
@@ -91,7 +91,7 @@
                       PoCの計画から実装までを行います。成果に対しての計画づくり、製品やシステムの簡易版プロトタイプを作成し、目的の効果が得られるか検証します。
                     </p>
                     <p class="price-text">
-                      1,200,000 <span>円/⽉</span> 
+                      1,400,000 <span>円/⽉</span>
                     </p>
                     <!-- <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
                       オンライン無料相談を予約する
@@ -121,7 +121,7 @@
                       プロダクション（本番環境）にリリースするための実装を⾏います。お客さまの開発チームの⼀員としてチームを主導し、製品のリリースを⾏います。
                     </p>
                     <p class="price-text">
-                      1,600,000 <span>円/⽉</span> 
+                      1,800,000 <span>円/⽉</span>
                     </p>
                     <!-- <a class="pricing-button" href="https://calendly.com/slsops/office-hours?month=2020-12">
                       オンライン無料相談を予約する
