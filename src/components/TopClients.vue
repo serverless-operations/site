@@ -14,54 +14,44 @@
     <div class="clients-image-container d-flex">
 
       <img
-        src="../assets/images/clients/clients-lixil.svg"
-        alt="ServerlessOperations Clients LIXIL"
-        class="clients-image"
+          src="../assets/images/clients/clients-lixil.svg"
+          alt="ServerlessOperations Clients LIXIL"
+          class="clients-image"
       />
       <img
-        src="../assets/images/clients/clients-htb.svg"
-        alt="ServerlessOperations Clients HTB 北海道テレビ"
-        class="clients-image"
+          src="../assets/images/clients/clients-htb.svg"
+          alt="ServerlessOperations Clients HTB 北海道テレビ"
+          class="clients-image"
       />
       <img
-        src="../assets/images/clients/clients-tokion.svg"
-        alt="ServerlessOperations Clients TOKION"
-        class="clients-image"
+          src="../assets/images/clients/clients-toda.svg"
+          alt="ServerlessOperations Clients TODA CORPORATION"
+          class="clients-image"
       />
       <img
-        src="../assets/images/clients/clients-serverworks.svg"
-        alt="ServerlessOperations Clients Serverworks"
-        class="clients-image"
+          src="../assets/images/clients/clients-nttcom.svg"
+          alt="ServerlessOperations Clients NTT COMWARE CORPORATION"
+          class="clients-image"
       />
       <img
-        src="../assets/images/clients/clients-geolonia.svg"
-        alt="ServerlessOperations Clients GEOLONIA"
-        class="clients-image"
+          src="../assets/images/clients/clients-geolonia.svg"
+          alt="ServerlessOperations Clients GEOLONIA"
+          class="clients-image"
       />
       <img
-        src="../assets/images/clients/clients-infas.svg"
-        alt="ServerlessOperations Clients INFAS PIBLICATIONS"
-        class="clients-image"
+          src="../assets/images/clients/clients-amiya.svg"
+          alt="ServerlessOperations Clients AMIYA"
+          class="clients-image"
       />
       <img
-        src="../assets/images/clients/clients-libelize.svg"
-        alt="ServerlessOperations Clients LIBELIZE"
-        class="clients-image"
+          src="../assets/images/clients/clients-infas.svg"
+          alt="ServerlessOperations Clients INFAS PIBLICATIONS"
+          class="clients-image"
       />
       <img
-        src="../assets/images/clients/clients-maas.svg"
-        alt="ServerlessOperations Clients MAAS GLOBAL"
-        class="clients-image"
-      />
-      <img
-        src="../assets/images/clients/clients-alis.svg"
-        alt="ServerlessOperations Clients ALIS"
-        class="clients-image"
-      />
-      <img
-        src="../assets/images/clients/clients-toda.svg"
-        alt="ServerlessOperations Clients TODA CORPORATION"
-        class="clients-image"
+          src="../assets/images/clients/clients-maas.svg"
+          alt="ServerlessOperations Clients MAAS GLOBAL"
+          class="clients-image"
       />
 
     </div>
