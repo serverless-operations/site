@@ -22,10 +22,25 @@ export default function (Vue, { router, head, isClient, appOptions }) {
   Vue.component('Layout', DefaultLayout)
   
   // Add an external Javascript before the closing </body> tag
-  head.script.push({
-    src: 'https://webfont.fontplus.jp/accessor/script/fontplus.js?LuMx0zy9taw%3D&box=ME4Rs88c3-0%3D&aa=1&ab=2',
-    body: true
-  })
+  head.script = [
+    {
+      src: 'https://webfont.fontplus.jp/accessor/script/fontplus.js?LuMx0zy9taw%3D&box=ME4Rs88c3-0%3D&aa=1&ab=2',
+      body: true
+    },
+    {
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-S3W4JSJK2H',
+      async: true
+    },
+    {
+      innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-S3W4JSJK2H');
+      `
+    }
+  ]
 
   head.link.push({
     rel: 'stylesheet',
