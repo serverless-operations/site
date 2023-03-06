@@ -58,13 +58,6 @@ module.exports = {
         typeName: 'WordPress', // GraphQL schema name (Optional)
       }
     },
-    // Google Analytics
-    {
-      use: '@gridsome/plugin-google-analytics',
-      options: {
-        id: 'UA-149835018-1'
-      }
-    },
     // Sitemap.xml
     {
       use: '@gridsome/plugin-sitemap',
