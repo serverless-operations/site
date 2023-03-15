@@ -1,5 +1,8 @@
 <template>
   <div id="main-wrapper" class="v-application v-application--is-ltr theme--dark">
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5X26LDM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <transition name="fade" appear>
       <div class="v-application--wrap">
         <header-component />
