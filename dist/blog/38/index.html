@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="ja" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22ja%22%7D%7D">
+  <head>
+    <title>brefを使って簡単にLambdaのPHP Custom Runtime環境を構築する | Serverless Operations</title><meta name="gridsome:hash" content="7d8cc78e1b8fcf6bb367080efcae4f8df6dfb6c5"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.14"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="og:locale" property="og:locale" content="ja_JP"><meta data-vue-tag="ssr" data-key="og:site_name" property="og:site_name" content="Serverless Operations"><meta data-vue-tag="ssr" name="twitter:card" content="summary_large_image"><meta data-vue-tag="ssr" name="twitter:image" content="https://serverless.co.jp/ogp.png"><meta data-vue-tag="ssr" data-key="og:type" property="og:type" content="article"><meta data-vue-tag="ssr" data-key="og:url" property="og:url" content="https://serverless.co.jp/blog/38/"><meta data-vue-tag="ssr" data-key="og:image" property="og:image" content="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/01/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1.png"><meta data-vue-tag="ssr" data-key="og:title" property="og:title" content="brefを使って簡単にLambdaのPHP Custom Runtime環境を構築する | Serverless Operations"><meta data-vue-tag="ssr" name="twitter:card" content="summary_large_image"><meta data-vue-tag="ssr" name="twitter:image" content="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/01/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1.png"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon.ce0531f.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon.ac8d93a.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/assets/static/favicon.b9532cc.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/assets/static/favicon.f22e9f3.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/assets/static/favicon.62d22cb.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/assets/static/favicon.1539b60.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/assets/static/favicon.dc0cdc5.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/static/favicon.7b22250.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css"><link data-vue-tag="ssr" data-key="canonical" rel="canonical" href="https://serverless.co.jp/blog/38/"><link rel="preload" href="/assets/css/0.styles.98f560c0.css" as="style"><link rel="preload" href="/assets/js/app.748a8736.js" as="script"><link rel="preload" href="/assets/js/page--src--templates--word-press-blog-vue.3139ba43.js" as="script"><link rel="prefetch" href="/assets/js/page--node-modules--gridsome--app--pages--404-vue.0efd8db6.js"><link rel="prefetch" href="/assets/js/page--src--pages--about-vue.1af80757.js"><link rel="prefetch" href="/assets/js/page--src--pages--blog-archives-vue.3f2792c8.js"><link rel="prefetch" href="/assets/js/page--src--pages--contact-vue.ff3778ed.js"><link rel="prefetch" href="/assets/js/page--src--pages--download-vue.ed8d75f7.js"><link rel="prefetch" href="/assets/js/page--src--pages--event-archives-vue.020ba0bf.js"><link rel="prefetch" href="/assets/js/page--src--pages--index-vue.be66fc9c.js"><link rel="prefetch" href="/assets/js/page--src--pages--news-archives-vue.d0b081f1.js"><link rel="prefetch" href="/assets/js/page--src--pages--our-products-vue.dc9f52c4.js"><link rel="prefetch" href="/assets/js/page--src--pages--privacy-policy-vue.fdaf6562.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--aws-serverless-vue.b118f419.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--aws-serverless-vue~page--src--pages--services--iot-serverless-vue.bada637e.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--index-vue.45768e68.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--iot-serverless-vue.bbc11f2a.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--serverless-consulting-vue.1e87ce7a.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--serverless-development-vue.4d9baf66.js"><link rel="prefetch" href="/assets/js/page--src--pages--test-form-vue.03f7db27.js"><link rel="prefetch" href="/assets/js/page--src--pages--works-archives-vue.eb99c43a.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-category-vue.d9298a51.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-post-tag-vue.1b66b17a.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-post-vue.808e5e69.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-works-vue.491af2ec.js"><link rel="prefetch" href="/assets/js/vendors~page--src--pages--contact-vue~page--src--pages--download-vue.7a23cb3f.js"><link rel="prefetch" href="/assets/js/vendors~page--src--pages--our-products-vue.8e9052c2.js"><link rel="prefetch" href="/assets/js/vendors~page--src--templates--word-press-blog-vue.16b09ab1.js"><link rel="stylesheet" href="/assets/css/0.styles.98f560c0.css"><script data-vue-tag="ssr">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MLP4448');</script><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <div id="app" data-server-rendered="true" class="v-application v-application--is-ltr theme--dark" data-v-7de3dd27><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLP4448" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div class="v-application--wrap"><header class="header-nav" data-v-5f4f5539><div class="header-nav__logo-block" data-v-5f4f5539><a href="/" class="header-nav__logo-link active" data-v-5f4f5539><img src="/assets/img/header-logo.a93f880b.svg" alt="Severless Operations ロゴ" class="header-nav__logo" data-v-5f4f5539></a></div><nav data-v-5f4f5539><ul data-v-5f4f5539><li data-v-5f4f5539><a href="/about" data-v-5f4f5539>私たちについて</a></li><li data-v-5f4f5539><a href="/services" data-v-5f4f5539>サービス</a></li><li data-v-5f4f5539><a href="/works-archives" data-v-5f4f5539>実績紹介</a></li><li data-v-5f4f5539><a href="/blog-archives" data-v-5f4f5539>ブログ</a></li><li data-v-5f4f5539><a href="/news-archives" data-v-5f4f5539>お知らせ</a></li><li data-v-5f4f5539><a href="/download" data-v-5f4f5539>会社資料ダウンロード</a></li><li data-v-5f4f5539><a href="/contact" data-v-5f4f5539>お問い合わせ</a></li></ul></nav><div id="app" class="header-nav__toggler-block d-block d-md-none" data-v-5f4f5539><button id="btn" type="button" class="header-nav__toggler-button btn" data-v-5f4f5539><div tabindex="-1" class="btn__content" data-v-5f4f5539><span class="header-nav__toggler-top" data-v-5f4f5539></span><span class="header-nav__toggler-middle" data-v-5f4f5539></span><span class="header-nav__toggler-bottom" data-v-5f4f5539></span></div></button></div><!----></header><main class="v-content"><div class="v-content" data-v-7de3dd27><div class="v-content__wrap" data-v-7de3dd27><div class="container" data-v-7de3dd27><p class="category-title" data-v-7de3dd27>
+          Blog
+        </p></div><header class="post-header" data-v-7de3dd27><div class="container" data-v-7de3dd27><div class="row justify-center" data-v-7de3dd27><div class="col-md-10 col-11" data-v-7de3dd27><h1 class="post-title" data-v-7de3dd27>brefを使って簡単にLambdaのPHP Custom Runtime環境を構築する</h1><div class="post-tag-container" data-v-7de3dd27><time datetime="2020.01.26" class="post-date" data-v-7de3dd27> 
+                  2020.01.26
+                  
+                </time><div class="post-tags" data-v-7de3dd27><span data-v-7de3dd27>Lambda</span></div><div class="post-tags" data-v-7de3dd27><span data-v-7de3dd27>PHP</span></div></div></div></div></div></header><article class="post-container" data-v-7de3dd27><div class="container" data-v-7de3dd27><div class="row justify-center" data-v-7de3dd27><div class="post-article-container col-md-10 col-11" data-v-7de3dd27><div class="post-article" data-v-7de3dd27>
+<h2 class="wp-block-heading">概要</h2>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="396" src="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1-1024x396.png" alt="" class="wp-image-39" srcset="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1-1024x396.png 1024w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1-300x116.png 300w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1-768x297.png 768w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1.png 1400w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>LambdaでPHPを動かすためにはCustom Runtimeの機能を使って、自分でランタイム環境をビルドして、bootstrapというCustom Runtimeのエンドポイントとなるファイルを用意する必要があります。</p>
+
+
+
+<p>しかし、<a rel="noreferrer noopener" href="https://bref.sh/" target="_blank">bref</a>というサーバーレス環境でPHPを動かすためのツールとServerless Frameworkを使うことで非常に簡単にPHPのCustom Runtime環境が構築できたのでその紹介をしたいと思います。</p>
+
+
+
+<h2 class="wp-block-heading">使い方</h2>
+
+
+
+<h3 class="wp-block-heading">テンプレートからプロジェクトを作成</h3>
+
+
+
+<p>brefのgithubリポジトリにサンプルとなるプロジェクトが公開されているのでそれを元にローカルにプロジェクトをセットアップします</p>
+
+
+
+<pre class="wp-block-code language-ssh"><code>$ serverless create --template-url https://github.com/brefphp/bref/tree/master/template/default --path sls-phpapp
+$ cd sls-phpapp</code></pre>
+
+
+
+<h3 class="wp-block-heading">composerでbrefをインストール</h3>
+
+
+
+<p>プロジェクト配下でcomposerを使ってインストールを行います</p>
+
+
+
+<pre class="wp-block-code"><code>$ composer require bref/bref</code></pre>
+
+
+
+<h3 class="wp-block-heading">serverless.ymlの書き方</h3>
+
+
+
+<pre class="wp-block-code language-yaml"><code>service: app
+
+provider:
+    name: aws
+    region: us-east-1
+    runtime: provided
+
+plugins:
+    - ./vendor/bref/bref
+
+functions:
+    function:
+        handler: index.php
+        description: ''
+        layers:
+            - ${bref:layer.php-73}</code></pre>
+
+
+
+<h2 class="wp-block-heading">SQSバックエンドなアプリケーションを構成する</h2>
+
+
+
+<p>Lambdaはイベントソースをトリガーとして起動させるので、今回はSQSバックエンドLambdaを構成して動かしてみます。<br>以下がそのserverless.ymlになります</p>
+
+
+
+<pre class="wp-block-code language-yaml"><code>service: phpapp
+
+provider:
+    name: aws
+    region: ap-northeast-1
+    runtime: provided
+
+plugins:
+    - ./vendor/bref/bref
+
+functions:
+    function:
+        handler: index.php
+        description: ''
+        layers:
+            - ${bref:layer.php-73}
+        events:
+          - sqs:
+              arn:
+                Fn::GetAtt:
+                  - PhpQueue
+                  - Arn
+
+resources:
+  Resources:
+    PhpQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: phpqueue</code></pre>
+
+
+
+<p>そして、<code>index.php</code>で<code>event</code>をダンプさせます</p>
+
+
+
+<pre class="wp-block-code language-php"><code>&lt;?php 
+declare(strict_types=1);
+require __DIR__.'/vendor/autoload.php';
+
+lambda(function ($event) {
+    var_dump($event);
+});</code></pre>
+
+
+
+<p>これで準備完了です。デプロイしましょう</p>
+
+
+
+<pre class="wp-block-code language-ssh"><code>$ serverless deploy</code></pre>
+
+
+
+<p>デプロイが完了したらSQSにメッセージを送ってこのLambdaが動くか動作確認します。</p>
+
+
+
+<pre class="wp-block-code language-ssh"><code>$ aws sqs send-message --queue-url https://sqs.ap-northeast-1.amazonaws.com/&lt;アカウントID>/&lt;queue名> --message-body aaa</code></pre>
+
+
+
+<p>CloudWatchLogsを見てみると、正しくメッセージが処理されていることがわかります。</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="504" src="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_4a3428d0-6045-7add-aff8-7ee807eeda18-1024x504.png" alt="" class="wp-image-40" srcset="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_4a3428d0-6045-7add-aff8-7ee807eeda18-1024x504.png 1024w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_4a3428d0-6045-7add-aff8-7ee807eeda18-300x148.png 300w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_4a3428d0-6045-7add-aff8-7ee807eeda18-768x378.png 768w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_4a3428d0-6045-7add-aff8-7ee807eeda18.png 1400w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h2 class="wp-block-heading">php.iniを編集する</h2>
+
+
+
+<p>デフォルトではLambdaの実行に最適化されたphp.iniがデプロイされています。<br>設定をカスタマイズしたい場合は、プロジェクト直下に<code>php/conf.d/php.ini</code>を配置して設定の記述を行います。</p>
+
+
+
+<p>brefは自動で<code>php/conf.d/*.ini</code>で設定内容をincludeしてくれるようです。</p>
+
+
+
+<h2 class="wp-block-heading">エクステンションを追加する</h2>
+
+
+
+<p>デフォルトでは以下のエクステンションがインストールされているようです。<br><a rel="noreferrer noopener" href="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F65478%2F879c07f9-639c-8bc0-bdde-a2f6f5a8535c.png?ixlib=rb-1.2.2&amp;auto=format&amp;gif-q=60&amp;q=75&amp;s=6843c0ddd285f9ed3c8c284ad9ece92c" target="_blank"></a></p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="768" src="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_879c07f9-639c-8bc0-bdde-a2f6f5a8535c-1024x768.png" alt="" class="wp-image-41" srcset="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_879c07f9-639c-8bc0-bdde-a2f6f5a8535c-1024x768.png 1024w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_879c07f9-639c-8bc0-bdde-a2f6f5a8535c-300x225.png 300w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_879c07f9-639c-8bc0-bdde-a2f6f5a8535c-768x576.png 768w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/06/https___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_879c07f9-639c-8bc0-bdde-a2f6f5a8535c.png 1274w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>ここにないエクステンションは、自身でそのエクステンション用のLambda layerを作成して、<code>php.ini</code>に設定することで使用可能になるようです。</p>
+
+
+
+<h2 class="wp-block-heading">まとめ</h2>
+
+
+
+<p>brefを使うことでかなり簡単にPHPのLambda環境を作ることが出来ました。カスタマイズについてもphpの設定やエクステンションも自由に追加できるため、多くのプロジェクトでは特に問題なく採用できるのでは無いでしょうか。</p>
+</div><section class="l-share-button" data-v-629ec8b5 data-v-7de3dd27><aside class="p-share-button" data-v-629ec8b5><div class="p-share-button__header" data-v-629ec8b5>SHARE</div><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fserverless.co.jp%2Fblog%2F38%2F" target="_blank" title="Facebookでシェア" class="p-share-button__link--facebook " data-v-629ec8b5><i class="mdi mdi-facebook" data-v-629ec8b5></i></a><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fserverless.co.jp%2Fblog%2F38%2F&amp;text=bref%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E7%B0%A1%E5%8D%98%E3%81%ABLambda%E3%81%AEPHP%20Custom%20Runtime%E7%92%B0%E5%A2%83%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B" target="_blank" title="Twitterでシェア" class="p-share-button__link--twitter" data-v-629ec8b5><i class="mdi mdi-twitter" data-v-629ec8b5></i></a></aside></section><div class="post-author-container" data-v-7de3dd27><h5 class="post-author-title" data-v-7de3dd27>Written by</h5><div class="post-author-text" data-v-7de3dd27><p data-v-7de3dd27><span class="role" data-v-7de3dd27>
+                      CEO
+                    </span><span class="name-jp" data-v-7de3dd27>
+                      堀家 隆宏
+                    </span><span class="name-en" data-v-7de3dd27>
+                      Takahiro Horike
+                    </span></p><p class="author-desc" data-v-7de3dd27>
+                    Co-founder and CEO of Serverless Operations, Inc
+                  </p><ul class="author-sns" data-v-7de3dd27><li data-v-7de3dd27><a href="https://github.com/horike37" target="_blank" class="github" data-v-7de3dd27><i aria-hidden="true" class="v-icon notranslate mdi mdi-github theme--light" data-v-7de3dd27></i></a></li><li data-v-7de3dd27><a href="https://www.facebook.com/horike.takahiro" target="_blank" class="facebook" data-v-7de3dd27><i aria-hidden="true" class="v-icon notranslate mdi mdi-facebook theme--light" data-v-7de3dd27></i></a></li><li data-v-7de3dd27><a href="https://twitter.com/horike37" target="_blank" class="twitter" data-v-7de3dd27><i aria-hidden="true" class="v-icon notranslate mdi mdi-twitter theme--light" data-v-7de3dd27></i></a></li></ul></div></div></div></div></div><div class="p-news-bg" data-v-7de3dd27></div></article><div class="container" data-v-7de3dd27><div class="row justify-center" data-v-7de3dd27><a href="/blog-archives" class="post-archives-link" data-v-7de3dd27><span class="post-archives-link-text" data-v-7de3dd27>BACK TO LIST</span><span data-v-7de3dd27><img src="/assets/img/icon-back-to-list.3add3700.svg" alt="BACK TO LIST アイコン" data-v-7de3dd27></span></a></div></div></div></div></main><footer class="v-footer footer v-sheet v-sheet--tile theme--dark" data-v-a49f4c2c><div class="container" data-v-a49f4c2c data-v-a49f4c2c><div class="row" data-v-a49f4c2c data-v-a49f4c2c><div class="footer-list-anim col-sm-6 col-md-3 col-12" data-v-a49f4c2c data-v-a49f4c2c><a href="/works-archives" class="c-footer-list__link" data-v-a49f4c2c><div class="c-footer-menu__title" data-v-a49f4c2c>Works</div><div class="c-footer-menu__subtitle" data-v-a49f4c2c>実績紹介</div></a><ul class="c-footer-list" data-v-a49f4c2c><div data-v-b68eaa08 data-v-a49f4c2c><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/501/" class="c-footer-list__link" data-v-b68eaa08>
+      戸田建設株式会社
+    </a></li><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/396/" class="c-footer-list__link" data-v-b68eaa08>
+      北海道テレビ放送株式会社
+    </a></li><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/358/" class="c-footer-list__link" data-v-b68eaa08>
+      株式会社Geolonia
+    </a></li><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/24/" class="c-footer-list__link" data-v-b68eaa08>
+      株式会社LIXIL
+    </a></li><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/185/" class="c-footer-list__link" data-v-b68eaa08>
+      株式会社TOKION
+    </a></li></div></ul></div><div class="footer-list-anim col-sm-6 col-md-3 col-12" data-v-a49f4c2c data-v-a49f4c2c><div data-v-a49f4c2c><a href="/services" class="c-footer-list__link" data-v-a49f4c2c><div class="c-footer-menu__title" data-v-a49f4c2c>Services</div><div class="c-footer-menu__subtitle" data-v-a49f4c2c>サービス紹介</div></a></div><ul class="c-footer-list" data-v-a49f4c2c><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services" class="c-footer-list__link" data-v-a49f4c2c>サーバーレスオペレーションズの<br data-v-a49f4c2c>サービスと強み</a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services/iot-serverless" class="c-footer-list__link" data-v-a49f4c2c>
+              IoT × サーバーレス / コンテナ開発<br data-v-a49f4c2c>導⼊サポート
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services/aws-serverless" class="c-footer-list__link" data-v-a49f4c2c>
+              AWSコアサーバーレスサービスの開発導⼊サポート
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services/serverless-consulting" class="c-footer-list__link" data-v-a49f4c2c>サーバーレスコンサルティング</a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services/serverless-development" class="c-footer-list__link" data-v-a49f4c2c>サーバーレスディべロプメント</a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/our-products" class="c-footer-list__link" data-v-a49f4c2c>
+              自社開発プロダクト
+            </a></li></ul></div><div class="footer-list-anim col-sm-6 col-md-3 col-12" data-v-a49f4c2c data-v-a49f4c2c><a href="/blog-archives" class="c-footer-list__link" data-v-a49f4c2c><div class="c-footer-menu__title" data-v-a49f4c2c>Blog</div><div class="c-footer-menu__subtitle" data-v-a49f4c2c>開発ブログ</div></a><ul class="c-footer-list" data-v-a49f4c2c><div data-v-39434060 data-v-a49f4c2c><li class="c-footer-list__item" data-v-39434060><a href="/blog/640/" class="c-footer-list__link" data-v-39434060>
+      AWS 開発基盤として、セキュリティを考慮したマルチアカウント構成のススメ
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/532/" class="c-footer-list__link" data-v-39434060>
+      AWS Amplify GraphQL Transformer v2 のデータモデリングとリレーションの仕組みを解説する
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/512/" class="c-footer-list__link" data-v-39434060>
+      AWS Lambda + Nuxt3で実現する「サーバーレスなSSR」とその構成
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/25/" class="c-footer-list__link" data-v-39434060>
+      Serverless Frameworkの使い方まとめ
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/450/" class="c-footer-list__link" data-v-39434060>
+      軽量で簡単に使えるキャッシュSaaS、MomentoをAWS Lambdaから使ってみる
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/429/" class="c-footer-list__link" data-v-39434060>
+      Next.js アプリケーションを AWS Amplify でホスティングする上でのTIPS
+    </a></li></div></ul></div><div class="footer-list-anim col-sm-6 col-md-3 col-12" data-v-a49f4c2c data-v-a49f4c2c><a href="/about" class="c-footer-list__link" data-v-a49f4c2c><div class="c-footer-menu__title" data-v-a49f4c2c>About</div><div class="c-footer-menu__subtitle" data-v-a49f4c2c>会社案内</div></a><ul class="c-footer-list" data-v-a49f4c2c><li class="c-footer-list__item" data-v-a49f4c2c><a href="/about" class="c-footer-list__link" data-v-a49f4c2c>
+              会社案内
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/news-archives/" class="c-footer-list__link" data-v-a49f4c2c>
+              おしらせ
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/privacy-policy/" class="c-footer-list__link" data-v-a49f4c2c>
+              プライバシーポリシー
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/download" class="c-footer-list__link" data-v-a49f4c2c>
+              会社資料ダウンロード
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/contact" class="c-footer-list__link" data-v-a49f4c2c>
+              お問い合わせ
+            </a></li></ul></div></div><div class="row mt-8 mt-md-12" data-v-a49f4c2c data-v-a49f4c2c><div class="col-md-2 col-12" data-v-a49f4c2c data-v-a49f4c2c><div data-v-a49f4c2c><a href="/" class="active" data-v-a49f4c2c><img src="/assets/img/footer-severless-operations-logo.e1e6687a.svg" alt="Severless Operations ロゴ" data-v-a49f4c2c></a></div></div><div class="col-md-10 col-12" data-v-a49f4c2c data-v-a49f4c2c><div class="sns-link text-md-right" data-v-a49f4c2c><a href="https://github.com/serverless-operations" target="_blank" class="sns-link__github" data-v-a49f4c2c><i aria-hidden="true" class="v-icon notranslate mdi mdi-github theme--light" data-v-a49f4c2c></i></a><a href="https://twitter.com/slsopsinc" target="_blank" class="sns-link__twitter" data-v-a49f4c2c><i aria-hidden="true" class="v-icon notranslate mdi mdi-twitter theme--light" data-v-a49f4c2c></i></a></div></div><div class="footer-copyright" data-v-a49f4c2c>
+        © Serverless Operations, inc
+      </div></div></div></footer></div></div>
+    <script>window.__INITIAL_STATE__={"data":{"wordPressBlog":{"title":"brefを使って簡単にLambdaのPHP Custom Runtime環境を構築する","content":"\n\u003Ch2 class=\"wp-block-heading\"\u003E概要\u003C\u002Fh2\u003E\n\n\n\n\u003Cfigure class=\"wp-block-image size-large\"\u003E\u003Cimg decoding=\"async\" loading=\"lazy\" width=\"1024\" height=\"396\" src=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1-1024x396.png\" alt=\"\" class=\"wp-image-39\" srcset=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1-1024x396.png 1024w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1-300x116.png 300w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1-768x297.png 768w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1.png 1400w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" \u002F\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Cp\u003ELambdaでPHPを動かすためにはCustom Runtimeの機能を使って、自分でランタイム環境をビルドして、bootstrapというCustom Runtimeのエンドポイントとなるファイルを用意する必要があります。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003Eしかし、\u003Ca rel=\"noreferrer noopener\" href=\"https:\u002F\u002Fbref.sh\u002F\" target=\"_blank\"\u003Ebref\u003C\u002Fa\u003Eというサーバーレス環境でPHPを動かすためのツールとServerless Frameworkを使うことで非常に簡単にPHPのCustom Runtime環境が構築できたのでその紹介をしたいと思います。\u003C\u002Fp\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003E使い方\u003C\u002Fh2\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003Eテンプレートからプロジェクトを作成\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003Ebrefのgithubリポジトリにサンプルとなるプロジェクトが公開されているのでそれを元にローカルにプロジェクトをセットアップします\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-ssh\"\u003E\u003Ccode\u003E$ serverless create --template-url https:\u002F\u002Fgithub.com\u002Fbrefphp\u002Fbref\u002Ftree\u002Fmaster\u002Ftemplate\u002Fdefault --path sls-phpapp\n$ cd sls-phpapp\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003Ecomposerでbrefをインストール\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003Eプロジェクト配下でcomposerを使ってインストールを行います\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code\"\u003E\u003Ccode\u003E$ composer require bref\u002Fbref\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003Eserverless.ymlの書き方\u003C\u002Fh3\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-yaml\"\u003E\u003Ccode\u003Eservice: app\n\nprovider:\n    name: aws\n    region: us-east-1\n    runtime: provided\n\nplugins:\n    - .\u002Fvendor\u002Fbref\u002Fbref\n\nfunctions:\n    function:\n        handler: index.php\n        description: ''\n        layers:\n            - ${bref:layer.php-73}\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003ESQSバックエンドなアプリケーションを構成する\u003C\u002Fh2\u003E\n\n\n\n\u003Cp\u003ELambdaはイベントソースをトリガーとして起動させるので、今回はSQSバックエンドLambdaを構成して動かしてみます。\u003Cbr\u003E以下がそのserverless.ymlになります\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-yaml\"\u003E\u003Ccode\u003Eservice: phpapp\n\nprovider:\n    name: aws\n    region: ap-northeast-1\n    runtime: provided\n\nplugins:\n    - .\u002Fvendor\u002Fbref\u002Fbref\n\nfunctions:\n    function:\n        handler: index.php\n        description: ''\n        layers:\n            - ${bref:layer.php-73}\n        events:\n          - sqs:\n              arn:\n                Fn::GetAtt:\n                  - PhpQueue\n                  - Arn\n\nresources:\n  Resources:\n    PhpQueue:\n      Type: AWS::SQS::Queue\n      Properties:\n        QueueName: phpqueue\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003Eそして、\u003Ccode\u003Eindex.php\u003C\u002Fcode\u003Eで\u003Ccode\u003Eevent\u003C\u002Fcode\u003Eをダンプさせます\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-php\"\u003E\u003Ccode\u003E&lt;?php \ndeclare(strict_types=1);\nrequire __DIR__.'\u002Fvendor\u002Fautoload.php';\n\nlambda(function ($event) {\n    var_dump($event);\n});\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003Eこれで準備完了です。デプロイしましょう\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-ssh\"\u003E\u003Ccode\u003E$ serverless deploy\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003Eデプロイが完了したらSQSにメッセージを送ってこのLambdaが動くか動作確認します。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-ssh\"\u003E\u003Ccode\u003E$ aws sqs send-message --queue-url https:\u002F\u002Fsqs.ap-northeast-1.amazonaws.com\u002F&lt;アカウントID\u003E\u002F&lt;queue名\u003E --message-body aaa\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003ECloudWatchLogsを見てみると、正しくメッセージが処理されていることがわかります。\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-image size-large\"\u003E\u003Cimg decoding=\"async\" loading=\"lazy\" width=\"1024\" height=\"504\" src=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_4a3428d0-6045-7add-aff8-7ee807eeda18-1024x504.png\" alt=\"\" class=\"wp-image-40\" srcset=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_4a3428d0-6045-7add-aff8-7ee807eeda18-1024x504.png 1024w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_4a3428d0-6045-7add-aff8-7ee807eeda18-300x148.png 300w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_4a3428d0-6045-7add-aff8-7ee807eeda18-768x378.png 768w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_4a3428d0-6045-7add-aff8-7ee807eeda18.png 1400w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" \u002F\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003Ephp.iniを編集する\u003C\u002Fh2\u003E\n\n\n\n\u003Cp\u003EデフォルトではLambdaの実行に最適化されたphp.iniがデプロイされています。\u003Cbr\u003E設定をカスタマイズしたい場合は、プロジェクト直下に\u003Ccode\u003Ephp\u002Fconf.d\u002Fphp.ini\u003C\u002Fcode\u003Eを配置して設定の記述を行います。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003Ebrefは自動で\u003Ccode\u003Ephp\u002Fconf.d\u002F*.ini\u003C\u002Fcode\u003Eで設定内容をincludeしてくれるようです。\u003C\u002Fp\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003Eエクステンションを追加する\u003C\u002Fh2\u003E\n\n\n\n\u003Cp\u003Eデフォルトでは以下のエクステンションがインストールされているようです。\u003Cbr\u003E\u003Ca rel=\"noreferrer noopener\" href=\"https:\u002F\u002Fqiita-user-contents.imgix.net\u002Fhttps%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F65478%2F879c07f9-639c-8bc0-bdde-a2f6f5a8535c.png?ixlib=rb-1.2.2&amp;auto=format&amp;gif-q=60&amp;q=75&amp;s=6843c0ddd285f9ed3c8c284ad9ece92c\" target=\"_blank\"\u003E\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-image size-large\"\u003E\u003Cimg decoding=\"async\" loading=\"lazy\" width=\"1024\" height=\"768\" src=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_879c07f9-639c-8bc0-bdde-a2f6f5a8535c-1024x768.png\" alt=\"\" class=\"wp-image-41\" srcset=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_879c07f9-639c-8bc0-bdde-a2f6f5a8535c-1024x768.png 1024w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_879c07f9-639c-8bc0-bdde-a2f6f5a8535c-300x225.png 300w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_879c07f9-639c-8bc0-bdde-a2f6f5a8535c-768x576.png 768w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F06\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_879c07f9-639c-8bc0-bdde-a2f6f5a8535c.png 1274w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" \u002F\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Cp\u003Eここにないエクステンションは、自身でそのエクステンション用のLambda layerを作成して、\u003Ccode\u003Ephp.ini\u003C\u002Fcode\u003Eに設定することで使用可能になるようです。\u003C\u002Fp\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003Eまとめ\u003C\u002Fh2\u003E\n\n\n\n\u003Cp\u003Ebrefを使うことでかなり簡単にPHPのLambda環境を作ることが出来ました。カスタマイズについてもphpの設定やエクステンションも自由に追加できるため、多くのプロジェクトでは特に問題なく採用できるのでは無いでしょうか。\u003C\u002Fp\u003E\n","author":{"name":"Takahiro Horike","description":"Co-founder and CEO of Serverless Operations, Inc","avatars":{"avatar96":"https:\u002F\u002Fsecure.gravatar.com\u002Favatar\u002F2ee9db3a5b6c492acf66ec14c8a5d8dc?s=96&d=mm&r=g"},"acf":{"userJpName":"堀家 隆宏","userRole":"CEO","facebook":"https:\u002F\u002Fwww.facebook.com\u002Fhorike.takahiro","twitter":"https:\u002F\u002Ftwitter.com\u002Fhorike37","github":"https:\u002F\u002Fgithub.com\u002Fhorike37"}},"date":"2020.01.26","path":"\u002Fblog\u002F38\u002F","featuredMedia":{"sourceUrl":"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F01\u002Fhttps___qiita-image-store.s3.ap-northeast-1.amazonaws.com_0_65478_2eb95b0b-29ab-0274-8eab-276f746ca0f1.png","altText":"","mediaDetails":{"width":1912}},"categories":[{"id":"7","title":"Blog","path":"\u002Fcategory\u002Fblog\u002F"}],"tags":[{"id":"10","title":"Lambda","path":"\u002Ftag\u002Flambda\u002F"},{"id":"12","title":"PHP","path":"\u002Ftag\u002Fphp\u002F"}]},"metadata":{"siteName":"Serverless Operations","siteDescription":"Serverless Operationsは、これまでグローバルの第一線で培ってきたクラウド技術（AWS − アマゾンウェブサービス）の豊富な実績と知見を活かし、お客さまのサーバーレスによる開発や運用の支援、コンサルティングまで一貫してサポート。サーバーレスに関するさまざまな課題を解決いたします。","siteUrl":"https:\u002F\u002Fserverless.co.jp","siteOgImage":"https:\u002F\u002Fserverless.co.jp\u002Fogp.png"}},"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="/assets/js/app.748a8736.js" defer></script><script src="/assets/js/page--src--templates--word-press-blog-vue.3139ba43.js" defer></script><script data-vue-tag="ssr" src="https://webfont.fontplus.jp/accessor/script/fontplus.js?LuMx0zy9taw%3D&box=ME4Rs88c3-0%3D&aa=1&ab=2" data-body="true"></script>
+  </body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="ja" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22ja%22%7D%7D">
+  <head>
+    <title>API Gateway+Lambda+Serverless+TravisでAPI開発のCI/CDパイプラインを構築する | Serverless Operations</title><meta name="gridsome:hash" content="7d8cc78e1b8fcf6bb367080efcae4f8df6dfb6c5"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.14"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="og:locale" property="og:locale" content="ja_JP"><meta data-vue-tag="ssr" data-key="og:site_name" property="og:site_name" content="Serverless Operations"><meta data-vue-tag="ssr" name="twitter:card" content="summary_large_image"><meta data-vue-tag="ssr" name="twitter:image" content="https://serverless.co.jp/ogp.png"><meta data-vue-tag="ssr" data-key="og:type" property="og:type" content="article"><meta data-vue-tag="ssr" data-key="og:url" property="og:url" content="https://serverless.co.jp/blog/18/"><meta data-vue-tag="ssr" data-key="og:image" property="og:image" content="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2017/02/https___qiita-image-store.s3.amazonaws.com_0_65478_57914bab-deb6-3058-39c9-a087ace85e9e.png"><meta data-vue-tag="ssr" data-key="og:title" property="og:title" content="API Gateway+Lambda+Serverless+TravisでAPI開発のCI/CDパイプラインを構築する | Serverless Operations"><meta data-vue-tag="ssr" name="twitter:card" content="summary_large_image"><meta data-vue-tag="ssr" name="twitter:image" content="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2017/02/https___qiita-image-store.s3.amazonaws.com_0_65478_57914bab-deb6-3058-39c9-a087ace85e9e.png"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon.ce0531f.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon.ac8d93a.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/assets/static/favicon.b9532cc.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/assets/static/favicon.f22e9f3.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/assets/static/favicon.62d22cb.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/assets/static/favicon.1539b60.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/assets/static/favicon.dc0cdc5.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/static/favicon.7b22250.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css"><link data-vue-tag="ssr" data-key="canonical" rel="canonical" href="https://serverless.co.jp/blog/18/"><link rel="preload" href="/assets/css/0.styles.98f560c0.css" as="style"><link rel="preload" href="/assets/js/app.748a8736.js" as="script"><link rel="preload" href="/assets/js/page--src--templates--word-press-blog-vue.3139ba43.js" as="script"><link rel="prefetch" href="/assets/js/page--node-modules--gridsome--app--pages--404-vue.0efd8db6.js"><link rel="prefetch" href="/assets/js/page--src--pages--about-vue.1af80757.js"><link rel="prefetch" href="/assets/js/page--src--pages--blog-archives-vue.3f2792c8.js"><link rel="prefetch" href="/assets/js/page--src--pages--contact-vue.ff3778ed.js"><link rel="prefetch" href="/assets/js/page--src--pages--download-vue.ed8d75f7.js"><link rel="prefetch" href="/assets/js/page--src--pages--event-archives-vue.020ba0bf.js"><link rel="prefetch" href="/assets/js/page--src--pages--index-vue.be66fc9c.js"><link rel="prefetch" href="/assets/js/page--src--pages--news-archives-vue.d0b081f1.js"><link rel="prefetch" href="/assets/js/page--src--pages--our-products-vue.dc9f52c4.js"><link rel="prefetch" href="/assets/js/page--src--pages--privacy-policy-vue.fdaf6562.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--aws-serverless-vue.b118f419.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--aws-serverless-vue~page--src--pages--services--iot-serverless-vue.bada637e.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--index-vue.45768e68.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--iot-serverless-vue.bbc11f2a.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--serverless-consulting-vue.1e87ce7a.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--serverless-development-vue.4d9baf66.js"><link rel="prefetch" href="/assets/js/page--src--pages--test-form-vue.03f7db27.js"><link rel="prefetch" href="/assets/js/page--src--pages--works-archives-vue.eb99c43a.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-category-vue.d9298a51.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-post-tag-vue.1b66b17a.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-post-vue.808e5e69.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-works-vue.491af2ec.js"><link rel="prefetch" href="/assets/js/vendors~page--src--pages--contact-vue~page--src--pages--download-vue.7a23cb3f.js"><link rel="prefetch" href="/assets/js/vendors~page--src--pages--our-products-vue.8e9052c2.js"><link rel="prefetch" href="/assets/js/vendors~page--src--templates--word-press-blog-vue.16b09ab1.js"><link rel="stylesheet" href="/assets/css/0.styles.98f560c0.css"><script data-vue-tag="ssr">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MLP4448');</script><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <div id="app" data-server-rendered="true" class="v-application v-application--is-ltr theme--dark" data-v-7de3dd27><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLP4448" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div class="v-application--wrap"><header class="header-nav" data-v-5f4f5539><div class="header-nav__logo-block" data-v-5f4f5539><a href="/" class="header-nav__logo-link active" data-v-5f4f5539><img src="/assets/img/header-logo.a93f880b.svg" alt="Severless Operations ロゴ" class="header-nav__logo" data-v-5f4f5539></a></div><nav data-v-5f4f5539><ul data-v-5f4f5539><li data-v-5f4f5539><a href="/about" data-v-5f4f5539>私たちについて</a></li><li data-v-5f4f5539><a href="/services" data-v-5f4f5539>サービス</a></li><li data-v-5f4f5539><a href="/works-archives" data-v-5f4f5539>実績紹介</a></li><li data-v-5f4f5539><a href="/blog-archives" data-v-5f4f5539>ブログ</a></li><li data-v-5f4f5539><a href="/news-archives" data-v-5f4f5539>お知らせ</a></li><li data-v-5f4f5539><a href="/download" data-v-5f4f5539>会社資料ダウンロード</a></li><li data-v-5f4f5539><a href="/contact" data-v-5f4f5539>お問い合わせ</a></li></ul></nav><div id="app" class="header-nav__toggler-block d-block d-md-none" data-v-5f4f5539><button id="btn" type="button" class="header-nav__toggler-button btn" data-v-5f4f5539><div tabindex="-1" class="btn__content" data-v-5f4f5539><span class="header-nav__toggler-top" data-v-5f4f5539></span><span class="header-nav__toggler-middle" data-v-5f4f5539></span><span class="header-nav__toggler-bottom" data-v-5f4f5539></span></div></button></div><!----></header><main class="v-content"><div class="v-content" data-v-7de3dd27><div class="v-content__wrap" data-v-7de3dd27><div class="container" data-v-7de3dd27><p class="category-title" data-v-7de3dd27>
+          Blog
+        </p></div><header class="post-header" data-v-7de3dd27><div class="container" data-v-7de3dd27><div class="row justify-center" data-v-7de3dd27><div class="col-md-10 col-11" data-v-7de3dd27><h1 class="post-title" data-v-7de3dd27>API Gateway+Lambda+Serverless+TravisでAPI開発のCI/CDパイプラインを構築する</h1><div class="post-tag-container" data-v-7de3dd27><time datetime="2017.02.21" class="post-date" data-v-7de3dd27> 
+                  2017.02.21
+                  
+                </time><div class="post-tags" data-v-7de3dd27><span data-v-7de3dd27>API Gateway</span></div><div class="post-tags" data-v-7de3dd27><span data-v-7de3dd27>Lambda</span></div><div class="post-tags" data-v-7de3dd27><span data-v-7de3dd27>Serverless</span></div></div></div></div></div></header><article class="post-container" data-v-7de3dd27><div class="container" data-v-7de3dd27><div class="row justify-center" data-v-7de3dd27><div class="post-article-container col-md-10 col-11" data-v-7de3dd27><div class="post-article" data-v-7de3dd27>
+<h2 class="wp-block-heading">概要</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F65478%2F57914bab-deb6-3058-39c9-a087ace85e9e.png?ixlib=rb-1.2.2&amp;auto=format&amp;gif-q=60&amp;q=75&amp;s=56710cce024edf43eb9d19515df67982" target="_blank" rel="noreferrer noopener"><img decoding="async" src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F65478%2F57914bab-deb6-3058-39c9-a087ace85e9e.png?ixlib=rb-1.2.2&amp;auto=format&amp;gif-q=60&amp;q=75&amp;s=56710cce024edf43eb9d19515df67982" alt="スクリーンショット 2017-02-21 10.15.16.png"/></a></figure></div>
+
+
+
+<p>API GatewayとLambdaを使ったAPI開発時のCI/CDについての記事です。<br>僕がnode.jsを普段から使用しているため、解説はnodeがベースになっています。</p>
+
+
+
+<p><a href="https://github.com/horike37/serverless-api-integration-test-sample">https://github.com/horike37/serverless-api-integration-test-sample</a></p>
+
+
+
+<p>ソースはすべてGitHubに上がってますのでそちらもご確認ください。</p>
+
+
+
+<h3 class="wp-block-heading">CIで実施する内容</h3>
+
+
+
+<p>以下の内容をCIとして行うことを考えます。</p>
+
+
+
+<ul><li>ESLintによる構文チェック</li><li>Mocha, Chaiを使用したユニットテスト</li><li>APIをAWSへデプロイしてテストを行うインテグレーションテスト</li></ul>
+
+
+
+<h3 class="wp-block-heading">CDで実施する内容</h3>
+
+
+
+<p>以下のようなルールでデプロイのサイクルを回します。</p>
+
+
+
+<ul><li>Gitのdevelopmentブランチへのpushをテスト環境へのデプロイと想定。<ul><li>構文チェックとユニットテストを実施。</li><li>ビルドが通れば、ServerlessのdevelopmentステージにAPIをデプロイ。</li></ul></li><li>Gitのmasterを最新ソースの集約場所として想定して、pushを実施。<ul><li>構文チェックとユニットテストとインテグレーションテストを実施。</li><li>ビルドが通ってもデプロイは実施しない。</li></ul></li><li>Gitのtagへのpushを本番環境へのデプロイと想定。<ul><li>構文チェックとユニットテストとインテグレーションテストを実施。</li><li>ビルドが通れば、ServerlessのproductionステージにAPIをデプロイ。</li></ul></li></ul>
+
+
+
+<h2 class="wp-block-heading">Continuous Integration</h2>
+
+
+
+<h3 class="wp-block-heading">ESLintによる構文チェック</h3>
+
+
+
+<p><a href="http://eslint.org/">http://eslint.org/</a></p>
+
+
+
+<p>JavaScript界隈ではもっともメジャーな構文チェックツールだと思います。構文ルールを定義して、構文エラーや記法を統一させることでソースの可読性や品質を向上させます。</p>
+
+
+
+<p><a href="https://github.com/horike37/serverless-api-integration-test-sample/blob/master/.eslintrc.js#L2">https://github.com/horike37/serverless-api-integration-test-sample/blob/master/.eslintrc.js#L2</a></p>
+
+
+
+<p>今回はルールとしてArbnbを採用しました。どの構文ルールを採用するかはチームの好みで決めれば良いと思います。</p>
+
+
+
+<h3 class="wp-block-heading">Mocha, Chaiを使用したユニットテスト</h3>
+
+
+
+<p>単体テストを実施します。メソッドや関数毎に入力値と出力値をチェックして関数単位での品質チェックを行います。</p>
+
+
+
+<p><a href="https://github.com/horike37/serverless-api-integration-test-sample/tree/master/lib">https://github.com/horike37/serverless-api-integration-test-sample/tree/master/lib</a></p>
+
+
+
+<p>このようにLambdaがメインで実行する部分から、ビジネスロジックをclassに切り出してあげるとテストが書きやすくなるのでそうすることが多いです。</p>
+
+
+
+<h3 class="wp-block-heading">APIをAWSへデプロイしたテストを行うインテグレーションテスト</h3>
+
+
+
+<p>インテグレーションテストはサーバレスアーキテクチャの特徴とも言えるテストです。</p>
+
+
+
+<p>サーバレスアーキテクチャは複数のサービスで構成されているケースが多く、ユニットテストだけではアーキテクチャ全体のテストを網羅できません。実際のクラウド環境へリソースをデプロイして結合テストを行い、すべて成功すれば、それを破棄します。</p>
+
+
+
+<p>このデプロイ管理にはServerlessを使用しています。</p>
+
+
+
+<p><a rel="noreferrer noopener" href="https://github.com/horike37/serverless-api-integration-test-sample/blob/master/integration-test/test.js#L18" target="_blank">https://github.com/horike37/serverless-api-integration-test-sample/blob/master/integration-test/test.js#L18</a><br><a rel="noreferrer noopener" href="https://github.com/horike37/serverless-api-integration-test-sample/blob/master/integration-test/test.js#L41" target="_blank">https://github.com/horike37/serverless-api-integration-test-sample/blob/master/integration-test/test.js#L41</a><br>テストの最初と最後にアーキテクチャのデプロイと削除を行っています。このメソッドの実体は、<code>sls deploy</code>や<code>sls remove</code>です。</p>
+
+
+
+<pre class="wp-block-code language-js"><code>it('should return correct values from all apis', () => {
+     const testEndpoint = `${endpoint}/hello`;
+
+     return fetch(testEndpoint, { method: 'GET' })
+       .then(response => response.json())
+       .then((json) => expect(json.message).to.equal('Go Serverless v1.0! Your function executed successfully!'));
+  });</code></pre>
+
+
+
+<p><a href="https://github.com/horike37/serverless-api-integration-test-sample/blob/master/integration-test/test.js#L35-L37">https://github.com/horike37/serverless-api-integration-test-sample/blob/master/integration-test/test.js#L35-L37</a></p>
+
+
+
+<p>そしてここがテストのメインの部分です。デプロイされたAPIへリクエストを送り、その返り値をchaiでチェックを行います。こうすることで何本APIを作ったとしても自動テストが可能になるというメリットがあります。</p>
+
+
+
+<h2 class="wp-block-heading">Continuous Delivery</h2>
+
+
+
+<h3 class="wp-block-heading">デプロイスクリプト</h3>
+
+
+
+<p>以下の様なスクリプトでデプロイを実施します。Gitのtagにpushされた際にproduction環境へ。Gitのdevelopmentブランチにpushされた際にdeployment環境へ。それぞれビルドが正しく通ればデプロイされるようになっています。bin/deploy.sh</p>
+
+
+
+<pre class="wp-block-code language-ssh"><code>#!/bin/bash
+set -e
+BRANCH=${TRAVIS_BRANCH:-$(git rev-parse --abbrev-ref HEAD)}
+if &#91;&#91; $TRAVIS_TAG ]]; then
+  STAGE="production"
+elif &#91;&#91; $BRANCH == 'development' ]]; then
+  STAGE="development"
+fi
+
+if &#91; -z ${STAGE+x} ]; then
+  echo "Not deploying changes";
+  exit 0;
+fi
+
+echo "Deploying from branch $BRANCH to stage $STAGE"
+npm prune --production  #remove devDependencies
+sls deploy --stage $STAGE --region $AWS_REGION</code></pre>
+
+
+
+<h3 class="wp-block-heading">ServerlessのIAM権限</h3>
+
+
+
+<p>TravisにてServerlessが動作するように専用のユーザを発行します。今回は最低限で以下の様なIAMポリシーを与えています。</p>
+
+
+
+<pre class="wp-block-code language-json"><code>{
+    "Version": "2012-10-17",
+    "Statement": &#91;
+        {
+            "Sid": "Stmt543534534",
+            "Effect": "Allow",
+            "Action": &#91;
+                "iam:GetRole",
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:PutRolePolicy",
+                "iam:DeleteRolePolicy",
+                "iam:PassRole",
+                "logs:*",
+                "s3:*",
+                "lambda:*",
+                "cloudformation:*",
+                "apigateway:*"
+            ],
+            "Resource": &#91;
+                "*"
+            ]
+        }
+    ]
+}</code></pre>
+
+
+
+<p>そして、TravisからAWSリソースへアクセスするためにcredentialをTravisへ設定します。<br>もちろん生のcredentialを.travis.ymlへ追記することはご法度です。</p>
+
+
+
+<p>Travisのコマンドにより暗号化し、credentialがTravisの環境上でしか使えないようにします。</p>
+
+
+
+<pre class="wp-block-code language-ssh"><code>$ travis encrypt AWS_ACCESS_KEY_ID=xxxxxxxxxxx --add
+$ travis encrypt AWS_SECRET_ACCESS_KEY=xxxxxxxxxxx --add</code></pre>
+
+
+
+<p>このコマンドにより。.travis.ymlに暗号化した状態でcredentialが設定されます。<br>これはTravis上でビルドを実行した際に環境変数として設定されます。</p>
+
+
+
+<h2 class="wp-block-heading">Travisの設定ファイル</h2>
+
+
+
+<p>最終的にはこんな感じに.travis.ymlが仕上がりました。</p>
+
+
+
+<pre class="wp-block-code language-yaml"><code>travis.yml
+
+language: node_js
+node_js:
+  - '4.3'
+env:
+  global:
+    - AWS_REGION=us-east-1
+    - SLS_DEBUG=true
+    - secure: lSxO7tZ0c/FA8VL72042dqQZ+tRjsS93iVYxMr1ghP/0tBxdmrhhYdAD9UrSv/Kk+Y1jRlkpQ2uaARHoy+6ZqmhchX32HpIYBQVJ/ntMSgv37gFbrNTOfSFoATMTRy6RT2UKaIWAa4xnmDxaQNFPx4X5l9Y25RdivoR+WXrEPd4eCCTVL/23bABSIySSTs+VGqQIppE4Jw5ibbcSoTLsuj00nK+VrmYHNlTSiEuKIxgFC1Ix0hqayJ/kely0DqYW/CY/vCCf0V4yazJo9fG1EFfrHsSIAKKeGRY7WMnLPJ7hJGwRiVV1/atMx/5kRPKOADcRTfoh3noXS3/sd1hbGjTwnJVRVrYiUocHwuNbo1TpW1On85jXEdvnKY9JYelFEnXnWn6A2bRMhgL/zul/WuSPCGq7HpsGMRhXrEiEYJ9YhnVNiUTaV2amoOClMOpHFnStMfTJVg7NJ8mBF4XOzODvhAzyPFDWdJ94Ejl1LAnGOAp/wBQVbFswKPdwdosFU6LyirQkA4k0q7C4zXYywyQtrY7H9w7FtKo+U4596GQAQtvzQz6GS42c1WBX0fIrMu1VXc+KmwCUBEVmvBxLS7c0DJUI61atDFGq7788K7IMWw83lIFjJULdwv1qU4uBi3MvPm2OHCdRAzBGEYIC87zfcYI/gi41rh3bj/C0wiI=
+    - secure: LIh0lkl/t72EbMd47WgEXqnoG3REp+oPhIfDR5Cs8SMO4sacvo2j4pRkRKIwwpdKozxdgLEMl1rwDoHyYPH77FzvDnwiufpaYgQs278wmi+6ZvoC9nhgdn2sT7cFnYuYAO8dC7G/NHzXogAVmiObf3I+hzNLjDqWwWVjqPm41p4P4c2EJUVo0nVlcaUOf8elS1j6zp+ZL1EQo4Fm4IumDgNpZUP4bSq8CcVPvF0ynMlslI8XNMnBOiYmG+644qILScyPK1Q2SPdMLqL5YXHuYfE0aCpFcWOcNZIalBmaxPqFNW+QHQvaYiwoENx/i91KS3U2mqfcNYY4o9viih47PFsaddvtBeB83Wfls7GIZ/XmvBKREuS5Gwhz930DbAvUNQT1ylS9Y6TTIIWIbe3Qmv6ngd9TrDHlnbVhQYgar9ur+TgvLyhs5YLAeLn85c3Z3GYN5JUuCq5bclzh4I+myagaWJPoujS1nT+vKLUW8hu5MkxApn+uFUo/OIW1WG4qho/ddh7RoJbI9oTebWjpXhLwd1pSET1yBVSEetORluh0pW7r5A425Rm80B58Mg/x0NNmM1x6DBrCZ5R8d+Bam6C7P4WxxrRex7vFcqRWeKlJNINO+rtPW3Uuo/s9yC9980uQ00eY0kqhouR8ol6xs/4Xye1AHovPR2unzEe37fM=
+before_install:
+  - chmod +x ./bin/deploy.sh
+  - npm i -g serverless@1.6.1
+install:
+  - travis_retry npm install
+script:
+  - npm run lint
+  - npm run test
+  - if &#91;&#91; $TRAVIS_BRANCH == "master" ]] || &#91;&#91; $TRAVIS_TAG ]]; then npm run integration-test; fi
+after_success:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js &amp;&amp; rm -rf ./coverage
+  - ./bin/deploy.sh
+﻿</code></pre>
+
+
+
+<h2 class="wp-block-heading">実行結果</h2>
+
+
+
+<h3 class="wp-block-heading">developmentブランチへのpush</h3>
+
+
+
+<p><a href="https://travis-ci.org/horike37/serverless-api-integration-test-sample/builds/203491545">https://travis-ci.org/horike37/serverless-api-integration-test-sample/builds/203491545</a></p>
+
+
+
+<p>ESLintとユニットテストのビルドが成功し、developmentステージへデプロイされています。</p>
+
+
+
+<h3 class="wp-block-heading">masterブランチへのpush</h3>
+
+
+
+<p><a href="https://travis-ci.org/horike37/serverless-api-integration-test-sample/builds/203489525">https://travis-ci.org/horike37/serverless-api-integration-test-sample/builds/203489525</a></p>
+
+
+
+<p>ESLintとユニットテストとインテグレーションテストが成功しましたが、デプロイはされていません。</p>
+
+
+
+<h3 class="wp-block-heading">tagへのpush</h3>
+
+
+
+<p><a href="https://travis-ci.org/horike37/serverless-api-integration-test-sample/builds/203484838">https://travis-ci.org/horike37/serverless-api-integration-test-sample/builds/203484838</a></p>
+
+
+
+<p><code>0.1</code>というタグにpushをしています。<br>ESLintとユニットテストとインテグレーションテストが成功し、puroductionステージにデプロイされています。</p>
+
+
+
+<p>如何でしたでしょうか。こんな感じでCI/CDパイプラインを構築することですべてが自動化され品質も担保されるようになりました。よろしければ是非参考にしてみてください！</p>
+
+
+
+<p>では、良いパイプラインライフを！</p>
+
+
+
+<h2 class="wp-block-heading">参考文献</h2>
+
+
+
+<p><a href="http://qiita.com/motchi0214/items/aceca576edf358cd988e">CodePipelineでServerless Frameworkのデプロイを管理する</a></p>
+</div><section class="l-share-button" data-v-629ec8b5 data-v-7de3dd27><aside class="p-share-button" data-v-629ec8b5><div class="p-share-button__header" data-v-629ec8b5>SHARE</div><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fserverless.co.jp%2Fblog%2F18%2F" target="_blank" title="Facebookでシェア" class="p-share-button__link--facebook " data-v-629ec8b5><i class="mdi mdi-facebook" data-v-629ec8b5></i></a><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fserverless.co.jp%2Fblog%2F18%2F&amp;text=API%20Gateway%2BLambda%2BServerless%2BTravis%E3%81%A7API%E9%96%8B%E7%99%BA%E3%81%AECI%2FCD%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B" target="_blank" title="Twitterでシェア" class="p-share-button__link--twitter" data-v-629ec8b5><i class="mdi mdi-twitter" data-v-629ec8b5></i></a></aside></section><div class="post-author-container" data-v-7de3dd27><h5 class="post-author-title" data-v-7de3dd27>Written by</h5><div class="post-author-text" data-v-7de3dd27><p data-v-7de3dd27><span class="role" data-v-7de3dd27>
+                      CEO
+                    </span><span class="name-jp" data-v-7de3dd27>
+                      堀家 隆宏
+                    </span><span class="name-en" data-v-7de3dd27>
+                      Takahiro Horike
+                    </span></p><p class="author-desc" data-v-7de3dd27>
+                    Co-founder and CEO of Serverless Operations, Inc
+                  </p><ul class="author-sns" data-v-7de3dd27><li data-v-7de3dd27><a href="https://github.com/horike37" target="_blank" class="github" data-v-7de3dd27><i aria-hidden="true" class="v-icon notranslate mdi mdi-github theme--light" data-v-7de3dd27></i></a></li><li data-v-7de3dd27><a href="https://www.facebook.com/horike.takahiro" target="_blank" class="facebook" data-v-7de3dd27><i aria-hidden="true" class="v-icon notranslate mdi mdi-facebook theme--light" data-v-7de3dd27></i></a></li><li data-v-7de3dd27><a href="https://twitter.com/horike37" target="_blank" class="twitter" data-v-7de3dd27><i aria-hidden="true" class="v-icon notranslate mdi mdi-twitter theme--light" data-v-7de3dd27></i></a></li></ul></div></div></div></div></div><div class="p-news-bg" data-v-7de3dd27></div></article><div class="container" data-v-7de3dd27><div class="row justify-center" data-v-7de3dd27><a href="/blog-archives" class="post-archives-link" data-v-7de3dd27><span class="post-archives-link-text" data-v-7de3dd27>BACK TO LIST</span><span data-v-7de3dd27><img src="/assets/img/icon-back-to-list.3add3700.svg" alt="BACK TO LIST アイコン" data-v-7de3dd27></span></a></div></div></div></div></main><footer class="v-footer footer v-sheet v-sheet--tile theme--dark" data-v-a49f4c2c><div class="container" data-v-a49f4c2c data-v-a49f4c2c><div class="row" data-v-a49f4c2c data-v-a49f4c2c><div class="footer-list-anim col-sm-6 col-md-3 col-12" data-v-a49f4c2c data-v-a49f4c2c><a href="/works-archives" class="c-footer-list__link" data-v-a49f4c2c><div class="c-footer-menu__title" data-v-a49f4c2c>Works</div><div class="c-footer-menu__subtitle" data-v-a49f4c2c>実績紹介</div></a><ul class="c-footer-list" data-v-a49f4c2c><div data-v-b68eaa08 data-v-a49f4c2c><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/501/" class="c-footer-list__link" data-v-b68eaa08>
+      戸田建設株式会社
+    </a></li><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/396/" class="c-footer-list__link" data-v-b68eaa08>
+      北海道テレビ放送株式会社
+    </a></li><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/358/" class="c-footer-list__link" data-v-b68eaa08>
+      株式会社Geolonia
+    </a></li><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/24/" class="c-footer-list__link" data-v-b68eaa08>
+      株式会社LIXIL
+    </a></li><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/185/" class="c-footer-list__link" data-v-b68eaa08>
+      株式会社TOKION
+    </a></li></div></ul></div><div class="footer-list-anim col-sm-6 col-md-3 col-12" data-v-a49f4c2c data-v-a49f4c2c><div data-v-a49f4c2c><a href="/services" class="c-footer-list__link" data-v-a49f4c2c><div class="c-footer-menu__title" data-v-a49f4c2c>Services</div><div class="c-footer-menu__subtitle" data-v-a49f4c2c>サービス紹介</div></a></div><ul class="c-footer-list" data-v-a49f4c2c><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services" class="c-footer-list__link" data-v-a49f4c2c>サーバーレスオペレーションズの<br data-v-a49f4c2c>サービスと強み</a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services/iot-serverless" class="c-footer-list__link" data-v-a49f4c2c>
+              IoT × サーバーレス / コンテナ開発<br data-v-a49f4c2c>導⼊サポート
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services/aws-serverless" class="c-footer-list__link" data-v-a49f4c2c>
+              AWSコアサーバーレスサービスの開発導⼊サポート
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services/serverless-consulting" class="c-footer-list__link" data-v-a49f4c2c>サーバーレスコンサルティング</a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services/serverless-development" class="c-footer-list__link" data-v-a49f4c2c>サーバーレスディべロプメント</a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/our-products" class="c-footer-list__link" data-v-a49f4c2c>
+              自社開発プロダクト
+            </a></li></ul></div><div class="footer-list-anim col-sm-6 col-md-3 col-12" data-v-a49f4c2c data-v-a49f4c2c><a href="/blog-archives" class="c-footer-list__link" data-v-a49f4c2c><div class="c-footer-menu__title" data-v-a49f4c2c>Blog</div><div class="c-footer-menu__subtitle" data-v-a49f4c2c>開発ブログ</div></a><ul class="c-footer-list" data-v-a49f4c2c><div data-v-39434060 data-v-a49f4c2c><li class="c-footer-list__item" data-v-39434060><a href="/blog/640/" class="c-footer-list__link" data-v-39434060>
+      AWS 開発基盤として、セキュリティを考慮したマルチアカウント構成のススメ
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/532/" class="c-footer-list__link" data-v-39434060>
+      AWS Amplify GraphQL Transformer v2 のデータモデリングとリレーションの仕組みを解説する
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/512/" class="c-footer-list__link" data-v-39434060>
+      AWS Lambda + Nuxt3で実現する「サーバーレスなSSR」とその構成
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/25/" class="c-footer-list__link" data-v-39434060>
+      Serverless Frameworkの使い方まとめ
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/450/" class="c-footer-list__link" data-v-39434060>
+      軽量で簡単に使えるキャッシュSaaS、MomentoをAWS Lambdaから使ってみる
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/429/" class="c-footer-list__link" data-v-39434060>
+      Next.js アプリケーションを AWS Amplify でホスティングする上でのTIPS
+    </a></li></div></ul></div><div class="footer-list-anim col-sm-6 col-md-3 col-12" data-v-a49f4c2c data-v-a49f4c2c><a href="/about" class="c-footer-list__link" data-v-a49f4c2c><div class="c-footer-menu__title" data-v-a49f4c2c>About</div><div class="c-footer-menu__subtitle" data-v-a49f4c2c>会社案内</div></a><ul class="c-footer-list" data-v-a49f4c2c><li class="c-footer-list__item" data-v-a49f4c2c><a href="/about" class="c-footer-list__link" data-v-a49f4c2c>
+              会社案内
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/news-archives/" class="c-footer-list__link" data-v-a49f4c2c>
+              おしらせ
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/privacy-policy/" class="c-footer-list__link" data-v-a49f4c2c>
+              プライバシーポリシー
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/download" class="c-footer-list__link" data-v-a49f4c2c>
+              会社資料ダウンロード
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/contact" class="c-footer-list__link" data-v-a49f4c2c>
+              お問い合わせ
+            </a></li></ul></div></div><div class="row mt-8 mt-md-12" data-v-a49f4c2c data-v-a49f4c2c><div class="col-md-2 col-12" data-v-a49f4c2c data-v-a49f4c2c><div data-v-a49f4c2c><a href="/" class="active" data-v-a49f4c2c><img src="/assets/img/footer-severless-operations-logo.e1e6687a.svg" alt="Severless Operations ロゴ" data-v-a49f4c2c></a></div></div><div class="col-md-10 col-12" data-v-a49f4c2c data-v-a49f4c2c><div class="sns-link text-md-right" data-v-a49f4c2c><a href="https://github.com/serverless-operations" target="_blank" class="sns-link__github" data-v-a49f4c2c><i aria-hidden="true" class="v-icon notranslate mdi mdi-github theme--light" data-v-a49f4c2c></i></a><a href="https://twitter.com/slsopsinc" target="_blank" class="sns-link__twitter" data-v-a49f4c2c><i aria-hidden="true" class="v-icon notranslate mdi mdi-twitter theme--light" data-v-a49f4c2c></i></a></div></div><div class="footer-copyright" data-v-a49f4c2c>
+        © Serverless Operations, inc
+      </div></div></div></footer></div></div>
+    <script>window.__INITIAL_STATE__={"data":{"wordPressBlog":{"title":"API Gateway+Lambda+Serverless+TravisでAPI開発のCI\u002FCDパイプラインを構築する","content":"\n\u003Ch2 class=\"wp-block-heading\"\u003E概要\u003C\u002Fh2\u003E\n\n\n\n\u003Cdiv class=\"wp-block-image\"\u003E\u003Cfigure class=\"aligncenter\"\u003E\u003Ca href=\"https:\u002F\u002Fqiita-user-contents.imgix.net\u002Fhttps%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F65478%2F57914bab-deb6-3058-39c9-a087ace85e9e.png?ixlib=rb-1.2.2&amp;auto=format&amp;gif-q=60&amp;q=75&amp;s=56710cce024edf43eb9d19515df67982\" target=\"_blank\" rel=\"noreferrer noopener\"\u003E\u003Cimg decoding=\"async\" src=\"https:\u002F\u002Fqiita-user-contents.imgix.net\u002Fhttps%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F65478%2F57914bab-deb6-3058-39c9-a087ace85e9e.png?ixlib=rb-1.2.2&amp;auto=format&amp;gif-q=60&amp;q=75&amp;s=56710cce024edf43eb9d19515df67982\" alt=\"スクリーンショット 2017-02-21 10.15.16.png\"\u002F\u003E\u003C\u002Fa\u003E\u003C\u002Ffigure\u003E\u003C\u002Fdiv\u003E\n\n\n\n\u003Cp\u003EAPI GatewayとLambdaを使ったAPI開発時のCI\u002FCDについての記事です。\u003Cbr\u003E僕がnode.jsを普段から使用しているため、解説はnodeがベースになっています。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Fgithub.com\u002Fhorike37\u002Fserverless-api-integration-test-sample\"\u003Ehttps:\u002F\u002Fgithub.com\u002Fhorike37\u002Fserverless-api-integration-test-sample\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EソースはすべてGitHubに上がってますのでそちらもご確認ください。\u003C\u002Fp\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003ECIで実施する内容\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003E以下の内容をCIとして行うことを考えます。\u003C\u002Fp\u003E\n\n\n\n\u003Cul\u003E\u003Cli\u003EESLintによる構文チェック\u003C\u002Fli\u003E\u003Cli\u003EMocha, Chaiを使用したユニットテスト\u003C\u002Fli\u003E\u003Cli\u003EAPIをAWSへデプロイしてテストを行うインテグレーションテスト\u003C\u002Fli\u003E\u003C\u002Ful\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003ECDで実施する内容\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003E以下のようなルールでデプロイのサイクルを回します。\u003C\u002Fp\u003E\n\n\n\n\u003Cul\u003E\u003Cli\u003EGitのdevelopmentブランチへのpushをテスト環境へのデプロイと想定。\u003Cul\u003E\u003Cli\u003E構文チェックとユニットテストを実施。\u003C\u002Fli\u003E\u003Cli\u003Eビルドが通れば、ServerlessのdevelopmentステージにAPIをデプロイ。\u003C\u002Fli\u003E\u003C\u002Ful\u003E\u003C\u002Fli\u003E\u003Cli\u003EGitのmasterを最新ソースの集約場所として想定して、pushを実施。\u003Cul\u003E\u003Cli\u003E構文チェックとユニットテストとインテグレーションテストを実施。\u003C\u002Fli\u003E\u003Cli\u003Eビルドが通ってもデプロイは実施しない。\u003C\u002Fli\u003E\u003C\u002Ful\u003E\u003C\u002Fli\u003E\u003Cli\u003EGitのtagへのpushを本番環境へのデプロイと想定。\u003Cul\u003E\u003Cli\u003E構文チェックとユニットテストとインテグレーションテストを実施。\u003C\u002Fli\u003E\u003Cli\u003Eビルドが通れば、ServerlessのproductionステージにAPIをデプロイ。\u003C\u002Fli\u003E\u003C\u002Ful\u003E\u003C\u002Fli\u003E\u003C\u002Ful\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003EContinuous Integration\u003C\u002Fh2\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003EESLintによる構文チェック\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003E\u003Ca href=\"http:\u002F\u002Feslint.org\u002F\"\u003Ehttp:\u002F\u002Feslint.org\u002F\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EJavaScript界隈ではもっともメジャーな構文チェックツールだと思います。構文ルールを定義して、構文エラーや記法を統一させることでソースの可読性や品質を向上させます。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Fgithub.com\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fblob\u002Fmaster\u002F.eslintrc.js#L2\"\u003Ehttps:\u002F\u002Fgithub.com\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fblob\u002Fmaster\u002F.eslintrc.js#L2\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E今回はルールとしてArbnbを採用しました。どの構文ルールを採用するかはチームの好みで決めれば良いと思います。\u003C\u002Fp\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003EMocha, Chaiを使用したユニットテスト\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003E単体テストを実施します。メソッドや関数毎に入力値と出力値をチェックして関数単位での品質チェックを行います。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Fgithub.com\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Ftree\u002Fmaster\u002Flib\"\u003Ehttps:\u002F\u002Fgithub.com\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Ftree\u002Fmaster\u002Flib\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EこのようにLambdaがメインで実行する部分から、ビジネスロジックをclassに切り出してあげるとテストが書きやすくなるのでそうすることが多いです。\u003C\u002Fp\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003EAPIをAWSへデプロイしたテストを行うインテグレーションテスト\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003Eインテグレーションテストはサーバレスアーキテクチャの特徴とも言えるテストです。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003Eサーバレスアーキテクチャは複数のサービスで構成されているケースが多く、ユニットテストだけではアーキテクチャ全体のテストを網羅できません。実際のクラウド環境へリソースをデプロイして結合テストを行い、すべて成功すれば、それを破棄します。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003Eこのデプロイ管理にはServerlessを使用しています。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E\u003Ca rel=\"noreferrer noopener\" href=\"https:\u002F\u002Fgithub.com\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fblob\u002Fmaster\u002Fintegration-test\u002Ftest.js#L18\" target=\"_blank\"\u003Ehttps:\u002F\u002Fgithub.com\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fblob\u002Fmaster\u002Fintegration-test\u002Ftest.js#L18\u003C\u002Fa\u003E\u003Cbr\u003E\u003Ca rel=\"noreferrer noopener\" href=\"https:\u002F\u002Fgithub.com\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fblob\u002Fmaster\u002Fintegration-test\u002Ftest.js#L41\" target=\"_blank\"\u003Ehttps:\u002F\u002Fgithub.com\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fblob\u002Fmaster\u002Fintegration-test\u002Ftest.js#L41\u003C\u002Fa\u003E\u003Cbr\u003Eテストの最初と最後にアーキテクチャのデプロイと削除を行っています。このメソッドの実体は、\u003Ccode\u003Esls deploy\u003C\u002Fcode\u003Eや\u003Ccode\u003Esls remove\u003C\u002Fcode\u003Eです。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-js\"\u003E\u003Ccode\u003Eit('should return correct values from all apis', () =\u003E {\n     const testEndpoint = `${endpoint}\u002Fhello`;\n\n     return fetch(testEndpoint, { method: 'GET' })\n       .then(response =\u003E response.json())\n       .then((json) =\u003E expect(json.message).to.equal('Go Serverless v1.0! Your function executed successfully!'));\n  });\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Fgithub.com\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fblob\u002Fmaster\u002Fintegration-test\u002Ftest.js#L35-L37\"\u003Ehttps:\u002F\u002Fgithub.com\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fblob\u002Fmaster\u002Fintegration-test\u002Ftest.js#L35-L37\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003Eそしてここがテストのメインの部分です。デプロイされたAPIへリクエストを送り、その返り値をchaiでチェックを行います。こうすることで何本APIを作ったとしても自動テストが可能になるというメリットがあります。\u003C\u002Fp\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003EContinuous Delivery\u003C\u002Fh2\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003Eデプロイスクリプト\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003E以下の様なスクリプトでデプロイを実施します。Gitのtagにpushされた際にproduction環境へ。Gitのdevelopmentブランチにpushされた際にdeployment環境へ。それぞれビルドが正しく通ればデプロイされるようになっています。bin\u002Fdeploy.sh\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-ssh\"\u003E\u003Ccode\u003E#!\u002Fbin\u002Fbash\nset -e\nBRANCH=${TRAVIS_BRANCH:-$(git rev-parse --abbrev-ref HEAD)}\nif &#91;&#91; $TRAVIS_TAG ]]; then\n  STAGE=\"production\"\nelif &#91;&#91; $BRANCH == 'development' ]]; then\n  STAGE=\"development\"\nfi\n\nif &#91; -z ${STAGE+x} ]; then\n  echo \"Not deploying changes\";\n  exit 0;\nfi\n\necho \"Deploying from branch $BRANCH to stage $STAGE\"\nnpm prune --production  #remove devDependencies\nsls deploy --stage $STAGE --region $AWS_REGION\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003EServerlessのIAM権限\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003ETravisにてServerlessが動作するように専用のユーザを発行します。今回は最低限で以下の様なIAMポリシーを与えています。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-json\"\u003E\u003Ccode\u003E{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": &#91;\n        {\n            \"Sid\": \"Stmt543534534\",\n            \"Effect\": \"Allow\",\n            \"Action\": &#91;\n                \"iam:GetRole\",\n                \"iam:CreateRole\",\n                \"iam:DeleteRole\",\n                \"iam:PutRolePolicy\",\n                \"iam:DeleteRolePolicy\",\n                \"iam:PassRole\",\n                \"logs:*\",\n                \"s3:*\",\n                \"lambda:*\",\n                \"cloudformation:*\",\n                \"apigateway:*\"\n            ],\n            \"Resource\": &#91;\n                \"*\"\n            ]\n        }\n    ]\n}\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003Eそして、TravisからAWSリソースへアクセスするためにcredentialをTravisへ設定します。\u003Cbr\u003Eもちろん生のcredentialを.travis.ymlへ追記することはご法度です。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003ETravisのコマンドにより暗号化し、credentialがTravisの環境上でしか使えないようにします。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-ssh\"\u003E\u003Ccode\u003E$ travis encrypt AWS_ACCESS_KEY_ID=xxxxxxxxxxx --add\n$ travis encrypt AWS_SECRET_ACCESS_KEY=xxxxxxxxxxx --add\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003Eこのコマンドにより。.travis.ymlに暗号化した状態でcredentialが設定されます。\u003Cbr\u003EこれはTravis上でビルドを実行した際に環境変数として設定されます。\u003C\u002Fp\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003ETravisの設定ファイル\u003C\u002Fh2\u003E\n\n\n\n\u003Cp\u003E最終的にはこんな感じに.travis.ymlが仕上がりました。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-yaml\"\u003E\u003Ccode\u003Etravis.yml\n\nlanguage: node_js\nnode_js:\n  - '4.3'\nenv:\n  global:\n    - AWS_REGION=us-east-1\n    - SLS_DEBUG=true\n    - secure: lSxO7tZ0c\u002FFA8VL72042dqQZ+tRjsS93iVYxMr1ghP\u002F0tBxdmrhhYdAD9UrSv\u002FKk+Y1jRlkpQ2uaARHoy+6ZqmhchX32HpIYBQVJ\u002FntMSgv37gFbrNTOfSFoATMTRy6RT2UKaIWAa4xnmDxaQNFPx4X5l9Y25RdivoR+WXrEPd4eCCTVL\u002F23bABSIySSTs+VGqQIppE4Jw5ibbcSoTLsuj00nK+VrmYHNlTSiEuKIxgFC1Ix0hqayJ\u002Fkely0DqYW\u002FCY\u002FvCCf0V4yazJo9fG1EFfrHsSIAKKeGRY7WMnLPJ7hJGwRiVV1\u002FatMx\u002F5kRPKOADcRTfoh3noXS3\u002Fsd1hbGjTwnJVRVrYiUocHwuNbo1TpW1On85jXEdvnKY9JYelFEnXnWn6A2bRMhgL\u002Fzul\u002FWuSPCGq7HpsGMRhXrEiEYJ9YhnVNiUTaV2amoOClMOpHFnStMfTJVg7NJ8mBF4XOzODvhAzyPFDWdJ94Ejl1LAnGOAp\u002FwBQVbFswKPdwdosFU6LyirQkA4k0q7C4zXYywyQtrY7H9w7FtKo+U4596GQAQtvzQz6GS42c1WBX0fIrMu1VXc+KmwCUBEVmvBxLS7c0DJUI61atDFGq7788K7IMWw83lIFjJULdwv1qU4uBi3MvPm2OHCdRAzBGEYIC87zfcYI\u002Fgi41rh3bj\u002FC0wiI=\n    - secure: LIh0lkl\u002Ft72EbMd47WgEXqnoG3REp+oPhIfDR5Cs8SMO4sacvo2j4pRkRKIwwpdKozxdgLEMl1rwDoHyYPH77FzvDnwiufpaYgQs278wmi+6ZvoC9nhgdn2sT7cFnYuYAO8dC7G\u002FNHzXogAVmiObf3I+hzNLjDqWwWVjqPm41p4P4c2EJUVo0nVlcaUOf8elS1j6zp+ZL1EQo4Fm4IumDgNpZUP4bSq8CcVPvF0ynMlslI8XNMnBOiYmG+644qILScyPK1Q2SPdMLqL5YXHuYfE0aCpFcWOcNZIalBmaxPqFNW+QHQvaYiwoENx\u002Fi91KS3U2mqfcNYY4o9viih47PFsaddvtBeB83Wfls7GIZ\u002FXmvBKREuS5Gwhz930DbAvUNQT1ylS9Y6TTIIWIbe3Qmv6ngd9TrDHlnbVhQYgar9ur+TgvLyhs5YLAeLn85c3Z3GYN5JUuCq5bclzh4I+myagaWJPoujS1nT+vKLUW8hu5MkxApn+uFUo\u002FOIW1WG4qho\u002Fddh7RoJbI9oTebWjpXhLwd1pSET1yBVSEetORluh0pW7r5A425Rm80B58Mg\u002Fx0NNmM1x6DBrCZ5R8d+Bam6C7P4WxxrRex7vFcqRWeKlJNINO+rtPW3Uuo\u002Fs9yC9980uQ00eY0kqhouR8ol6xs\u002F4Xye1AHovPR2unzEe37fM=\nbefore_install:\n  - chmod +x .\u002Fbin\u002Fdeploy.sh\n  - npm i -g serverless@1.6.1\ninstall:\n  - travis_retry npm install\nscript:\n  - npm run lint\n  - npm run test\n  - if &#91;&#91; $TRAVIS_BRANCH == \"master\" ]] || &#91;&#91; $TRAVIS_TAG ]]; then npm run integration-test; fi\nafter_success:\n  - cat .\u002Fcoverage\u002Flcov.info | .\u002Fnode_modules\u002Fcoveralls\u002Fbin\u002Fcoveralls.js &amp;&amp; rm -rf .\u002Fcoverage\n  - .\u002Fbin\u002Fdeploy.sh\n﻿\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003E実行結果\u003C\u002Fh2\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003Edevelopmentブランチへのpush\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Ftravis-ci.org\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fbuilds\u002F203491545\"\u003Ehttps:\u002F\u002Ftravis-ci.org\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fbuilds\u002F203491545\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EESLintとユニットテストのビルドが成功し、developmentステージへデプロイされています。\u003C\u002Fp\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003Emasterブランチへのpush\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Ftravis-ci.org\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fbuilds\u002F203489525\"\u003Ehttps:\u002F\u002Ftravis-ci.org\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fbuilds\u002F203489525\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EESLintとユニットテストとインテグレーションテストが成功しましたが、デプロイはされていません。\u003C\u002Fp\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003Etagへのpush\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Ftravis-ci.org\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fbuilds\u002F203484838\"\u003Ehttps:\u002F\u002Ftravis-ci.org\u002Fhorike37\u002Fserverless-api-integration-test-sample\u002Fbuilds\u002F203484838\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E\u003Ccode\u003E0.1\u003C\u002Fcode\u003Eというタグにpushをしています。\u003Cbr\u003EESLintとユニットテストとインテグレーションテストが成功し、puroductionステージにデプロイされています。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E如何でしたでしょうか。こんな感じでCI\u002FCDパイプラインを構築することですべてが自動化され品質も担保されるようになりました。よろしければ是非参考にしてみてください！\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003Eでは、良いパイプラインライフを！\u003C\u002Fp\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003E参考文献\u003C\u002Fh2\u003E\n\n\n\n\u003Cp\u003E\u003Ca href=\"http:\u002F\u002Fqiita.com\u002Fmotchi0214\u002Fitems\u002Faceca576edf358cd988e\"\u003ECodePipelineでServerless Frameworkのデプロイを管理する\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n","author":{"name":"Takahiro Horike","description":"Co-founder and CEO of Serverless Operations, Inc","avatars":{"avatar96":"https:\u002F\u002Fsecure.gravatar.com\u002Favatar\u002F2ee9db3a5b6c492acf66ec14c8a5d8dc?s=96&d=mm&r=g"},"acf":{"userJpName":"堀家 隆宏","userRole":"CEO","facebook":"https:\u002F\u002Fwww.facebook.com\u002Fhorike.takahiro","twitter":"https:\u002F\u002Ftwitter.com\u002Fhorike37","github":"https:\u002F\u002Fgithub.com\u002Fhorike37"}},"date":"2017.02.21","path":"\u002Fblog\u002F18\u002F","featuredMedia":{"sourceUrl":"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2017\u002F02\u002Fhttps___qiita-image-store.s3.amazonaws.com_0_65478_57914bab-deb6-3058-39c9-a087ace85e9e.png","altText":"","mediaDetails":{"width":800}},"categories":[{"id":"7","title":"Blog","path":"\u002Fcategory\u002Fblog\u002F"}],"tags":[{"id":"9","title":"API Gateway","path":"\u002Ftag\u002Fapi-gateway\u002F"},{"id":"10","title":"Lambda","path":"\u002Ftag\u002Flambda\u002F"},{"id":"2","title":"Serverless","path":"\u002Ftag\u002Fserverless\u002F"}]},"metadata":{"siteName":"Serverless Operations","siteDescription":"Serverless Operationsは、これまでグローバルの第一線で培ってきたクラウド技術（AWS − アマゾンウェブサービス）の豊富な実績と知見を活かし、お客さまのサーバーレスによる開発や運用の支援、コンサルティングまで一貫してサポート。サーバーレスに関するさまざまな課題を解決いたします。","siteUrl":"https:\u002F\u002Fserverless.co.jp","siteOgImage":"https:\u002F\u002Fserverless.co.jp\u002Fogp.png"}},"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="/assets/js/app.748a8736.js" defer></script><script src="/assets/js/page--src--templates--word-press-blog-vue.3139ba43.js" defer></script><script data-vue-tag="ssr" src="https://webfont.fontplus.jp/accessor/script/fontplus.js?LuMx0zy9taw%3D&box=ME4Rs88c3-0%3D&aa=1&ab=2" data-body="true"></script>
+  </body>
+</html>

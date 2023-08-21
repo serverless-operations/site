@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="ja" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22ja%22%7D%7D">
+  <head>
+    <title>Auth0 + AppSync + StepFunctions + Stripe + Vuejs(Nuxt.js)でサーバーレスECサイトを作る | Serverless Operations</title><meta name="gridsome:hash" content="7d8cc78e1b8fcf6bb367080efcae4f8df6dfb6c5"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.14"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="og:locale" property="og:locale" content="ja_JP"><meta data-vue-tag="ssr" data-key="og:site_name" property="og:site_name" content="Serverless Operations"><meta data-vue-tag="ssr" name="twitter:card" content="summary_large_image"><meta data-vue-tag="ssr" name="twitter:image" content="https://serverless.co.jp/ogp.png"><meta data-vue-tag="ssr" data-key="og:type" property="og:type" content="article"><meta data-vue-tag="ssr" data-key="og:url" property="og:url" content="https://serverless.co.jp/blog/97/"><meta data-vue-tag="ssr" data-key="og:image" property="og:image" content="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/serverless-ec-3.png"><meta data-vue-tag="ssr" data-key="og:title" property="og:title" content="Auth0 + AppSync + StepFunctions + Stripe + Vuejs(Nuxt.js)でサーバーレスECサイトを作る | Serverless Operations"><meta data-vue-tag="ssr" name="twitter:card" content="summary_large_image"><meta data-vue-tag="ssr" name="twitter:image" content="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/serverless-ec-3.png"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon.ce0531f.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon.ac8d93a.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/assets/static/favicon.b9532cc.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/assets/static/favicon.f22e9f3.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/assets/static/favicon.62d22cb.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/assets/static/favicon.1539b60.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/assets/static/favicon.dc0cdc5.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/static/favicon.7b22250.2cc8acaa6971d9266cbf9d7d5455c37a.png"><link data-vue-tag="ssr" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css"><link data-vue-tag="ssr" data-key="canonical" rel="canonical" href="https://serverless.co.jp/blog/97/"><link rel="preload" href="/assets/css/0.styles.98f560c0.css" as="style"><link rel="preload" href="/assets/js/app.748a8736.js" as="script"><link rel="preload" href="/assets/js/page--src--templates--word-press-blog-vue.3139ba43.js" as="script"><link rel="prefetch" href="/assets/js/page--node-modules--gridsome--app--pages--404-vue.0efd8db6.js"><link rel="prefetch" href="/assets/js/page--src--pages--about-vue.1af80757.js"><link rel="prefetch" href="/assets/js/page--src--pages--blog-archives-vue.3f2792c8.js"><link rel="prefetch" href="/assets/js/page--src--pages--contact-vue.ff3778ed.js"><link rel="prefetch" href="/assets/js/page--src--pages--download-vue.ed8d75f7.js"><link rel="prefetch" href="/assets/js/page--src--pages--event-archives-vue.020ba0bf.js"><link rel="prefetch" href="/assets/js/page--src--pages--index-vue.be66fc9c.js"><link rel="prefetch" href="/assets/js/page--src--pages--news-archives-vue.d0b081f1.js"><link rel="prefetch" href="/assets/js/page--src--pages--our-products-vue.dc9f52c4.js"><link rel="prefetch" href="/assets/js/page--src--pages--privacy-policy-vue.fdaf6562.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--aws-serverless-vue.b118f419.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--aws-serverless-vue~page--src--pages--services--iot-serverless-vue.bada637e.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--index-vue.45768e68.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--iot-serverless-vue.bbc11f2a.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--serverless-consulting-vue.1e87ce7a.js"><link rel="prefetch" href="/assets/js/page--src--pages--services--serverless-development-vue.4d9baf66.js"><link rel="prefetch" href="/assets/js/page--src--pages--test-form-vue.03f7db27.js"><link rel="prefetch" href="/assets/js/page--src--pages--works-archives-vue.eb99c43a.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-category-vue.d9298a51.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-post-tag-vue.1b66b17a.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-post-vue.808e5e69.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-works-vue.491af2ec.js"><link rel="prefetch" href="/assets/js/vendors~page--src--pages--contact-vue~page--src--pages--download-vue.7a23cb3f.js"><link rel="prefetch" href="/assets/js/vendors~page--src--pages--our-products-vue.8e9052c2.js"><link rel="prefetch" href="/assets/js/vendors~page--src--templates--word-press-blog-vue.16b09ab1.js"><link rel="stylesheet" href="/assets/css/0.styles.98f560c0.css"><script data-vue-tag="ssr">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MLP4448');</script><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <div id="app" data-server-rendered="true" class="v-application v-application--is-ltr theme--dark" data-v-7de3dd27><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLP4448" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div class="v-application--wrap"><header class="header-nav" data-v-5f4f5539><div class="header-nav__logo-block" data-v-5f4f5539><a href="/" class="header-nav__logo-link active" data-v-5f4f5539><img src="/assets/img/header-logo.a93f880b.svg" alt="Severless Operations ロゴ" class="header-nav__logo" data-v-5f4f5539></a></div><nav data-v-5f4f5539><ul data-v-5f4f5539><li data-v-5f4f5539><a href="/about" data-v-5f4f5539>私たちについて</a></li><li data-v-5f4f5539><a href="/services" data-v-5f4f5539>サービス</a></li><li data-v-5f4f5539><a href="/works-archives" data-v-5f4f5539>実績紹介</a></li><li data-v-5f4f5539><a href="/blog-archives" data-v-5f4f5539>ブログ</a></li><li data-v-5f4f5539><a href="/news-archives" data-v-5f4f5539>お知らせ</a></li><li data-v-5f4f5539><a href="/download" data-v-5f4f5539>会社資料ダウンロード</a></li><li data-v-5f4f5539><a href="/contact" data-v-5f4f5539>お問い合わせ</a></li></ul></nav><div id="app" class="header-nav__toggler-block d-block d-md-none" data-v-5f4f5539><button id="btn" type="button" class="header-nav__toggler-button btn" data-v-5f4f5539><div tabindex="-1" class="btn__content" data-v-5f4f5539><span class="header-nav__toggler-top" data-v-5f4f5539></span><span class="header-nav__toggler-middle" data-v-5f4f5539></span><span class="header-nav__toggler-bottom" data-v-5f4f5539></span></div></button></div><!----></header><main class="v-content"><div class="v-content" data-v-7de3dd27><div class="v-content__wrap" data-v-7de3dd27><div class="container" data-v-7de3dd27><p class="category-title" data-v-7de3dd27>
+          Blog
+        </p></div><header class="post-header" data-v-7de3dd27><div class="container" data-v-7de3dd27><div class="row justify-center" data-v-7de3dd27><div class="col-md-10 col-11" data-v-7de3dd27><h1 class="post-title" data-v-7de3dd27>Auth0 + AppSync + StepFunctions + Stripe + Vuejs(Nuxt.js)でサーバーレスECサイトを作る</h1><div class="post-tag-container" data-v-7de3dd27><time datetime="2020.07.20" class="post-date" data-v-7de3dd27> 
+                  2020.07.20
+                  
+                </time><div class="post-tags" data-v-7de3dd27><span data-v-7de3dd27>Appsync</span></div><div class="post-tags" data-v-7de3dd27><span data-v-7de3dd27>Auth0</span></div><div class="post-tags" data-v-7de3dd27><span data-v-7de3dd27>Step Functions</span></div><div class="post-tags" data-v-7de3dd27><span data-v-7de3dd27>Stripe</span></div><div class="post-tags" data-v-7de3dd27><span data-v-7de3dd27>Vue</span></div></div></div></div></div></header><article class="post-container" data-v-7de3dd27><div class="container" data-v-7de3dd27><div class="row justify-center" data-v-7de3dd27><div class="post-article-container col-md-10 col-11" data-v-7de3dd27><div class="post-article" data-v-7de3dd27>
+<h2 class="wp-block-heading">概要</h2>
+
+
+
+<p>以下の様な構成でGraphQLでサーバーレスなECサイトを作ってみましょう。AppSyncのバックエンドにStepFunctionsに置くことで決済のトランザクションを可能にしています。トランザクションの結果はGraphQLのSubscriptionでフロントエンド側に通知を行う構成になっています。</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="834" height="558" src="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/serverless-ec-2.png" alt="" class="wp-image-101" srcset="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/serverless-ec-2.png 834w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/serverless-ec-2-300x201.png 300w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/serverless-ec-2-768x514.png 768w" sizes="(max-width: 834px) 100vw, 834px" /></figure>
+
+
+
+<h2 class="wp-block-heading">GraphQLスキーマ</h2>
+
+
+
+<p>スキーマを以下の様に定義します。<code>createPayment</code> ミューテーションで購入リクエストをブラウザから送ります。そして、StepFunctionsの最後のステップで<code>publishPaymentResult</code> ミューテーションに購入処理のトランザクション結果を送り、ブラウザでは&nbsp;<code>onGetResult</code> サブスクリプションで結果を受け取る設計になってます。</p>
+
+
+
+<pre class="wp-block-code language-graphql"><code>type Mutation {
+	createPayment(input: PaymentInput!): Payment
+	publishPaymentResult(result: ResultInput): Result
+}
+
+type Payment {
+	id: ID!
+	price: Int!
+	amount: Int!
+}
+
+input PaymentInput {
+	id: ID!
+	price: Int!
+	amount: Int!
+}
+
+type Query {
+	getPayment(id: ID!): Payment
+}
+
+type Result {
+	id: ID!
+	status: ResultStatus!
+}
+
+input ResultInput {
+	id: ID!
+	status: ResultStatus!
+}
+
+enum ResultStatus {
+	SUCCESS
+	FAILURE
+}
+
+type Subscription {
+	onGetResult(id: ID!): Result
+		@aws_subscribe(mutations: &#91;"publishPaymentResult"])
+}
+
+schema {
+	query: Query
+	mutation: Mutation
+	subscription: Subscription
+}</code></pre>
+
+
+
+<h2 class="wp-block-heading">AppSyncの設定</h2>
+
+
+
+<h3 class="wp-block-heading">Auth0による認証</h3>
+
+
+
+<p>OIDC認証を以下のように設定します。プロバイダードメインには契約したあなたのAuth0テナントのURLを設定しましょう</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="736" src="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-2.44.14-1024x736.png" alt="" class="wp-image-100" srcset="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-2.44.14-1024x736.png 1024w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-2.44.14-300x216.png 300w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-2.44.14-768x552.png 768w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-2.44.14-1536x1104.png 1536w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-2.44.14.png 1706w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h3 class="wp-block-heading">StepFunctionsとの連携</h3>
+
+
+
+<p>Classmethodの岩田さんの<a href="https://dev.classmethod.jp/articles/step-functions-for-appsync-resolver/">AppSyncのクエリからStep Functionsのステートマシンを起動して時間のかかる処理を非同期に実行する</a>&nbsp;を参考にさせてもらいました。</p>
+
+
+
+<p>記事のとおりにHTTPのデータソースを作成してそこからIAMで認可させてStepFunctionsのエンドポイントにリクエストを投げています。</p>
+
+
+
+<p>リクエストのマッピングテンプレートは以下のように定義しています。<br><code>$context.identity.claims.sub</code> や<code>stripe_user_id</code> などを渡すことでStepFunctions内のLambdaでAuth0上のユーザデータやStripe上のデータとやり取りできるようにしています。</p>
+
+
+
+<pre class="wp-block-code language-json"><code>{
+  "version": "2018-05-29",
+  "method": "POST",
+  "resourcePath": "/",
+  "params": {
+    "headers": {
+      "content-type": "application/x-amz-json-1.0",
+      "x-amz-target":"AWSStepFunctions.StartExecution"
+    },
+    "body": {
+      "stateMachineArn": "arn:aws:states:us-east-1:&lt;accountID>:stateMachine:myStateMachine",
+      "input": "{ \"id\": \"$context.arguments.input.id\", \"idToken\": \"$context.request.headers.authorization\", \"user_id\":\"$context.identity.claims.sub\", \"stripe_user_id\":\"$context.identity.claims&#91;'https://serverless-ec.com/stripe_user_id']\" }"
+    }
+  }
+}</code></pre>
+
+
+
+<h2 class="wp-block-heading">StepFunctionsの設定</h2>
+
+
+
+<p>以下の様にワークフローを定義します。決済のトランザクション処理を実施できる仕組みになっています。どこかで処理が失敗した場合には処理をロールバックさせて失敗したことを通知出来るような仕組みになっています。</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="910" height="762" src="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.01.44.png" alt="" class="wp-image-103" srcset="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.01.44.png 910w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.01.44-300x251.png 300w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.01.44-768x643.png 768w" sizes="(max-width: 910px) 100vw, 910px" /></figure>
+
+
+
+<p>それぞれのステップでは以下の処理を実施しています。</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>ChargeStripe</td><td>StripeのChargeAPIを叩いて決済処理を実施します</td></tr><tr><td>Order</td><td>注文処理を実施します</td></tr><tr><td>NotificationSuccess</td><td>PublishPaymentResultミューテーションに成功を送信します</td></tr><tr><td>Rollback</td><td>注文処理が失敗した場合にStripeの決済を取り消して状態を元に戻します</td></tr><tr><td>NotificationError</td><td>PublishPaymentResultミューテーションに失敗を送信します</td></tr></tbody></table></figure>
+
+
+
+<p><code>ChargeStripe</code>では以下のような形で決済処理を実施します。</p>
+
+
+
+<pre class="wp-block-code language-js"><code>'use strict';
+
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
+module.exports.handler = async event => {
+  const charge = await stripe.charges.create({
+    amount: 3000,
+    currency: "jpy",
+    description: 'テスト決済',
+    customer: event.stripe_user_id
+  })
+
+  return {
+	  id: event.id,
+	  idToken: event.idToken,
+	  charge: charge.id
+  }
+}</code></pre>
+
+
+
+<p>そして処理がすべて成功したら<code>NotificationSuccess</code>で成功通知用にミューテーションを送ります。以下のコードもClassmethodの岩田さんの記事を参考にさせてもらいました。</p>
+
+
+
+<pre class="wp-block-code language-js"><code>'use strict';
+const axios = require('axios')
+
+const PublishPaymentResultMutation = `mutation PublishPaymentResult(
+    $id: ID!,
+    $status: ResultStatus!
+  ) {
+    publishPaymentResult(result: {id: $id, status: $status}) {
+      id
+      status
+    }
+  }`;
+
+module.exports.handler = async event => {
+  console.log(event)
+
+  const mutation = {
+    query: PublishPaymentResultMutation,
+    operationName: 'PublishPaymentResult',
+    variables: {
+      id: event.id,
+      status: 'SUCCESS'
+    },
+  };
+
+  try {
+    const response = await axios({
+	method: 'POST',
+	url: process.env.APPSYNC_URL,
+	data: JSON.stringify(mutation),
+	headers: {
+	  'Content-Type': 'application/json',
+	  'Authorization': `${event.idToken}`,
+	}
+    });
+} catch (error) {
+    console.error(`&#91;ERROR] ${error.response.status} - ${JSON.stringify(error.response.data)}`);
+    throw error;
+  }
+};</code></pre>
+
+
+
+<p>Rollbackでは以下の様なコードで決済をRefundする処理を書いています</p>
+
+
+
+<pre class="wp-block-code language-js"><code>'use strict';
+
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
+module.exports.handler = async event => {
+  const error = JSON.parse(event.Cause)
+  const data = JSON.parse(error.errorMessage)
+  await stripe.refunds.create({
+    charge: data.charge
+  })
+
+  return {
+	  id: data.id,
+	  idToken: data.idToken
+  }
+}</code></pre>
+
+
+
+<h2 class="wp-block-heading">Vue.js(Nuxt.js)からGraphQLにリクエストを送るためにApolloクライアントを設定する</h2>
+
+
+
+<h3 class="wp-block-heading">Auth0 と連携する </h3>
+
+
+
+<p>フロントエンドのサンプルは Vue.js(Nuxt.js) で作成していきます。先ずはOIDC 認証モードでリクエストを送るためにIDトークンを取得する必要があり、フロントエンド側とAuth0を連携する設定を行います。package.json に <code>@nuxtjs/auth</code> モジュールを追加し、<code>nuxt.config.js</code> に以下の設定を追加します。</p>
+
+
+
+<pre class="wp-block-code language-ts"><code>const config = {
+  modules: &#91;
+    // ...
+    '@nuxtjs/auth'
+  ],
+  // ...
+  auth: {
+    strategies: {
+      auth0: {
+        domain: 'xxx.auth0.com' // Auth0 Application Domain
+        client_id: '...' // Auth0 Application Client ID,
+        scope: &#91; 'openid' ],
+        response_type: 'id_token token',
+        token_key: 'id_token'
+      }
+    },
+    redirect: {
+      login: '/',
+      logout: '/',
+      callback: '/callback',
+      home: '/main'
+    }
+  }
+}</code></pre>
+
+
+
+<p>サインイン画面に遷移させたいところで以下のように実装します。IDトークンを取得する方法については後述します。</p>
+
+
+
+<pre class="wp-block-code language-ts"><code>  methods: {
+    login() {
+      this.$auth.loginWith('auth0')
+    }
+  }</code></pre>
+
+
+
+<h3 class="wp-block-heading">Apollo クライアントを設定、利用する</h3>
+
+
+
+<p>package.json にいくつか必要なモジュールを追加します。</p>
+
+
+
+<pre class="wp-block-code language-shell"><code>yarn add @nuxtjs/apollo aws-appsync aws-appsync-subscription-link apollo-link</code></pre>
+
+
+
+<p><code>nuxt.config.js</code> には以下のように設定を追加します。</p>
+
+
+
+<pre class="wp-block-code language-ts"><code>const config = {
+  modules: &#91;
+    // ...
+    '@nuxtjs/apollo'
+  ],
+  // ...
+  apollo: {
+    authenticationType: '',
+    clientConfigs: {
+      default: '~/apollo/config.js'
+    }
+  },
+}</code></pre>
+
+
+
+<p>注意点としては<code>authenticationType</code> に空文字 <code>''</code> を設定する必要があります。<code>Bearer</code> のような認証タイプは特に指定しません。</p>
+
+
+
+<p>続いて、Apollo クライアントの設定ファイル <code>~/apollo/config.js</code> を書いていきます。AppSyncのSubscriptionを利用するためには、AppSyncのリアルタイムエンドポイントとのWebSocket接続を確立してくれるモジュールを利用する必要があります。 </p>
+
+
+
+<pre class="wp-block-code language-ts"><code>
+import { Context } from '@nuxt/types/app'
+import { ApolloLink } from 'apollo-link'
+import { AUTH_TYPE } from 'aws-appsync'
+import { createSubscriptionHandshakeLink } from 'aws-appsync-subscription-link'
+
+export default ctx => {
+
+  const { APPSYNC_GRAPHQL_ENDPOINT, APPSYNC_REGION } = ctx.env
+  const link = ApolloLink.from(&#91;
+
+    createSubscriptionHandshakeLink({
+      url: APPSYNC_GRAPHQL_ENDPOINT,
+      region: APPSYNC_REGION,
+      auth: {
+        type: AUTH_TYPE.OPENID_CONNECT,
+        // Context, Vuex, localStorage 等からセット可能
+        jwtToken: () => 'idToken'
+      }
+    })
+
+  ])
+  return { link }
+}</code></pre>
+
+
+
+<p>以上、AppSync とつなぐための準備ができました。Vue コンポーネントの中で <code>apollo</code> プロパティを利用するか、<code>this.$apollo.getClient()</code>でクライアントインスタンスを取得するなどして、query/mutation/subscriptionを実装できます。</p>
+
+
+
+<p>以下のようにAuth0連携で取得した ID Token を指定することもできます。</p>
+
+
+
+<pre class="wp-block-code language-ts"><code>// ID Token を取得
+const bearerIdToken = this.$auth.getToken('auth0')
+
+// 先頭 'Bearer' 文字列を外す
+const idToken = bearerToken.substring(constants.BEARER_PREFIX.length)
+
+// クライアントに ID Token をセット
+this.$apolloHelpers.onLogin(idToken)
+
+// GraphQLリクエストを送る
+this.$apollo.getClient().query({ /* ... */ })
+this.$apollo.getClient().mutation({ /* ... */ })
+this.$apollo.getClient().subscribe({ /* ... */ })</code></pre>
+
+
+
+<h2 class="wp-block-heading">動作確認</h2>
+
+
+
+<p>ローカルでサイトにアクセスして、まずはAuth0からログインを行います。</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="940" height="1024" src="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.20.50-940x1024.png" alt="" class="wp-image-104" srcset="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.20.50-940x1024.png 940w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.20.50-275x300.png 275w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.20.50-768x837.png 768w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.20.50.png 1274w" sizes="(max-width: 940px) 100vw, 940px" /></figure>
+
+
+
+<p>すると購入ページに遷移するので購入してみましょう。</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="591" src="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.21.04-1024x591.png" alt="" class="wp-image-105" srcset="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.21.04-1024x591.png 1024w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.21.04-300x173.png 300w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.21.04-768x443.png 768w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.21.04.png 1512w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>以下の通りちゃんと結果をサブスクリプションで受け取ることが出来ました。</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="760" src="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.21.14-1024x760.png" alt="" class="wp-image-106" srcset="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.21.14-1024x760.png 1024w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.21.14-300x223.png 300w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.21.14-768x570.png 768w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.21.14.png 1140w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>今度はOrder処理をわざと落としてちゃんとロールバックして失敗の結果が通知くるか検証してみましょう。</p>
+
+
+
+<p>以下の通り失敗のステータスで結果が受け取れました。</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="674" src="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.27.28-1024x674.png" alt="" class="wp-image-107" srcset="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.27.28-1024x674.png 1024w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.27.28-300x198.png 300w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.27.28-768x506.png 768w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.27.28.png 1394w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>StepFunctionsは以下の通りOrderが失敗してRollbackが発生していることがわかります。</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="860" height="754" src="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.27.48.png" alt="" class="wp-image-108" srcset="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.27.48.png 860w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.27.48-300x263.png 300w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.27.48-768x673.png 768w" sizes="(max-width: 860px) 100vw, 860px" /></figure>
+
+
+
+<p>Stripeでもちゃんと返金処理が実施されていました。</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="633" src="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.33.22-1024x633.png" alt="" class="wp-image-109" srcset="https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.33.22-1024x633.png 1024w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.33.22-300x186.png 300w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.33.22-768x475.png 768w, https://cdn.getshifter.co/f6642def64a63651c07142605e040674c5441f6d/uploads/2020/07/スクリーンショット-2020-07-20-3.33.22.png 1342w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p></p>
+</div><section class="l-share-button" data-v-629ec8b5 data-v-7de3dd27><aside class="p-share-button" data-v-629ec8b5><div class="p-share-button__header" data-v-629ec8b5>SHARE</div><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fserverless.co.jp%2Fblog%2F97%2F" target="_blank" title="Facebookでシェア" class="p-share-button__link--facebook " data-v-629ec8b5><i class="mdi mdi-facebook" data-v-629ec8b5></i></a><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fserverless.co.jp%2Fblog%2F97%2F&amp;text=Auth0%20%2B%20AppSync%20%2B%20StepFunctions%20%2B%20Stripe%20%2B%20Vuejs(Nuxt.js)%E3%81%A7%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%82%B9EC%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E4%BD%9C%E3%82%8B" target="_blank" title="Twitterでシェア" class="p-share-button__link--twitter" data-v-629ec8b5><i class="mdi mdi-twitter" data-v-629ec8b5></i></a></aside></section><div class="post-author-container" data-v-7de3dd27><h5 class="post-author-title" data-v-7de3dd27>Written by</h5><div class="post-author-text" data-v-7de3dd27><p data-v-7de3dd27><span class="role" data-v-7de3dd27>
+                      CEO
+                    </span><span class="name-jp" data-v-7de3dd27>
+                      堀家 隆宏
+                    </span><span class="name-en" data-v-7de3dd27>
+                      Takahiro Horike
+                    </span></p><p class="author-desc" data-v-7de3dd27>
+                    Co-founder and CEO of Serverless Operations, Inc
+                  </p><ul class="author-sns" data-v-7de3dd27><li data-v-7de3dd27><a href="https://github.com/horike37" target="_blank" class="github" data-v-7de3dd27><i aria-hidden="true" class="v-icon notranslate mdi mdi-github theme--light" data-v-7de3dd27></i></a></li><li data-v-7de3dd27><a href="https://www.facebook.com/horike.takahiro" target="_blank" class="facebook" data-v-7de3dd27><i aria-hidden="true" class="v-icon notranslate mdi mdi-facebook theme--light" data-v-7de3dd27></i></a></li><li data-v-7de3dd27><a href="https://twitter.com/horike37" target="_blank" class="twitter" data-v-7de3dd27><i aria-hidden="true" class="v-icon notranslate mdi mdi-twitter theme--light" data-v-7de3dd27></i></a></li></ul></div></div></div></div></div><div class="p-news-bg" data-v-7de3dd27></div></article><div class="container" data-v-7de3dd27><div class="row justify-center" data-v-7de3dd27><a href="/blog-archives" class="post-archives-link" data-v-7de3dd27><span class="post-archives-link-text" data-v-7de3dd27>BACK TO LIST</span><span data-v-7de3dd27><img src="/assets/img/icon-back-to-list.3add3700.svg" alt="BACK TO LIST アイコン" data-v-7de3dd27></span></a></div></div></div></div></main><footer class="v-footer footer v-sheet v-sheet--tile theme--dark" data-v-a49f4c2c><div class="container" data-v-a49f4c2c data-v-a49f4c2c><div class="row" data-v-a49f4c2c data-v-a49f4c2c><div class="footer-list-anim col-sm-6 col-md-3 col-12" data-v-a49f4c2c data-v-a49f4c2c><a href="/works-archives" class="c-footer-list__link" data-v-a49f4c2c><div class="c-footer-menu__title" data-v-a49f4c2c>Works</div><div class="c-footer-menu__subtitle" data-v-a49f4c2c>実績紹介</div></a><ul class="c-footer-list" data-v-a49f4c2c><div data-v-b68eaa08 data-v-a49f4c2c><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/501/" class="c-footer-list__link" data-v-b68eaa08>
+      戸田建設株式会社
+    </a></li><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/396/" class="c-footer-list__link" data-v-b68eaa08>
+      北海道テレビ放送株式会社
+    </a></li><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/358/" class="c-footer-list__link" data-v-b68eaa08>
+      株式会社Geolonia
+    </a></li><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/24/" class="c-footer-list__link" data-v-b68eaa08>
+      株式会社LIXIL
+    </a></li><li class="c-footer-list__item" data-v-b68eaa08><a href="/works/185/" class="c-footer-list__link" data-v-b68eaa08>
+      株式会社TOKION
+    </a></li></div></ul></div><div class="footer-list-anim col-sm-6 col-md-3 col-12" data-v-a49f4c2c data-v-a49f4c2c><div data-v-a49f4c2c><a href="/services" class="c-footer-list__link" data-v-a49f4c2c><div class="c-footer-menu__title" data-v-a49f4c2c>Services</div><div class="c-footer-menu__subtitle" data-v-a49f4c2c>サービス紹介</div></a></div><ul class="c-footer-list" data-v-a49f4c2c><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services" class="c-footer-list__link" data-v-a49f4c2c>サーバーレスオペレーションズの<br data-v-a49f4c2c>サービスと強み</a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services/iot-serverless" class="c-footer-list__link" data-v-a49f4c2c>
+              IoT × サーバーレス / コンテナ開発<br data-v-a49f4c2c>導⼊サポート
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services/aws-serverless" class="c-footer-list__link" data-v-a49f4c2c>
+              AWSコアサーバーレスサービスの開発導⼊サポート
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services/serverless-consulting" class="c-footer-list__link" data-v-a49f4c2c>サーバーレスコンサルティング</a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/services/serverless-development" class="c-footer-list__link" data-v-a49f4c2c>サーバーレスディべロプメント</a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/our-products" class="c-footer-list__link" data-v-a49f4c2c>
+              自社開発プロダクト
+            </a></li></ul></div><div class="footer-list-anim col-sm-6 col-md-3 col-12" data-v-a49f4c2c data-v-a49f4c2c><a href="/blog-archives" class="c-footer-list__link" data-v-a49f4c2c><div class="c-footer-menu__title" data-v-a49f4c2c>Blog</div><div class="c-footer-menu__subtitle" data-v-a49f4c2c>開発ブログ</div></a><ul class="c-footer-list" data-v-a49f4c2c><div data-v-39434060 data-v-a49f4c2c><li class="c-footer-list__item" data-v-39434060><a href="/blog/640/" class="c-footer-list__link" data-v-39434060>
+      AWS 開発基盤として、セキュリティを考慮したマルチアカウント構成のススメ
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/532/" class="c-footer-list__link" data-v-39434060>
+      AWS Amplify GraphQL Transformer v2 のデータモデリングとリレーションの仕組みを解説する
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/512/" class="c-footer-list__link" data-v-39434060>
+      AWS Lambda + Nuxt3で実現する「サーバーレスなSSR」とその構成
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/25/" class="c-footer-list__link" data-v-39434060>
+      Serverless Frameworkの使い方まとめ
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/450/" class="c-footer-list__link" data-v-39434060>
+      軽量で簡単に使えるキャッシュSaaS、MomentoをAWS Lambdaから使ってみる
+    </a></li><li class="c-footer-list__item" data-v-39434060><a href="/blog/429/" class="c-footer-list__link" data-v-39434060>
+      Next.js アプリケーションを AWS Amplify でホスティングする上でのTIPS
+    </a></li></div></ul></div><div class="footer-list-anim col-sm-6 col-md-3 col-12" data-v-a49f4c2c data-v-a49f4c2c><a href="/about" class="c-footer-list__link" data-v-a49f4c2c><div class="c-footer-menu__title" data-v-a49f4c2c>About</div><div class="c-footer-menu__subtitle" data-v-a49f4c2c>会社案内</div></a><ul class="c-footer-list" data-v-a49f4c2c><li class="c-footer-list__item" data-v-a49f4c2c><a href="/about" class="c-footer-list__link" data-v-a49f4c2c>
+              会社案内
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/news-archives/" class="c-footer-list__link" data-v-a49f4c2c>
+              おしらせ
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/privacy-policy/" class="c-footer-list__link" data-v-a49f4c2c>
+              プライバシーポリシー
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/download" class="c-footer-list__link" data-v-a49f4c2c>
+              会社資料ダウンロード
+            </a></li><li class="c-footer-list__item" data-v-a49f4c2c><a href="/contact" class="c-footer-list__link" data-v-a49f4c2c>
+              お問い合わせ
+            </a></li></ul></div></div><div class="row mt-8 mt-md-12" data-v-a49f4c2c data-v-a49f4c2c><div class="col-md-2 col-12" data-v-a49f4c2c data-v-a49f4c2c><div data-v-a49f4c2c><a href="/" class="active" data-v-a49f4c2c><img src="/assets/img/footer-severless-operations-logo.e1e6687a.svg" alt="Severless Operations ロゴ" data-v-a49f4c2c></a></div></div><div class="col-md-10 col-12" data-v-a49f4c2c data-v-a49f4c2c><div class="sns-link text-md-right" data-v-a49f4c2c><a href="https://github.com/serverless-operations" target="_blank" class="sns-link__github" data-v-a49f4c2c><i aria-hidden="true" class="v-icon notranslate mdi mdi-github theme--light" data-v-a49f4c2c></i></a><a href="https://twitter.com/slsopsinc" target="_blank" class="sns-link__twitter" data-v-a49f4c2c><i aria-hidden="true" class="v-icon notranslate mdi mdi-twitter theme--light" data-v-a49f4c2c></i></a></div></div><div class="footer-copyright" data-v-a49f4c2c>
+        © Serverless Operations, inc
+      </div></div></div></footer></div></div>
+    <script>window.__INITIAL_STATE__={"data":{"wordPressBlog":{"title":"Auth0 + AppSync + StepFunctions + Stripe + Vuejs(Nuxt.js)でサーバーレスECサイトを作る","content":"\n\u003Ch2 class=\"wp-block-heading\"\u003E概要\u003C\u002Fh2\u003E\n\n\n\n\u003Cp\u003E以下の様な構成でGraphQLでサーバーレスなECサイトを作ってみましょう。AppSyncのバックエンドにStepFunctionsに置くことで決済のトランザクションを可能にしています。トランザクションの結果はGraphQLのSubscriptionでフロントエンド側に通知を行う構成になっています。\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-image size-large\"\u003E\u003Cimg decoding=\"async\" loading=\"lazy\" width=\"834\" height=\"558\" src=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fserverless-ec-2.png\" alt=\"\" class=\"wp-image-101\" srcset=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fserverless-ec-2.png 834w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fserverless-ec-2-300x201.png 300w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fserverless-ec-2-768x514.png 768w\" sizes=\"(max-width: 834px) 100vw, 834px\" \u002F\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003EGraphQLスキーマ\u003C\u002Fh2\u003E\n\n\n\n\u003Cp\u003Eスキーマを以下の様に定義します。\u003Ccode\u003EcreatePayment\u003C\u002Fcode\u003E ミューテーションで購入リクエストをブラウザから送ります。そして、StepFunctionsの最後のステップで\u003Ccode\u003EpublishPaymentResult\u003C\u002Fcode\u003E ミューテーションに購入処理のトランザクション結果を送り、ブラウザでは&nbsp;\u003Ccode\u003EonGetResult\u003C\u002Fcode\u003E サブスクリプションで結果を受け取る設計になってます。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-graphql\"\u003E\u003Ccode\u003Etype Mutation {\n\tcreatePayment(input: PaymentInput!): Payment\n\tpublishPaymentResult(result: ResultInput): Result\n}\n\ntype Payment {\n\tid: ID!\n\tprice: Int!\n\tamount: Int!\n}\n\ninput PaymentInput {\n\tid: ID!\n\tprice: Int!\n\tamount: Int!\n}\n\ntype Query {\n\tgetPayment(id: ID!): Payment\n}\n\ntype Result {\n\tid: ID!\n\tstatus: ResultStatus!\n}\n\ninput ResultInput {\n\tid: ID!\n\tstatus: ResultStatus!\n}\n\nenum ResultStatus {\n\tSUCCESS\n\tFAILURE\n}\n\ntype Subscription {\n\tonGetResult(id: ID!): Result\n\t\t@aws_subscribe(mutations: &#91;\"publishPaymentResult\"])\n}\n\nschema {\n\tquery: Query\n\tmutation: Mutation\n\tsubscription: Subscription\n}\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003EAppSyncの設定\u003C\u002Fh2\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003EAuth0による認証\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003EOIDC認証を以下のように設定します。プロバイダードメインには契約したあなたのAuth0テナントのURLを設定しましょう\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-image size-large\"\u003E\u003Cimg decoding=\"async\" loading=\"lazy\" width=\"1024\" height=\"736\" src=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-2.44.14-1024x736.png\" alt=\"\" class=\"wp-image-100\" srcset=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-2.44.14-1024x736.png 1024w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-2.44.14-300x216.png 300w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-2.44.14-768x552.png 768w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-2.44.14-1536x1104.png 1536w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-2.44.14.png 1706w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" \u002F\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003EStepFunctionsとの連携\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003EClassmethodの岩田さんの\u003Ca href=\"https:\u002F\u002Fdev.classmethod.jp\u002Farticles\u002Fstep-functions-for-appsync-resolver\u002F\"\u003EAppSyncのクエリからStep Functionsのステートマシンを起動して時間のかかる処理を非同期に実行する\u003C\u002Fa\u003E&nbsp;を参考にさせてもらいました。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E記事のとおりにHTTPのデータソースを作成してそこからIAMで認可させてStepFunctionsのエンドポイントにリクエストを投げています。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003Eリクエストのマッピングテンプレートは以下のように定義しています。\u003Cbr\u003E\u003Ccode\u003E$context.identity.claims.sub\u003C\u002Fcode\u003E や\u003Ccode\u003Estripe_user_id\u003C\u002Fcode\u003E などを渡すことでStepFunctions内のLambdaでAuth0上のユーザデータやStripe上のデータとやり取りできるようにしています。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-json\"\u003E\u003Ccode\u003E{\n  \"version\": \"2018-05-29\",\n  \"method\": \"POST\",\n  \"resourcePath\": \"\u002F\",\n  \"params\": {\n    \"headers\": {\n      \"content-type\": \"application\u002Fx-amz-json-1.0\",\n      \"x-amz-target\":\"AWSStepFunctions.StartExecution\"\n    },\n    \"body\": {\n      \"stateMachineArn\": \"arn:aws:states:us-east-1:&lt;accountID\u003E:stateMachine:myStateMachine\",\n      \"input\": \"{ \\\"id\\\": \\\"$context.arguments.input.id\\\", \\\"idToken\\\": \\\"$context.request.headers.authorization\\\", \\\"user_id\\\":\\\"$context.identity.claims.sub\\\", \\\"stripe_user_id\\\":\\\"$context.identity.claims&#91;'https:\u002F\u002Fserverless-ec.com\u002Fstripe_user_id']\\\" }\"\n    }\n  }\n}\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003EStepFunctionsの設定\u003C\u002Fh2\u003E\n\n\n\n\u003Cp\u003E以下の様にワークフローを定義します。決済のトランザクション処理を実施できる仕組みになっています。どこかで処理が失敗した場合には処理をロールバックさせて失敗したことを通知出来るような仕組みになっています。\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-image size-large\"\u003E\u003Cimg decoding=\"async\" loading=\"lazy\" width=\"910\" height=\"762\" src=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.01.44.png\" alt=\"\" class=\"wp-image-103\" srcset=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.01.44.png 910w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.01.44-300x251.png 300w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.01.44-768x643.png 768w\" sizes=\"(max-width: 910px) 100vw, 910px\" \u002F\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Cp\u003Eそれぞれのステップでは以下の処理を実施しています。\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-table\"\u003E\u003Ctable\u003E\u003Ctbody\u003E\u003Ctr\u003E\u003Ctd\u003EChargeStripe\u003C\u002Ftd\u003E\u003Ctd\u003EStripeのChargeAPIを叩いて決済処理を実施します\u003C\u002Ftd\u003E\u003C\u002Ftr\u003E\u003Ctr\u003E\u003Ctd\u003EOrder\u003C\u002Ftd\u003E\u003Ctd\u003E注文処理を実施します\u003C\u002Ftd\u003E\u003C\u002Ftr\u003E\u003Ctr\u003E\u003Ctd\u003ENotificationSuccess\u003C\u002Ftd\u003E\u003Ctd\u003EPublishPaymentResultミューテーションに成功を送信します\u003C\u002Ftd\u003E\u003C\u002Ftr\u003E\u003Ctr\u003E\u003Ctd\u003ERollback\u003C\u002Ftd\u003E\u003Ctd\u003E注文処理が失敗した場合にStripeの決済を取り消して状態を元に戻します\u003C\u002Ftd\u003E\u003C\u002Ftr\u003E\u003Ctr\u003E\u003Ctd\u003ENotificationError\u003C\u002Ftd\u003E\u003Ctd\u003EPublishPaymentResultミューテーションに失敗を送信します\u003C\u002Ftd\u003E\u003C\u002Ftr\u003E\u003C\u002Ftbody\u003E\u003C\u002Ftable\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Cp\u003E\u003Ccode\u003EChargeStripe\u003C\u002Fcode\u003Eでは以下のような形で決済処理を実施します。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-js\"\u003E\u003Ccode\u003E'use strict';\n\nconst stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);\n\nmodule.exports.handler = async event =\u003E {\n  const charge = await stripe.charges.create({\n    amount: 3000,\n    currency: \"jpy\",\n    description: 'テスト決済',\n    customer: event.stripe_user_id\n  })\n\n  return {\n\t  id: event.id,\n\t  idToken: event.idToken,\n\t  charge: charge.id\n  }\n}\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003Eそして処理がすべて成功したら\u003Ccode\u003ENotificationSuccess\u003C\u002Fcode\u003Eで成功通知用にミューテーションを送ります。以下のコードもClassmethodの岩田さんの記事を参考にさせてもらいました。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-js\"\u003E\u003Ccode\u003E'use strict';\nconst axios = require('axios')\n\nconst PublishPaymentResultMutation = `mutation PublishPaymentResult(\n    $id: ID!,\n    $status: ResultStatus!\n  ) {\n    publishPaymentResult(result: {id: $id, status: $status}) {\n      id\n      status\n    }\n  }`;\n\nmodule.exports.handler = async event =\u003E {\n  console.log(event)\n\n  const mutation = {\n    query: PublishPaymentResultMutation,\n    operationName: 'PublishPaymentResult',\n    variables: {\n      id: event.id,\n      status: 'SUCCESS'\n    },\n  };\n\n  try {\n    const response = await axios({\n\tmethod: 'POST',\n\turl: process.env.APPSYNC_URL,\n\tdata: JSON.stringify(mutation),\n\theaders: {\n\t  'Content-Type': 'application\u002Fjson',\n\t  'Authorization': `${event.idToken}`,\n\t}\n    });\n} catch (error) {\n    console.error(`&#91;ERROR] ${error.response.status} - ${JSON.stringify(error.response.data)}`);\n    throw error;\n  }\n};\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003ERollbackでは以下の様なコードで決済をRefundする処理を書いています\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-js\"\u003E\u003Ccode\u003E'use strict';\n\nconst stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);\n\nmodule.exports.handler = async event =\u003E {\n  const error = JSON.parse(event.Cause)\n  const data = JSON.parse(error.errorMessage)\n  await stripe.refunds.create({\n    charge: data.charge\n  })\n\n  return {\n\t  id: data.id,\n\t  idToken: data.idToken\n  }\n}\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003EVue.js(Nuxt.js)からGraphQLにリクエストを送るためにApolloクライアントを設定する\u003C\u002Fh2\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003EAuth0 と連携する \u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003Eフロントエンドのサンプルは Vue.js(Nuxt.js) で作成していきます。先ずはOIDC 認証モードでリクエストを送るためにIDトークンを取得する必要があり、フロントエンド側とAuth0を連携する設定を行います。package.json に \u003Ccode\u003E@nuxtjs\u002Fauth\u003C\u002Fcode\u003E モジュールを追加し、\u003Ccode\u003Enuxt.config.js\u003C\u002Fcode\u003E に以下の設定を追加します。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-ts\"\u003E\u003Ccode\u003Econst config = {\n  modules: &#91;\n    \u002F\u002F ...\n    '@nuxtjs\u002Fauth'\n  ],\n  \u002F\u002F ...\n  auth: {\n    strategies: {\n      auth0: {\n        domain: 'xxx.auth0.com' \u002F\u002F Auth0 Application Domain\n        client_id: '...' \u002F\u002F Auth0 Application Client ID,\n        scope: &#91; 'openid' ],\n        response_type: 'id_token token',\n        token_key: 'id_token'\n      }\n    },\n    redirect: {\n      login: '\u002F',\n      logout: '\u002F',\n      callback: '\u002Fcallback',\n      home: '\u002Fmain'\n    }\n  }\n}\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003Eサインイン画面に遷移させたいところで以下のように実装します。IDトークンを取得する方法については後述します。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-ts\"\u003E\u003Ccode\u003E  methods: {\n    login() {\n      this.$auth.loginWith('auth0')\n    }\n  }\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Ch3 class=\"wp-block-heading\"\u003EApollo クライアントを設定、利用する\u003C\u002Fh3\u003E\n\n\n\n\u003Cp\u003Epackage.json にいくつか必要なモジュールを追加します。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-shell\"\u003E\u003Ccode\u003Eyarn add @nuxtjs\u002Fapollo aws-appsync aws-appsync-subscription-link apollo-link\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003E\u003Ccode\u003Enuxt.config.js\u003C\u002Fcode\u003E には以下のように設定を追加します。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-ts\"\u003E\u003Ccode\u003Econst config = {\n  modules: &#91;\n    \u002F\u002F ...\n    '@nuxtjs\u002Fapollo'\n  ],\n  \u002F\u002F ...\n  apollo: {\n    authenticationType: '',\n    clientConfigs: {\n      default: '~\u002Fapollo\u002Fconfig.js'\n    }\n  },\n}\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003E注意点としては\u003Ccode\u003EauthenticationType\u003C\u002Fcode\u003E に空文字 \u003Ccode\u003E''\u003C\u002Fcode\u003E を設定する必要があります。\u003Ccode\u003EBearer\u003C\u002Fcode\u003E のような認証タイプは特に指定しません。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E続いて、Apollo クライアントの設定ファイル \u003Ccode\u003E~\u002Fapollo\u002Fconfig.js\u003C\u002Fcode\u003E を書いていきます。AppSyncのSubscriptionを利用するためには、AppSyncのリアルタイムエンドポイントとのWebSocket接続を確立してくれるモジュールを利用する必要があります。 \u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-ts\"\u003E\u003Ccode\u003E\nimport { Context } from '@nuxt\u002Ftypes\u002Fapp'\nimport { ApolloLink } from 'apollo-link'\nimport { AUTH_TYPE } from 'aws-appsync'\nimport { createSubscriptionHandshakeLink } from 'aws-appsync-subscription-link'\n\nexport default ctx =\u003E {\n\n  const { APPSYNC_GRAPHQL_ENDPOINT, APPSYNC_REGION } = ctx.env\n  const link = ApolloLink.from(&#91;\n\n    createSubscriptionHandshakeLink({\n      url: APPSYNC_GRAPHQL_ENDPOINT,\n      region: APPSYNC_REGION,\n      auth: {\n        type: AUTH_TYPE.OPENID_CONNECT,\n        \u002F\u002F Context, Vuex, localStorage 等からセット可能\n        jwtToken: () =\u003E 'idToken'\n      }\n    })\n\n  ])\n  return { link }\n}\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Cp\u003E以上、AppSync とつなぐための準備ができました。Vue コンポーネントの中で \u003Ccode\u003Eapollo\u003C\u002Fcode\u003E プロパティを利用するか、\u003Ccode\u003Ethis.$apollo.getClient()\u003C\u002Fcode\u003Eでクライアントインスタンスを取得するなどして、query\u002Fmutation\u002Fsubscriptionを実装できます。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E以下のようにAuth0連携で取得した ID Token を指定することもできます。\u003C\u002Fp\u003E\n\n\n\n\u003Cpre class=\"wp-block-code language-ts\"\u003E\u003Ccode\u003E\u002F\u002F ID Token を取得\nconst bearerIdToken = this.$auth.getToken('auth0')\n\n\u002F\u002F 先頭 'Bearer' 文字列を外す\nconst idToken = bearerToken.substring(constants.BEARER_PREFIX.length)\n\n\u002F\u002F クライアントに ID Token をセット\nthis.$apolloHelpers.onLogin(idToken)\n\n\u002F\u002F GraphQLリクエストを送る\nthis.$apollo.getClient().query({ \u002F* ... *\u002F })\nthis.$apollo.getClient().mutation({ \u002F* ... *\u002F })\nthis.$apollo.getClient().subscribe({ \u002F* ... *\u002F })\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\n\n\n\u003Ch2 class=\"wp-block-heading\"\u003E動作確認\u003C\u002Fh2\u003E\n\n\n\n\u003Cp\u003Eローカルでサイトにアクセスして、まずはAuth0からログインを行います。\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-image size-large\"\u003E\u003Cimg decoding=\"async\" loading=\"lazy\" width=\"940\" height=\"1024\" src=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.20.50-940x1024.png\" alt=\"\" class=\"wp-image-104\" srcset=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.20.50-940x1024.png 940w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.20.50-275x300.png 275w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.20.50-768x837.png 768w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.20.50.png 1274w\" sizes=\"(max-width: 940px) 100vw, 940px\" \u002F\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Cp\u003Eすると購入ページに遷移するので購入してみましょう。\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-image size-large\"\u003E\u003Cimg decoding=\"async\" loading=\"lazy\" width=\"1024\" height=\"591\" src=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.21.04-1024x591.png\" alt=\"\" class=\"wp-image-105\" srcset=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.21.04-1024x591.png 1024w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.21.04-300x173.png 300w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.21.04-768x443.png 768w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.21.04.png 1512w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" \u002F\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Cp\u003E以下の通りちゃんと結果をサブスクリプションで受け取ることが出来ました。\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-image size-large\"\u003E\u003Cimg decoding=\"async\" loading=\"lazy\" width=\"1024\" height=\"760\" src=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.21.14-1024x760.png\" alt=\"\" class=\"wp-image-106\" srcset=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.21.14-1024x760.png 1024w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.21.14-300x223.png 300w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.21.14-768x570.png 768w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.21.14.png 1140w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" \u002F\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Cp\u003E今度はOrder処理をわざと落としてちゃんとロールバックして失敗の結果が通知くるか検証してみましょう。\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E以下の通り失敗のステータスで結果が受け取れました。\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-image size-large\"\u003E\u003Cimg decoding=\"async\" loading=\"lazy\" width=\"1024\" height=\"674\" src=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.27.28-1024x674.png\" alt=\"\" class=\"wp-image-107\" srcset=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.27.28-1024x674.png 1024w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.27.28-300x198.png 300w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.27.28-768x506.png 768w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.27.28.png 1394w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" \u002F\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Cp\u003EStepFunctionsは以下の通りOrderが失敗してRollbackが発生していることがわかります。\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-image size-large\"\u003E\u003Cimg decoding=\"async\" loading=\"lazy\" width=\"860\" height=\"754\" src=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.27.48.png\" alt=\"\" class=\"wp-image-108\" srcset=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.27.48.png 860w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.27.48-300x263.png 300w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.27.48-768x673.png 768w\" sizes=\"(max-width: 860px) 100vw, 860px\" \u002F\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Cp\u003EStripeでもちゃんと返金処理が実施されていました。\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-image size-large\"\u003E\u003Cimg decoding=\"async\" loading=\"lazy\" width=\"1024\" height=\"633\" src=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.33.22-1024x633.png\" alt=\"\" class=\"wp-image-109\" srcset=\"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.33.22-1024x633.png 1024w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.33.22-300x186.png 300w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.33.22-768x475.png 768w, https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fスクリーンショット-2020-07-20-3.33.22.png 1342w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" \u002F\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Cp\u003E\u003C\u002Fp\u003E\n","author":{"name":"Takahiro Horike","description":"Co-founder and CEO of Serverless Operations, Inc","avatars":{"avatar96":"https:\u002F\u002Fsecure.gravatar.com\u002Favatar\u002F2ee9db3a5b6c492acf66ec14c8a5d8dc?s=96&d=mm&r=g"},"acf":{"userJpName":"堀家 隆宏","userRole":"CEO","facebook":"https:\u002F\u002Fwww.facebook.com\u002Fhorike.takahiro","twitter":"https:\u002F\u002Ftwitter.com\u002Fhorike37","github":"https:\u002F\u002Fgithub.com\u002Fhorike37"}},"date":"2020.07.20","path":"\u002Fblog\u002F97\u002F","featuredMedia":{"sourceUrl":"https:\u002F\u002Fcdn.getshifter.co\u002Ff6642def64a63651c07142605e040674c5441f6d\u002Fuploads\u002F2020\u002F07\u002Fserverless-ec-3.png","altText":"serverless-ec","mediaDetails":{"width":834}},"categories":[{"id":"7","title":"Blog","path":"\u002Fcategory\u002Fblog\u002F"}],"tags":[{"id":"19","title":"Appsync","path":"\u002Ftag\u002Fappsync\u002F"},{"id":"15","title":"Auth0","path":"\u002Ftag\u002Fauth0\u002F"},{"id":"18","title":"Step Functions","path":"\u002Ftag\u002Fstep-functions\u002F"},{"id":"20","title":"Stripe","path":"\u002Ftag\u002Fstripe\u002F"},{"id":"21","title":"Vue","path":"\u002Ftag\u002Fvue\u002F"}]},"metadata":{"siteName":"Serverless Operations","siteDescription":"Serverless Operationsは、これまでグローバルの第一線で培ってきたクラウド技術（AWS − アマゾンウェブサービス）の豊富な実績と知見を活かし、お客さまのサーバーレスによる開発や運用の支援、コンサルティングまで一貫してサポート。サーバーレスに関するさまざまな課題を解決いたします。","siteUrl":"https:\u002F\u002Fserverless.co.jp","siteOgImage":"https:\u002F\u002Fserverless.co.jp\u002Fogp.png"}},"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="/assets/js/app.748a8736.js" defer></script><script src="/assets/js/page--src--templates--word-press-blog-vue.3139ba43.js" defer></script><script data-vue-tag="ssr" src="https://webfont.fontplus.jp/accessor/script/fontplus.js?LuMx0zy9taw%3D&box=ME4Rs88c3-0%3D&aa=1&ab=2" data-body="true"></script>
+  </body>
+</html>
