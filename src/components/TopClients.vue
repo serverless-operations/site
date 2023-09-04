@@ -34,6 +34,11 @@
           class="clients-image"
       />
       <img
+          src="../assets/images/clients/clients-optex.svg"
+          alt="ServerlessOperations Clients OPTEX"
+          class="clients-image"
+      />
+      <img
           src="../assets/images/clients/clients-geolonia.svg"
           alt="ServerlessOperations Clients GEOLONIA"
           class="clients-image"
