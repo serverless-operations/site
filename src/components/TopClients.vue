@@ -39,6 +39,11 @@
           class="clients-image"
       />
       <img
+          src="../assets/images/clients/clients-chukyo-tv.svg"
+          alt="ServerlessOperations Clients CHUKYO TV"
+          class="clients-image"
+      />
+      <img
           src="../assets/images/clients/clients-geolonia.svg"
           alt="ServerlessOperations Clients GEOLONIA"
           class="clients-image"
